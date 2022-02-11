@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="global.sesoc.library.dao.BoardMapper">
+
+<!-- 게시글 저장 -->
+<insert id="insertBoard" parameterType="board">
+	insert 
+	into 
+		web5_board 
+		(
+			boardnum
+			, id
+			, title
+			, contents
+			<if test="originalfile != null and savedfile != null">
+			, originalfile
+			, savedfile
+			</if>
+		)
+	values 
+		(
+			web5_board_seq.nextval
+			, #{id}
+			, #{title}
+			, #{contents}
+			<if test="originalfile != null and savedfile != null">
+			, #{originalfile}
+			, #{savedfile}
+			</if>
+		)
+</insert>
+
+<!-- 게시글 읽기 -->
+<select id="getBoard" parameterType="int" resultType="board">
+	select 
+		boardnum
+		, id
+		, title
+		, contents
+		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
+		, hits
+		, originalfile
+		, savedfile
+	from 
+		web5_board
+	where 
+		boardnum = #{boardnum}
+</select>
+
+<!-- 조회수 1 증가 -->
+<update id="addHits" parameterType="int">
+	update
+		web5_board
+	set
+		hits = hits + 1
+	where
+		boardnum = #{boardnum}
+</update>
+
+<!-- 전체 글 개수 (검색 필터링 후) -->
+<select id="getTotal" parameterType="string" resultType="int">
+	select 
+		count(*)
+	from 
+		web5_board 
+	<if test="_parameter != null">
+	where 
+		title like '%' || #{searchText} || '%'
+	</if>
+</select>
+
+<!-- 현재 페이지 목록 (검색 필터링 후) -->
+<select id="listBoard" parameterType="string" resultType="board">
+	select 
+		boardnum
+		, id
+		, title
+		, to_char(inputdate, 'YYYY-MM-DD') inputdate
+		, hits
+	from 
+		web5_board 
+	<if test="_parameter != null">
+	where 
+		title like '%' || #{searchText} || '%'
+	</if>
+	order by boardnum desc
+</select>
+
+
+<!-- 글 삭제 -->
+<delete id="deleteBoard" parameterType="board">
+	delete
+	from
+		web5_board
+	where
+		boardnum = #{boardnum}
+		and id = #{id}
+</delete>
+
+<!-- 글 수정 -->
+<update id="updateBoard" parameterType="board">
+	update
+		web5_board
+	set
+		title = #{title}
+		, contents = #{contents}
+		<if test="originalfile != null and savedfile != null">
+		, originalfile = #{originalfile}
+		, savedfile = #{savedfile}
+		</if>
+	where
+		boardnum = #{boardnum}
+		and id = #{id}
+</update>
+
+<!-- 리플 저장 -->
+<insert id="insertReply" parameterType="reply">
+	insert into web5_reply (
+		replynum
+		, boardnum
+		, id
+		, text
+	)
+	values (
+		web5_reply_seq.nextval
+		, #{boardnum}
+		, #{id}
+		, #{text}
+	)
+</insert>
+
+<!-- 리플 삭제 -->
+<delete id="deleteReply" parameterType="reply">
+	delete
+	from
+		web5_reply
+	where
+		replynum = #{replynum}
+		and id = #{id}
+</delete>
+
+<!-- 현재 글의 리플 목록 -->
+<select id="listReply" parameterType="int" resultType="reply">
+	select 
+		replynum
+		, boardnum
+		, id
+		, text
+		, to_char(inputdate, 'YYYY-MM-DD') inputdate
+	from 
+		web5_reply 
+	where
+		boardnum = #{boardnum}
+	order by 
+		replynum desc
+</select>
+
+<!-- 리플 수정 -->
+<update id="updateReply" parameterType="Reply">
+	update
+		web5_reply
+	set
+		text = #{text}
+	where
+		replynum = #{replynum}
+		and id = #{id}
+</update>
+
+</mapper>

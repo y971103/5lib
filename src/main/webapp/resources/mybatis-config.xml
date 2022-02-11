@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="global.sesoc.library.vo.MemberVO" alias="MemberVO" />
+		<typeAlias type="global.sesoc.library.vo.BoardVO" alias="BoardVO" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="memberMapper.xml" />
+		<mapper resource="boardMapper.xml" />
+	</mappers>
+	
+</configuration>

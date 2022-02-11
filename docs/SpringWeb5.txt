@@ -1,0 +1,10 @@
+[ springWeb5 예제 ]
+
+* 사용 프레임워크와 기능 
+- Spring 4.3.6
+- Mybatis 3.4.1
+- JSP, JSTL, HTML, CSS, JavaScript
+- 회원가입, 로그인, 로그아웃, 개인정보 수정, 게시판, 리플, 파일업로드, 다운로드
+- 로그인은 인터셉터 이용
+
+

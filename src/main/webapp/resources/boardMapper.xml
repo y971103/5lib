@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="global.sesoc.library.dao.BoardMapper">
+
+	<!-- 블로그 글 목록 -->
+	<select id="list" parameterType="string" resultType="BoardVO">
+		
+	</select>
+	
+	<!-- 블로그 글 읽기 -->
+	<select id="read" parameterType="int" resultType="BoardVO">
+		
+	</select>	
+	
+	
+	<!-- 블로그 글 저장 -->
+	<insert id="write" parameterType="BoardVO">
+		
+	</insert>
+
+
+	<!-- 글 삭제 -->
+	<delete id="write" parameterType="BoardVO">
+	
+	</delete>
+
+
+	<!-- 글 수정 -->
+	<update id="update" parameterType="BoardVO">
+		
+	</update>
+	
+	<!-- 추천수 1 증가 -->
+	<update id="like" parameterType="int">
+		
+	</update>
+
+</mapper>
