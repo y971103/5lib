@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>global.sesoc</groupId>
-	<artifactId>web5</artifactId>
-	<name>SpringWeb5</name>
+	<artifactId>library</artifactId>
+	<name>library</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
