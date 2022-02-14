@@ -39,7 +39,12 @@ CREATE TABLE book
 	introduce varchar2(2000),
 	-- ì±… ì‚¬ì§„
 	book_photo number,
+<<<<<<< HEAD
 	-- ì±… íŒŒì¼
+=======
+	book_introduce varchar2(2000),
+	-- Ã¥ ÆÄÀÏ
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	bookfile number,
 	genre_num number(2) NOT NULL,
 	PRIMARY KEY (booknum)
@@ -70,7 +75,13 @@ CREATE TABLE essay
 	content varchar2(2000),
 	-- íšŒì› ì•„ì´ë””
 	id varchar2(20) NOT NULL,
+<<<<<<< HEAD
 	-- ì—ì„¸ì´ ì‘ì„± ì¼ì
+=======
+	-- Á¶È¸¼ö
+	hits number,
+	-- ¿¡¼¼ÀÌ ÀÛ¼º ÀÏÀÚ
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	inputdate date DEFAULT SYSDATE,
 	-- ì±… ë²ˆí˜¸
 	booknum number NOT NULL,
@@ -135,7 +146,13 @@ CREATE TABLE notice
 	infonum number NOT NULL,
 	-- ê³µì§€ ì œëª©
 	title varchar2(200),
+<<<<<<< HEAD
 	-- ê³µì§€ ë‚´ìš©
+=======
+	-- Á¶È¸¼ö
+	hits number,
+	-- °øÁö ³»¿ë
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	content varchar2(2000),
 	-- ê³µì§€ ì‘ì„± ì¼ì
 	inputdate date DEFAULT SYSDATE,
@@ -155,7 +172,13 @@ CREATE TABLE QnA
 	QnAtitle varchar2(200),
 	-- ë¬¸ì˜ ë‚´ìš©
 	QnAcontent varchar2(2000),
+<<<<<<< HEAD
 	-- ë¬¸ì˜ ì‘ì„± ë‚ ì§œ
+=======
+	-- Á¶È¸¼ö
+	hits number,
+	-- ¹®ÀÇ ÀÛ¼º ³¯Â¥
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	inputdate date DEFAULT SYSDATE,
 	-- íšŒì› ì•„ì´ë””
 	id varchar2(20) NOT NULL,
@@ -198,12 +221,21 @@ CREATE TABLE review
 
 CREATE TABLE shelf
 (
+<<<<<<< HEAD
 	-- ë‚´ ì„œì¬ì— ë“±ë¡ëœ ì±… ìˆ˜
 	shelfnum number NOT NULL,
 	-- íšŒì› ì•„ì´ë””
 	id varchar2(20) NOT NULL,
 	-- ì±… ë²ˆí˜¸
 	booknum number NOT NULL
+=======
+	-- È¸¿ø ¾ÆÀÌµğ
+	id varchar2(20) NOT NULL,
+	-- Ã¥ ¹øÈ£
+	booknum number NOT NULL,
+	-- ³» ¼­Àç¿¡ µî·ÏµÈ Ã¥ ¼ö
+	shelfnum number NOT NULL
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 );
 
 
@@ -309,6 +341,7 @@ ALTER TABLE QnA_reply
 
 /* Comments */
 
+<<<<<<< HEAD
 COMMENT ON COLUMN book.booknum IS 'ì±… ë²ˆí˜¸';
 COMMENT ON COLUMN book.title IS 'ì±… ì œëª©';
 COMMENT ON COLUMN book.author IS 'ì‘ê°€';
@@ -361,6 +394,63 @@ COMMENT ON COLUMN review.booknum IS 'ì±… ë²ˆí˜¸';
 COMMENT ON COLUMN shelf.shelfnum IS 'ë‚´ ì„œì¬ì— ë“±ë¡ëœ ì±… ìˆ˜';
 COMMENT ON COLUMN shelf.id IS 'íšŒì› ì•„ì´ë””';
 COMMENT ON COLUMN shelf.booknum IS 'ì±… ë²ˆí˜¸';
+=======
+COMMENT ON COLUMN book.booknum IS 'Ã¥ ¹øÈ£';
+COMMENT ON COLUMN book.title IS 'Ã¥ Á¦¸ñ';
+COMMENT ON COLUMN book.author IS 'ÀÛ°¡';
+COMMENT ON COLUMN book.publisher IS 'ÃâÆÇ»ç';
+COMMENT ON COLUMN book.p_date IS 'ÃâÆÇ ÀÏÀÚ';
+COMMENT ON COLUMN book.score IS 'ÆòÁ¡';
+COMMENT ON COLUMN book.genre_type IS 'Àå¸£';
+COMMENT ON COLUMN book.book_photo IS 'Ã¥ »çÁø';
+COMMENT ON COLUMN book.bookfile IS 'Ã¥ ÆÄÀÏ';
+COMMENT ON COLUMN comments.commentnum IS '³ª¸¸ º¸´Â ¸®ºä ¹øÈ£ (ÁÙ±Û)';
+COMMENT ON COLUMN comments.content IS '³ª¸¸ º¸´Â ¸®ºä ³»¿ë';
+COMMENT ON COLUMN comments.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN comments.booknum IS 'Ã¥ ¹øÈ£';
+COMMENT ON COLUMN essay.essaynum IS '¿¡¼¼ÀÌ(µ¶ÈÄ°¨) ¹øÈ£ (³²µé ´Ù º½)';
+COMMENT ON COLUMN essay.title IS '¿¡¼¼ÀÌ Á¦¸ñ';
+COMMENT ON COLUMN essay.content IS '¿¡¼¼ÀÌ ³»¿ë';
+COMMENT ON COLUMN essay.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN essay.hits IS 'Á¶È¸¼ö';
+COMMENT ON COLUMN essay.inputdate IS '¿¡¼¼ÀÌ ÀÛ¼º ÀÏÀÚ';
+COMMENT ON COLUMN essay.booknum IS 'Ã¥ ¹øÈ£';
+COMMENT ON COLUMN genre.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN habit.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN habit.time IS 'µ¶¼­ ½Ã°£';
+COMMENT ON COLUMN habit.amount IS 'ÀĞÀº ±Ç¼ö';
+COMMENT ON COLUMN habit.inputdate IS 'Å¸ÀÓ°ú ºñ±³ÇÒ ÇöÀç ½Ã°¢';
+COMMENT ON COLUMN members.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN members.password IS 'È¸¿ø ºñ¹Ğ¹øÈ£';
+COMMENT ON COLUMN members.name IS 'È¸¿ø ÀÌ¸§';
+COMMENT ON COLUMN members.phone IS 'È¸¿ø ÀüÈ­¹øÈ£';
+COMMENT ON COLUMN members.email IS 'È¸¿ø ÀÌ¸ŞÀÏ';
+COMMENT ON COLUMN members.sub IS 'È¸¿ø ±¸µ¶ Á¤º¸';
+COMMENT ON COLUMN notice.infonum IS '°øÁö ¹øÈ£';
+COMMENT ON COLUMN notice.title IS '°øÁö Á¦¸ñ';
+COMMENT ON COLUMN notice.hits IS 'Á¶È¸¼ö';
+COMMENT ON COLUMN notice.content IS '°øÁö ³»¿ë';
+COMMENT ON COLUMN notice.inputdate IS '°øÁö ÀÛ¼º ÀÏÀÚ';
+COMMENT ON COLUMN notice.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN QnA.QnAnum IS '¹®ÀÇ ¹øÈ£';
+COMMENT ON COLUMN QnA.QnAtitle IS '¹®ÀÇ Á¦¸ñ';
+COMMENT ON COLUMN QnA.QnAcontent IS '¹®ÀÇ ³»¿ë';
+COMMENT ON COLUMN QnA.hits IS 'Á¶È¸¼ö';
+COMMENT ON COLUMN QnA.inputdate IS '¹®ÀÇ ÀÛ¼º ³¯Â¥';
+COMMENT ON COLUMN QnA.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN QnA_reply.QnAreplynum IS 'QnA ´ñ±Û ¹øÈ£';
+COMMENT ON COLUMN QnA_reply.QnAnum IS '¹®ÀÇ ¹øÈ£';
+COMMENT ON COLUMN QnA_reply.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN review.reviewnum IS 'ÇÑÁÙÆò ¹øÈ£ (¶óÀÌºê·¯¸®)';
+COMMENT ON COLUMN review.inputdate IS 'ÇÑÁÙÆò ÀÛ¼º ³¯Â¥';
+COMMENT ON COLUMN review.content IS 'ÇÑÁÙÆò ³»¿ë';
+COMMENT ON COLUMN review.likecnt IS 'ÇÑÁÙÆò ÁÁ¾Æ¿ä';
+COMMENT ON COLUMN review.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN review.booknum IS 'Ã¥ ¹øÈ£';
+COMMENT ON COLUMN shelf.id IS 'È¸¿ø ¾ÆÀÌµğ';
+COMMENT ON COLUMN shelf.booknum IS 'Ã¥ ¹øÈ£';
+COMMENT ON COLUMN shelf.shelfnum IS '³» ¼­Àç¿¡ µî·ÏµÈ Ã¥ ¼ö';
+>>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 
 
 

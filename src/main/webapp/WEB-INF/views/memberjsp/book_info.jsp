@@ -2,12 +2,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
+    <title>book_info</title>
     <link rel="icon" href="../resources/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -23,6 +21,12 @@
     <link rel="stylesheet" href="../resources/css/hover.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
 </head>
 
 <body>
@@ -50,7 +54,7 @@
                                         <a class="nav-link" href="library">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -68,8 +72,8 @@
                                             Board
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">Info</a>
-                                            <a class="dropdown-item" href="tour_details.html">QnA</a>
+                                            <a class="dropdown-item" href="top_place">Info</a>
+                                            <a class="dropdown-item" href="tour_details">QnA</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -86,142 +90,107 @@
     </header>
     <!-- 헤더 끝-->
 
-    <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
-        <div class="container">
-            <div class="row ">
-                <div class="col-xl-6">
-                    <div class="section_tittle">
-                        <h2>Best seller</h2>
+    <!-- Product Details Section Begin -->
+    <section>
+        <div class="container" style="margin-bottom: 20px;">
+            <div class="row">       
+                <div style="padding-left: 10%;">
+                    <img src="../resources/img/test22.jpg" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <div class="product__details__text">
+                        <h3><strong>미드나잇 라이브러리</strong></h3>
+                        <div>
+                            <ul>
+                                <li class="binfo">
+                                    <span style="font-size: large;"><strong>저자</strong></span>
+                                    <div>
+                                       메트 헤이그
+                                    </div>
+                                </li>
+                                <li class="binfo">
+                                    <span style="font-size: large;"><strong>출판사</strong></span>
+                                    <div>
+                                        인플루엔셜
+                                    </div>
+                                </li>
+                                <li class="binfo">
+                                    <span style="font-size: large;"><strong>출간</strong></span>
+                                    <div>
+                                        2021.04.28
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
+                        <h4><strong>책 소개</strong></h4>
+                        <div>
+                            <ul>
+                                <li style="width: 500px;" class="binfo">
+                                    죽기로 결심한 주인공 ‘노라 시드’가 삶과 죽음 사이에 존재하는 미스터리한 도서관 ‘미드나잇 라이브러리’에서
+                                     눈을 뜨며 시작되는 이 소설은 노라가 인생의 두 번째 기회를 얻으며, 가장 완벽한 삶을 찾기 위한 모험을 떠나는 이야기이다. 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="button" value="책 읽기" class="readbt">
+                </div>
+                
+                <div class="col-lg-12" style="padding-left: 10%;">
+                    <div class="product__details__tab" style="padding-right: 23%;">
+                        <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">한 줄 리뷰</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="line_bottom">
+                                <span>아이디</span>
+                                <span>2022.02.13</span>
+                                <div class="one_line">좋은 책입니다!!!!!!!!!!</div>
+                            </div>
+                            <div class="line_bottom">
+                                <span>아이디</span>
+                                <span>2022.02.13</span>
+                                <div class="one_line">으아아아아아ㅏ아아아아아아아ㅏㅇ</div>
+                            </div>
+                            <div class="line_bottom">
+                                <span>아이디</span>
+                                <span>2022.02.13</span>
+                                <div class="one_line">이거 가능 하겠지? css 너무 난잡하네</div>
+                            </div>
+
+                            <div>
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> <input type="submit" value="등록" class="sub_review">
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="client_review_slider owl-carousel">
-                        <div class="photo">
-                            <img src="../resources/img/test1.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test2.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test4.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
+
+                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
+                <div class="row" style="margin-left: 10%;">
+                    <div class="photo" style="margin-right: 22px;">
+                        <img src="../resources/img/rec1.jpg" alt="">
+                    </div>
+                    <div class="photo" style="margin-right: 22px;">
+                        <img src="../resources/img/rec1.jpg" alt="">
+                    </div>
+                    <div class="photo" style="margin-right: 22px;">
+                        <img src="../resources/img/rec1.jpg" alt="">
+                    </div>
+                    <div class="photo" style="margin-right: 22px;">
+                        <img src="../resources/img/rec1.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- 도서 슬라이드(배너) 끝-->
-    <!-- Header part end-->
+    <!-- Product Details Section End -->
 
-    <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="section_tittle text-center">
-                        <h2>이런 책은 어떠세요?</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-left: 7%;">
-                <figure class="snip1283">
-                    <img src="../resources/img/li1.jpg" alt="sample83" />
-                    <figcaption>
-                      <h3>Fleece Marigold</h3>
-                      <p>Technaf, Bangladesh</p>
-                    </figcaption>
-                    <a href="#"></a>
-                  </figure>
-                
-            
-                    <figure class="snip1283">
-                        <img src="../resources/img/test22.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-               
-                    <figure class="snip1283">
-                        <img src="../resources/img/test33.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-             
-                    <figure class="snip1283">
-                        <img src="../resources/img/test44.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                    </figure>
-              
-                    <figure class="snip1283">
-                        <img src="../resources/img/test11.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-                    
-                
-                        <figure class="snip1283">
-                            <img src="../resources/img/test22.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
-                   
-                        <figure class="snip1283">
-                            <img src="../resources/img/test33.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
-                 
-                        <figure class="snip1283">
-                            <img src="../resources/img/test44.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip1283">
-                            <img src="../resources/img/test11.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                <a href="top_place.html" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
-            </div>
-        </div>
-    </section>
-    <!--top place end-->
-
-    <!-- 푸터 시작-->
+    <!-- Footer Section Begin -->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
@@ -241,7 +210,6 @@
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
                             <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                 method="get" class="form-inline">
                                 <input class="form-control" name="EMAIL" placeholder="Your Email Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
@@ -265,7 +233,7 @@
                         <p>4156, New garden, New York, USA
                                 +880 362 352 783</p>
                         <span>contact@martine.com</span>
-                       
+                      
                     </div>
                 </div>
             </div>
@@ -275,37 +243,39 @@
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
                         <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- footer part end-->
+    <!-- Footer Section End -->
 
-    <!-- jquery plugins here-->
-    <script src="../resources/js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="../resources/js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="../resources/js/bootstrap.min.js"></script>
-    <!-- magnific js -->
-    <script src="../resources/js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="../resources/js/owl.carousel.min.js"></script>
-    <!-- masonry js -->
-    <script src="../resources/js/masonry.pkgd.js"></script>
-    <!-- masonry js -->
-    <script src="../resources/js/jquery.nice-select.min.js"></script>
-    <script src="../resources/js/gijgo.min.js"></script>
-    <!-- contact js -->
-    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>
-    <script src="../resources/js/jquery.form.js"></script>
-    <script src="../resources/js/jquery.validate.min.js"></script>
-    <script src="../resources/js/mail-script.js"></script>
-    <script src="../resources/js/contact.js"></script>
-    <!-- custom js -->
-    <script src="../resources/js/custom.js"></script>
+    <!-- Js Plugins -->
+
+     <!-- jquery plugins here-->
+     <script src="../resources/js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../resources/js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../resources/js/bootstrap.min.js"></script>
+     <!-- magnific js -->
+     <script src="../resources/js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../resources/js/owl.carousel.min.js"></script>
+     <!-- masonry js -->
+     <script src="../resources/js/masonry.pkgd.js"></script>
+     <!-- masonry js -->
+     <script src="../resources/js/jquery.nice-select.min.js"></script>
+     <script src="../resources/js/gijgo.min.js"></script>
+     <!-- contact js -->
+     <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
+     <script src="../resources/js/jquery.form.js"></script>
+     <script src="../resources/js/jquery.validate.min.js"></script>
+     <script src="../resources/js/mail-script.js"></script>
+     <script src="../resources/js/contact.js"></script>
+     <!-- custom js -->
+     <script src="../resources/js/custom.js"></script>
 </body>
 </html>
