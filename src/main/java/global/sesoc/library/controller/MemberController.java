@@ -48,4 +48,16 @@ public class MemberController {
 		
 		return "memberjsp/login_signup";
 	}
+	
+	@RequestMapping(value="notice_qna", method=RequestMethod.GET)
+	public String notice_qna() {
+		
+		return "boardjsp/notice_qna";
+	}
+	
+	@RequestMapping(value="essaylist", method=RequestMethod.GET)
+	public String essaylist() {
+		
+		return "boardjsp/essaylist";
+	}
 }
