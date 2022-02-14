@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>library-11</title>
+    <title>Martine</title>
     <link rel="icon" href="../resources/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -23,8 +24,9 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
 </head>
+
 <body>
- <!--:헤더 시작::-->
+   <!--:헤더 시작::-->
    <header class="main_menu">
         <div class="main_menu_iner">
             <div class="container">
@@ -45,7 +47,7 @@
                                         <a class="nav-link" href="index.html">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="top_place.html">Library</a>
+                                        <a class="nav-link" href="library.html">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
@@ -66,8 +68,8 @@
                                             Board
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">Notice/QNA</a>
-                                            <a class="dropdown-item" href="tour_details.html">Essay</a>
+                                            <a class="dropdown-item" href="top_place.html">Info</a>
+                                            <a class="dropdown-item" href="tour_details.html">QnA</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -75,7 +77,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                            <a href="loging_sinup.html" class="btn_1 d-none d-lg-block">Login/SignUP</a>
                         </nav>
                     </div>
                 </div>
@@ -85,12 +87,12 @@
     <!-- 헤더 끝-->
 
     <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #81acfd, #f1feff);"  >
+    <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
         <div class="container">
             <div class="row ">
                 <div class="col-xl-6">
                     <div class="section_tittle">
-                        <h2>What they said</h2>
+                        <h2>Best seller</h2>
                     </div>
                 </div>
             </div>
@@ -126,7 +128,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>Top Places to visit</h2>
+                        <h2>이런 책은 어떠세요?</h2>
                     </div>
                 </div>
             </div>
@@ -263,12 +265,7 @@
                         <p>4156, New garden, New York, USA
                                 +880 362 352 783</p>
                         <span>contact@martine.com</span>
-                        <div class="social-icons">
-                            <a href="#"><i class="ti-facebook"></i></a>
-                            <a href="#"><i class="ti-twitter-alt"></i></a>
-                            <a href="#"><i class="ti-pinterest"></i></a>
-                            <a href="#"><i class="ti-instagram"></i></a>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -278,7 +275,7 @@
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
                         <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -303,7 +300,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../resources/js/jquery.nice-select.min.js"></script>
     <script src="../resources/js/gijgo.min.js"></script>
     <!-- contact js -->
-    <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>
