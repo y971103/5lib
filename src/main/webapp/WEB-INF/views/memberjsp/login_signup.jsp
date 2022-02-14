@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>login/signup</title>
+        <title>login/signup1</title>
         <link rel="stylesheet" href="../resources/css/log-style.css">
         <link rel="icon" href="../resources/img/favicon.png">
     </head>
