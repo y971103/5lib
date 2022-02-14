@@ -135,7 +135,8 @@
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="책 읽기" class="readbt">
+                    <input type="button" value="E-Pub 파일 다운" class="readbt">
+                    <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
                 </div>
                 
                 <div class="col-lg-12" style="padding-left: 10%;">
