@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="wrap">
-            <div class="form-wrap" style="background-color: white;">
+            <div class="form-wrap">
                 <div class="button-wrap">
                     <div id="btn"></div>
                     <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
