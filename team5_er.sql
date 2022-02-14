@@ -37,6 +37,7 @@ CREATE TABLE book
 	genre_type number,
 	-- 책 사진
 	book_photo number,
+	book_introduce varchar2(2000),
 	-- 책 파일
 	bookfile number,
 	genre_num number(2) NOT NULL,
@@ -68,6 +69,8 @@ CREATE TABLE essay
 	content varchar2(2000),
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
+	-- 조회수
+	hits number,
 	-- 에세이 작성 일자
 	inputdate date DEFAULT SYSDATE,
 	-- 책 번호
@@ -131,6 +134,8 @@ CREATE TABLE notice
 	infonum number NOT NULL,
 	-- 공지 제목
 	title varchar2(200),
+	-- 조회수
+	hits number,
 	-- 공지 내용
 	content varchar2(2000),
 	-- 공지 작성 일자
@@ -149,6 +154,8 @@ CREATE TABLE QnA
 	QnAtitle varchar2(200),
 	-- 문의 내용
 	QnAcontent varchar2(2000),
+	-- 조회수
+	hits number,
 	-- 문의 작성 날짜
 	inputdate date DEFAULT SYSDATE,
 	-- 회원 아이디
@@ -190,13 +197,12 @@ CREATE TABLE review
 
 CREATE TABLE shelf
 (
-	-- 내 서재에 등록된 책 수
-	shelfnum number NOT NULL,
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 책 번호
 	booknum number NOT NULL,
-	PRIMARY KEY (shelfnum)
+	-- 내 서재에 등록된 책 수
+	shelfnum number NOT NULL
 );
 
 
@@ -319,6 +325,7 @@ COMMENT ON COLUMN essay.essaynum IS '에세이(독후감) 번호 (남들 다 봄)';
 COMMENT ON COLUMN essay.title IS '에세이 제목';
 COMMENT ON COLUMN essay.content IS '에세이 내용';
 COMMENT ON COLUMN essay.id IS '회원 아이디';
+COMMENT ON COLUMN essay.hits IS '조회수';
 COMMENT ON COLUMN essay.inputdate IS '에세이 작성 일자';
 COMMENT ON COLUMN essay.booknum IS '책 번호';
 COMMENT ON COLUMN genre.id IS '회원 아이디';
@@ -334,12 +341,14 @@ COMMENT ON COLUMN members.email IS '회원 이메일';
 COMMENT ON COLUMN members.sub IS '회원 구독 정보';
 COMMENT ON COLUMN notice.infonum IS '공지 번호';
 COMMENT ON COLUMN notice.title IS '공지 제목';
+COMMENT ON COLUMN notice.hits IS '조회수';
 COMMENT ON COLUMN notice.content IS '공지 내용';
 COMMENT ON COLUMN notice.inputdate IS '공지 작성 일자';
 COMMENT ON COLUMN notice.id IS '회원 아이디';
 COMMENT ON COLUMN QnA.QnAnum IS '문의 번호';
 COMMENT ON COLUMN QnA.QnAtitle IS '문의 제목';
 COMMENT ON COLUMN QnA.QnAcontent IS '문의 내용';
+COMMENT ON COLUMN QnA.hits IS '조회수';
 COMMENT ON COLUMN QnA.inputdate IS '문의 작성 날짜';
 COMMENT ON COLUMN QnA.id IS '회원 아이디';
 COMMENT ON COLUMN QnA_reply.QnAreplynum IS 'QnA 댓글 번호';
@@ -351,9 +360,9 @@ COMMENT ON COLUMN review.content IS '한줄평 내용';
 COMMENT ON COLUMN review.likecnt IS '한줄평 좋아요';
 COMMENT ON COLUMN review.id IS '회원 아이디';
 COMMENT ON COLUMN review.booknum IS '책 번호';
-COMMENT ON COLUMN shelf.shelfnum IS '내 서재에 등록된 책 수';
 COMMENT ON COLUMN shelf.id IS '회원 아이디';
 COMMENT ON COLUMN shelf.booknum IS '책 번호';
+COMMENT ON COLUMN shelf.shelfnum IS '내 서재에 등록된 책 수';
 
 
 
