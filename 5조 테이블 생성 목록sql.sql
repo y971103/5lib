@@ -1,24 +1,3 @@
-
-/* Drop Tables */
-
-DROP TABLE comments CASCADE CONSTRAINTS;
-DROP TABLE essay CASCADE CONSTRAINTS;
-DROP TABLE review CASCADE CONSTRAINTS;
-DROP TABLE shelf CASCADE CONSTRAINTS;
-DROP TABLE book CASCADE CONSTRAINTS;
-DROP TABLE genre CASCADE CONSTRAINTS;
-DROP TABLE genre_info CASCADE CONSTRAINTS;
-DROP TABLE habit CASCADE CONSTRAINTS;
-DROP TABLE notice CASCADE CONSTRAINTS;
-DROP TABLE QnA_reply CASCADE CONSTRAINTS;
-DROP TABLE QnA CASCADE CONSTRAINTS;
-DROP TABLE members CASCADE CONSTRAINTS;
-
-
-
-
-/* Create Tables */
-
 CREATE TABLE book
 (
 	-- Ï±Ö Î≤àÌò∏
@@ -39,12 +18,7 @@ CREATE TABLE book
 	introduce varchar2(2000),
 	-- Ï±Ö ÏÇ¨ÏßÑ
 	book_photo number,
-<<<<<<< HEAD
 	-- Ï±Ö ÌååÏùº
-=======
-	book_introduce varchar2(2000),
-	-- √• ∆ƒ¿œ
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	bookfile number,
 	genre_num number(2) NOT NULL,
 	PRIMARY KEY (booknum)
@@ -64,7 +38,6 @@ CREATE TABLE comments
 	PRIMARY KEY (commentnum)
 );
 
-
 CREATE TABLE essay
 (
 	-- ÏóêÏÑ∏Ïù¥(ÎèÖÌõÑÍ∞ê) Î≤àÌò∏ (ÎÇ®Îì§ Îã§ Î¥Ñ)
@@ -75,13 +48,7 @@ CREATE TABLE essay
 	content varchar2(2000),
 	-- ÌöåÏõê ÏïÑÏù¥Îîî
 	id varchar2(20) NOT NULL,
-<<<<<<< HEAD
 	-- ÏóêÏÑ∏Ïù¥ ÏûëÏÑ± ÏùºÏûê
-=======
-	-- ¡∂»∏ºˆ
-	hits number,
-	-- ø°ºº¿Ã ¿€º∫ ¿œ¿⁄
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	inputdate date DEFAULT SYSDATE,
 	-- Ï±Ö Î≤àÌò∏
 	booknum number NOT NULL,
@@ -89,7 +56,6 @@ CREATE TABLE essay
 	hits number,
 	PRIMARY KEY (essaynum)
 );
-
 
 CREATE TABLE genre
 (
@@ -99,14 +65,12 @@ CREATE TABLE genre
 	UNIQUE (id, genre_num)
 );
 
-
 CREATE TABLE genre_info
 (
 	genre_num number(2) NOT NULL,
 	genre_name varchar2(100),
 	PRIMARY KEY (genre_num)
 );
-
 
 CREATE TABLE habit
 (
@@ -119,7 +83,6 @@ CREATE TABLE habit
 	-- ÌÉÄÏûÑÍ≥º ÎπÑÍµêÌï† ÌòÑÏû¨ ÏãúÍ∞Å
 	inputdate date DEFAULT SYSDATE
 );
-
 
 CREATE TABLE members
 (
@@ -139,20 +102,13 @@ CREATE TABLE members
 	PRIMARY KEY (id)
 );
 
-
 CREATE TABLE notice
 (
 	-- Í≥µÏßÄ Î≤àÌò∏
 	infonum number NOT NULL,
 	-- Í≥µÏßÄ Ï†úÎ™©
 	title varchar2(200),
-<<<<<<< HEAD
 	-- Í≥µÏßÄ ÎÇ¥Ïö©
-=======
-	-- ¡∂»∏ºˆ
-	hits number,
-	-- ∞¯¡ˆ ≥ªøÎ
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	content varchar2(2000),
 	-- Í≥µÏßÄ ÏûëÏÑ± ÏùºÏûê
 	inputdate date DEFAULT SYSDATE,
@@ -163,7 +119,6 @@ CREATE TABLE notice
 	PRIMARY KEY (infonum)
 );
 
-
 CREATE TABLE QnA
 (
 	-- Î¨∏Ïùò Î≤àÌò∏
@@ -172,13 +127,7 @@ CREATE TABLE QnA
 	QnAtitle varchar2(200),
 	-- Î¨∏Ïùò ÎÇ¥Ïö©
 	QnAcontent varchar2(2000),
-<<<<<<< HEAD
 	-- Î¨∏Ïùò ÏûëÏÑ± ÎÇ†Ïßú
-=======
-	-- ¡∂»∏ºˆ
-	hits number,
-	-- πÆ¿« ¿€º∫ ≥Ø¬•
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 	inputdate date DEFAULT SYSDATE,
 	-- ÌöåÏõê ÏïÑÏù¥Îîî
 	id varchar2(20) NOT NULL,
@@ -186,7 +135,6 @@ CREATE TABLE QnA
 	hits number,
 	PRIMARY KEY (QnAnum)
 );
-
 
 CREATE TABLE QnA_reply
 (
@@ -199,7 +147,6 @@ CREATE TABLE QnA_reply
 	id varchar2(20) NOT NULL,
 	PRIMARY KEY (QnAreplynum)
 );
-
 
 CREATE TABLE review
 (
@@ -218,137 +165,105 @@ CREATE TABLE review
 	PRIMARY KEY (reviewnum)
 );
 
-
 CREATE TABLE shelf
 (
-<<<<<<< HEAD
 	-- ÎÇ¥ ÏÑúÏû¨Ïóê Îì±Î°ùÎêú Ï±Ö Ïàò
 	shelfnum number NOT NULL,
 	-- ÌöåÏõê ÏïÑÏù¥Îîî
 	id varchar2(20) NOT NULL,
 	-- Ï±Ö Î≤àÌò∏
 	booknum number NOT NULL
-=======
-	-- »∏ø¯ æ∆¿Ãµ
-	id varchar2(20) NOT NULL,
-	-- √• π¯»£
-	booknum number NOT NULL,
-	-- ≥ª º≠¿Áø° µÓ∑œµ» √• ºˆ
-	shelfnum number NOT NULL
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
 );
-
-
-
-/* Create Foreign Keys */
 
 ALTER TABLE comments
 	ADD FOREIGN KEY (booknum)
 	REFERENCES book (booknum)
 ;
 
-
 ALTER TABLE essay
 	ADD FOREIGN KEY (booknum)
 	REFERENCES book (booknum)
 ;
-
 
 ALTER TABLE review
 	ADD FOREIGN KEY (booknum)
 	REFERENCES book (booknum)
 ;
 
-
 ALTER TABLE shelf
 	ADD FOREIGN KEY (booknum)
 	REFERENCES book (booknum)
 ;
-
 
 ALTER TABLE book
 	ADD FOREIGN KEY (genre_num)
 	REFERENCES genre_info (genre_num)
 ;
 
-
 ALTER TABLE genre
 	ADD FOREIGN KEY (genre_num)
 	REFERENCES genre_info (genre_num)
 ;
-
 
 ALTER TABLE comments
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
-
 ALTER TABLE essay
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
-
 
 ALTER TABLE genre
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
-
 ALTER TABLE habit
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
-
 
 ALTER TABLE notice
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
-
 ALTER TABLE QnA
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
-
 ALTER TABLE QnA_reply
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
-
 
 ALTER TABLE review
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
-
 ALTER TABLE shelf
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
-
 
 ALTER TABLE QnA_reply
 	ADD FOREIGN KEY (QnAnum)
 	REFERENCES QnA (QnAnum)
 ;
 
-
-
-/* Comments */
-
-<<<<<<< HEAD
 COMMENT ON COLUMN book.booknum IS 'Ï±Ö Î≤àÌò∏';
 COMMENT ON COLUMN book.title IS 'Ï±Ö Ï†úÎ™©';
 COMMENT ON COLUMN book.author IS 'ÏûëÍ∞Ä';
+
 COMMENT ON COLUMN book.publisher IS 'Ï∂úÌåêÏÇ¨';
 COMMENT ON COLUMN book.p_date IS 'Ï∂úÌåê ÏùºÏûê';
 COMMENT ON COLUMN book.score IS 'ÌèâÏ†ê';
 COMMENT ON COLUMN book.genre_type IS 'Ïû•Î•¥';
+COMMENT ON COLUMN book.introduce IS 'Ï±Ö ÏÜåÍ∞úÍ∏Ä';
 COMMENT ON COLUMN book.book_photo IS 'Ï±Ö ÏÇ¨ÏßÑ';
 COMMENT ON COLUMN book.bookfile IS 'Ï±Ö ÌååÏùº';
 COMMENT ON COLUMN comments.commentnum IS 'ÎÇòÎßå Î≥¥Îäî Î¶¨Î∑∞ Î≤àÌò∏ (Ï§ÑÍ∏Ä)';
@@ -394,63 +309,10 @@ COMMENT ON COLUMN review.booknum IS 'Ï±Ö Î≤àÌò∏';
 COMMENT ON COLUMN shelf.shelfnum IS 'ÎÇ¥ ÏÑúÏû¨Ïóê Îì±Î°ùÎêú Ï±Ö Ïàò';
 COMMENT ON COLUMN shelf.id IS 'ÌöåÏõê ÏïÑÏù¥Îîî';
 COMMENT ON COLUMN shelf.booknum IS 'Ï±Ö Î≤àÌò∏';
-=======
-COMMENT ON COLUMN book.booknum IS '√• π¯»£';
-COMMENT ON COLUMN book.title IS '√• ¡¶∏Ò';
-COMMENT ON COLUMN book.author IS '¿€∞°';
-COMMENT ON COLUMN book.publisher IS '√‚∆«ªÁ';
-COMMENT ON COLUMN book.p_date IS '√‚∆« ¿œ¿⁄';
-COMMENT ON COLUMN book.score IS '∆Ú¡°';
-COMMENT ON COLUMN book.genre_type IS '¿Â∏£';
-COMMENT ON COLUMN book.book_photo IS '√• ªÁ¡¯';
-COMMENT ON COLUMN book.bookfile IS '√• ∆ƒ¿œ';
-COMMENT ON COLUMN comments.commentnum IS '≥™∏∏ ∫∏¥¬ ∏Æ∫‰ π¯»£ (¡Ÿ±€)';
-COMMENT ON COLUMN comments.content IS '≥™∏∏ ∫∏¥¬ ∏Æ∫‰ ≥ªøÎ';
-COMMENT ON COLUMN comments.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN comments.booknum IS '√• π¯»£';
-COMMENT ON COLUMN essay.essaynum IS 'ø°ºº¿Ã(µ∂»ƒ∞®) π¯»£ (≥≤µÈ ¥Ÿ ∫Ω)';
-COMMENT ON COLUMN essay.title IS 'ø°ºº¿Ã ¡¶∏Ò';
-COMMENT ON COLUMN essay.content IS 'ø°ºº¿Ã ≥ªøÎ';
-COMMENT ON COLUMN essay.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN essay.hits IS '¡∂»∏ºˆ';
-COMMENT ON COLUMN essay.inputdate IS 'ø°ºº¿Ã ¿€º∫ ¿œ¿⁄';
-COMMENT ON COLUMN essay.booknum IS '√• π¯»£';
-COMMENT ON COLUMN genre.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN habit.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN habit.time IS 'µ∂º≠ Ω√∞£';
-COMMENT ON COLUMN habit.amount IS '¿–¿∫ ±«ºˆ';
-COMMENT ON COLUMN habit.inputdate IS '≈∏¿”∞˙ ∫Ò±≥«“ «ˆ¿Á Ω√∞¢';
-COMMENT ON COLUMN members.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN members.password IS '»∏ø¯ ∫Òπ–π¯»£';
-COMMENT ON COLUMN members.name IS '»∏ø¯ ¿Ã∏ß';
-COMMENT ON COLUMN members.phone IS '»∏ø¯ ¿¸»≠π¯»£';
-COMMENT ON COLUMN members.email IS '»∏ø¯ ¿Ã∏ﬁ¿œ';
-COMMENT ON COLUMN members.sub IS '»∏ø¯ ±∏µ∂ ¡§∫∏';
-COMMENT ON COLUMN notice.infonum IS '∞¯¡ˆ π¯»£';
-COMMENT ON COLUMN notice.title IS '∞¯¡ˆ ¡¶∏Ò';
-COMMENT ON COLUMN notice.hits IS '¡∂»∏ºˆ';
-COMMENT ON COLUMN notice.content IS '∞¯¡ˆ ≥ªøÎ';
-COMMENT ON COLUMN notice.inputdate IS '∞¯¡ˆ ¿€º∫ ¿œ¿⁄';
-COMMENT ON COLUMN notice.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN QnA.QnAnum IS 'πÆ¿« π¯»£';
-COMMENT ON COLUMN QnA.QnAtitle IS 'πÆ¿« ¡¶∏Ò';
-COMMENT ON COLUMN QnA.QnAcontent IS 'πÆ¿« ≥ªøÎ';
-COMMENT ON COLUMN QnA.hits IS '¡∂»∏ºˆ';
-COMMENT ON COLUMN QnA.inputdate IS 'πÆ¿« ¿€º∫ ≥Ø¬•';
-COMMENT ON COLUMN QnA.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN QnA_reply.QnAreplynum IS 'QnA ¥Ò±€ π¯»£';
-COMMENT ON COLUMN QnA_reply.QnAnum IS 'πÆ¿« π¯»£';
-COMMENT ON COLUMN QnA_reply.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN review.reviewnum IS '«—¡Ÿ∆Ú π¯»£ (∂Û¿Ã∫Í∑Ø∏Æ)';
-COMMENT ON COLUMN review.inputdate IS '«—¡Ÿ∆Ú ¿€º∫ ≥Ø¬•';
-COMMENT ON COLUMN review.content IS '«—¡Ÿ∆Ú ≥ªøÎ';
-COMMENT ON COLUMN review.likecnt IS '«—¡Ÿ∆Ú ¡¡æ∆ø‰';
-COMMENT ON COLUMN review.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN review.booknum IS '√• π¯»£';
-COMMENT ON COLUMN shelf.id IS '»∏ø¯ æ∆¿Ãµ';
-COMMENT ON COLUMN shelf.booknum IS '√• π¯»£';
-COMMENT ON COLUMN shelf.shelfnum IS '≥ª º≠¿Áø° µÓ∑œµ» √• ºˆ';
->>>>>>> 844147ebadfdc44cd94a0f6d04f214640af6d069
+
+
+
+
 
 
 

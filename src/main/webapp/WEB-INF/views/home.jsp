@@ -14,7 +14,7 @@
 <ul>
 <c:if test="${sessionScope.loginId == null}">
 	<li><a href="member/join">회원가입</a></li>
-	<li><a href="member/login">로그인a</a></li>
+	<li><a href="member/login">로그인</a></li>
 </c:if>
 <c:if test="${sessionScope.loginId != null}">
 	<li><a href="member/logout">로그아웃</a></li>
