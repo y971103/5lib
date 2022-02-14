@@ -1,21 +1,23 @@
 package global.sesoc.library.vo;
 
- 
-public class Info {
-	int infonum;
-	String id;
-	String title;
-	String content;
-	String inputdate;
+
+public class Notice {
+	private int infonum;
+	private String title;
+	private String content;
+	private String inputdate;
+	private String id;
+	private int hits;
 	
 	
-	public Info(int infonum, String id, String title, String content, String inputdate) {
+	public Notice(int infonum, String title, String content, String inputdate, String id, int hits) {
 		super();
 		this.infonum = infonum;
-		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.inputdate = inputdate;
+		this.id = id;
+		this.hits = hits;
 	}
 
 
@@ -26,16 +28,6 @@ public class Info {
 
 	public void setInfonum(int infonum) {
 		this.infonum = infonum;
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 
@@ -69,10 +61,30 @@ public class Info {
 	}
 
 
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public int getHits() {
+		return hits;
+	}
+
+
+	public void setHits(int hits) {
+		this.hits = hits;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Info [infonum=" + infonum + ", id=" + id + ", title=" + title + ", content=" + content + ", inputdate="
-				+ inputdate + "]";
+		return "Notice [infonum=" + infonum + ", title=" + title + ", content=" + content + ", inputdate=" + inputdate
+				+ ", id=" + id + ", hits=" + hits + "]";
 	}
-	
+
 }

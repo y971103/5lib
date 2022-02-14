@@ -17,7 +17,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		logger.debug("LoginInterceptor �떎�뻾");
+		logger.debug("LoginInterceptor");
 		
 		
 		HttpSession session = request.getSession();
