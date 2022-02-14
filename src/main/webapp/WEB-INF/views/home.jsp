@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>[ web5 ]</h1>
-승환이 수정함 
+승환이 수정함
 <c:if test="${sessionScope.loginId != null}">
 	<p>${sessionScope.loginName} (${sessionScope.loginId})님 로그인 중</p>
 </c:if>
@@ -23,5 +23,7 @@
 	<li><a href="board/list">게시판</a></li>
 </ul>
 <a href="member/index">메인화면단</a>
+<br>
+<a href="member/viewer">뷰어</a>
 </body>
 </html>

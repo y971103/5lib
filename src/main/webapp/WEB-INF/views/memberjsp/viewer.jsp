@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<<<<<<< HEAD
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +12,21 @@
     <title>Lib-service's Viewer</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="../resources/libs/normalize.min.css">
-    <link rel="stylesheet" href="../resources/style.css">
+    <link rel="stylesheet" href="../resources/viewer/style.css">
     <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="description" content="ePubViewer is an powerful, modern, and easy-to-use web app for reading ebooks.">
 </head>
-=======
-        <link rel="stylesheet" href="../resources/css/normalize.css">
-        <link rel="stylesheet" href="../resources/css/main.css">
-        <link rel="stylesheet" href="../resources/css/popup.css">
 
-        <script src="../resources/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="../resources/viewer/normalize.css">
+        <link rel="stylesheet" href="../resources/viewer/main.css">
+        <link rel="stylesheet" href="../resources/viewer/popup.css">
 
-        <script src="../resources/js/zip.min.js"></script>
+        <script src="../resources/viewer/jquery.min.js"></script>
+
+        <script src="../resources/viewer/zip.min.js"></script>
 
         <script>
             "use strict";
@@ -34,7 +34,7 @@
             document.onreadystatechange = function () {
               if (document.readyState == "complete") {
 //                window.reader = ePubReader("https://s3.amazonaws.com/moby-dick/", {
-                window.reader = ePubReader("../resources/test.epub", {
+                window.reader = ePubReader("../resources/viewer/test.epub", {
                    restore: true
                  });
               }
@@ -46,13 +46,13 @@
         <!-- <script src="js/libs/localforage.min.js"></script> -->
 
         <!-- Full Screen -->
-        <script src="../resources/js/screenfull.min.js"></script>
+        <script src="../resources/viewer/screenfull.min.js"></script>
 
         <!-- Render -->
-        <script src="../resources/js/epub1.js"></script>
+        <script src="../resources/viewer/epub1.js"></script>
 
         <!-- Reader -->
-        <script src="../resources/js/reader.js"></script>
+        <script src="../resources/viewer/reader.js"></script>
 
         <!-- Plugins -->
         <!-- <script src="js/plugins/search.js"></script> -->
@@ -71,7 +71,8 @@
           <a id="show-Toc" class="show_view icon-list-1 active" data-view="Toc">TOC</a>
           <a id="show-Bookmarks" class="show_view icon-bookmark" data-view="Bookmarks">Bookmarks</a>
           <!-- <a id="show-Notes" class="show_view icon-edit" data-view="Notes">Notes</a> -->
->>>>>>> a8865a1fa6b66a15a6663dc7e8ee765adc6c75cc
+		</div>
+	</div>
 
 <body>
     <div class="app">
@@ -252,9 +253,8 @@
                 <div class="empty">
                     <div class="app-name">lib-service's Viewer</div>
                     <div class="message">
-                        Unknown error. If this message does not disappear in a few seconds, try using a different browser (Chrome or Firefox), and
-                        if the issue still persists,
-                        <a href="https://github.com/pgaskin/ePubViewer">report it here</a>.
+                       	 알 수 없는 에러가 발생했습니다. 다른 브라우저를 사용해주세요!
+                        <a href="https://github.com/pgaskin/ePubViewer">여기 클릭!</a>.
                     </div>
                 </div>
             </div>
@@ -284,23 +284,6 @@
         if (isIE()) alert("ePubViewer does not support Internet Explorer. Please use Chrome or Firefox.");
     </script>
 
-    <script>
-        if ('serviceWorker' in navigator) window.addEventListener('load', () => {
-            navigator.serviceWorker.register('sw.js').then(reg => {
-                reg.onupdatefound = () => {
-                    const installingWorker = reg.installing;
-                    installingWorker.onstatechange = () => {
-                        if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            location.reload();
-                        }
-                    };
-                };
-            })
-        });
-        try {
-            window.caches.keys().then(keys => console.log("caches: " + keys.join(", "))).catch(err => console.log("error checking cache version"));
-        } catch (err) { }
-    </script>
 
     <script src="../resources/polyfills/babel-polyfill.min.js"></script>
     <script src="../resources/polyfills/fetch.js"></script>
@@ -319,7 +302,7 @@
         }).install();
     </script>
 
-    <script src="../resources/script.js"></script>
+    <script src="../resources/viewer/script.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66226417-1"></script>
     <script>

@@ -119,7 +119,26 @@
     -webkit-flex: 0 0 auto;
     flex: 0 0 auto;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 180px;
+}
+
+.profile
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /*둥그런 원으로 만들기 위함*/
+  overflow: hidden;
+}
+
+.profile img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .app .book .empty-wrapper .empty .app-name {
@@ -143,7 +162,8 @@
     color: inherit;
     text-decoration: none;
     margin: 20px;
-    background: rgba(0, 0, 0, 0.03);
+/*     background: rgba(0, 0, 0, 0.03); */
+    background: red;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -650,9 +670,9 @@
 
 @media only screen and (max-width: 950px) {
     .app .bar {
-        height: 36px;
+        height: 50px;
         line-height: 36px;
-        padding: 0 4px;
+        padding: 0 15px;
     }
 }
 

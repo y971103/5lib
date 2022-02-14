@@ -24,4 +24,10 @@ public class MemberController {
 		
 		return "memberjsp/index";
 	}
+	
+	@RequestMapping(value="viewer", method=RequestMethod.GET)
+	public String viewer() {
+		
+		return "memberjsp/viewer";
+	}
 }
