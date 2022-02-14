@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="wrap">
-            <div class="form-wrap">
+            <div class="form-wrap" style="background-color: white;">
                 <div class="button-wrap">
                     <div id="btn"></div>
                     <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
@@ -27,7 +27,7 @@
                     <input type="email" class="input-field" placeholder="Your Email" required>
                     <input type="PhoneNumber" class="input-field" placeholder="Enter PhoneNumber" required>
                     <input type="text" class="input-field" placeholder="Name" required>
-                    <div style="color: #999;">Favorite Genre
+                    <div style="color: #999; height: 50px;">Favorite Genre
                     <select name="genre" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
                         <option value="인문">Humanities</option>
                         <option value="소설">Novel</option>
@@ -36,6 +36,9 @@
                         <option value="소설">Self-development</option>
                         <option value="라이프스타일">Life-style</option>
                     </select></div>
+                   <div style="color: #999; margin-bottom: 20px;">
+                    Subscribe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" required style="zoom: 1.5;">
+                   </div>
                     <button class="submit">REGISTER</button>
                 </form>
             </div>
