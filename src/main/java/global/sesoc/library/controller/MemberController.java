@@ -30,4 +30,22 @@ public class MemberController {
 		
 		return "memberjsp/viewer";
 	}
+	
+	@RequestMapping(value="library", method=RequestMethod.GET)
+	public String library() {
+		
+		return "memberjsp/library";
+	}
+	
+	@RequestMapping(value="book_info", method=RequestMethod.GET)
+	public String bookinfo() {
+		
+		return "memberjsp/book_info";
+	}
+	
+	@RequestMapping(value="login_signup", method=RequestMethod.GET)
+	public String login_signup() {
+		
+		return "memberjsp/login_signup";
+	}
 }

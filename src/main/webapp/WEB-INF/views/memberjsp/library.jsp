@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
+    <title>Library</title>
     <link rel="icon" href="../resources/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -50,7 +50,7 @@
                                         <a class="nav-link" href="library">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -68,8 +68,8 @@
                                             Board
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">Info</a>
-                                            <a class="dropdown-item" href="tour_details.html">QnA</a>
+                                            <a class="dropdown-item" href="top_place">Info</a>
+                                            <a class="dropdown-item" href="tour_details">QnA</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -86,141 +86,99 @@
     </header>
     <!-- 헤더 끝-->
 
-    <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
-        <div class="container">
-            <div class="row ">
-                <div class="col-xl-6">
-                    <div class="section_tittle">
-                        <h2>Best seller</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="client_review_slider owl-carousel">
-                        <div class="photo">
-                            <img src="../resources/img/test1.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test2.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test4.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- 도서 슬라이드(배너) 끝-->
     <!-- Header part end-->
 
     <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px;">
+    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #d1f8d8, #faffff);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>이런 책은 어떠세요?</h2>
+                        <h2>Top Places to visit</h2>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
-                <figure class="snip1283">
-                    <img src="../resources/img/li1.jpg" alt="sample83" />
-                    <figcaption>
-                      <h3>Fleece Marigold</h3>
-                      <p>Technaf, Bangladesh</p>
-                    </figcaption>
-                    <a href="#"></a>
-                  </figure>
-                
-            
-                    <figure class="snip1283">
-                        <img src="../resources/img/test22.jpg" alt="sample83" />
-                        <figcaption>
+                <div class="row" >
+                    <div>
+                        <a href="book_info">
+                        <img src="../resources/img/li1.jpg" alt="sample83" />
+                        <div>
                           <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-               
-                    <figure class="snip1283">
-                        <img src="../resources/img/test33.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-             
-                    <figure class="snip1283">
-                        <img src="../resources/img/test44.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                    </figure>
-              
-                    <figure class="snip1283">
-                        <img src="../resources/img/test11.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-                    
-                
-                        <figure class="snip1283">
-                            <img src="../resources/img/test22.jpg" alt="sample83" />
-                            <figcaption>
+                          <p>최은영 지음</p>
+                        </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
                               <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
-                   
-                        <figure class="snip1283">
-                            <img src="../resources/img/test33.jpg" alt="sample83" />
-                            <figcaption>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
                               <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
-                 
-                        <figure class="snip1283">
-                            <img src="../resources/img/test44.jpg" alt="sample83" />
-                            <figcaption>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
                               <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip1283">
-                            <img src="../resources/img/test11.jpg" alt="sample83" />
-                            <figcaption>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
                               <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-                <a href="top_place.html" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
+                              <h3>Fleece Marigold</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
+                              <h3>Fleece Marigold</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
+                    <div>
+                        <a href="book_info">
+                            <img src="../resources/img/li1.jpg" alt="sample83" />
+                            <div>
+                              <h3>Fleece Marigold</h3>
+                            </div>
+                        </a>
+                    </div>
+                <a href="#" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
     <!--top place end-->
 
+    <!-- footer part start-->
+    
     <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
@@ -300,7 +258,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../resources/js/jquery.nice-select.min.js"></script>
     <script src="../resources/js/gijgo.min.js"></script>
     <!-- contact js -->
-    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>
+    <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>
