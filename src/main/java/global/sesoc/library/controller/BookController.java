@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.dao.MemberDAO;
 
 
@@ -17,7 +18,7 @@ public class BookController {
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	
 	@Autowired
-	MemberDAO dao;
+	BookDAO dao;
 	
 	@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index() {
