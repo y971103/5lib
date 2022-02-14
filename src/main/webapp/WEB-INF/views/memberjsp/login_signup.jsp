@@ -15,13 +15,13 @@
                     <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
                     <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
                 </div>
-                <form id="login" action="" class="input-group" style="left: 50px;top: 130px;">
+                <form id="login" action="" class="input-group" style="top: 130px;">
                     <img src="../resources/img/loginlogo.png">
                     <input type="text" class="input-field" placeholder="User Id" required>
                     <input type="password" class="input-field" placeholder="Enter Password" required>
                     <button class="submit" style="margin-top: 15px;">Login</button>
                 </form>
-                <form id="register" action="" class="input-group" style="left: 50px;top: 90px;">
+                <form id="register" action="" class="input-group" style="top: 90px;">
                     <input type="text" class="input-field" placeholder="User ID" required>
                     <input type="password" class="input-field" placeholder="Enter Password" required>
                     <input type="email" class="input-field" placeholder="Your Email" required>
