@@ -20,7 +20,7 @@ public class BookController {
 	@Autowired
 	BookDAO dao;
 	
-	@RequestMapping(value="index", method=RequestMethod.GET)
+	/*@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index() {
 		
 		return "memberjsp/index";
@@ -30,5 +30,5 @@ public class BookController {
 	public String viewer() {
 		
 		return "memberjsp/viewer";
-	}
+	}*/
 }
