@@ -1,66 +1,62 @@
 package global.sesoc.library.vo;
   
 
-public class QnA_reply {
+public class Reply {
+	
+	private int replynum;	//기본키		
 	private String id;
 	private String content;
-	private int QnAreplynum;	//기본키		
-	private int QnAnum;
+	private int Boardnum;
+
 	
-	
-	public QnA_reply(String id, String content, int qnAreplynum, int qnAnum) {
+	public Reply(int replynum, String id, String content, int boardnum) {
 		super();
+		this.replynum = replynum;
 		this.id = id;
 		this.content = content;
-		QnAreplynum = qnAreplynum;
-		QnAnum = qnAnum;
+		Boardnum = boardnum;
 	}
 
+	public Reply() {
+		
+	}
+
+	public int getReplynum() {
+		return replynum;
+	}
+
+	public void setReplynum(int replynum) {
+		this.replynum = replynum;
+	}
 
 	public String getId() {
 		return id;
 	}
 
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 
 	public String getContent() {
 		return content;
 	}
 
-
 	public void setContent(String content) {
 		this.content = content;
 	}
 
-
-	public int getQnAreplynum() {
-		return QnAreplynum;
+	public int getBoardnum() {
+		return Boardnum;
 	}
 
-
-	public void setQnAreplynum(int qnAreplynum) {
-		QnAreplynum = qnAreplynum;
+	public void setBoardnum(int boardnum) {
+		Boardnum = boardnum;
 	}
-
-
-	public int getQnAnum() {
-		return QnAnum;
-	}
-
-
-	public void setQnAnum(int qnAnum) {
-		QnAnum = qnAnum;
-	}
-
 
 	@Override
 	public String toString() {
-		return "QnA_reply [id=" + id + ", content=" + content + ", QnAreplynum=" + QnAreplynum + ", QnAnum=" + QnAnum
-				+ "]";
+		return "Reply [replynum=" + replynum + ", id=" + id + ", content=" + content + ", Boardnum=" + Boardnum + "]";
 	}
+	
 	
 }

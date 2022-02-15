@@ -19,7 +19,7 @@
                     <img src="../resources/img/loginlogo.png">
                     <input type="text" class="input-field" placeholder="User Id" required>
                     <input type="password" class="input-field" placeholder="Enter Password" required>
-                    <button class="submit" style="margin-top: 15px;">Login</button>
+                    <input type="submit" class="submit" value="login">
                 </form>
                 <form id="register" action="register" class="input-group" style="top: 90px ;" method="post">
                     <input type="text" class="input-field" placeholder="User ID" name="id" required>

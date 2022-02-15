@@ -8,6 +8,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
+=======
+import global.sesoc.library.mapper.BoardMapper;
+import global.sesoc.library.vo.Notice;
+>>>>>>> 8e33be11e087f2a62651859c49ea3471c73fe56d
 import global.sesoc.library.vo.QnA;
 import global.sesoc.library.vo.Board_reply;
 
@@ -91,6 +96,15 @@ public class BoardDAO {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		int result = mapper.updateQnAReply(qnareply);
 		return result;
+	}
+	
+	
+	
+	//공지
+	
+	public void insertnoitce(Notice notice) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
