@@ -16,9 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import global.sesoc.library.dao.BoardDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Notice;
 import global.sesoc.library.vo.QnA;
 import global.sesoc.library.vo.QnA_reply;
+import global.sesoc.library.vo.Reply;
 
 @Controller
 @RequestMapping("board")
@@ -35,29 +37,29 @@ public class BoardController {
 		
 		
 	/**
-	 * QnA쓰기 폼 보기
+	 * 글쓰기 폼 보기
 	 */
-	@RequestMapping (value="QnAwrite", method=RequestMethod.GET)
-	public String QnAwrite() {
-		return "boardjsp/QnAwrite";
+	@RequestMapping (value="write", method=RequestMethod.GET)
+	public String write() {
+		return "boardjsp/boardwrite";
 	}
 	
 	/** 
 	 * 글 저장
 	 */
-	@RequestMapping (value="QnAwrite", method=RequestMethod.POST)
+	@RequestMapping (value="write", method=RequestMethod.POST)
 	public String QnAwrite(
 			HttpSession session
 			, Model model
-			, QnA qna) {
+			, Board board) {
 		
 		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
 		String id = (String) session.getAttribute("loginId");
-		qna.setId(id);
+		board.setId(id);
 		
-		logger.debug("저장할 글 정보 : {}", qna);
+		logger.debug("저장할 글 정보 : {}", board);
 		
-		dao.insertQnA(qna);
+		dao.insertBoard(board);
 		return "redirect:list";
 	}
 	
@@ -78,14 +80,14 @@ public class BoardController {
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-		ArrayList<QnA> qnalist = dao.listQnA(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
-		model.addAttribute("boardlist", qnalist);
+		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("navi", navi);
 		model.addAttribute("searchText", searchText);
 		
-		return "boardjsp/notice_QnA";
+		return "boardjsp/boardList";
 	}
 
 	/**
@@ -94,33 +96,33 @@ public class BoardController {
 	 * @return 해당 글 정보
 	 */
 	@RequestMapping (value="read", method=RequestMethod.GET)
-	public String readQnA (int qnAnum, Model model) {
+	public String readQnA (int boardnum, Model model) {
 		//전달된 글 번호로 해당 글정보 읽기
-		QnA qna = dao.getQnA(qnAnum);
-		if (qna == null) {
+		Board board = dao.getBoard(boardnum);
+		if (board == null) {
 			return "redirect:list";
 		}
 		
 		//해당 글에 달린 리플목록 읽기
-		ArrayList<QnA_reply> replylist = dao.listQnAReply(qnAnum);
+		ArrayList<Reply> replylist = dao.listReply(boardnum);
 		
 		//본문글정보와 리플 목록을 모델에 저장
-		model.addAttribute("qna", qna);
+		model.addAttribute("board", board);
 		model.addAttribute("replylist", replylist);
 		
-		return "boardjsp/qnaread";
+		return "boardjsp/boardread";
 	}
 	
 	/**
 	 * 글 삭제
 	 */
 	@RequestMapping (value="delete", method=RequestMethod.GET)
-	public String deleteQnA (HttpSession session, int qnAnum) {
+	public String deleteQnA (HttpSession session, int boardnum) {
 		String id = (String) session.getAttribute("loginId");
 		
 		//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
-		QnA qna = new QnA();
-		qna.setQnAnum(qnAnum);
+		Board board = new Board();
+		board.setBoardnum(boardnum);
 		qna.setId(id);
 	
 		//글 삭제
