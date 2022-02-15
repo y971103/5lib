@@ -48,6 +48,7 @@ public class MemberController {
 	 * 로그인 폼으로 이동
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "loginForm";
@@ -58,6 +59,7 @@ public class MemberController {
 	 * @param session
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Members member, HttpSession session) {
 		Members resultMember = dao.getMember(member.getId());
