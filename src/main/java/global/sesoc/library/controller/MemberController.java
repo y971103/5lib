@@ -59,6 +59,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Members member, HttpSession session) {
+		logger.info(member);
 		Members resultMember = dao.getMember(member.getId());
 		
 		if (resultMember != null && member.getId().equals(resultMember.getId())) {
