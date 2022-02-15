@@ -89,7 +89,7 @@ CREATE TABLE members
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 회원 비밀번호
-	password varchar2(20),
+	password varchar2 NOT NULL,
 	-- 회원 이름
 	name varchar2(20),
 	-- 회원 전화번호
@@ -97,8 +97,8 @@ CREATE TABLE members
 	-- 회원 이메일
 	email varchar2(20),
 	-- 회원 구독 정보
-	sub number,
-	genre_num number,
+	sub varchar2(20),
+	genre_num varchar2(20),
 	PRIMARY KEY (id)
 );
 

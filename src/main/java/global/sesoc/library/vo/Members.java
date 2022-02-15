@@ -5,13 +5,13 @@ public class Members {
 	private String id;					
 	private String password;			
 	private String name;			
-	private String phone;						
+	private int phone;						
 	private String email;		
-	private int sub;
-	private int genre_type;
+	private String sub;
+	private String genre_num;
 	
 	
-	public Members(String id, String password, String name, String phone, String email, int sub, int genre_type) {
+	public Members(String id, String password, String name, int phone, String email, String sub, String genre_num) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -19,10 +19,14 @@ public class Members {
 		this.phone = phone;
 		this.email = email;
 		this.sub = sub;
-		this.genre_type = genre_type;
+		this.genre_num = genre_num;
 	}
 
-
+	
+	public Members() {
+		
+	}
+	
 	public String getId() {
 		return id;
 	}
@@ -53,12 +57,12 @@ public class Members {
 	}
 
 
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
 
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 
@@ -73,33 +77,30 @@ public class Members {
 	}
 
 
-	public int getSub() {
+	public String getSub() {
 		return sub;
 	}
 
 
-	public void setSub(int sub) {
+	public void setSub(String sub) {
 		this.sub = sub;
 	}
 
 
-	public int getGenre_type() {
-		return genre_type;
+	public String getGenre_num() {
+		return genre_num;
 	}
 
 
-	public void setGenre_type(int genre_type) {
-		this.genre_type = genre_type;
+	public void setGenre_num(String genre_num) {
+		this.genre_num = genre_num;
 	}
 
 
 	@Override
 	public String toString() {
 		return "Members [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", email="
-				+ email + ", sub=" + sub + ", genre_type=" + genre_type + "]";
+				+ email + ", sub=" + sub + ", genre_num=" + genre_num + "]";
 	}
-
-
-
 	
 }

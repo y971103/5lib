@@ -33,6 +33,7 @@ public class MemberController {
 	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		
+		logger.info("전달된 param: {}", member);
 		int result = dao.insertMember(member);
 		if (result != 1) {
 			return "memberjsp/login_signup";
@@ -44,6 +45,7 @@ public class MemberController {
 	 * 로그인 폼으로 이동
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "loginForm";
@@ -54,6 +56,7 @@ public class MemberController {
 	 * @param session
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(Members member, HttpSession session) {
 		Members resultMember = dao.getMember(member.getId());
