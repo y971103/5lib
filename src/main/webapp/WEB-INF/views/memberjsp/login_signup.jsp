@@ -15,10 +15,10 @@
                     <button type="button" class="togglebtn" onclick="login()">LOG IN</button>
                     <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
                 </div>
-                <form id="login" action="" class="input-group" style="top: 130px;">
+                <form id="login" action="login" class="input-group" style="top: 130px;" method="post">
                     <img src="../resources/img/loginlogo.png">
-                    <input type="text" class="input-field" placeholder="User Id" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
+                    <input type="text" class="input-field" placeholder="User Id" name="id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
                     <input type="submit" class="submit" value="login">
                 </form>
                 <form id="register" action="register" class="input-group" style="top: 90px ;" method="post">

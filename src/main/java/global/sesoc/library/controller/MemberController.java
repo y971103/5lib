@@ -38,33 +38,27 @@ public class MemberController {
 		if (result != 1) {
 			return "memberjsp/login_signup";
 		}
-		return "redirect:/";
+		return "memberjsp/index";
 	}
 	
-	/**
-	 * 로그인 폼으로 이동
-	 * @return
-	 */
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
-		return "loginForm";
+		return "memberjsp/login_signup";
 	}
 	
-	/**
-	 * 로그인 처리
-	 * @param session
-	 * @return
-	 */
-	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Members member, HttpSession session) {
-		Members resultMember = dao.getMember(member.getId());
+	public String login(HttpSession session, String id, String password) {
+		Members member = dao.getMember(id);
 		
-		if (resultMember != null && member.getId().equals(resultMember.getId())) {
+		if (member != null && member.getPassword().equals(password)) {
 			session.setAttribute("loginId", member.getId());
+			return "memberjsp/index";
 		}
-		return "redirect:/";
+		//맞지 않으면 로그인폼으로 이동
+		else {
+			return "memberjsp/login_signup";
+		}
 	}
 	
 	/**

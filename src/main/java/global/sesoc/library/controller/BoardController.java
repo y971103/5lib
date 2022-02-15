@@ -16,11 +16,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import global.sesoc.library.dao.BoardDAO;
 import global.sesoc.library.util.PageNavigator;
+<<<<<<< HEAD
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Notice;
 import global.sesoc.library.vo.QnA;
 import global.sesoc.library.vo.QnA_reply;
 import global.sesoc.library.vo.Reply;
+=======
+import global.sesoc.library.vo.QnA;
+import global.sesoc.library.vo.Board_reply;
+>>>>>>> aec39d4ab45b3626ac22324b15370fd4c329e570
 
 @Controller
 @RequestMapping("board")
@@ -29,13 +34,6 @@ public class BoardController {
 	
 	@Autowired
 	BoardDAO dao;
-	
-	//게시판 관련 상수값들
-		final int countPerPage = 10;			//페이지당 글 수
-		final int pagePerGroup = 5;				//페이지 이동 링크를 표시할 페이지 수
-		final String uploadPath = "/boardfile";	//파일 업로드 경로
-		
-		
 	/**
 	 * 글쓰기 폼 보기
 	 */
@@ -51,7 +49,12 @@ public class BoardController {
 	public String QnAwrite(
 			HttpSession session
 			, Model model
+<<<<<<< HEAD
 			, Board board) {
+=======
+			, QnA qna 
+			, MultipartFile upload) {
+>>>>>>> aec39d4ab45b3626ac22324b15370fd4c329e570
 		
 		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
 		String id = (String) session.getAttribute("loginId");
@@ -80,7 +83,13 @@ public class BoardController {
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
+<<<<<<< HEAD
 		ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+=======
+		ArrayList<Board> noticelist = dao.listNotice(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<QnA> qnalist = dao.listQnA(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+>>>>>>> aec39d4ab45b3626ac22324b15370fd4c329e570
+		
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("boardlist", boardlist);
@@ -104,7 +113,11 @@ public class BoardController {
 		}
 		
 		//해당 글에 달린 리플목록 읽기
+<<<<<<< HEAD
 		ArrayList<Reply> replylist = dao.listReply(boardnum);
+=======
+		ArrayList<Board_reply> replylist = dao.listQnAReply(qnAnum);
+>>>>>>> aec39d4ab45b3626ac22324b15370fd4c329e570
 		
 		//본문글정보와 리플 목록을 모델에 저장
 		model.addAttribute("board", board);
@@ -174,7 +187,7 @@ public class BoardController {
 	 */
 	@RequestMapping (value="replyWrite", method=RequestMethod.POST)
 	public String insertQnAreply(
-			QnA_reply qnareply, 
+			Board_reply qnareply, 
 			HttpSession session, 
 			Model model) {
 		
@@ -193,7 +206,7 @@ public class BoardController {
 	 * 리플 삭제
 	 */
 	@RequestMapping (value="replyDelete", method=RequestMethod.GET)
-	public String deleteQnAReply(QnA_reply qnareply, HttpSession session) {
+	public String deleteQnAReply(Board_reply qnareply, HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
 		
 		//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
@@ -208,7 +221,7 @@ public class BoardController {
 	 * @param reply 수정할 리플 정보
 	 */
 	@RequestMapping (value="replyEdit", method=RequestMethod.POST)
-	public String updateQnAreply(HttpSession session, QnA_reply qnareply) {
+	public String updateQnAreply(HttpSession session, Board_reply qnareply) {
 		
 		//삭제할 리플 정보와 본인 글인지 확인할 로그인아이디
 		String id = (String) session.getAttribute("loginId");
@@ -220,32 +233,4 @@ public class BoardController {
 		return "redirect:read?QnAnum=" + qnareply.getQnAnum();
 	}
 	
-	
-	//공지
-	
-	/**
-	 * 공지 쓰기 폼 보기
-	 */
-	@RequestMapping (value="noticewrite", method=RequestMethod.GET)
-	public String noticewrite() {
-		return "boardjsp/noticewrite";
-	}
-	
-	
-	//공지 저장
-	@RequestMapping (value="noticewrite", method=RequestMethod.POST)
-	public String noticewrite(
-			HttpSession session
-			, Model model
-			, Notice notice) {
-		
-		//세션에서 로그인한 사용자의 아이디를 읽어서 noitce객체의 작성자 정보에 세팅
-		String id = (String) session.getAttribute("loginId");
-		notice.setId(id);
-		
-		logger.debug("저장할 글 정보 : {}", notice);
-		
-		dao.insertnoitce(notice);
-		return "redirect:list";
-	}
 }

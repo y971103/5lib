@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -220,7 +222,11 @@
         </div>
     </section>
     <!--top place end-->
-
+<c:if test="${loginId != null}">
+	<h2>
+		${sessionScope.loginId}님 환영합니다 !!!<br>
+	</h2>
+</c:if>
     <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
