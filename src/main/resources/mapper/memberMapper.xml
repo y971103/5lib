@@ -7,7 +7,7 @@
 <mapper namespace="global.sesoc.library.dao.MemberMapper">
 
 <!-- 회원 정보 저장 -->
-<insert id="" parameterType="Members">
+<insert id="insertMember" parameterType="Members">
 	insert into members (
 		id
 		, password
@@ -26,13 +26,17 @@
 		, #{sub}
 		, #{genre_num}
 </insert>
-	
+
+
 <!-- 회원 정보 검색 -->
+<!-- 
 <select id="" parameterType="string" resultType="Members">
 	select * from members where id = #{id}
 </select>
 
+ -->
 <!-- 회원 정보 수정 -->
+<!-- 
 <update id="" parameterType="member">
 	update
 		members
@@ -45,5 +49,6 @@
 	where
 		id = #{id}
 </update>
+-->
 
 </mapper>
