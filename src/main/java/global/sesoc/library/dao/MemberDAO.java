@@ -14,7 +14,7 @@ public class MemberDAO {
 	@Autowired
 	SqlSession sqlSession;
 
-	public int insert(Members member) {
+	public int insertMember(Members member) {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		int result = 0;
 
@@ -25,6 +25,12 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public Members getMember(String id) {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		Members member = mapper.selectMember(id);
+		return member;
 	}
 	
 

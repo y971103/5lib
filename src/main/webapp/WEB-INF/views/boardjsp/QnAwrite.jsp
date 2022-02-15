@@ -1,8 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +30,31 @@
     rel="stylesheet">
 
 
+    <script>
+        //글쓰기폼 확인
+        function formCheck() {
+            var title = document.getElementById('title');
+            var contents = document.getElementById('contents');
+            
+            if (title.value.length < 5) {
+                alert("제목을 입력하세요.");
+                title.focus();
+                title.select();
+                return false;
+            }
+            if (contents.value.length < 5) {
+                alert("내용을 입력하세요.");
+                contents.focus();
+                contents.select();
+                return false;
+            }
+            return true;
+        }
+        </script>	
+
+    <style>
     
+    </style>
 </head>
 
 <body>
@@ -97,102 +118,42 @@
     </div>
 </header>
 <!-- 헤더 끝-->
+
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
                 <br></br>
-                <h1 class="heading-section">Board</h1>
-            </div>
+                <h1 class="heading-section">QnA</h1>
+            <br></br>
+        	</div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="QnAwrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
-                <div class="table-wrap">
-                    <table class="table myaccordion table-hover" id="accordion">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>제목</th>
-                          <th>작성자</th>
-                          <th>조회수</th>
-                          <th>등록일</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <th scope="row">1</th>
-                          <td>배송 문의</td>
-                          <td>soso</td>
-                          <td>10</td>
-                          <td>21.12.12</td>
-                          <td>
-                              <i class="fa" aria-hidden="true"></i>
-                        </td>
-                        </tr>
-                        <tr>
-                            <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
-                                <p>배송 문의합니다.</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
-                          <th scope="row">2</th>
-                          <td>문의합니다.</td>
-                          <td>rlathgnl</td>
-                          <td>9</td>
-                          <td>21.12.31</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+                    <form id="writeform" action="write"  method="post" enctype="multipart/form-data" onsubmit="return formCheck();">
+                        <table>
                             <tr>
-                            <td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
-                                <p>에휴힘들어</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
-                          <th scope="row">3</th>
-                          <td>문의문의</td>
-                          <td>uejdf</td>
-                          <td>2</td>
-                          <td>22.1.11</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
+                                <th>제목</th>
+                                <td>
+                                    <input type="text" name="title" id="title" style="width:1000px;">
+                                </td>
+                            </tr>
                             <tr>
-                            <td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
-                                <p>무니무니</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
-                          <th scope="row">4</th>
-                          <td>큐앤에이</td>
-                          <td>fofo</td>
-                          <td>23</td>
-                          <td>22.1.23</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
+                                <th>내용</th> 
+                                <td>
+                                    <textarea name="contents" id="contents" style="width:1000px;height:200px;resize:none;"></textarea>
+                                </td>
+                            </tr>
                             <tr>
-                            <td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
-                                <p>동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
-                            </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>
+                                <td colspan="2" class="white center">
+                                    <input type="submit" class="btn_1 text-cnter" value="저장" />
+                                </td> 
+                            </tr>
+                        </table>
+                    </form>
+                </div> 
             </div>
-        </div>
-    </div>
-</section>
-
-<br></br>
+        </section>
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -292,5 +253,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      <script src="../resources/js/custom.js"></script>
 </body>
 
-</html>
 </html>
