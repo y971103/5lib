@@ -32,7 +32,7 @@ public class BoardController {
 		final int pagePerGroup = 5;				//페이지 이동 링크를 표시할 페이지 수
 		final String uploadPath = "/boardfile";	//파일 업로드 경로
 		
-	
+		
 	
 	/** 
 	 * 글 저장

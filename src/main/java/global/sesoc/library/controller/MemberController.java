@@ -126,8 +126,8 @@ public class MemberController {
 /**
  * 글쓰기 폼 보기
  */
-@RequestMapping (value="boardwrite", method=RequestMethod.GET)
-public String write() {
-	return "boardjsp/boardwrite";
-}
+	@RequestMapping (value="boardwrite", method=RequestMethod.GET)
+	public String write() {
+		return "boardjsp/boardwrite";
+	}
 }
