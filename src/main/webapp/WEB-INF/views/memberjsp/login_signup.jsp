@@ -38,7 +38,7 @@
                     </select></div>
                    <div style="color: #999; margin-bottom: 20px;">
                     Subscribe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    <input type="checkbox" required name="sub" style="zoom: 1.5;">
+                    <input type="checkbox" name="sub" style="zoom: 1.5;" required>
                    </div>
                     <input type="submit" class="submit" value="register">
                 </form>
