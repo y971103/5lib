@@ -1,8 +1,9 @@
 package global.sesoc.library.vo;
 
 
-public class Notice {
-	private int infonum;
+public class Board {
+	private int boardnum;
+	private int type;
 	private String title;
 	private String content;
 	private String inputdate;
@@ -10,9 +11,10 @@ public class Notice {
 	private int hits;
 	
 	
-	public Notice(int infonum, String title, String content, String inputdate, String id, int hits) {
+	public Board(int boardnum, int type, String title, String content, String inputdate, String id, int hits) {
 		super();
-		this.infonum = infonum;
+		this.boardnum = boardnum;
+		this.type = type;
 		this.title = title;
 		this.content = content;
 		this.inputdate = inputdate;
@@ -21,13 +23,28 @@ public class Notice {
 	}
 
 
-	public int getInfonum() {
-		return infonum;
+	public Board () {
+		
 	}
 
 
-	public void setInfonum(int infonum) {
-		this.infonum = infonum;
+	public int getBoardnum() {
+		return boardnum;
+	}
+
+
+	public void setBoardnum(int boardnum) {
+		this.boardnum = boardnum;
+	}
+
+
+	public int getType() {
+		return type;
+	}
+
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 
@@ -83,8 +100,9 @@ public class Notice {
 
 	@Override
 	public String toString() {
-		return "Notice [infonum=" + infonum + ", title=" + title + ", content=" + content + ", inputdate=" + inputdate
-				+ ", id=" + id + ", hits=" + hits + "]";
+		return "Board [boardnum=" + boardnum + ", type=" + type + ", title=" + title + ", content=" + content
+				+ ", inputdate=" + inputdate + ", id=" + id + ", hits=" + hits + "]";
 	}
-
+	
+	
 }

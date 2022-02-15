@@ -102,51 +102,39 @@ CREATE TABLE members
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE notice
+CREATE TABLE board
 (
-	-- 공지 번호
-	infonum number NOT NULL,
-	-- 공지 제목
+	-- 게시판 번호 
+	boardnum number NOT NULL,
+	-- 게시판 타입 (공지사항, QnA)
+	board_type number,
+	-- 글 제목 
 	title varchar2(200),
-	-- 공지 내용
+	-- 조회수 
+	hits number,
+	-- 글 내용 
 	content varchar2(2000),
-	-- 공지 작성 일자
+	-- 작성 시간 
 	inputdate date DEFAULT SYSDATE,
-	-- 회원 아이디
+	-- 아이디 
 	id varchar2(20) NOT NULL,
-	-- 조회수
-	hits number,
-	PRIMARY KEY (infonum)
+	PRIMARY KEY (boardnum)
 );
 
-CREATE TABLE QnA
-(
-	-- 문의 번호
-	QnAnum number NOT NULL,
-	-- 문의 제목
-	QnAtitle varchar2(200),
-	-- 문의 내용
-	QnAcontent varchar2(2000),
-	-- 문의 작성 날짜
-	inputdate date DEFAULT SYSDATE,
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 조회수
-	hits number,
-	PRIMARY KEY (QnAnum)
-);
 
-CREATE TABLE QnA_reply
+CREATE TABLE reply
 (
-	-- QnA 댓글 번호
-	QnAreplynum number NOT NULL,
+	-- 게시글 댓글 번호 
+	replynum number NOT NULL,
+	-- 게시글 댓글 내용 
 	content varchar2(200),
-	-- 문의 번호
-	QnAnum number NOT NULL,
-	-- 회원 아이디
+	-- 댓글 아이디 
 	id varchar2(20) NOT NULL,
-	PRIMARY KEY (QnAreplynum)
+	-- 게시글 번호 
+	boardnum number NOT NULL,
+	PRIMARY KEY (replynum)
 );
+
 
 CREATE TABLE review
 (
@@ -312,13 +300,10 @@ COMMENT ON COLUMN shelf.booknum IS '책 번호';
 
 
 
---공지사항 게시판 글 번호에 사용할 시퀀스
-create sequence notice_seq;
+-- 게시판 글 번호에 사용할 시퀀스
+create sequence board_seq;
 
--- QnA 게시판 글 번호에 사용할 시퀀스 
-create sequence QnA_seq;
-
---QnA 게시판 댓글번호에 필요한 시퀀스
-create sequence QnA_reply_seq;
+-- 게시글 댓글 번호에 사용할 시퀀스 
+create sequence reply_seq;
 
 

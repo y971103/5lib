@@ -1,4 +1,4 @@
-package global.sesoc.library.mapper;
+package global.sesoc.library.dao;
 
 
 public interface BookMapper {
