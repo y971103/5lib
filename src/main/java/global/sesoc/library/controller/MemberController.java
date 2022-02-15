@@ -25,19 +25,19 @@ public class MemberController {
 	 * 회원 가입 폼 보기
 	 */
 	@RequestMapping (value="join", method=RequestMethod.GET)
-	public String joinForm(Model model) {
-		return "memberjsp/joinForm";
+	public String signupForm(Model model) {
+		return "memberjsp/login_signup";
 	}
 
 	/**
 	 * 회원 가입 처리
 	 */
 	@RequestMapping (value="join", method=RequestMethod.POST)
-	public String join(Model model, Members member) {
+	public String signup(Model model, Members member) {
 		
 		int result = dao.insert(member);
 		if (result != 1) {
-			return "memberjsp/joinForm";
+			return "memberjsp/login_signup";
 		}
 		return "redirect:/";
 	}
