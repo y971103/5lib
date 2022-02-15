@@ -24,7 +24,7 @@ public class MemberController {
 	/**
 	 * 회원 가입 폼 보기
 	 */
-	@RequestMapping (value="join", method=RequestMethod.GET)
+	@RequestMapping (value="register", method=RequestMethod.GET)
 	public String signupForm(Model model) {
 		return "memberjsp/login_signup";
 	}
@@ -32,10 +32,10 @@ public class MemberController {
 	/**
 	 * 회원 가입 처리
 	 */
-	@RequestMapping (value="join", method=RequestMethod.POST)
+	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		
-		int result = dao.insert(member);
+		int result = dao.insertMember(member);
 		if (result != 1) {
 			return "memberjsp/login_signup";
 		}
@@ -84,5 +84,17 @@ public class MemberController {
 	public String essaylist() {
 		
 		return "boardjsp/essaylist";
+	}
+	
+	@RequestMapping(value="essaywrite", method=RequestMethod.GET)
+	public String essaywrite() {
+		
+		return "boardjsp/essaywrite";
+	}
+	
+	@RequestMapping(value="QnAwrite", method=RequestMethod.GET)
+	public String QnAwrite() {
+		
+		return "boardjsp/QnAwrite";
 	}
 }
