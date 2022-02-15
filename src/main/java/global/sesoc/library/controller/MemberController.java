@@ -104,5 +104,11 @@ public class MemberController {
 		return "memberjsp/login_signup";
 	}
 	
+	@RequestMapping(value="contact", method=RequestMethod.GET)
+	public String contact() {
+		
+		return "memberjsp/contact";
+	}
+	
 	
 }
