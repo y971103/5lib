@@ -17,9 +17,7 @@ public interface BoardMapper {
 
 	public int getTotal(String searchText);
 
-	public ArrayList<Notice> listNotice(String searchText, RowBounds rb);
-	
-	public ArrayList<QnA> listQnA(String searchText, RowBounds rb);
+	public ArrayList<Board> listBoard(String searchText, RowBounds rb);
 
 	public int deleteBoard(Board board);
 
