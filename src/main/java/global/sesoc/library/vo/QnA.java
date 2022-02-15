@@ -21,6 +21,11 @@ public class QnA {
 	}
 
 
+	public QnA() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getQnAnum() {
 		return QnAnum;
 	}
