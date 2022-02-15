@@ -133,4 +133,10 @@ public class MemberController {
 		
 		return "boardjsp/QnAwrite";
 	}
+	
+	@RequestMapping(value="contact", method=RequestMethod.GET)
+	public String contact() {
+		
+		return "memberjsp/contact";
+	}
 }
