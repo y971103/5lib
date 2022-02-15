@@ -35,6 +35,7 @@
 
 <body>
 
+   <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
         <div class="main_menu_iner">
@@ -49,51 +50,51 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                            id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="library.html">Library</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Mypage
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html" id="navbarDropdown">내 서재</a>
-                                        <a class="dropdown-item" href="single-blog.html">통계</a>
-                                        <a class="dropdown-item" href="elements.html">리뷰</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        Board
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="notice_qna">Notice & QnA</a>
-                                        <a class="dropdown-item" href="essaylist">Essay</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="#" class="btn_1 d-none d-lg-block">Login/SignUP</a>
-                    </nav>
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                                id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="library">Library</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Mypage
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="blog" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="single-blog">통계</a>
+                                            <a class="dropdown-item" href="elements">리뷰</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown_1"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Board
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                            <a class="dropdown-item" href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a>
+                                        	<a class="dropdown-item" href="<c:url value="/board/essaylist"/>">Essay</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="login_signup" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- 헤더 끝-->
+    </header>
+    <!-- 헤더 끝-->
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">

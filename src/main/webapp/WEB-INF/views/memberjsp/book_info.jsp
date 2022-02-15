@@ -54,7 +54,7 @@
                                         <a class="nav-link" href="library">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -72,8 +72,8 @@
                                             Board
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="notice_qna">Notice & QnA</a>
-                                        	<a class="dropdown-item" href="essaylist">Essay</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a>
+                                        	<a class="dropdown-item" href="<c:url value="/board/essaylist"/>">Essay</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
