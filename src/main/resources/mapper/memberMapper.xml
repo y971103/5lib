@@ -17,14 +17,15 @@
 		, sub
 		, genre_num
 	)
-	values 
-		(#{id}
+	values (
+		#{id}
 		, #{password}
 		, #{name}
 		, #{phone}
-		, #{email})
+		, #{email}
 		, #{sub}
 		, #{genre_num}
+	)
 </insert>
 
 

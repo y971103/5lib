@@ -33,6 +33,7 @@ public class MemberController {
 	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		
+		logger.info("전달된 param: {}", member);
 		int result = dao.insertMember(member);
 		if (result != 1) {
 			return "memberjsp/login_signup";
