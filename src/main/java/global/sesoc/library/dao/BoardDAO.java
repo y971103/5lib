@@ -24,7 +24,21 @@ public class BoardDAO {
 		int result = mapper.insertBoard(board);
 		return result;
 	}
-		
+	
+	/**
+	 * 글 번호로 해당 게시글 읽기
+	 * @param boardnum 검색할 글번호
+	 * @return 검색된 게시글 정보. 없으면 null.
+	 */
+	public Board getBoard(int boardnum) {
+		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+		//해당 번호의 글정보 읽기
+		Board board = mapper.getBoard(boardnum);
+		//조회수 1증가
+		mapper.addHits(boardnum);
+		return board;
+	}
+	
 	
 	//글 목록
 	public ArrayList<Board> listBoard(String searchText, int startRecord, int countPerPage) {
@@ -37,15 +51,6 @@ public class BoardDAO {
 		return boardlist;
 	}
 
-	//전달된 글 번호로 해당 글정보 읽기
-	public Board getBoard(int boardnum) {
-		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-		//해당 번호의 글정보 읽기
-		Board board = mapper.getBoard(boardnum);
-		//조회수 1증가
-		mapper.addHits(boardnum);
-		return board;
-	}
 	
 	//전체 글 개수
 	public int getTotal(String searchText) {
