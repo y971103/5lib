@@ -11,21 +11,21 @@ public interface BoardMapper {
 
 	public int insertBoard(Board board);
 
+	public ArrayList<Board> listBoard(String searchText, RowBounds rb);
+
 	public Board getBoard(int boardnum);
 
 	public void addHits(int boardnum);
 
 	public int getTotal(String searchText);
 
-	public ArrayList<Board> listBoard(String searchText, RowBounds rb);
+	public ArrayList<Reply> listReply(int boardnum);
 
 	public int deleteBoard(Board board);
 
 	public int updateBoard(Board board);
 
 	public int insertReply(Reply reply);
-
-	public ArrayList<Reply> listReply(int boardnum);
 
 	public int deleteReply(Reply reply);
 

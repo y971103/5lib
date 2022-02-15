@@ -16,17 +16,15 @@
 			, id
 			, hits
 			, content
-			, inputdate
 		)
 	values 
 		(
-			#{boardnum}
+			board_seq.nextval	
 			, #{board_type}
 			, #{title}
 			, #{id}
 			, #{hits}
 			, #{content}
-			, #{inputdate}
 		)
 </insert>
 

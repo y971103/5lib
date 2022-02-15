@@ -3,7 +3,7 @@ package global.sesoc.library.vo;
 
 public class Board {
 	private int boardnum;
-	private int type;
+	private int board_type;
 	private String title;
 	private String content;
 	private String inputdate;
@@ -14,7 +14,7 @@ public class Board {
 	public Board(int boardnum, int type, String title, String content, String inputdate, String id, int hits) {
 		super();
 		this.boardnum = boardnum;
-		this.type = type;
+		this.board_type = board_type;
 		this.title = title;
 		this.content = content;
 		this.inputdate = inputdate;
@@ -38,13 +38,13 @@ public class Board {
 	}
 
 
-	public int getType() {
-		return type;
+	public int getBoard_type() {
+		return board_type;
 	}
 
 
-	public void setType(int type) {
-		this.type = type;
+	public void setBoard_type(int board_type) {
+		this.board_type = board_type;
 	}
 
 
@@ -100,7 +100,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [boardnum=" + boardnum + ", type=" + type + ", title=" + title + ", content=" + content
+		return "Board [boardnum=" + boardnum + ", type=" + board_type + ", title=" + title + ", content=" + content
 				+ ", inputdate=" + inputdate + ", id=" + id + ", hits=" + hits + "]";
 	}
 	

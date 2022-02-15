@@ -67,7 +67,7 @@ public class BoardController {
 		logger.debug("저장할 글 정보 : {}", board);
 		
 		dao.insertBoard(board);
-		return "redirect:list";
+		return "boardjsp/notice_QnA";
 	}
 	
 	/**
