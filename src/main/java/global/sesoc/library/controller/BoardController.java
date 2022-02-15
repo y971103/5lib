@@ -152,7 +152,7 @@ public class BoardController {
 		
 		//수정할 글이 로그인한 본인 글인지 확인
 		String id = (String) session.getAttribute("loginId");
-		Board oldboard = dao.getQnA(board.getBoardnum());
+		Board oldboard = dao.getBoard(board.getBoardnum());
 		if (oldboard == null || !oldboard.getId().equals(id)) {
 			return "redirect:list";
 		}
