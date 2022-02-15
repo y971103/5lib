@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import global.sesoc.library.dao.BoardDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Notice;
 import global.sesoc.library.vo.QnA;
 import global.sesoc.library.vo.QnA_reply;
 
@@ -26,6 +27,13 @@ public class BoardController {
 	
 	@Autowired
 	BoardDAO dao;
+	
+	//게시판 관련 상수값들
+		final int countPerPage = 10;			//페이지당 글 수
+		final int pagePerGroup = 5;				//페이지 이동 링크를 표시할 페이지 수
+		final String uploadPath = "/boardfile";	//파일 업로드 경로
+		
+		
 	/**
 	 * QnA쓰기 폼 보기
 	 */
@@ -41,8 +49,7 @@ public class BoardController {
 	public String qnawrite(
 			HttpSession session
 			, Model model
-			, QnA qna 
-			, MultipartFile upload) {
+			, QnA qna) {
 		
 		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
 		String id = (String) session.getAttribute("loginId");
@@ -211,4 +218,32 @@ public class BoardController {
 		return "redirect:read?QnAnum=" + qnareply.getQnAnum();
 	}
 	
+	
+	//공지
+	
+	/**
+	 * 공지 쓰기 폼 보기
+	 */
+	@RequestMapping (value="noticewrite", method=RequestMethod.GET)
+	public String noticewrite() {
+		return "boardjsp/noticewrite";
+	}
+	
+	
+	//공지 저장
+	@RequestMapping (value="noticewrite", method=RequestMethod.POST)
+	public String noticewrite(
+			HttpSession session
+			, Model model
+			, Notice notice) {
+		
+		//세션에서 로그인한 사용자의 아이디를 읽어서 noitce객체의 작성자 정보에 세팅
+		String id = (String) session.getAttribute("loginId");
+		notice.setId(id);
+		
+		logger.debug("저장할 글 정보 : {}", notice);
+		
+		dao.insertnoitce(notice);
+		return "redirect:list";
+	}
 }

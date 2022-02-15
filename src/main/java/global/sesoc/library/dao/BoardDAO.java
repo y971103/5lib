@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.mapper.BoardMapper;
+import global.sesoc.library.vo.Notice;
 import global.sesoc.library.vo.QnA;
 import global.sesoc.library.vo.QnA_reply;
 
@@ -92,6 +93,15 @@ public class BoardDAO {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		int result = mapper.updateReply(qnareply);
 		return result;
+	}
+	
+	
+	
+	//공지
+	
+	public void insertnoitce(Notice notice) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
