@@ -23,17 +23,13 @@ public class MemberController {
 	@Autowired
 	MemberDAO dao;
 	
-	/**
-	 * �쉶�썝 媛��엯 �뤌 蹂닿린
-	 */
+
 	@RequestMapping (value="register", method=RequestMethod.GET)
 	public String signupForm(Model model) {
 		return "memberjsp/login_signup";
 	}
 
-	/**
-	 * �쉶�썝 媛��엯 泥섎━
-	 */
+	
 	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		

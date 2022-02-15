@@ -21,7 +21,7 @@
                     <input type="password" class="input-field" placeholder="Enter Password" required>
                     <button class="submit" style="margin-top: 15px;">Login</button>
                 </form>
-                <form id="register" action="" class="input-group" style="top: 90px;">
+                <form id="register" action="register" class="input-group" style="top: 90px;">
                     <input type="text" class="input-field" placeholder="User ID" name="id" required>
                     <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
                     <input type="email" class="input-field" placeholder="Your Email" name="email" required>
