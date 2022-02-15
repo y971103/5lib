@@ -98,5 +98,8 @@ public class Members {
 		return "Members [id=" + id + ", password=" + password + ", name=" + name + ", phone=" + phone + ", email="
 				+ email + ", sub=" + sub + ", genre_type=" + genre_type + "]";
 	}
+
+
+
 	
 }

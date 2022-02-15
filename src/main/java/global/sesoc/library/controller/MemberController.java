@@ -1,5 +1,7 @@
 package global.sesoc.library.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ public class MemberController {
 	MemberDAO dao;
 	
 	/**
-	 * 회원 가입 폼 보기
+	 * �쉶�썝 媛��엯 �뤌 蹂닿린
 	 */
 	@RequestMapping (value="join", method=RequestMethod.GET)
 	public String joinForm(Model model) {
@@ -30,7 +32,7 @@ public class MemberController {
 	}
 
 	/**
-	 * 회원 가입 처리
+	 * �쉶�썝 媛��엯 泥섎━
 	 */
 	@RequestMapping (value="join", method=RequestMethod.POST)
 	public String join(Model model, Members member) {
@@ -42,8 +44,43 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	/**
+	 * 로그인 폼으로 이동
+	 * @return
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginForm() {
+		return "loginForm";
+	}
 	
-	/*임시 페이지 이동 */
+	/**
+	 * 로그인 처리
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(Members member, HttpSession session) {
+		Members resultMember = dao.getMember(member.getId());
+		
+		if (resultMember != null && member.getId().equals(resultMember.getId())) {
+			session.setAttribute("loginId", member.getId());
+		}
+		return "redirect:/";
+	}
+	
+	/**
+	 * 로그아웃
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.removeAttribute("loginId");
+		return "redirect:/";
+	}
+	
+	
+	/*�엫�떆 �럹�씠吏� �씠�룞 */
 	@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index() {
 		
