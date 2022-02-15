@@ -30,7 +30,7 @@ public class BoardController {
 	 * QnA쓰기 폼 보기
 	 */
 	@RequestMapping (value="QnAwrite", method=RequestMethod.GET)
-	public String qnawrite() {
+	public String QnAwrite() {
 		return "boardjsp/QnAwrite";
 	}
 	
@@ -38,7 +38,7 @@ public class BoardController {
 	 * 글 저장
 	 */
 	@RequestMapping (value="QnAwrite", method=RequestMethod.POST)
-	public String qnawrite(
+	public String QnAwrite(
 			HttpSession session
 			, Model model
 			, QnA qna 
@@ -50,7 +50,7 @@ public class BoardController {
 		
 		logger.debug("저장할 글 정보 : {}", qna);
 		
-		dao.insertqna(qna);
+		dao.insertQnA(qna);
 		return "redirect:list";
 	}
 	
@@ -58,7 +58,7 @@ public class BoardController {
 	 * 글목록
 	 */
 	@RequestMapping (value="list", method=RequestMethod.GET)
-	public String list(
+	public String listQnA (
 			@RequestParam(value="page", defaultValue="1") int page
 			, @RequestParam(value="searchText", defaultValue="") String searchText
 			, Model model) {
@@ -71,14 +71,14 @@ public class BoardController {
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-		ArrayList<QnA> qnalist = dao.listqna(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<QnA> qnalist = dao.listQnA(searchText, navi.getStartRecord(), navi.getCountPerPage());	
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("boardlist", qnalist);
 		model.addAttribute("navi", navi);
 		model.addAttribute("searchText", searchText);
 		
-		return "boardjsp/notice_qna";
+		return "boardjsp/notice_QnA";
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class BoardController {
 	 * @return 해당 글 정보
 	 */
 	@RequestMapping (value="read", method=RequestMethod.GET)
-	public String read(int qnAnum, Model model) {
+	public String readQnA (int qnAnum, Model model) {
 		//전달된 글 번호로 해당 글정보 읽기
 		QnA qna = dao.getQnA(qnAnum);
 		if (qna == null) {
@@ -95,7 +95,7 @@ public class BoardController {
 		}
 		
 		//해당 글에 달린 리플목록 읽기
-		ArrayList<QnA_reply> replylist = dao.listReply(qnAnum);
+		ArrayList<QnA_reply> replylist = dao.listQnAReply(qnAnum);
 		
 		//본문글정보와 리플 목록을 모델에 저장
 		model.addAttribute("qna", qna);
@@ -108,7 +108,7 @@ public class BoardController {
 	 * 글 삭제
 	 */
 	@RequestMapping (value="delete", method=RequestMethod.GET)
-	public String delete(HttpSession session, int qnAnum) {
+	public String deleteQnA (HttpSession session, int qnAnum) {
 		String id = (String) session.getAttribute("loginId");
 		
 		//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
@@ -117,7 +117,7 @@ public class BoardController {
 		qna.setId(id);
 	
 		//글 삭제
-		int result = dao.deleteqna(qna);
+		int result = dao.deleteQnA(qna);
 		
 		
 		return "redirect:list";
@@ -139,7 +139,7 @@ public class BoardController {
 	 * @param board 수정할 글 정보
 	 */
 	@RequestMapping (value="edit", method=RequestMethod.POST)
-	public String edit(
+	public String updateQnA (
 			HttpSession session
 			, QnA qna
 			, MultipartFile upload) {
@@ -164,7 +164,7 @@ public class BoardController {
 	 * 리플 저장 처리
 	 */
 	@RequestMapping (value="replyWrite", method=RequestMethod.POST)
-	public String replyWrite(
+	public String insertQnAreply(
 			QnA_reply qnareply, 
 			HttpSession session, 
 			Model model) {
@@ -184,7 +184,7 @@ public class BoardController {
 	 * 리플 삭제
 	 */
 	@RequestMapping (value="replyDelete", method=RequestMethod.GET)
-	public String deleteReply(QnA_reply qnareply, HttpSession session) {
+	public String deleteQnAReply(QnA_reply qnareply, HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
 		
 		//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
@@ -199,7 +199,7 @@ public class BoardController {
 	 * @param reply 수정할 리플 정보
 	 */
 	@RequestMapping (value="replyEdit", method=RequestMethod.POST)
-	public String replyEdit(HttpSession session, QnA_reply qnareply) {
+	public String updateQnAreply(HttpSession session, QnA_reply qnareply) {
 		
 		//삭제할 리플 정보와 본인 글인지 확인할 로그인아이디
 		String id = (String) session.getAttribute("loginId");
