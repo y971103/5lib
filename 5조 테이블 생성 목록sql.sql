@@ -312,7 +312,13 @@ COMMENT ON COLUMN shelf.booknum IS '책 번호';
 
 
 
+--공지사항 게시판 글 번호에 사용할 시퀀스
+create sequence notice_seq;
 
+-- QnA 게시판 글 번호에 사용할 시퀀스 
+create sequence QnA_seq;
 
+--QnA 게시판 댓글번호에 필요한 시퀀스
+create sequence QnA_reply_seq;
 
 

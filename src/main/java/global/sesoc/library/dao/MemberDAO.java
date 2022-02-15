@@ -26,6 +26,12 @@ public class MemberDAO {
 		}
 		return result;
 	}
+
+	public Members getMember(String id) {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		Members member = mapper.selectMember(id);
+		return member;
+	}
 	
 
 }

@@ -21,14 +21,14 @@
                     <input type="password" class="input-field" placeholder="Enter Password" required>
                     <button class="submit" style="margin-top: 15px;">Login</button>
                 </form>
-                <form id="register" action="" class="input-group" style="top: 90px;">
-                    <input type="text" class="input-field" placeholder="User ID" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" required>
-                    <input type="email" class="input-field" placeholder="Your Email" required>
-                    <input type="PhoneNumber" class="input-field" placeholder="Enter PhoneNumber" required>
-                    <input type="text" class="input-field" placeholder="Name" required>
+                <form id="register" action="register" class="input-group" style="top: 90px;">
+                    <input type="text" class="input-field" placeholder="User ID" name="id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
+                    <input type="email" class="input-field" placeholder="Your Email" name="email" required>
+                    <input type="PhoneNumber" class="input-field" placeholder="Enter PhoneNumber" name="phone" required>
+                    <input type="text" class="input-field" placeholder="Name" name="name" required>
                     <div style="color: #999; height: 50px;">Favorite Genre
-                    <select name="genre" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
+                    <select name="genre_num" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
                         <option value="인문">Humanities</option>
                         <option value="소설">Novel</option>
                         <option value="소설">Travel</option>
@@ -37,7 +37,8 @@
                         <option value="라이프스타일">Life-style</option>
                     </select></div>
                    <div style="color: #999; margin-bottom: 20px;">
-                    Subscribe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" required style="zoom: 1.5;">
+                    Subscribe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <input type="checkbox" required name="sub" style="zoom: 1.5;">
                    </div>
                     <button class="submit">REGISTER</button>
                 </form>
