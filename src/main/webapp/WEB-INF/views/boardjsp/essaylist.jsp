@@ -104,7 +104,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-            <a href="#" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
+            <a href="essaywrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
                 <div class="table-wrap">
                 	<br></br>
                     <table class="table">
