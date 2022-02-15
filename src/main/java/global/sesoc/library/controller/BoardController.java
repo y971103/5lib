@@ -32,32 +32,26 @@ public class BoardController {
 		final int pagePerGroup = 5;				//페이지 이동 링크를 표시할 페이지 수
 		final String uploadPath = "/boardfile";	//파일 업로드 경로
 		
-	/**
-	 * 글쓰기 폼 보기
-	 */
-	@RequestMapping (value="write", method=RequestMethod.GET)
-	public String write() {
-		return "boardjsp/boardwrite";
-	}
+	
 	
 	/** 
 	 * 글 저장
 	 */
-	@RequestMapping (value="write", method=RequestMethod.POST)
-	public String write(
-			HttpSession session
-			, Model model
-			, Board board ) {
-		
-		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
-		String id = (String) session.getAttribute("loginId");
-		board.setId(id);
-		
-		logger.debug("저장할 글 정보 : {}", board);
-		
-		dao.insertBoard(board);
-		return "redirect:list";
-	}
+//	@RequestMapping (value="write", method=RequestMethod.POST)
+//	public String write(
+//			HttpSession session
+//			, Model model
+//			, Board board ) {
+//		
+//		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
+//		String id = (String) session.getAttribute("loginId");
+//		board.setId(id);
+//		
+//		logger.debug("저장할 글 정보 : {}", board);
+//		
+//		dao.insertBoard(board);
+//		return "redirect:list";
+//	}
 	
 	/**
 	 * 글목록

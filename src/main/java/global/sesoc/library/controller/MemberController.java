@@ -104,11 +104,7 @@ public class MemberController {
 		return "memberjsp/login_signup";
 	}
 	
-	@RequestMapping(value="notice_QnA", method=RequestMethod.GET)
-	public String notice_qna() {
-		
-		return "boardjsp/notice_QnA";
-	}
+	
 	
 	@RequestMapping(value="essaylist", method=RequestMethod.GET)
 	public String essaylist() {
@@ -122,9 +118,16 @@ public class MemberController {
 		return "boardjsp/essaywrite";
 	}
 	
-	@RequestMapping(value="QnAwrite", method=RequestMethod.GET)
-	public String QnAwrite() {
+	@RequestMapping(value="notice_QnA", method=RequestMethod.GET)
+	public String notice_qna() {
 		
-		return "boardjsp/QnAwrite";
-	}
+	return "boardjsp/notice_QnA";
+}
+/**
+ * 글쓰기 폼 보기
+ */
+@RequestMapping (value="boardwrite", method=RequestMethod.GET)
+public String write() {
+	return "boardjsp/boardwrite";
+}
 }

@@ -70,7 +70,7 @@
                                             Board
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="notice_qna">Notice & QnA</a>
+                                            <a class="dropdown-item" href="notice_QnA">Notice & QnA</a>
                                         	<a class="dropdown-item" href="essaylist">Essay</a>
                                         </div>
                                     </li>
