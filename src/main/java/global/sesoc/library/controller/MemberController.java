@@ -26,20 +26,20 @@ public class MemberController {
 	/**
 	 * �쉶�썝 媛��엯 �뤌 蹂닿린
 	 */
-	@RequestMapping (value="join", method=RequestMethod.GET)
-	public String joinForm(Model model) {
-		return "memberjsp/joinForm";
+	@RequestMapping (value="register", method=RequestMethod.GET)
+	public String signupForm(Model model) {
+		return "memberjsp/login_signup";
 	}
 
 	/**
 	 * �쉶�썝 媛��엯 泥섎━
 	 */
-	@RequestMapping (value="join", method=RequestMethod.POST)
-	public String join(Model model, Members member) {
+	@RequestMapping (value="register", method=RequestMethod.POST)
+	public String signup(Model model, Members member) {
 		
-		int result = dao.insert(member);
+		int result = dao.insertMember(member);
 		if (result != 1) {
-			return "memberjsp/joinForm";
+			return "memberjsp/login_signup";
 		}
 		return "redirect:/";
 	}
@@ -121,5 +121,17 @@ public class MemberController {
 	public String essaylist() {
 		
 		return "boardjsp/essaylist";
+	}
+	
+	@RequestMapping(value="essaywrite", method=RequestMethod.GET)
+	public String essaywrite() {
+		
+		return "boardjsp/essaywrite";
+	}
+	
+	@RequestMapping(value="QnAwrite", method=RequestMethod.GET)
+	public String QnAwrite() {
+		
+		return "boardjsp/QnAwrite";
 	}
 }
