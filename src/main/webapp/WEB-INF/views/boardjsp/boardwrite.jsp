@@ -34,7 +34,7 @@
         //글쓰기폼 확인
         function formCheck() {
             var title = document.getElementById('title');
-            var contents = document.getElementById('contents');
+            var content = document.getElementById('content');
             
             if (title.value.length < 5) {
                 alert("제목을 입력하세요.");
@@ -42,10 +42,10 @@
                 title.select();
                 return false;
             }
-            if (contents.value.length < 5) {
+            if (content.value.length < 5) {
                 alert("내용을 입력하세요.");
-                contents.focus();
-                contents.select();
+                content.focus();
+                content.select();
                 return false;
             }
             return true;
@@ -141,7 +141,7 @@
                             <tr>
                                 <th>내용</th> 
                                 <td>
-                                    <textarea name="contents" id="contents" style="width:1000px;height:200px;resize:none;"></textarea>
+                                    <textarea name="content" id="content" style="width:1000px;height:200px;resize:none;"></textarea>
                                 </td>
                             </tr>
                             <tr>

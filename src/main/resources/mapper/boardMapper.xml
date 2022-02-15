@@ -7,10 +7,11 @@
 <mapper namespace="global.sesoc.library.dao.BoardMapper">
 
 <!-- 공지사항 게시글 저장 -->
-<insert id="insertNotice" parameterType="Notice">
-	insert into notice
+<insert id="insertBoard" parameterType="Board">
+	insert into board
 		(
-			infonum
+			boardnum
+			, board_type
 			, title
 			, id
 			, hits
@@ -19,7 +20,8 @@
 		)
 	values 
 		(
-			#{infonum}
+			#{boardnum}
+			, #{board_type}
 			, #{title}
 			, #{id}
 			, #{hits}
@@ -29,28 +31,28 @@
 </insert>
 
 <!-- 공지사항 게시글 읽기 -->
-<select id="getNotice" parameterType="int" resultType="Notice">
+<select id="getBoard" parameterType="int" resultType="Board">
 	select 
-			infonum
+			boardnum
 			, title
 			, id
 			, hits
 			, content
 			, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
 	from 
-		notice
+		board
 	where 
-		infonum = #{infonum}
+		boardnum = #{boardnum}
 </select>
 
 <!-- 조회수 1 증가 -->
 <update id="addHits" parameterType="int">
 	update
-		notice
+		board
 	set
 		hits = hits + 1
 	where
-		infonum = #{infonum}
+		boardnum = #{boardnum}
 </update>
 
 <!-- 전체 글 개수 -->
@@ -58,7 +60,7 @@
 	select 
 		count(*)
 	from 
-		notice
+		board
 	<if test="_parameter != null">
 	where 
 		title like '%' || #{searchText} || '%'
@@ -66,199 +68,96 @@
 </select>
 
 <!-- 현재 페이지 공지사항 목록 -->
-<select id="listNotice" parameterType="string" resultType="Notice">
+<select id="listBoard" parameterType="string" resultType="Board">
 	select 
-		infonum
+		boardnum
 		, title
 		, id
 		, hits
 		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
 	from 
-		notice
+		board
 	<if test="_parameter != null">
 	where 
 		title like '%' || #{searchText} || '%'
 	</if>
-	order by infonum desc
+	order by boardnum desc
 </select>
 
 
 <!-- 공지사항 게시글 삭제 -->
-<delete id="deleteNotice" parameterType="Notice">
+<delete id="deleteBoard" parameterType="Board">
 	delete from
-		notice
+		board
 	where
-		infonum = #{infonum}
+		boardnum = #{boardnum}
 		and id = #{id}
 </delete>
 
 <!-- 공지사항 게시글 수정 -->
-<update id="updateNotice" parameterType="Notice">
+<update id="updateBoard" parameterType="Board">
 	update 
-		notice
+		board
 	set
 		title = #{title}
 		, content = #{content}
 	where
-		infonum = #{infonum}
+		boardnum = #{boardnum}
 		and id = #{id}
 </update>
 
 
-
-<!--    ###############################  여기까지 공지사항 XML  ################################# -->
-
-
-<!-- QnA 게시글 저장 -->
-<insert id="insertQnA" parameterType="QnA">
-	insert into QnA
-		(
-			QnAnum
-			, QnAtitle
-			, id
-			, hits
-			, QnAcontent
-			, inputdate
-		)
-	values 
-		(
-			#{QnAnum}
-			, #{QnAtitle}
-			, #{id}
-			, #{hits}
-			, #{QnAcontent}
-			, #{inputdate}
-		)
-</insert>
-
-<!-- QnA 게시글 읽기 -->
-<select id="getNotice" parameterType="int" resultType="Notice">
-	select 
-			QnAnum
-			, QnAtitle
-			, id
-			, hits
-			, QnAcontent
-			, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
-	from 
-		QnA
-	where 
-		QnAnum = #{QnAnum}
-</select>
-
-<!-- 조회수 1 증가 -->
-<update id="addHits" parameterType="int">
-	update
-		QnA
-	set
-		hits = hits + 1
-	where
-		QnAnum = #{QnAnum}
-</update>
-
-<!-- 전체 글 개수 -->
-<select id="getTotal" parameterType="string" resultType="int">
-	select 
-		count(*)
-	from 
-		QnA
-	<if test="_parameter != null">
-	where 
-		QnAtitle like '%' || #{searchText} || '%'
-	</if>
-</select>
-
-<!-- 현재 페이지 QnA 목록 -->
-<select id="listQnA" parameterType="string" resultType="QnA">
-	select 
-		QnAnum
-		, QnAtitle
-		, id
-		, hits
-		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
-	from 
-		QnA
-	<if test="_parameter != null">
-	where 
-		QnAtitle like '%' || #{searchText} || '%'
-	</if>
-	order by QnAnum desc
-</select>
+<!--    ###############################  여기까지 board XML  ################################# -->
 
 
-<!-- QnA 게시글 삭제 -->
-<delete id="deleteQnA" parameterType="QnA">
-	delete from
-		QnA
-	where
-		QnAnum = #{QnAnum}
-		and id = #{id}
-</delete>
-
-<!-- QnA 게시글 수정 -->
-<update id="updateQnA" parameterType="QnA">
-	update 
-		QnA
-	set
-		QnAtitle = #{QnAtitle}
-		, QnAcontent = #{QnAcontent}
-	where
-		QnAnum = #{QnAnum}
-		and id = #{id}
-</update>
-
-
-<!--    ###############################  여기까지 QnA XML  ################################# -->
-
-
-<!-- QnA 리플 저장 -->
-<insert id="insertQnAreply" parameterType="QnA_reply">
-	insert into QnA_reply (
-		QnAreplynum
+<!-- 리플 저장 -->
+<insert id="insertReply" parameterType="Reply">
+	insert into reply (
+		replynum
 		, content
 		, id
-		, QnAnum
+		, boardnum
 	)
 	values (
-		QnA_reply_seq.nextval					<!-- ★ 댓글 번호에 사용할 시퀀스 만들어주기!! -->
-		, #{QnAnum}
+		reply_seq.nextval					<!-- ★ 댓글 번호에 사용할 시퀀스 만들어주기!! -->
+		, #{boardnum}
 		, #{content}
 		, #{id}
 	)
 </insert>
 
 <!-- QnA 리플 삭제 -->
-<delete id="deleteQnAreply" parameterType="QnA_reply">
+<delete id="deleteReply" parameterType="Reply">
 	delete from
-		QnA_reply
+		reply
 	where
-		QnAreplynum = #{QnAreplynum}
+		replynum = #{replynum}
 		and id = #{id}
 </delete>
 
 <!-- QnA 리플 목록 -->
-<select id="listQnAreply" parameterType="int" resultType="QnA_reply">
+<select id="listReply" parameterType="int" resultType="Reply">
 	select 
-		QnAreplynum
-		, QnAnum
+		replynum
+		, boardnum
 		, content
 		, id
 	from 
-		QnA_reply
+		reply
 	where
-		QnAnum = #{QnAnum}
+		boardnum = #{boardnum}
 	order by 
-		QnAreplynum desc
+		replynum desc
 </select>
 
 <!-- QnA 리플 수정 -->
-<update id="updateQnAreply" parameterType="QnA_reply">
+<update id="updatereply" parameterType="Reply">
 	update
-		QnA_reply
+		reply
 	set
 		content = #{content}
 	where
-		QnAreplynum = #{QnAreplynum}
+		replynum = #{replynum}
 		and id = #{id}
 </update>
 

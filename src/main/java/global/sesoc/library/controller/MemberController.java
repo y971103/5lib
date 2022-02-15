@@ -73,7 +73,7 @@ public class MemberController {
 	}
 	
 	
-	/*�엫�떆 �럹�씠吏� �씠�룞 */
+	
 	@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index() {
 		
@@ -105,29 +105,4 @@ public class MemberController {
 	}
 	
 	
-	
-	@RequestMapping(value="essaylist", method=RequestMethod.GET)
-	public String essaylist() {
-		
-		return "boardjsp/essaylist";
-	}
-	
-	@RequestMapping(value="essaywrite", method=RequestMethod.GET)
-	public String essaywrite() {
-		
-		return "boardjsp/essaywrite";
-	}
-	
-	@RequestMapping(value="notice_QnA", method=RequestMethod.GET)
-	public String notice_qna() {
-		
-	return "boardjsp/notice_QnA";
-}
-/**
- * 글쓰기 폼 보기
- */
-	@RequestMapping (value="boardwrite", method=RequestMethod.GET)
-	public String write() {
-		return "boardjsp/boardwrite";
-	}
 }
