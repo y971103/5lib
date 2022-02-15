@@ -11,7 +11,7 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
-	<x>10</x>
+	<x>0</x>
 	<y>0</y>
 	<default_color>
 		<r>128</r>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2022-02-08 10:52:38</creation_date>
-			<updated_date>2022-02-15 13:46:30</updated_date>
+			<updated_date>2022-02-15 14:06:46</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -323,7 +323,7 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>한줄평 내용</description>
+			<description>reply 내용</description>
 			<logical_name>content</logical_name>
 			<physical_name>content</physical_name>
 			<type>varchar(n)</type>
@@ -339,7 +339,7 @@
 			<binary>false</binary>
 			<args></args>
 			<char_semantics>false</char_semantics>
-			<description>reply 내용</description>
+			<description>한줄평 내용</description>
 			<logical_name>content</logical_name>
 			<physical_name>content</physical_name>
 			<type>varchar(n)</type>
@@ -1271,7 +1271,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>21</word_id>
+					<word_id>20</word_id>
 					<id>9</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1700,7 +1700,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>9</word_id>
+					<word_id>10</word_id>
 					<id>17</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1858,7 +1858,7 @@
 			<connections>
 				<relation>
 					<id>6</id>
-					<source>6</source>
+					<source>9</source>
 					<target>5</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1880,7 +1880,7 @@
 				</relation>
 				<relation>
 					<id>7</id>
-					<source>9</source>
+					<source>6</source>
 					<target>5</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1977,7 +1977,7 @@
 				<normal_column>
 					<id>23</id>
 					<referenced_column>25</referenced_column>
-					<relation>6</relation>
+					<relation>7</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2011,7 +2011,7 @@
 				<normal_column>
 					<id>24</id>
 					<referenced_column>42</referenced_column>
-					<relation>7</relation>
+					<relation>6</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2689,7 +2689,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>20</word_id>
+					<word_id>21</word_id>
 					<id>39</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -3230,7 +3230,7 @@
 			<connections>
 				<relation>
 					<id>13</id>
-					<source>6</source>
+					<source>2</source>
 					<target>10</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -3252,7 +3252,7 @@
 				</relation>
 				<relation>
 					<id>14</id>
-					<source>2</source>
+					<source>6</source>
 					<target>10</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -3314,7 +3314,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>10</word_id>
+					<word_id>9</word_id>
 					<id>54</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -3349,7 +3349,7 @@
 				<normal_column>
 					<id>55</id>
 					<referenced_column>25</referenced_column>
-					<relation>13</relation>
+					<relation>14</relation>
 					<description>reply 회원 아이디</description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3383,7 +3383,7 @@
 				<normal_column>
 					<id>56</id>
 					<referenced_column>6</referenced_column>
-					<relation>14</relation>
+					<relation>13</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
