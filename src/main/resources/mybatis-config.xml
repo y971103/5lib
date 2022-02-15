@@ -4,12 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="global.sesoc.library.vo.Members" alias="member" />
+		<typeAlias type="global.sesoc.library.vo.Members" alias="Members" />
 		<!--  <typeAlias type="global.sesoc.library.vo.Board" alias="board" />
 		<typeAlias type="global.sesoc.library.vo.Reply" alias="reply" />-->
 	</typeAliases>
 	<mappers>
-		<!--  <mapper resource="mapper/memberMapper.xml" />
-		<mapper resource="mapper/boardMapper.xml" />-->
+		<mapper resource="mapper/memberMapper.xml" />
+		<!-- <mapper resource="mapper/boardMapper.xml" /> -->
 	</mappers>
 </configuration>

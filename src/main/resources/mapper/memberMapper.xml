@@ -28,13 +28,12 @@
 </insert>
 
 
-<!-- 회원 정보 검색 -->
-<!-- 
-<select id="" parameterType="string" resultType="Members">
+<!-- 회원 정보 검색 (로그인) -->
+<select id="selectMember" parameterType="string" resultType="Members">
 	select * from members where id = #{id}
 </select>
 
- -->
+
 <!-- 회원 정보 수정 -->
 <!-- 
 <update id="" parameterType="member">
