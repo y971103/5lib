@@ -104,10 +104,10 @@ public class MemberController {
 		return "memberjsp/login_signup";
 	}
 	
-	@RequestMapping(value="notice_qna", method=RequestMethod.GET)
+	@RequestMapping(value="notice_QnA", method=RequestMethod.GET)
 	public String notice_qna() {
 		
-		return "boardjsp/notice_qna";
+		return "boardjsp/notice_QnA";
 	}
 	
 	@RequestMapping(value="essaylist", method=RequestMethod.GET)

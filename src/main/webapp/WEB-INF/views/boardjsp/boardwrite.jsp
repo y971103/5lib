@@ -130,7 +130,7 @@
         </div>
             <div class="container">
                 <div class="d-none d-sm-block mb-5 pb-4">
-                    <form id="writeform" action="write"  method="post" enctype="multipart/form-data" onsubmit="return formCheck();">
+                    <form id="writeform" action="write"  method="post">
                         <table>
                             <tr>
                                 <th>제목</th>

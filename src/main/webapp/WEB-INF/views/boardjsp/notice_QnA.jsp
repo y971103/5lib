@@ -108,8 +108,10 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="QnAwrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
+                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
                 <div class="table-wrap">
+                
+                	
                     <table class="table myaccordion table-hover" id="accordion">
                       <thead>
                         <tr>
@@ -121,70 +123,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="board" items="${boardlist}">
                         <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <th scope="row">1</th>
-                          <td>배송 문의</td>
-                          <td>soso</td>
-                          <td>10</td>
-                          <td>21.12.12</td>
+                          <th scope="row">${board.boardnum}</th>
                           <td>
-                              <i class="fa" aria-hidden="true"></i>
-                        </td>
-                        </tr>
-                        <tr>
-                            <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
-                                <p>배송 문의합니다.</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
-                          <th scope="row">2</th>
-                          <td>문의합니다.</td>
-                          <td>rlathgnl</td>
-                          <td>9</td>
-                          <td>21.12.31</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
-                            <tr>
-                            <td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
-                                <p>에휴힘들어</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
-                          <th scope="row">3</th>
-                          <td>문의문의</td>
-                          <td>uejdf</td>
-                          <td>2</td>
-                          <td>22.1.11</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
-                            <tr>
-                            <td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
-                                <p>무니무니</p>
-                            </td>
-                        </tr>
-
-                        <tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
-                          <th scope="row">4</th>
-                          <td>큐앤에이</td>
-                          <td>fofo</td>
-                          <td>23</td>
-                          <td>22.1.23</td>
-                          <td>
-                              <i class="fa" aria-hidden="false"></i>
-                        </td>
-                        </tr>
-                            <tr>
-                            <td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
-                                <p>동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
-                            </td>
+                          	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
+                          </td>
+                          <td>${board.id}</td>
+                          <td>${board.hits}</td>
+                          <td>${board.inputdate}</td>
                         </tr>
                       </tbody>
+                      </c:forEach> 
                     </table>
                 </div>
             </div>
