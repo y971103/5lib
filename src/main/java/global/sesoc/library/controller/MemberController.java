@@ -69,7 +69,7 @@ public class MemberController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");
-		return "redirect:/";
+		return "memberjsp/login_signup";
 	}
 	
 	
@@ -82,7 +82,7 @@ public class MemberController {
 	
 	@RequestMapping(value="viewer", method=RequestMethod.GET)
 	public String viewer() {
-		
+				
 		return "memberjsp/viewer";
 	}
 	

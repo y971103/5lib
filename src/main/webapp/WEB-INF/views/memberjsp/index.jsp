@@ -35,7 +35,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="index"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -79,7 +79,15 @@
                                     </li>
                                 </ul>
                             </div>
+                            <c:if test="${loginId != null}">
+							<h2>
+								${sessionScope.loginId}님 <br>
+							</h2>
+							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							</c:if>
+							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                            </c:if>
                         </nav>
                     </div>
                 </div>
@@ -222,22 +230,20 @@
         </div>
     </section>
     <!--top place end-->
-<c:if test="${loginId != null}">
-	<h2>
-		${sessionScope.loginId}님 환영합니다 !!!<br>
-	</h2>
-</c:if>
+
     <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-5">
                     <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
+                        <h4>Project Members</h4>
                         <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
+                            <li><a href="#">최승환</a></li>
+                            <li><a href="#">김기도</a></li>
+                            <li><a href="#">김소휘</a></li>
+                            <li><a href="#">김은지</a></li>
+                            <li><a href="#">염한승</a></li>
                         </ul>
 
                     </div>
@@ -267,11 +273,8 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                       
+                        <h4>Address Of Our Project </h4>
+                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                     </div>
                 </div>
             </div>

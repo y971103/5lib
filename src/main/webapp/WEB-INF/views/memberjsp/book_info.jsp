@@ -82,8 +82,15 @@
                                     </li>
                                 </ul>
                             </div>
+                            <c:if test="${loginId != null}">
+							<h2>
+								${sessionScope.loginId}님 <br>
+							</h2>
+							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							</c:if>
+							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login/SignUP</a>
-                        </nav>
+                            </c:if>
                     </div>
                 </div>
             </div>
@@ -136,7 +143,7 @@
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt">
+                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
                 </div>
                 
