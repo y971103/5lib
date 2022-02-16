@@ -306,4 +306,5 @@ create sequence board_seq;
 -- 게시글 댓글 번호에 사용할 시퀀스 
 create sequence reply_seq;
 
-
+-- 에세이 글 번호에 사용할 시퀀스
+create sequence essay_seq;

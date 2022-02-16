@@ -23,7 +23,7 @@ public class FileController {
 	@GetMapping("/download")
 	public void download(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		
+	// realPath : 상대경로에서 절대적인 경로로 변경하기 위해 사용하는 숨겨진 진짜 파일 경로. 소비자들에게 노출되어서는 안되며 수시로 변경된다.
     String realPath = request.getSession().getServletContext().getRealPath("/resources/file");
     String path = realPath + "\\" + "moby-dick.epub";
     logger.info(path);
