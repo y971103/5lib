@@ -40,7 +40,6 @@ public class BoardController {
 		return "redirect:list";
 	}	
 	
-	
 	/**
 	 * 글쓰기 폼으로 이동
 	 */
@@ -49,7 +48,6 @@ public class BoardController {
 		
 		return "boardjsp/boardwrite";
 	}
-	
 	
 	/** 
 	 * 글 저장
@@ -60,7 +58,7 @@ public class BoardController {
 			, Model model
 			, Board board ) {
 		
-		//세션에서 로그인한 사용자의 아이디를 읽어서 board객체의 작성자 정보에 세팅
+		//세션에서 로그인한 사용자의 아이디를 읽어서 QnA객체의 작성자 정보에 세팅
 		String id = (String) session.getAttribute("loginId");
 		board.setId(id);
 		
@@ -155,7 +153,7 @@ public class BoardController {
 	 * 글 수정 처리
 	 * @param board 수정할 글 정보
 	 */
-	@RequestMapping (value="boardedit", method=RequestMethod.POST)
+	@RequestMapping (value="edit", method=RequestMethod.POST)
 	public String update (
 			HttpSession session
 			, Board board
@@ -228,5 +226,45 @@ public class BoardController {
 		return "redirect:read?Boardnum=" + reply.getBoardnum();
 	}
 	
-
+////////////////////////////////		essay		//////////////////////////
+	
+	
+	//에세이 목록
+	@RequestMapping(value="essaylist", method=RequestMethod.GET)
+	public String essaylist(
+		@RequestParam(value="page", defaultValue="1") int page
+		, @RequestParam(value="searchText", defaultValue="") String searchText
+		, Model model) {
+	
+	logger.debug("page: {}, searchText: {}", page, searchText);
+	
+	int total = dao.getTotal(searchText);			//전체 글 개수
+	
+	//페이지 계산을 위한 객체 생성
+	PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
+	
+	//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
+	ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+	
+	
+	//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
+	model.addAttribute("boardlist", boardlist);
+	model.addAttribute("navi", navi);
+	model.addAttribute("searchText", searchText);
+	
+		
+		return "boardjsp/essaylist";
+	}
+	
+	//에세이 쓰기 폼
+	@RequestMapping(value="essaywrite", method=RequestMethod.GET)
+	public String essaywrite() {
+		
+		return "boardjsp/essaywrite";
+	}
+	
+	
+	
+	
+	
 }
