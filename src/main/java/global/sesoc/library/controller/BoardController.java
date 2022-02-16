@@ -37,7 +37,7 @@ public class BoardController {
 	@RequestMapping(value="notice_QnA", method=RequestMethod.GET)
 	public String notice_qna() {
 			
-		return "boardjsp/notice_QnA";
+		return "redirect:list";
 	}	
 	
 	
@@ -67,7 +67,7 @@ public class BoardController {
 		logger.debug("저장할 글 정보 : {}", board);
 		
 		dao.insertBoard(board);
-		return "boardjsp/notice_QnA";
+		return "redirect:list";
 	}
 	
 	/**
@@ -231,23 +231,42 @@ public class BoardController {
 ////////////////////////////////		essay		//////////////////////////
 	
 	
+	//에세이 목록
 	@RequestMapping(value="essaylist", method=RequestMethod.GET)
-	public String essaylist() {
+	public String essaylist(
+		@RequestParam(value="page", defaultValue="1") int page
+		, @RequestParam(value="searchText", defaultValue="") String searchText
+		, Model model) {
+	
+	logger.debug("page: {}, searchText: {}", page, searchText);
+	
+	int total = dao.getTotal(searchText);			//전체 글 개수
+	
+	//페이지 계산을 위한 객체 생성
+	PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
+	
+	//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
+	ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+	
+	
+	//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
+	model.addAttribute("boardlist", boardlist);
+	model.addAttribute("navi", navi);
+	model.addAttribute("searchText", searchText);
+	
 		
 		return "boardjsp/essaylist";
 	}
 	
+	//에세이 쓰기 폼
 	@RequestMapping(value="essaywrite", method=RequestMethod.GET)
 	public String essaywrite() {
 		
 		return "boardjsp/essaywrite";
 	}
 	
-	@RequestMapping(value="QnAwrite", method=RequestMethod.GET)
-	public String QnAwrite() {
-		
-		return "boardjsp/QnAwrite";
-	}
+	
+	
 	
 	
 }

@@ -125,8 +125,8 @@
                       </thead>
                       <tbody>
                       	<c:forEach var="board" items="${boardlist}">
-                        <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <th scope="row">${board.boardnum}</th>
+                        <tr>
+                          <td scope="row">${board.boardnum}</td>
                           <td>
                           	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
                           </td>
@@ -134,8 +134,8 @@
                           <td>${board.hits}</td>
                           <td>${board.inputdate}</td>
                         </tr>
+                        </c:forEach>
                       </tbody>
-                      </c:forEach> 
                     </table>
                 </div>
             </div>

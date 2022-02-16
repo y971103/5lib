@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Write Essay</title>
     <style>
         * {
   outline:none;
@@ -114,13 +114,13 @@ body {
 <body>
     <div id="wrapper">
 
-	<form id="paper" method="get" action="">
+	<form id="essaywrite" method="post" action="essaywrite">
 
 		<div id="margin">Title: <input id="title" type="text" name="title"></div>
-        <div id="margin">Book: <input id="title" type="text" name="title"></div>
+        <div id="margin">Book: <input id="booknum" type="text" name="booknum"></div>
 		<textarea placeholder="Enter something funny." id="text" name="text" style="overflow: break-word; "></textarea>  
 		<br>
-		<input id="button" type="submit" value="Create">
+		<input id="button" type="submit" value="저장">
 		
 	</form>
 
