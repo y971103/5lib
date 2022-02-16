@@ -21,6 +21,9 @@ public class Essay {
 		this.hits = hits;
 	}
 
+	public Essay() {
+	}
+
 	public int getEssaynum() {
 		return essaynum;
 	}

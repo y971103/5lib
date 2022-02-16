@@ -32,4 +32,5 @@ public interface BoardMapper {
 	public int updateReply(Reply reply);
 	
 	
+
 }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="global.sesoc.library.dao.EssayMapper">
+
+<!-- 에세이 저장 -->
+<insert id="insertEssay" parameterType="Essay">
+	insert into essay
+		(
+			essaynum
+			, title
+			, booknum
+			, id
+			, hits
+			, content
+		)
+	values 
+		(
+			essay_seq.nextval
+			, #{title}
+			, #{booknum}
+			, #{id}
+			, #{hits}
+			, #{content}
+		)
+</insert>
+
+<!-- 에세이 읽기 -->
+<select id="getEssay" parameterType="int" resultType="Essay">
+	select 
+			essaynum
+			, booknum
+			, title
+			, id
+			, hits
+			, content
+			, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
+	from 
+		essay
+	where 
+		essaynum = #{essaynum}
+</select>
+
+<!-- 조회수 증가 -->
+<update id="addHits" parameterType="int">
+	update
+		essay
+	set
+		hits = hits + 1
+	where
+		essaynum = #{essaynum}
+</update>
+
+<!-- 전체 에세이 개수 -->
+<select id="getTotal" parameterType="string" resultType="int">
+	select 
+		count(*)
+	from 
+		essay
+	<if test="_parameter != null">
+	where 
+		title like '%' || #{searchText} || '%'
+	</if>
+</select>
+
+<!-- 현재 페이지 에세이 목록 -->
+<select id="listEssay" parameterType="string" resultType="Essay">
+	select 
+		essaynum
+		, booknum
+		, title
+		, id
+		, hits
+		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
+	from 
+		essay
+	<if test="_parameter != null">
+	where 
+		title like '%' || #{searchText} || '%'
+	</if>
+	order by essaynum desc
+</select>
+
+<!-- 에세이 삭제 -->
+<delete id="deleteEssay" parameterType="Essay">
+	delete from
+		essay
+	where
+		essaynum = #{essaynum}
+		and id = #{id}
+</delete>
+
+<!-- 에세이 수정 -->
+<update id="updateEssay" parameterType="Essay">
+	update 
+		essay
+	set
+		title = #{title}
+		, content = #{content}
+	where
+		essaynum = #{essaynum}
+		and id = #{id}
+</update>
+
+</mapper>

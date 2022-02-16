@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">
@@ -79,7 +80,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                             <a class="dropdown-item" href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a>
-                                        	<a class="dropdown-item" href="<c:url value="/board/essaylist"/>">Essay</a>
+                                        	<a class="dropdown-item" href="<c:url value="/essay/essay"/>">Essay</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -108,11 +109,12 @@
             <a href="essaywrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
                 <div class="table-wrap">
                 	<br></br>
+                	
                     <table class="table">
                       <thead class="thead-primary">
                         <tr>
                             <th>#</th>
-                            <th>&nbsp;</th>
+                            <th>Book</th>
                             <th>Title</th>
                           <th>Writer</th>
                           <th>hits</th>
@@ -120,46 +122,16 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	<c:forEach var="essay" items="${essaylist}">
                         <tr class="alert" role="alert">
-                            <td>1</td>
-                            <td>
-                                <img src="../resources/img/test22.jpg" width=100 height=100>
-                            </td>
-                            <td>에세이 제목</td>
-                            <td>djkfajkl</td>
-                            <td>11</td>
-                            <td>22.02.14</td>
+                            <td>${essay.essaynum}</td>
+                            <td>${essay.booknum}</td>
+                            <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
+                            <td>${essay.id}</td>
+                            <td>${essay.hits}</td>
+                            <td>${essay.inputdate}</td>
                         </tr>
-                        <tr class="alert" role="alert">
-                            <td>2</td>
-                            <td>
-                                <img src="../resources/img/test1.jpg" width=100 height=100>
-                            </td>
-                            <td>에세이 제목</td>
-                            <td>djkfajkl</td>
-                            <td>11</td>
-                            <td>22.02.14</td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>3</td>
-                            <td>
-                                <img src="../resources/img/test3.jpg" width=100 height=100>
-                            </td>
-                            <td>에세이 제목</td>
-                            <td>djkfajkl</td>
-                            <td>11</td>
-                            <td>22.02.14</td>
-                        </tr>
-                        <tr class="alert" role="alert">
-                            <td>4</td>
-                            <td>
-                                <img src="../resources/img/test4.jpg" width=100 height=100>
-                            </td>
-                            <td>에세이 제목</td>
-                            <td>djkfajkl</td>
-                            <td>11</td>
-                            <td>22.02.14</td>
-                        </tr>
+                        </c:forEach>
                       </tbody>
                     </table>
                 </div>

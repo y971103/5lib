@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Board;
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Reply;
 
 
@@ -102,7 +103,7 @@ public class BoardDAO {
 		int result = mapper.updateReply(reply);
 		return result;
 	}
-
+	
 
 
 }

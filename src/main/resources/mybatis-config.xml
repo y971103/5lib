@@ -7,9 +7,11 @@
 		<typeAlias type="global.sesoc.library.vo.Members" alias="Members" />
 		<typeAlias type="global.sesoc.library.vo.Board" alias="board" />
 		<typeAlias type="global.sesoc.library.vo.Reply" alias="reply" />
+		<typeAlias type="global.sesoc.library.vo.Essay" alias="essay" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/boardMapper.xml" /> 
+		<mapper resource="mapper/essayMapper.xml" /> 
 	</mappers>
 </configuration>

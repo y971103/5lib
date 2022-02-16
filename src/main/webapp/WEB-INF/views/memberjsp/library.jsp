@@ -70,7 +70,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                             <a class="dropdown-item" href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a>
-                                        	<a class="dropdown-item" href="<c:url value="/board/essaylist"/>">Essay</a>
+                                        	<a class="dropdown-item" href="<c:url value="/essay/essay"/>">Essay</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
