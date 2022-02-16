@@ -25,5 +25,10 @@
 <a href="member/index">메인화면단</a>
 <br>
 <a href="member/viewer">뷰어</a>
+<br>
+<div>
+  <a href="http://localhost:8888/library/download">파일 다운로드</a>
+</div>
+
 </body>
 </html>

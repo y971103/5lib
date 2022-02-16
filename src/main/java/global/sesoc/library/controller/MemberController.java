@@ -82,7 +82,7 @@ public class MemberController {
 	
 	@RequestMapping(value="viewer", method=RequestMethod.GET)
 	public String viewer() {
-		
+				
 		return "memberjsp/viewer";
 	}
 	
