@@ -24,7 +24,7 @@ public class MemberController {
 	MemberDAO dao;
 	
 
-	@RequestMapping (value="register", method=RequestMethod.GET)
+	@RequestMapping (value="login_signup", method=RequestMethod.GET)
 	public String signupForm(Model model) {
 		return "memberjsp/login_signup";
 	}
@@ -96,12 +96,6 @@ public class MemberController {
 	public String bookinfo() {
 		
 		return "memberjsp/book_info";
-	}
-	
-	@RequestMapping(value="login_signup", method=RequestMethod.GET)
-	public String login_signup() {
-		
-		return "memberjsp/login_signup";
 	}
 	
 	@RequestMapping(value="contact", method=RequestMethod.GET)
