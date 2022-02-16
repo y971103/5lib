@@ -121,7 +121,7 @@
                       <thead class="thead-primary">
                         <tr>
                             <th>#</th>
-                            <th>Book</th>
+                            <th>Bookㄹ</th>
                             <th>Title</th>
                           <th>Writer</th>
                           <th>hits</th>
