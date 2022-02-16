@@ -132,7 +132,7 @@
                       	<c:forEach var="essay" items="${essaylist}">
                         <tr class="alert" role="alert">
                             <td>${essay.essaynum}</td>
-                            <td>${essay.booknum}</td>
+                            <!-- <td>${essay.booknum}</td> -->
                             <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
                             <td>${essay.id}</td>
                             <td>${essay.hits}</td>

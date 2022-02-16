@@ -51,7 +51,6 @@ CREATE TABLE essay
 	-- 에세이 작성 일자
 	inputdate date DEFAULT SYSDATE,
 	-- 책 번호
-	booknum number NOT NULL,
 	-- 조회수
 	hits number,
 	PRIMARY KEY (essaynum)

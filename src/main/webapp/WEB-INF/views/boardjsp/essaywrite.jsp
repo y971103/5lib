@@ -114,10 +114,10 @@
 <body>
     <div id="wrapper">
 
-	<form id="write" action="write" method="post" >
+	<form id="write" action="essay_write" method="post" >
 
 		<div id="margin">Title: <input class="title" type="text" name="title"></div>
-        <div id="margin">Book: <input class="title" type="text" name="booknum"></div>
+        <!--  <div id="margin">Book: <input class="title" type="text" name="booknum"></div>-->
 		<textarea placeholder="Enter something funny." id="text" name="content" style="overflow: break-word; "></textarea>  
 		<br>
 		<input type="submit" id="button" value="저장">

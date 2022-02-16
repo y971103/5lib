@@ -12,7 +12,7 @@
 		(
 			essaynum
 			, title
-			, booknum
+			
 			, id
 			, hits
 			, content
@@ -21,7 +21,7 @@
 		(
 			essay_seq.nextval
 			, #{title}
-			, #{booknum}
+			
 			, #{id}
 			, #{hits}
 			, #{content}
@@ -32,7 +32,6 @@
 <select id="getEssay" parameterType="int" resultType="Essay">
 	select 
 			essaynum
-			, booknum
 			, title
 			, id
 			, hits
@@ -70,7 +69,6 @@
 <select id="listEssay" parameterType="string" resultType="Essay">
 	select 
 		essaynum
-		, booknum
 		, title
 		, id
 		, hits

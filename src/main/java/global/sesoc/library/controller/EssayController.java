@@ -53,7 +53,7 @@ private static final Logger logger = LoggerFactory.getLogger(BoardController.cla
 	/** 
 	 * 글 저장
 	 */
-	@RequestMapping (value="write", method=RequestMethod.POST)
+	@RequestMapping (value="essay_write", method=RequestMethod.POST)
 	public String write(
 			HttpSession session
 			, Model model
