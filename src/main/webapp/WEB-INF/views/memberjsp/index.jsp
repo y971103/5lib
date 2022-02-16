@@ -237,11 +237,13 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-5">
                     <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
+                        <h4>Project Members</h4>
                         <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
+                            <li><a href="#">최승환</a></li>
+                            <li><a href="#">김기도</a></li>
+                            <li><a href="#">김소휘</a></li>
+                            <li><a href="#">김은지</a></li>
+                            <li><a href="#">염한승</a></li>
                         </ul>
 
                     </div>
@@ -271,11 +273,8 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                       
+                        <h4>Address Of Our Project </h4>
+                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                     </div>
                 </div>
             </div>
