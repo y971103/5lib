@@ -54,10 +54,10 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index">Home</a>
+                                        <a class="nav-link" href="<c:url value="/member/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="library">Library</a>
+                                        <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
@@ -83,11 +83,11 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact">Contact</a>
+                                        <a class="nav-link" href="<c:url value="/member/contact"/>">Contact</a>
                                     </li>
                                 </ul>
                             </div>
-                            <a href="login_signup" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                            <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login/SignUP</a>
                         </nav>
                     </div>
                 </div>
