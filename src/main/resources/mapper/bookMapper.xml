@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 게시판 처리 SQL -->
-<mapper namespace="global.sesoc.library.dao.bookMapper">
+<mapper namespace="global.sesoc.library.dao.BookMapper">
 
 <!-- 한줄평 저장 -->
 <!-- <insert id="insertReview" parameterType="Review">

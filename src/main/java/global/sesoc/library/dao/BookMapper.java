@@ -18,6 +18,8 @@ public interface BookMapper {
 	 */
 
 	public ArrayList<Kakaobook> selectKakaobook();
+
+	public int insertKakaobook(Kakaobook kakaobook);
 	
 	
 }

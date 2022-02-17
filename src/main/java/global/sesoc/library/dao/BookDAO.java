@@ -1,6 +1,7 @@
 package global.sesoc.library.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,18 @@ public class BookDAO {
 //		return reviewlist;
 //	}
 
-	public ArrayList<Kakaobook> selectKakaobook() {
+
+	public int insertKakaobook(Kakaobook kakaobook) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		ArrayList<Kakaobook> kakaobooklist = mapper.selectKakaobook();
-		return kakaobooklist;
+		int result = 0;
+		
+		result = mapper.insertKakaobook(kakaobook);
+		return result;
+	}
+	
+	public List<Kakaobook> select() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		List<Kakaobook> book = mapper.selectKakaobook();
+		return book;
 	}
 }
