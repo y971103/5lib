@@ -267,6 +267,18 @@ public class BoardController {
 		return "boardjsp/comment";
 	}
 	
+	@RequestMapping(value="habit", method=RequestMethod.GET)
+	public String habit() {
+			
+		return "boardjsp/habit";
+	}
+	
+	@RequestMapping(value="shelf", method=RequestMethod.GET)
+	public String shelf() {
+			
+		return "boardjsp/shelf";
+	}
+	
 	
 
 	
