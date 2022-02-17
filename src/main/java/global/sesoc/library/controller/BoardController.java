@@ -226,9 +226,6 @@ public class BoardController {
 		return "redirect:read?Boardnum=" + reply.getBoardnum();
 	}
 	
-<<<<<<< HEAD
-////////////////////////////////		essay		//////////////////////////
-	
 	
 	//에세이 목록
 	@RequestMapping(value="essaylist", method=RequestMethod.GET)
@@ -271,7 +268,6 @@ public class BoardController {
 	}
 	
 	
-=======
->>>>>>> c96f91aa4803f3f45ee66bb85c380cb2c8961e9b
+
 	
 }
