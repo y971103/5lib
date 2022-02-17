@@ -116,7 +116,7 @@ public class BoardController {
 		model.addAttribute("board", board);
 		model.addAttribute("replylist", replylist);
 		
-		return "boardjsp/boardRead";
+		return "boardjsp/read";
 	}
 	
 	/**

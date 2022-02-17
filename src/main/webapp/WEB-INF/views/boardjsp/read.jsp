@@ -1,9 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!doctype html>
+<html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>book_info</title>
@@ -22,15 +26,19 @@
     <link rel="stylesheet" href="../resources/css/hover.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
-
+	
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
+
+    
 </head>
 
 <body>
+
+   <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
         <div class="main_menu_iner">
@@ -38,7 +46,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/member/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +94,7 @@
 							<h2>
 								${sessionScope.loginId}님 <br>
 							</h2>
-							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
 							<a href="update" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
@@ -98,109 +106,155 @@
         </div>
     </header>
     <!-- 헤더 끝-->
+     <header class="main_menu">
+        <div class="main_menu_iner">
+            <div class="container">
+                <div class="row align-items-center ">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-    <!-- Product Details Section Begin -->
-    <section>
-        <div class="container" style="margin-bottom: 20px;">
-            <div class="row">       
-                <div style="padding-left: 10%;">
-                    <img src="../resources/img/test22.jpg" alt="">
-                </div>
-                <div class="col-lg-6">
-                    <div class="product__details__text">
-                        <h3><strong>미드나잇 라이브러리</strong></h3>
-                        <div>
-                            <ul>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>저자</strong></span>
-                                    <div>
-                                       메트 헤이그
-                                    </div>
-                                </li>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>출판사</strong></span>
-                                    <div>
-                                        인플루엔셜
-                                    </div>
-                                </li>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>출간</strong></span>
-                                    <div>
-                                        2021.04.28
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        
-                        <h4><strong>책 소개</strong></h4>
-                        <div>
-                            <ul>
-                                <li style="width: 500px;" class="binfo">
-                                    죽기로 결심한 주인공 ‘노라 시드’가 삶과 죽음 사이에 존재하는 미스터리한 도서관 ‘미드나잇 라이브러리’에서
-                                     눈을 뜨며 시작되는 이 소설은 노라가 인생의 두 번째 기회를 얻으며, 가장 완벽한 삶을 찾기 위한 모험을 떠나는 이야기이다. 
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
-                    <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
-                </div>
-                
-                <div class="col-lg-12" style="padding-left: 10%;">
-                    <div class="product__details__tab" style="padding-right: 23%;">
-                        <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">한 줄 리뷰</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">좋은 책입니다!!!!!!!!!!</div>
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                                id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="library.html">Library</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Mypage
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="blog.html" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="single-blog.html">통계</a>
+                                            <a class="dropdown-item" href="elements.html">리뷰</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Board
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                            <a class="dropdown-item" href="top_place.html">Info</a>
+                                            <a class="dropdown-item" href="tour_details.html">QnA</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">으아아아아아ㅏ아아아아아아아ㅏㅇ</div>
-                            </div>
-                            <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">이거 가능 하겠지? css 너무 난잡하네</div>
-                            </div>
-
-                            <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> <input type="submit" value="등록" class="sub_review">
-                            </div>
-                            
-                        </div>
+                            <a href="loging_sinup.html" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                        </nav>
                     </div>
                 </div>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더 끝-->
 
-                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
-                <div class="row" style="margin-left: 10%;">
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
+    
+
+    <!--게시판 읽기-->                               
+<!--Borad The Read 게시판 읽기-->                               
+    <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #ffffff);"> <!-- #99b19c-->
+        <div id="main">
+       
+        <div class="container" style="padding-top:1px;">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    
+                    <div class="text-center">
+                        <h3>Borad The Read</h3>  
+                        <div class="line_bottom"></div>
+                        <div class="one_line"> </div>
+                          
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Product Details Section End -->
+    
+    <br><br>
+    
+    <section article>
+        <div class="col-lg-12" style="padding-left: 10%;">
+        <div class="col-lg-12" style="padding-right: 23%;">
+            <div class="section_tittle">
+            <table border="2">
+                <tr>
+                  <th style="width: 160px;">작성일</th>
+                  <td style="width: 300px;">${borad.inputdate}</td>
+                  
+                   
+                  <th style="width: 160px;">작성자</th>
+                  <td style="width: 300px;">${borad.id}</td>
+                </tr>
 
-    <!-- Footer Section Begin -->
+                <tr>
+                  <th style="width: 160px;">제목</th>
+                  <td style="width: 300px;">${borad.title}</td>
+
+                  <th style="width: 160px;">조회수</th>
+                  <td style="width: 300px;">${borad.hits}</td>
+                </tr>
+
+                <tr>
+                  <th style="width: 160px;">파일첨부</th>
+                  <td>
+                    <c:if test="${borad.originalfile != null}">
+                        <a href="download?boardnum=${board.boardnum}">
+                            ${board.originalfile}
+                        </a>
+                    </c:if>
+                    
+                  <th style="width: 160px;">수정하기</th>
+                  <td style="width: 300px;">${borad.hits}</td>
+                </tr>
+
+                <tr>
+                  <td colspan="6" height="400">${borad.content}</td>
+                </tr>
+            </table>
+        </div>        
+    </section>
+
+    <section>
+      
+        <div class="col-lg-12" style="padding-left: 10%;">
+        <div class="col-lg-12" style="padding-right: 23%;">     
+            <div class="text-left">
+            <form id="reply" action="insertreply" method="post">
+                <h3>댓글</h3>
+                <textarea cols="100" rows="1">
+   
+                </textarea>
+                <input type = "submit" value="저장하기">
+               </form>  
+                      
+      
+            </div>
+        </div>
+        </div>
+        <br><br>
+        <hr>
+            
+
+        </section>
+
+    <!-- footer part start-->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
@@ -211,6 +265,15 @@
                             <li><a href="#">Miami, USA</a></li>
                             <li><a href="#">California, USA</a></li>
                             <li><a href="#">London, UK</a></li>
+                            <li><a href="#">Saintmartine, Bangladesh</a></li>
+                            <li><a href="#">Mount Everast, India</a></li>
+                            <li><a href="#">Sidney, Australia</a></li>
+                            <li><a href="#">Miami, USA</a></li>
+                            <li><a href="#">California, USA</a></li>
+                            <li><a href="#">London, UK</a></li>
+                            <li><a href="#">Saintmartine, Bangladesh</a></li>
+                            <li><a href="#">Mount Everast, India</a></li>
+                            <li><a href="#">Sidney, Australia</a></li>
                         </ul>
 
                     </div>
@@ -219,16 +282,12 @@
                     <div class="single-footer-widget">
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
+                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" required="" type="email">
                                 <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
                                 </button>
                                 <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                                 </div>
 
                                 <div class="info"></div>
@@ -240,10 +299,14 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
+                        <p>4156, New garden, New York, USA +880 362 352 783</p>
                         <span>contact@martine.com</span>
-                      
+                        <div class="social-icons">
+                            <a href="#"><i class="ti-facebook"></i></a>
+                            <a href="#"><i class="ti-twitter-alt"></i></a>
+                            <a href="#"><i class="ti-pinterest"></i></a>
+                            <a href="#"><i class="ti-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,7 +323,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
+    <!-- footer part end-->
 
     <!-- Js Plugins -->
 
@@ -288,4 +351,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      <!-- custom js -->
      <script src="../resources/js/custom.js"></script>
 </body>
+
+</html>
 </html>
