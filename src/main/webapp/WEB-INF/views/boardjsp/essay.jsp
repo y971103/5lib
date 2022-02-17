@@ -69,7 +69,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="blog" id="navbarDropdown">내 서재</a>
                                             <a class="dropdown-item" href="single-blog">통계</a>
-                                            <a class="dropdown-item" href="elements">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">

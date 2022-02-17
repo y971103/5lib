@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
-<head>
+ <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Comment</title>
+        <title>Martine</title>
         <link rel="icon" href="img/favicon.png">
-         <!-- Bootstrap CSS -->
-	    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-	    <!-- owl carousel CSS -->
-	    <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
-	    <!-- themify CSS -->
-	    <link rel="stylesheet" href="../resources/css/themify-icons.css">
-	    <!-- flaticon CSS -->
-	    <link rel="stylesheet" href="../resources/css/flaticon.css">
-	    <!-- fontawesome CSS -->
-	    <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
-	    <!-- hover CSS -->
-	    <link rel="stylesheet" href="../resources/css/hover.css">
-	    <!-- style CSS -->
-	    <link rel="stylesheet" href="../resources/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+        <!-- owl carousel CSS -->
+        <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
+        <!-- themify CSS -->
+        <link rel="stylesheet" href="../resources/css/themify-icons.css">
+        <!-- flaticon CSS -->
+        <link rel="stylesheet" href="../resources/css/flaticon.css">
+        <!-- fontawesome CSS -->
+        <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
+        <!-- hover CSS -->
+        <link rel="stylesheet" href="../resources/css/hover.css">
+        <!-- style CSS -->
+        <link rel="stylesheet" href="../resources/css/style.css">
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
@@ -47,13 +49,13 @@
     
     <body>
        <!--:헤더 시작::-->
-       <header class="main_menu">
+      <header class="main_menu">
         <div class="main_menu_iner">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/member/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +80,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="blog" id="navbarDropdown">내 서재</a>
                                             <a class="dropdown-item" href="single-blog">통계</a>
-                                            <a class="dropdown-item" href="elements">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -97,16 +99,15 @@
                                     </li>
                                 </ul>
                             </div>
-                            <c:if test="${loginId != null}">
+                           <c:if test="${loginId != null}">
 							<h2>
 								${sessionScope.loginId}님 <br>
 							</h2>
-							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login/SignUP</a>
                             </c:if>
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -132,7 +133,7 @@
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row">       
                                     <div style="padding-left: 7%;">
-                                        <img src="img/li1.jpg" alt="">
+                                        <img src="../resources/img/li1.jpg" alt="">
                                     </div>
                                      <class="binfo">   
                                      <div class="c_title">
@@ -164,7 +165,7 @@
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
                                     <div style="padding-left: 7%;">
-                                        <img src="img/li1.jpg" alt="">
+                                        <img src="../resources/img/li1.jpg" alt="">
                                     </div>
                                      <class="binfo">   
                                      <div>
@@ -191,11 +192,11 @@
 </div>
 
 <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="../resources/assets/js/jquery.min.js"></script>
+        <script src="../resources/assets/js/browser.min.js"></script>
+        <script src="../resources/assets/js/breakpoints.min.js"></script>
+        <script src="../resources/assets/js/util.js"></script>
+        <script src="../resources/assets/js/main.js"></script>
 
  <!-- footer part start-->
   <footer class="footer-area">
