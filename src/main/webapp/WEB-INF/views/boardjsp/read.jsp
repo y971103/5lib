@@ -38,7 +38,6 @@
 
 <body>
 
-   <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
         <div class="main_menu_iner">
@@ -106,64 +105,6 @@
         </div>
     </header>
     <!-- 헤더 끝-->
-     <header class="main_menu">
-        <div class="main_menu_iner">
-            <div class="container">
-                <div class="row align-items-center ">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                                id="navbarSupportedContent">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="library.html">Library</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Mypage
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog.html" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="single-blog.html">통계</a>
-                                            <a class="dropdown-item" href="elements.html">리뷰</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Board
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">Info</a>
-                                            <a class="dropdown-item" href="tour_details.html">QnA</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="loging_sinup.html" class="btn_1 d-none d-lg-block">Login/SignUP</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- 헤더 끝-->
 
     
 
@@ -177,7 +118,7 @@
                 <div class="col-xl-6">
                     
                     <div class="text-center">
-                        <h3>Borad The Read</h3>  
+                        <h3>Board The Read</h3>  
                         <div class="line_bottom"></div>
                         <div class="one_line"> </div>
                           
@@ -196,38 +137,33 @@
             <table border="2">
                 <tr>
                   <th style="width: 160px;">작성일</th>
-                  <td style="width: 300px;">${borad.inputdate}</td>
+                  <td style="width: 300px;">${board.inputdate}</td>
                   
                    
                   <th style="width: 160px;">작성자</th>
-                  <td style="width: 300px;">${borad.id}</td>
+                  <td style="width: 300px;">${board.id}</td>
                 </tr>
 
                 <tr>
                   <th style="width: 160px;">제목</th>
-                  <td style="width: 300px;">${borad.title}</td>
+                  <td style="width: 300px;">${board.title}</td>
 
                   <th style="width: 160px;">조회수</th>
-                  <td style="width: 300px;">${borad.hits}</td>
+                  <td style="width: 300px;">${board.hits}</td>
                 </tr>
 
                 <tr>
-                  <th style="width: 160px;">파일첨부</th>
-                  <td>
-                    <c:if test="${borad.originalfile != null}">
-                        <a href="download?boardnum=${board.boardnum}">
-                            ${board.originalfile}
-                        </a>
-                    </c:if>
                     
                   <th style="width: 160px;">수정하기</th>
-                  <td style="width: 300px;">${borad.hits}</td>
+                  <td style="width: 300px;">${board.hits}</td>
                 </tr>
 
                 <tr>
-                  <td colspan="6" height="400">${borad.content}</td>
+                  <td colspan="6" height="400">${board.content}</td>
                 </tr>
             </table>
+        	</div>
+        </div>
         </div>        
     </section>
 
@@ -236,14 +172,25 @@
         <div class="col-lg-12" style="padding-left: 10%;">
         <div class="col-lg-12" style="padding-right: 23%;">     
             <div class="text-left">
-            <form id="reply" action="insertreply" method="post">
+            <form id="reply" action="replyWrite" method="post">
                 <h3>댓글</h3>
                 <textarea cols="100" rows="1">
    
                 </textarea>
                 <input type = "submit" value="저장하기">
                </form>  
-                      
+            <table class="reply">
+			<c:forEach var="reply" items="${replylist}">
+				<tr>
+					<td class="replyid">
+						<b>${reply.id}</b>
+					</td>
+					<td class="replytext">
+						${reply.text}
+				</tr>	
+					 
+			</c:forEach>
+			</table> 
       
             </div>
         </div>
