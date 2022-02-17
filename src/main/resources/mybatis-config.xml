@@ -7,6 +7,7 @@
 		<typeAlias type="global.sesoc.library.vo.Members" alias="Members" />
 		<typeAlias type="global.sesoc.library.vo.Board" alias="board" />
 		<typeAlias type="global.sesoc.library.vo.Reply" alias="reply" />
+		<typeAlias type="global.sesoc.library.vo.Review" alias="review" />
 		<typeAlias type="global.sesoc.library.vo.Essay" alias="essay" />
 		<typeAlias type="global.sesoc.library.vo.Kakaobook" alias="kakaobook" />
 	</typeAliases>
