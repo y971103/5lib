@@ -144,88 +144,18 @@
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
+            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="11">
                 <figure class="snip1283">
-                    <img src="../resources/img/li1.jpg" alt="sample83" />
+                    <img src="download?filename=${book.thumbnail}">
                     <figcaption>
-                      <h3>Fleece Marigold</h3>
-                      <p>Technaf, Bangladesh</p>
+                      <h3>${book.title}</h3>
+                      <p>${book.contents}</p>
                     </figcaption>
                     <a href="#"></a>
                   </figure>
-                
+                </c:forEach>
             
-                    <figure class="snip1283">
-                        <img src="../resources/img/test22.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-               
-                    <figure class="snip1283">
-                        <img src="../resources/img/test33.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-             
-                    <figure class="snip1283">
-                        <img src="../resources/img/test44.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                    </figure>
-              
-                    <figure class="snip1283">
-                        <img src="../resources/img/test11.jpg" alt="sample83" />
-                        <figcaption>
-                          <h3>Fleece Marigold</h3>
-                          <p>Technaf, Bangladesh</p>
-                        </figcaption>
-                        <a href="#"></a>
-                      </figure>
-                    
-                
-                        <figure class="snip1283">
-                            <img src="../resources/img/test22.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
                    
-                        <figure class="snip1283">
-                            <img src="../resources/img/test33.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure>
-                 
-                        <figure class="snip1283">
-                            <img src="../resources/img/test44.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
-
-                        <figure class="snip1283">
-                            <img src="../resources/img/test11.jpg" alt="sample83" />
-                            <figcaption>
-                              <h3>Fleece Marigold</h3>
-                              <p>Technaf, Bangladesh</p>
-                            </figcaption>
-                            <a href="#"></a>
-                        </figure>
                 <a href="top_place.html" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
