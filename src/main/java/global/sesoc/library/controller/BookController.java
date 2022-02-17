@@ -16,14 +16,18 @@ import global.sesoc.library.vo.Review;
 
 
 @Controller
-@RequestMapping("book")
+@RequestMapping("")
 public class BookController {
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	
 	@Autowired
 	BookDAO dao;
 	
-	
+	@RequestMapping(value="book", method=RequestMethod.GET)
+	public String book() {
+				
+		return "bookjsp/booktest";
+	}
 
 	
 	// 한줄 리뷰 관련 컨트롤러	

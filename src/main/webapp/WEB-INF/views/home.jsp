@@ -26,6 +26,8 @@
 <br>
 <a href="member/viewer">뷰어</a>
 <br>
+<a href="member/booktest">책 정보</a>
+<br>
 <div>
   <a href="http://localhost:8888/library/download">파일 다운로드</a>
 </div>
