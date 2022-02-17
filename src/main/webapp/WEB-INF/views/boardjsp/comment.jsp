@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Martine</title>
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="../resources/img/favicon.png">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
         <!-- owl carousel CSS -->
@@ -137,17 +137,17 @@
                                     </div>
                                      <class="binfo">   
                                      <div class="c_title">
-                                        미드나잇&nbsp;라이브러리
+                                       	 미드나잇&nbsp;라이브러리
                                      </div>
                                      <h3 class="c_review">책 리뷰</h3>
                                      <form action="" method="post">  
                                      <div class="row">
                                         <div class="col-12">
                                             <div class="c_content">
-                                            불편한데 자꾸 가고 싶은 편의점이 있다!
-                                            힘들게 살아낸 오늘을 위로하는 편의점의 밤
-                                            정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
-                                            '망원동 브라더스' 김호연의 '동네 이야기' 시즌 2
+                                           	         불편한데 자꾸 가고 싶은 편의점이 있다!
+                                            	힘들게 살아낸 오늘을 위로하는 편의점의 밤
+                                           		 정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
+                                            	'망원동 브라더스' 김호연의 '동네 이야기' 시즌 2
                                         </div>
                                     <input type="submit" value="공유하기">
                                    </form>
@@ -169,7 +169,7 @@
                                     </div>
                                      <class="binfo">   
                                      <div>
-                                        미드나잇&nbsp;라이브러리
+                                        	미드나잇&nbsp;라이브러리
                                      </div>
                                      <form>  
                                      <div class="row">
@@ -185,11 +185,9 @@
                         </section>
                    </div>
                    <hr>  
-                    </article>
-</div>
-
-
-</div>
+                   </article>
+			</div>
+		</div>
 
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>

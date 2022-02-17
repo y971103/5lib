@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Martine</title>
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="../resources/img/favicon.png">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
         <!-- owl carousel CSS -->
@@ -114,8 +114,51 @@
         </div>
     </header>
         <!-- 헤더 끝-->
+  <!--nav탭 드롭다운 보여주는 곳-->
+        <head>
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
+        </head>
+            <body class="is-preload">
+            <!-- Wrapper-->
+			<div id="wrapper">
 
-
+			<!-- Nav -->
+            <nav id="nav">
+               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open active1"><span>Shelf</span></a>
+               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
+               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
+         </nav>
+            <!--main css-->
+            <div id="main" style="margin-bottom: 50px;">
+                <!--Habit 통계-->
+                    <article id="Habit" class="panel">
+                        <header>
+                            <h2 class="c_review">내 서재</h2>
+                        </header>
+                        
+                        <section>
+                            <div class="row"> <!--가로 255 이상의 이미지 사용하면 됨-->
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test1.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test2.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test3.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+    </div>  
+</div>
 
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>

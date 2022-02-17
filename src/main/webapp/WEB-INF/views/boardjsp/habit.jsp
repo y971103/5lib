@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Martine</title>
-        <link rel="icon" href="img/favicon.png">
+        <link rel="icon" href="../resources/img/favicon.png">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
         <!-- owl carousel CSS -->
@@ -114,7 +114,50 @@
         </div>
     </header>
         <!-- 헤더 끝-->
+<!--nav탭 드롭다운 보여주는 곳-->
+        <body class="is-preload">
+            <!-- Wrapper-->
+         <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
+         <!-- Nav -->
+         <nav id="nav">
+               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
+               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
+               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
+         </nav>
+         <div id="main">
+            <!-- Comment 감상공유 -->
+                <article id="Comment" class="panel">  
+                    <header>
+                        <h2 class="c_review" style="margin-left: 38%;">내 독서 습관</h2>
+                    </header>                      
+                    <section style="margin-left: 25%;">
+                        <div class="container" style="margin-bottom: 10px;">
+                            <div class="row">       
+                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
+                                 <class="binfo">   
+                                    <div class="c_title">
+                                     	  총 85분 동안 독서를 했습니다.
+                                    </div>
+                            </div>    
+                        </br> </br>
+                            <div class="row">       
+                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
+                                 <class="binfo">   
+                                    <div class="c_title">
+                                   	    금요일에 가장 많이 읽었습니다.
+                                    </div>
+                            </div>    
+                        </div>
+            </div>
+          
+                    </section>
+               </div>
+             
+                </article>
+</div>
 
+
+</div>
       
       
 <!-- Scripts -->
