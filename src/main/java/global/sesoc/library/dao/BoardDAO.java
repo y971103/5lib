@@ -90,7 +90,7 @@ public class BoardDAO {
 		
 	}
 
-	//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
+	//삭제할 리플 번호와 본인 글인지 확인할 로그인아이디
 	public int deleteReply(Reply reply) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		int result = mapper.deleteReply(reply);

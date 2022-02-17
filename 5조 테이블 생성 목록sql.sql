@@ -50,7 +50,6 @@ CREATE TABLE essay
 	id varchar2(20) NOT NULL,
 	-- 에세이 작성 일자
 	inputdate date DEFAULT SYSDATE,
-	-- 책 번호
 	-- 조회수
 	hits number,
 	PRIMARY KEY (essaynum)
@@ -307,3 +306,6 @@ create sequence reply_seq;
 
 -- 에세이 글 번호에 사용할 시퀀스
 create sequence essay_seq;
+
+-- 한줄평 댓글 번호에 사용할 시퀀스
+create sequence review_seq;		
