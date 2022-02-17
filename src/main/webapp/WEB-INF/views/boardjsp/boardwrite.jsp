@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -89,9 +91,9 @@
                                             Mypage
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="single-blog">통계</a>
-                                            <a class="dropdown-item" href="elements">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">

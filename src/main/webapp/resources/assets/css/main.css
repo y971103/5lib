@@ -1358,7 +1358,7 @@ input, select, textarea {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: black;
-		font-size: 20pt;
+		font-size: 10pt;
 		line-height: 1.75em;
 	}
 
@@ -1371,8 +1371,13 @@ input, select, textarea {
 
 		@media screen and (max-width: 1680px) {
 
-			body, input, textarea, select {
+			body, input, select {
 				font-size: 15pt;
+			}
+
+			textarea{
+				font-size: 10pt;
+			 	maxlength=200;
 			}
 
 		}
@@ -1450,8 +1455,6 @@ input, select, textarea {
 	hr {
 		border: 0;
 		border-top: solid 1px #ddd;
-		padding: 1.5em 0 0 0;
-		margin: 1.75em 0 0 0;
 	}
 
 	sub {
@@ -1636,7 +1639,8 @@ input, select, textarea {
 		border: 0;
 		cursor: pointer;
 		outline: 0;
-		padding: 0.7em 1.5em 0.7em 1.5em;
+		margin-top: 20px;
+		margin-left: 78%;
 	}
 
 		input[type="button"]:hover,
@@ -1925,6 +1929,7 @@ input, select, textarea {
 		max-width: 100%;
 		padding: 4em 0;
 		padding-top: 0px;
+		padding-bottom: 0px;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -2233,6 +2238,15 @@ input, select, textarea {
 				margin-left: 0.5em;
 			}
 
+		}
+
+		.c_content{
+			width: 480px;
+		}
+
+		.c_review, .c_title{
+			font-weight: 700;
+			color: white;
 		}
 
 	
