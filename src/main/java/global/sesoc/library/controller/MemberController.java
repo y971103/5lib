@@ -86,12 +86,6 @@ public class MemberController {
 		return "memberjsp/viewer";
 	}
 	
-	@RequestMapping(value="booktest", method=RequestMethod.GET)
-	public String book() {
-				
-		return "memberjsp/booktest";
-	}
-	
 	@RequestMapping(value="library", method=RequestMethod.GET)
 	public String library() {
 		

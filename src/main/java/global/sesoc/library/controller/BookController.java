@@ -19,17 +19,17 @@ import global.sesoc.library.vo.Review;
 
 
 @Controller
-@RequestMapping("")
+@RequestMapping("book")
 public class BookController {
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	
 	@Autowired
 	BookDAO dao;
 	
-	@RequestMapping(value="book", method=RequestMethod.GET)
+	@RequestMapping(value="kakaobook", method=RequestMethod.GET)
 	public String book() {
 				
-		return "bookjsp/booktest";
+		return "bookjsp/kakaobook";
 	}
 
 	
