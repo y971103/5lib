@@ -32,6 +32,11 @@ public class MemberDAO {
 		Members member = mapper.selectMember(id);
 		return member;
 	}
-	
+
+	public int updateMember(Members member) {
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		int result = mapper.updateMember(member);
+		return result;
+	}
 
 }

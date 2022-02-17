@@ -29,7 +29,7 @@ public class MemberController {
 		return "memberjsp/login_signup";
 	}
 
-	
+	// 회원가입
 	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		
@@ -41,7 +41,7 @@ public class MemberController {
 		return "memberjsp/index";
 	}
 	
-	
+	// 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "memberjsp/login_signup";
@@ -61,11 +61,7 @@ public class MemberController {
 		}
 	}
 	
-	/**
-	 * 로그아웃
-	 * @param session
-	 * @return
-	 */
+	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");
@@ -73,6 +69,26 @@ public class MemberController {
 	}
 	
 	
+	// 개인정보 수정 폼 이동
+	@RequestMapping(value = "update", method= RequestMethod.GET)
+	public String update(HttpSession session, Model model) {
+		//세션의 아이디를 읽어서 DB에서 개인정보를 검색
+		String id = (String) session.getAttribute("loginId");  // 캐스팅 필요.
+		Members member = dao.getMember(id);
+		//개인정보를 모델에 저장.
+		model.addAttribute("members", member);
+		return "memberjsp/updateForm";
+	}
+	
+	// 개인정보 수정 내용 DB에 반영
+	@RequestMapping(value = "update", method= RequestMethod.POST)
+	public String update(Members member, HttpSession session) {			
+		logger.debug("수정폼에서 전달된 값 {}", member);
+		String id =(String) session.getAttribute("loginId");
+		member.setId(id);
+		dao.updateMember(member);
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value="index", method=RequestMethod.GET)
 	public String index() {

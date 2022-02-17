@@ -165,7 +165,7 @@ public class BookController {
 		//책 정보 출력 
 		@RequestMapping(value = "/view", method = RequestMethod.GET)
 		public String view(Model model) {
-			//테스트 하기 위한 임시 코드임. 아래 정보 DB에서 불러오는 것으로 수정할 것
+			
 			List<Kakaobook> kakaobook = dao.select();
 
 			

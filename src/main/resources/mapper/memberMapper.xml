@@ -36,19 +36,17 @@
 
 
 <!-- 회원 정보 수정 -->
-<!-- 
-<update id="" parameterType="member">
+<update id="updateMember" parameterType="Members">
 	update
 		members
 	set
 		password = #{password}
 		, name = #{name}
 		, phone = #{phone}
-		, address = #{address}
 		, email = #{email}
+		, genre_num = #{genre_num}
 	where
 		id = #{id}
 </update>
--->
 
 </mapper>

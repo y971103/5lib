@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>카카오 책 정보</h1>
-<c:forEach var="book" items="${kakaobooklist}" begin="0" end="3">
+<c:forEach var="book" items="${kakaobooklist}" begin="0" end="10">
    <p>번호 : ${status.count}</p>
    <p>제목 : ${book.title}</p>
    <p>작가 : ${book.authors}</p>
