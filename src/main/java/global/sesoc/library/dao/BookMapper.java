@@ -2,6 +2,7 @@ package global.sesoc.library.dao;
 
 import java.util.ArrayList;
 
+import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
 public interface BookMapper {
@@ -17,6 +18,8 @@ public interface BookMapper {
 	
 	//한줄평 목록 출력
 	public ArrayList<Review> listReview(int booknum);
+
+	public ArrayList<Kakaobook> seletKakaobook();
 	
 	
 }

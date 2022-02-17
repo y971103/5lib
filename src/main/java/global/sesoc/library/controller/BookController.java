@@ -1,5 +1,7 @@
 package global.sesoc.library.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.BookDAO;
+import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
 
@@ -72,5 +75,14 @@ public class BookController {
 		dao.updateReview(review);
 		//원래의 글읽기 화면으로 이동 
 		return "redirect:read?Booknum=" + review.getBooknum();
+	}
+	
+	//kakaobook arraylist
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String list(Model model) {
+		ArrayList<Kakaobook> kakaobooklist = dao.selectKakaobook();
+		logger.debug("결과:{}",kakaobooklist);
+		model.addAttribute("kakaobooklist",kakaobooklist);
+		return "kakaobooklist";
 	}
 }
