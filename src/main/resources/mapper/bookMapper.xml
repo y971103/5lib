@@ -60,4 +60,8 @@
 		and id = #{id}
 </update>
 
+<select id="selectKakaobook" resultType="Kakaobook">
+		select * from kakao_book
+	</select>
+
 </mapper>
