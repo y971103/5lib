@@ -25,12 +25,6 @@ public class BookController {
 	
 	@Autowired
 	BookDAO dao;
-	
-	@RequestMapping(value="kakaobook", method=RequestMethod.GET)
-	public String book() {
-				
-		return "bookjsp/kakaobook";
-	}
 
 	
 	// 한줄 리뷰 관련 컨트롤러	
@@ -82,11 +76,16 @@ public class BookController {
 //	}
 	
 	//kakaobook arraylist
-	@RequestMapping(value="/list",method=RequestMethod.GET)
+	@RequestMapping(value="/kakaobook",method=RequestMethod.GET)
 	public String list(Model model) {
 		ArrayList<Kakaobook> kakaobooklist = dao.selectKakaobook();
 		logger.debug("결과:{}",kakaobooklist);
 		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "kakaobooklist";
+		return "bookjsp/kakaobook";
 	}
+	
+	/*
+	 * @RequestMapping(value="/kakaobook",method=RequestMethod.GET) public String
+	 * kakaobook() { return "kakaobook"; }
+	 */
 }

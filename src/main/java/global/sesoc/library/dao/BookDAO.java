@@ -46,7 +46,7 @@ public class BookDAO {
 
 	public ArrayList<Kakaobook> selectKakaobook() {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		ArrayList<Kakaobook> kakaobooklist = mapper.seletKakaobook();
+		ArrayList<Kakaobook> kakaobooklist = mapper.selectKakaobook();
 		return kakaobooklist;
 	}
 }
