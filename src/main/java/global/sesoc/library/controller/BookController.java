@@ -91,13 +91,13 @@ public class BookController {
 //	}
 	
 	//kakaobook arraylist
-	@RequestMapping(value="/kakaobook",method=RequestMethod.GET)
+	@RequestMapping(value="kakaobook",method=RequestMethod.GET)
 	public String list(Model model) {
 		logger.debug("kakaobook 진입");
 		List<Kakaobook> kakaobooklist = dao.select();
 		logger.debug("결과:{}",kakaobooklist);
 		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "bookjsp/kakaobook";
+		return "memberjsp/index";
 	}
 	
 	
