@@ -226,6 +226,7 @@ public class BoardController {
 		return "redirect:read?Boardnum=" + reply.getBoardnum();
 	}
 	
+<<<<<<< HEAD
 ////////////////////////////////		essay		//////////////////////////
 	
 	
@@ -270,5 +271,7 @@ public class BoardController {
 	}
 	
 	
+=======
+>>>>>>> c96f91aa4803f3f45ee66bb85c380cb2c8961e9b
 	
 }

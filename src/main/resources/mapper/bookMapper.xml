@@ -7,7 +7,7 @@
 <mapper namespace="global.sesoc.library.dao.bookMapper">
 
 <!-- 한줄평 저장 -->
-<insert id="insertReview" parameterType="Review">
+<!-- <insert id="insertReview" parameterType="Review">
 	insert into review (
 		reviewnum
 		, booknum
@@ -22,35 +22,35 @@
 		, #{content}
 		, #{id}
 	)
-</insert>
+</insert> -->
 
 <!-- 한줄평 삭제 -->
-<delete id="deleteReview" parameterType="Review">
+<!-- <delete id="deleteReview" parameterType="Review">
 	delete from
 		review
 	where
 		reviewnum = #{reviewnum}
 		and id = #{id}
-</delete>
+</delete> -->
 
 <!-- 한줄평 목록 -->
-<select id="listReview" parameterType="int" resultType="Review">
+<!-- <select id="listReview" parameterType="int" resultType="Review">
 	select 
 		reviewnum
 		, id
 		, to_char(inputdate, 'YYYY-MM-DD') inputdate
 		, content
-	<!-- , likecnt 	좋아요 기능 추후에 협의-->	
+	, likecnt 	좋아요 기능 추후에 협의	
 	from 
 		review
 	where
 		booknum = #{booknum}
 	order by 
 		reviewnum desc
-</select>
+</select> -->
 
 <!-- 한줄평 수정 -->
-<update id="updateReview" parameterType="Review">
+<!-- <update id="updateReview" parameterType="Review">
 	update
 		review
 	set
@@ -58,7 +58,9 @@
 	where
 		reviewnum = #{reviewnum}
 		and id = #{id}
-</update>
+</update> -->
+
+
 
 <select id="selectKakaobook" resultType="Kakaobook">
 		select * from kakao_book

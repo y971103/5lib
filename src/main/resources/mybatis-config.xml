@@ -14,6 +14,6 @@
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/boardMapper.xml" /> 
 		<mapper resource="mapper/essayMapper.xml" /> 
-		<!--  <mapper resource="mapper/bookMapper.xml" /> -->
+		<mapper resource="mapper/bookMapper.xml" />  
 	</mappers>
 </configuration>
