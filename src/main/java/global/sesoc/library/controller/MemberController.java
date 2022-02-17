@@ -16,6 +16,7 @@ import global.sesoc.library.vo.Members;
 
 
 @Controller
+@RequestMapping("member")
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
@@ -23,13 +24,13 @@ public class MemberController {
 	MemberDAO dao;
 	
 
-	@RequestMapping (value="member/login_signup", method=RequestMethod.GET)
+	@RequestMapping (value="login_signup", method=RequestMethod.GET)
 	public String signupForm(Model model) {
 		return "memberjsp/login_signup";
 	}
 
 	// 회원가입
-	@RequestMapping (value="member/register", method=RequestMethod.POST)
+	@RequestMapping (value="register", method=RequestMethod.POST)
 	public String signup(Model model, Members member) {
 		
 		logger.info("전달된 param: {}", member);
@@ -41,12 +42,12 @@ public class MemberController {
 	}
 	
 	// 로그인
-	@RequestMapping(value = "member/login", method = RequestMethod.GET)
+	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "memberjsp/login_signup";
 	}
 	
-	@RequestMapping(value = "member/login", method = RequestMethod.POST)
+	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String login(HttpSession session, String id, String password) {
 		Members member = dao.getMember(id);
 		
@@ -61,7 +62,7 @@ public class MemberController {
 	}
 	
 	// 로그아웃
-	@RequestMapping(value = "member/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");
 		return "memberjsp/login_signup";
@@ -69,7 +70,7 @@ public class MemberController {
 	
 	
 	// 개인정보 수정 폼 이동
-	@RequestMapping(value = "member/update", method= RequestMethod.GET)
+	@RequestMapping(value = "update", method= RequestMethod.GET)
 	public String update(HttpSession session, Model model) {
 		//세션의 아이디를 읽어서 DB에서 개인정보를 검색
 		String id = (String) session.getAttribute("loginId");  // 캐스팅 필요.
@@ -80,7 +81,7 @@ public class MemberController {
 	}
 	
 	// 개인정보 수정 내용 DB에 반영
-	@RequestMapping(value = "member/update", method= RequestMethod.POST)
+	@RequestMapping(value = "update", method= RequestMethod.POST)
 	public String update(Members member, HttpSession session) {			
 		logger.debug("수정폼에서 전달된 값 {}", member);
 		String id =(String) session.getAttribute("loginId");
@@ -89,31 +90,31 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-//	@RequestMapping(value="book/kakaobook", method=RequestMethod.GET)
-//	public String index() {
-//		
-//		return "memberjsp/index";
-//	}
+	@RequestMapping(value="index", method=RequestMethod.GET)
+	public String index() {
+		
+		return "memberjsp/index";
+	}
 	
-	@RequestMapping(value="member/viewer", method=RequestMethod.GET)
+	@RequestMapping(value="viewer", method=RequestMethod.GET)
 	public String viewer() {
 				
 		return "memberjsp/viewer";
 	}
 	
-	@RequestMapping(value="member/library", method=RequestMethod.GET)
+	@RequestMapping(value="library", method=RequestMethod.GET)
 	public String library() {
 		
 		return "memberjsp/library";
 	}
 	
-	@RequestMapping(value="member/book_info", method=RequestMethod.GET)
+	@RequestMapping(value="book_info", method=RequestMethod.GET)
 	public String bookinfo() {
 		
 		return "memberjsp/book_info";
 	}
 	
-	@RequestMapping(value="member/contact", method=RequestMethod.GET)
+	@RequestMapping(value="contact", method=RequestMethod.GET)
 	public String contact() {
 		
 		return "memberjsp/contact";
