@@ -112,7 +112,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login/SignUP</a>
+                            <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
                         </nav>
                     </div>
                 </div>

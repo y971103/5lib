@@ -10,7 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>개인 정보 수정</title>
 
-<link rel="stylesheet" type="text/css" href="../resources/css/default.css" />
+ <link rel="stylesheet" href="../resources/css/log-style.css">
+ <link rel="icon" href="../resources/img/favicon.png">
 
 <script>
 //가입폼 확인
@@ -41,46 +42,33 @@ function formCheck() {
 }
 </script>
 </head>
-
 <body>
-<div class="centerdiv">
-<h1>[ 개인 정보 수정 ]</h1>
-
-<form id="updateform" action="update"  method="post" onsubmit="return formCheck();">
-<table>
-	<tr>
-		<th>ID</th>
-		<td>${member.id}</td>
-	</tr>
-	<tr>
-		<th>비밀번호</th>
-		<td><input type="password" name="password" id="password" placeholder="비밀번호 입력"><br>
-		<input type="password" id="password2" placeholder="비밀번호 다시 입력"></td>
-	</tr>
-	<tr>
-		<th>이름</th>
-		<td><input type="text" name="name" id="name" placeholder="이름 입력"  value="${member.name}"></td>
-	</tr>
-	<tr>
-		<th>전화번호</th>
-		<td><input type="text" name="phone" placeholder="전화번호 입력"  value="${member.phone}"></td>
-	</tr>
-	<tr>
-		<th>주소</th>
-		<td><input type="text" name="address" placeholder="주소 입력"  value="${member.address}" style="width:300px;"></td>
-	</tr>
-	<tr>
-		<th>이메일</th>
-		<td><input type="text" name="email" id="email" placeholder="이메일  입력"  value="${member.email}"></td>
-	</tr>
-</table>
-	<br>
-
-	<input type="submit" value="수정" />
-	<input type="reset" value="다시 쓰기" />
-
-</form>
-
-</div>
+	<div class="wrap">
+        <div class="form-wrap">
+         	<div class="button-wrap">
+                <div id="btn"></div>
+                <button type="button" class="togglebtn" style="left: 50px;" onclick="update()">Update</button>
+			</div>
+		<form id="updateForm" action="update" class="input-group" style="top: 100px; left: 50px;" method="post" onsubmit="return formCheck();">
+                    <input type="password" id="password" class="input-field" placeholder="* Enter Password" name="password" required>
+                    <input type="password" id="password2" class="input-field" placeholder="* Repeat Password" name="password2" required>
+                     <input type="text" class="input-field" placeholder="* Name" name="name" required>
+                    <input type="email" class="input-field" placeholder="  Your Email" name="email">
+                    <input type="PhoneNumber" class="input-field" placeholder="  Write PhoneNumber" name="phone">
+                    <div style="color: #999; height: 50px;">Favorite Genre
+                    <select name="genre_num" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
+                        <option value="인문">Humanities</option>
+                        <option value="소설">Novel</option>
+                        <option value="여행">Travel</option>
+                        <option value="에세이">Essay</option>
+                        <option value="자기계발">Self-development</option>
+                        <option value="라이프스타일">Life-style</option>
+                    </select></div>
+                    <br>
+                   <input type="submit" class="submit" value="update">
+        </form>
+ 		</div>
+ 	</div>
+       
 </body>
 </html>
