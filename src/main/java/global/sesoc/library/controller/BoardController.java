@@ -263,7 +263,11 @@ public class BoardController {
 		return "boardjsp/essaywrite";
 	}
 	
-	
+	@RequestMapping(value="comment", method=RequestMethod.GET)
+	public String comment() {
+			
+		return "boardjsp/comment";
+	}
 	
 	
 	
