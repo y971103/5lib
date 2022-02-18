@@ -30,6 +30,8 @@ public interface BoardMapper {
 	public int deleteReply(Reply reply);
 
 	public int updateReply(Reply reply);
+
+	public void writenotice(Board board);
 	
 	
 
