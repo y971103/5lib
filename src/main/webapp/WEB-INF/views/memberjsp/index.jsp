@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../resources/css/hover.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
+    
 </head>
 
 <body>
