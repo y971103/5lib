@@ -87,6 +87,7 @@ public class BoardController {
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
 		ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		
 		//마스킹 추가
 		logger.debug("list: {}", boardlist);
 		
