@@ -52,7 +52,7 @@
                                         <a class="nav-link dropdown-toggle" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
-                                            Mypage
+                                            My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
@@ -77,9 +77,9 @@
                                 </ul>
                             </div>
                            <c:if test="${loginId != null}">
-							<h2>
+							<h4>
 								${sessionScope.loginId}님 <br>
-							</h2>
+							</h4>
 							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
 							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
@@ -96,7 +96,7 @@
 			<div id="main">
 
 				<header class="major container medium" style="margin-bottom: 0px; width: 1000px;">
-					<h2>lib-service 프로젝트입니다
+					<h1><strong>lib-service</strong></h1>
 					<br />
 					</header>
 
@@ -104,7 +104,7 @@
 					<section class="feature left">
 						<a href="#" class="image icon solid fa-tags"><img src="../resources/images/pic09.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Team Purpose</h3>
+							<h3>Project Purpose</h3>
 							물리적인 도서의 구입량이 급감하고 있는 반면, 현대인이 인터넷에 연결되어 있는 </br>
 							시간은 취침시간을 제외한 하루종일이라고 해도 과언이 아닐 정도가 되었다. </br>
 							때문에 언제 어디서나 웹에 접속하여 읽고 싶은 도서를 </br>
@@ -116,35 +116,33 @@
 						<div class="content">
 							<h3>Team Members</h3>
 							<strong>Team leaders</strong> </br>
-							최승환 </br>
+							최승환   (choi90@gmail.com)</br>
+							<br>
 							<strong>Team members</strong> </br>
-							김기도, 김소휘, 김은지, 염한승
+							김기도   (kkd9255@gmail.com) <br>
+							김소휘   (sohwe05@gmail.com) <br>
+						         김은지   (eunji94@naver.com) <br>
+							염한승   (y971103@naver.com) <br>
 						</div>
 					</section>
 					<section class="feature left">
 						<a href="#" class="image icon solid fa-address-book"><img src="../resources/images/pic03.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Member Address</h3>
+							<h3>About Team</h3>
 							<table>
 								<tr>
-									<th style="width: 50px;">최승환</th>
-									<td>2</td>
+									<td><strong>Company</strong></td><br>
+									<td><strong>KITA IT Academy</strong></td>
+									
 								</tr>
 								<tr>
-									<th>김기도</th>
-									<td>2</td>
+									<td><strong>Team Name</strong></td><br>
+									<td><strong>Digital Master Team 5</strong></td>
+									
 								</tr>
 								<tr>
-									<th>김소휘</th>
-									<td>2</td>
-								</tr>
-								<tr>
-									<th>김은지</th>
-									<td>2</td>
-								</tr>
-								<tr>
-									<th>염한승</th>
-									<td>y971103@naver.com</td>
+									<td><strong>GitHub</strong></td><br>
+									<th><strong>https://github.com/y971103/5lib</strong></th>
 								</tr>
 							</table>
 						</div>
@@ -154,6 +152,7 @@
 						<div class="content">
 							<h3>Location</h3>
 							<p>(06090)서울특별시 강남구 학동로 426 (삼성동) 02-3423-5114</p>
+							<p>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
 						</div>
 					</section>
 				</div>
