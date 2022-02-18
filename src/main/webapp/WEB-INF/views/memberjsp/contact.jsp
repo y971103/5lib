@@ -151,8 +151,9 @@
 						<a href="#" class="image icon solid fa-map-marker-alt"><img src="../resources/images/pic11.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Location</h3>
-							<p>(06090)서울특별시 강남구 학동로 426 (삼성동) 02-3423-5114</p>
+							<p>(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
 							<p>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
+							<p>전화 02-6000-5378,5379 &nbsp;&nbsp;  팩스 02-6000-5066</p>
 						</div>
 					</section>
 				</div>
