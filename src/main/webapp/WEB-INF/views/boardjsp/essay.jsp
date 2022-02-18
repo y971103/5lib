@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="bottom:2px;">
                             <a class="navbar-brand" href="<c:url value="/member/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
