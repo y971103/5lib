@@ -118,9 +118,9 @@
 	)
 	values (
 		reply_seq.nextval					<!-- ★ 댓글 번호에 사용할 시퀀스 만들어주기!! -->
+		, #{content, jdbcType=VARCHAR}
+		, #{id, jdbcType=VARCHAR}
 		, #{boardnum}
-		, #{content}
-		, #{id}
 	)
 </insert>
 
