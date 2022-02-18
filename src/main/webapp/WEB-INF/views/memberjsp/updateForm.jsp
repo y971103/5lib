@@ -45,10 +45,7 @@ function formCheck() {
 <body>
 	<div class="wrap">
         <div class="form-wrap">
-         	<div class="button-wrap">
-                <div id="btn"></div>
-                <button type="button" class="togglebtn" style="left: 50px;" onclick="update()">Update</button>
-			</div>
+         	<img src="../resources/img/logo.png" alt="logo" width="170" style="margin-top:30px; margin-left:100px;">
 		<form id="updateForm" action="update" class="input-group" style="top: 100px; left: 50px;" method="post" onsubmit="return formCheck();">
                     <input type="password" id="password" class="input-field" placeholder="* Enter Password" name="password" required>
                     <input type="password" id="password2" class="input-field" placeholder="* Repeat Password" name="password2" required>
