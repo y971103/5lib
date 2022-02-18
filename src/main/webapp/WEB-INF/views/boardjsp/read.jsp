@@ -33,7 +33,13 @@
     rel="stylesheet">
 
 
-    
+    <script>
+    function deleteCheck(boardnum){
+    	if(confirm("정말 삭제하시겠습니까?")){
+    		location.href = 'delete?boardnum=' + boardnum;
+    	}
+    }
+    </script>
 </head>
 
 <body>
@@ -153,7 +159,6 @@
                 </tr>
 
                 <tr>
-                    
                   <th style="width: 160px;">수정하기</th>
                   <td style="width: 300px;">${board.hits}</td>
                 </tr>
@@ -162,6 +167,16 @@
                   <td colspan="6" height="400">${board.content}</td>
                 </tr>
             </table>
+            
+            <c:if test="${loginId == board.id}">
+				<!-- 현재글 삭제하기-->
+				<a href="javascript:deleteCheck(${board.boardnum})">삭제</a>
+				<!-- 현재글 수정하기-->
+				<a href="edit?boardnum=${board.boardnum}">수정</a>
+			</c:if>
+            
+            <a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
+            
         	</div>
         </div>
         </div>        
