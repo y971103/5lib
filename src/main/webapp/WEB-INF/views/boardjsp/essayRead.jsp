@@ -45,7 +45,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/member/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -56,13 +56,13 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/member/index"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle"id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -74,7 +74,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown_1"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Board
@@ -156,7 +156,17 @@
                     <td colspan="6" height="500">${essay.title}독후감 내용 읽어들이기</td>
                 </tr>
                 </table>
-                <hr>
+                
+                <!-- 본인 글인 경우에만 보이기 -->
+				<c:if test="${loginId == board.id}">
+					<!-- 현재글 삭제하기-->
+					<a href="javascript:deleteCheck(${board.boardnum})">삭제</a>
+					<!-- 현재글 수정하기-->
+					<a href="edit?boardnum=${board.boardnum}">수정</a>
+				</c:if>
+					
+				<!-- 목록보기-->
+				<a href="list">목록보기</a>
                 </div>
             </div>
             </div>        
