@@ -92,7 +92,13 @@
                 </div>
             </div>
         </div>
-        <!-- 검색폼 -->
+ 
+    </header>
+    <!-- 헤더 끝-->
+
+    <!-- Header part end-->
+    
+           <!-- 검색폼 -->
 <form id="pagingForm" method="get" action="list">
 	<input type="hidden" name="page" id="page" />
 	<select name ="type">
@@ -100,14 +106,10 @@
 		<option value = "2">=제목=</option>
 		<option value = "3">=내용=</option>
 		</select>
-			제목 : <input type="text"  name="searchText" value="${searchText}" />
-	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
+			검색해주세요 : <input type="text"  name="searchText" value="${searchText}" />
+	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
 </form>
 <!-- /검색폼 --> 
-    </header>
-    <!-- 헤더 끝-->
-
-    <!-- Header part end-->
 
     <!--책 보여 주는데-->
     <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #d1f8d8, #faffff);">
