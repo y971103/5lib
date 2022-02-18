@@ -33,7 +33,8 @@
 	update
 		board
 	set
-		board_type = 2
+		board_type = 2,
+		title = '[공지]'+ #{title}
 	where
 		id = 'admin'
 </update>
@@ -89,7 +90,7 @@
 	where 
 		title like '%' || #{searchText} || '%'
 	</if>
-	order by boardnum desc
+	order by board_type desc, boardnum desc
 </select>
 
 

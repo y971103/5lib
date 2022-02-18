@@ -93,7 +93,7 @@ public class BookController {
 		List<Kakaobook> kakaobooklist = dao.select();
 		logger.debug("결과:{}",kakaobooklist);
 		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "memberjsp/index";
+		return "bookjsp/index";
 	}
 	
 	

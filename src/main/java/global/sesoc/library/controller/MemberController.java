@@ -38,7 +38,7 @@ public class MemberController {
 		if (result != 1) {
 			return "memberjsp/login_signup";
 		}
-		return "memberjsp/index";
+		return "bookjsp/index";
 	}
 	
 	// 로그인
@@ -53,7 +53,7 @@ public class MemberController {
 		
 		if (member != null && member.getPassword().equals(password)) {
 			session.setAttribute("loginId", member.getId());
-			return "memberjsp/index";
+			return "bookjsp/index";
 		}
 		//맞지 않으면 로그인폼으로 이동
 		else {
@@ -90,11 +90,11 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value="index", method=RequestMethod.GET)
-	public String index() {
-		
-		return "memberjsp/index";
-	}
+//	@RequestMapping(value="index", method=RequestMethod.GET)
+//	public String index() {
+//		
+//		return "memberjsp/index";
+//	}
 	
 	@RequestMapping(value="viewer", method=RequestMethod.GET)
 	public String viewer() {
