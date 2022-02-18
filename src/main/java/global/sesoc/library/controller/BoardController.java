@@ -186,7 +186,7 @@ public class BoardController {
 		//글 수정 처리
 		dao.updateBoard(board);
 		//원래의 글읽기 화면으로 이동 
-		return "redirect:read?QnAnum=" + board.getBoardnum();
+		return "redirect:read?boardnum=" + board.getBoardnum();
 	}
 	
 	/**

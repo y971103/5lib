@@ -158,11 +158,11 @@
                 </table>
                 
                 <!-- 본인 글인 경우에만 보이기 -->
-				<c:if test="${loginId == board.id}">
+				<c:if test="${loginId == essay.id}">
 					<!-- 현재글 삭제하기-->
-					<a href="javascript:deleteCheck(${board.boardnum})">삭제</a>
+					<a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
 					<!-- 현재글 수정하기-->
-					<a href="edit?boardnum=${board.boardnum}">수정</a>
+					<a href="edit?boardnum=${essay.essaynum}">수정</a>
 				</c:if>
 					
 				<!-- 목록보기-->
