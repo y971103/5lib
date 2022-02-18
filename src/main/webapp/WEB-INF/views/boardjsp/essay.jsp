@@ -123,18 +123,16 @@
                       <thead class="thead-primary">
                         <tr>
                             <th>#</th>
-                            <th>Book</th>
-                            <th>Title</th>
-                          <th>Writer</th>
-                          <th>hits</th>
-                          <th>Date</th>
+                            <th>제목</th>
+                          <th>작성자</th>
+                          <th>조회수</th>
+                          <th>등록일</th>
                         </tr>
                       </thead>
                       <tbody>
                       	<c:forEach var="essay" items="${essaylist}">
                         <tr class="alert" role="alert">
                             <td>${essay.essaynum}</td>
-                            <!-- <td>${essay.booknum}</td> -->
                             <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
                             <td>${essay.id}</td>
                             <td>${essay.hits}</td>
