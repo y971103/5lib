@@ -93,7 +93,8 @@
 	order by board_type desc, boardnum desc
 </select>
 
-<!-- <select id="listBoard" parameterType="string" resultType="Board">
+<!--마스킹 추가 
+<select id="listBoard" parameterType="string" resultType="Board">
 	select 
 		boardnum
 		, title
@@ -108,8 +109,8 @@
 		title like '%' || #{searchText} || '%'
 	</if>
 	order by boardnum desc
-</select>
- -->
+</select> -->
+
 
 <!-- 공지사항 게시글 삭제 -->
 <delete id="deleteBoard" parameterType="Board">
