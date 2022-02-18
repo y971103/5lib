@@ -5562,6 +5562,8 @@ h6 {
 .switch-wrap {
   margin-bottom: 10px;
 }
-
+.navbar-brand{
+	width:210px;
+}
 
 /*# sourceMappingURL=../css/style.map */
