@@ -55,7 +55,15 @@
         </script>	
 
     <style>
-    
+    input[type=submit] {
+	  background-color: #04AA6D;
+	  border: none;
+	  color: white;
+	  padding: 16px 32px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
     </style>
 </head>
 
@@ -133,25 +141,28 @@
             <div class="container">
                 <div class="d-none d-sm-block mb-5 pb-4">
                     <form id="writeform" action="write"  method="post">
-                        <table>
-                            <tr>
-                                <th>제목</th>
-                                <td>
-                                    <input type="text" name="title" id="title" style="width:1000px;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>내용</th> 
-                                <td>
-                                    <textarea name="content" id="content" style="width:1000px;height:200px;resize:none;"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="white center">
-                                    <input type="submit" class="btn_1 text-cnter" value="저장" />
-                                </td> 
-                            </tr>
-                        </table>
+                	<div class="table-wrap">
+                    <table class="table myaccordion table-hover" id="accordion">
+                        <tr>
+                          <td>제목</td>
+                          <td>
+                             <input type="text" name="title" id="title" style="width:1000px;">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>내용</td> 
+                          <td>
+                             <textarea name="content" id="content" style="width:1000px;height:200px;resize:none;"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2">
+                        		<input type="submit" value="저장" style="margin-left: 500px"/>
+                        	</td>
+                        </tr>
+                    </table>
+                    
+                    </div>
                     </form>
                 </div> 
             </div>
