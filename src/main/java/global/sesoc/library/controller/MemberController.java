@@ -1,5 +1,7 @@
 package global.sesoc.library.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.MemberDAO;
+import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
 
@@ -108,9 +111,12 @@ public class MemberController {
 		return "memberjsp/library";
 	}
 	
-	@RequestMapping(value="book_info", method=RequestMethod.GET)
-	public String bookinfo() {
-		
+	@RequestMapping(value="book_info",method=RequestMethod.GET)
+	public String list(Model model) {
+		logger.debug("kakaobook 진입");
+		List<Kakaobook> kakaobooklist = dao.select();
+		logger.debug("결과:{}",kakaobooklist);
+		model.addAttribute("kakaobooklist",kakaobooklist);
 		return "memberjsp/book_info";
 	}
 	

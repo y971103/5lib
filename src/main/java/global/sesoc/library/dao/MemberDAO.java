@@ -1,10 +1,13 @@
 package global.sesoc.library.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.dao.MemberMapper;
+import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
 
@@ -37,6 +40,12 @@ public class MemberDAO {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		int result = mapper.updateMember(member);
 		return result;
+	}
+
+	public List<Kakaobook> select() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		List<Kakaobook> book = mapper.selectKakaobook();
+		return book;
 	}
 
 }

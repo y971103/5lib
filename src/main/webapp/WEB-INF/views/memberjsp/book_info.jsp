@@ -98,15 +98,14 @@
         </div>
     </header>
     <!-- 헤더 끝-->
-
     <!-- Product Details Section Begin -->
     <section>
 		<table class="book">
-		<c:forEach var="book" items="${booklist}">    
+		<c:forEach var="book" items="${kakaobooklist}" begin="0" end="0">    
         <div class="container" style="margin-bottom: 20px;">
             <div class="row">       
                 <div style="padding-left: 10%;">
-                    <img src="../resources/img/test22.jpg" alt="">
+                    <img src="download?filename=${book.thumbnail}">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
@@ -120,7 +119,7 @@
                                     <span style="font-size: large;"><strong>저자</strong></span>
                                     <div>
                                     	<td class="bookauthor">		<!-- 책 저자 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.author}</b></strong></h3>
+                                       		<h3><strong><b style="margin-right: 20px;">${book.authors}</b></strong></h3>
                                     	</td>
                                     </div>
                                 </li>
@@ -136,7 +135,7 @@
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
                                         <td class="bookp_date">			<!-- 책 출간 일자 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.p_date}</b></strong></h3>
+                                       		<h3><strong><b style="margin-right: 20px;">${book.datetime}</b></strong></h3>
                                     	</td>
                                     </div>
                                 </li>
@@ -149,7 +148,7 @@
                             <ul>
                                 <li style="width: 500px;" class="binfo">
                                     <td class="bookintroduce">			<!-- 책 소개 글 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.introduce}</b></strong></h3>
+                                       		<h3><strong><b style="margin-right: 20px;">${book.contents}</b></strong></h3>
                                     </td>
                                 </li>
                             </ul>
