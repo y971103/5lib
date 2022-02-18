@@ -34,7 +34,7 @@
 		board
 	set
 		board_type = 2,
-		title = '[공지]'+ #{title}
+		title = '[공지]'|| title
 	where
 		id = 'admin'
 </update>
