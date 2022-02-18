@@ -96,6 +96,18 @@
         </div>
     </header>
     <!-- 헤더 끝-->
+    <!-- 검색폼 -->
+<form id="pagingForm" method="get" action="list">
+	<input type="hidden" name="page" id="page" />
+	<select name ="type">
+		<option value = "1">=전체=</option>
+		<option value = "2">=제목=</option>
+		<option value = "3">=내용=</option>
+		</select>
+			제목 : <input type="text"  name="searchText" value="${searchText}" />
+	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
+</form>
+<!-- /검색폼 --> 
 
     <!-- 도서 슬라이드(배너)-->
     <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
