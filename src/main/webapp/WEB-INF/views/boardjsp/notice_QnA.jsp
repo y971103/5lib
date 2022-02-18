@@ -32,7 +32,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-
+	<script>
+	function pagingFormSubmit(currentPage) {
+		var form = document.getElementById('pagingForm');
+		var page = document.getElementById('page');
+		page.value = currentPage;
+		form.submit();
+	}
+	</script>
+	
+	
     
 </head>
 
@@ -144,9 +153,25 @@
                         </c:forEach>
                       </tbody>
                     </table>
-                </div>
+                
+                <div class="h5 mb-4 text-center">
+				<!-- 페이지 이동 부분 -->                      
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+			
+				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+					<c:if test="${counter == navi.currentPage}"><b></c:if>
+						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+					<c:if test="${counter == navi.currentPage}"></b></c:if>
+				</c:forEach>
+				&nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+				</div>
+				
             </div>
         </div>
+    	</div>
     </div>
 </section>
 

@@ -59,9 +59,9 @@
 	update
 		board
 	set
-		hits = hits + 1logo
-	wherelogo
-		boardnum = #{boardnum}logo
+		hits = hits + 1
+	where
+		boardnum = #{boardnum}
 </update>
 
 <!-- 전체 글 개수 -->
