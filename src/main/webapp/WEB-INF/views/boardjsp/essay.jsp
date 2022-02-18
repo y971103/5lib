@@ -122,7 +122,7 @@
                       <thead class="thead-primary">
                         <tr>
                             <th>#</th>
-                            <th>Bookㄹ</th>
+                            <th>Book</th>
                             <th>Title</th>
                           <th>Writer</th>
                           <th>hits</th>

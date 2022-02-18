@@ -174,7 +174,7 @@
             <div class="text-left">
             <form id="reply" action="replyWrite" method="post">
                 <h3>댓글</h3>
-                <textarea cols="100" rows="1">
+                <textarea cols="100" rows="1" name="content">
    
                 </textarea>
                 <input type = "submit" value="저장하기">
@@ -183,12 +183,13 @@
 			<c:forEach var="reply" items="${replylist}">
 				<tr>
 					<td class="replyid">
-						<b>${reply.id}</b>
+						<b style="margin-right: 20px;">${reply.id}</b><hr>
 					</td>
-					<td class="replytext">
-						${reply.text}
+					<td class="replycontent">
+						${reply.content}<hr>
+					</td>
 				</tr>	
-					 
+		 
 			</c:forEach>
 			</table> 
       
