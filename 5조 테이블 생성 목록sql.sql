@@ -125,7 +125,7 @@ CREATE TABLE reply
 	-- 게시글 댓글 번호 
 	replynum number NOT NULL,
 	-- 게시글 댓글 내용 
-	content varchar2(200),
+	content varchar2(200) NOT NULL,
 	-- 댓글 아이디 
 	id varchar2(20) NOT NULL,
 	-- 게시글 번호 

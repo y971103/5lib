@@ -23,10 +23,11 @@
     <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
     <!-- hover CSS -->
     <link rel="stylesheet" href="../resources/css/hover.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="../resources/css/style.css">
+   
     
     <link rel="stylesheet" href="../resources/css/essaytable.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../resources/css/style.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -122,7 +123,7 @@
                       <thead class="thead-primary">
                         <tr>
                             <th>#</th>
-                            <th>Bookㄹ</th>
+                            <th>Book</th>
                             <th>Title</th>
                           <th>Writer</th>
                           <th>hits</th>

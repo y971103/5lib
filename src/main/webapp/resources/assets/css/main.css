@@ -1406,9 +1406,12 @@ input, select, textarea {
 
 		}
 
-	strong, b, h1, h2, h3, h4, h5, h6 {
-		font-weight: 400;
-		color: #363636;
+	strong, b, h1, h2, h3, h4, h5, h6 {	
+	  font-size: 30px;
+	  line-height: 28px;
+	  color: #0c3e72;
+	  font-weight: 600;
+	  line-height: 1.222;
 	}
 
 	h1 {
@@ -1417,7 +1420,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.8em;
+		font-size: 30px;
 		letter-spacing: -0.015em;
 	}
 
@@ -2248,5 +2251,8 @@ input, select, textarea {
 			font-weight: 700;
 			color: white;
 		}
-
+		
+		.nav-link{
+			font-weight:400;
+		}
 	
