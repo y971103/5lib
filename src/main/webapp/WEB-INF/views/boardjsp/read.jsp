@@ -115,7 +115,7 @@
     
 
     <!--게시판 읽기-->                               
-<!--Borad The Read 게시판 읽기-->                               
+	<!--Borad The Read 게시판 읽기-->                               
     <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #ffffff);"> <!-- #99b19c-->
         <div id="main">
        

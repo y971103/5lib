@@ -1,7 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!doctype html>
 <html lang="en">
@@ -33,7 +32,39 @@
     rel="stylesheet">
 
 
-    
+    <script>
+        //글쓰기폼 확인
+        function formCheck() {
+            var title = document.getElementById('title');
+            var content = document.getElementById('content');
+            
+            if (title.value.length < 5) {
+                alert("제목을 입력하세요.");
+                title.focus();
+                title.select();
+                return false;
+            }
+            if (content.value.length < 5) {
+                alert("내용을 입력하세요.");
+                content.focus();
+                content.select();
+                return false;
+            }
+            return true;
+        }
+        </script>	
+
+    <style>
+    input[type=submit] {
+	  background-color: #04AA6D;
+	  border: none;
+	  color: white;
+	  padding: 16px 32px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+    </style>
 </head>
 
 <body>
@@ -62,7 +93,7 @@
                                         <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle"id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -89,96 +120,55 @@
                                     </li>
                                 </ul>
                             </div>
-                            <c:if test="${loginId != null}">
-							<h2>
-								${sessionScope.loginId}님 <br>
-							</h2>
-							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="update" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
-							</c:if>
-							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
-                            </c:if>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- 헤더 끝-->
-     <!--essayRead 에세이 읽기 폼 --> 
-<body> 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-4">
-                    <br></br>
-                    <h1 class="heading-section">essayRead</h1>
-                    <hr>
-                </div>
-            </div>
-            
-    <section article>
-            <div class="col-lg-12" style="padding-left: 10%;">
-                <div class="col-lg-12" style="padding-right: 10%;">
-               <table border="1">
-                
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-4">
+                <br></br>
+                <h1 class="heading-section">QnA</h1>
+            <br></br>
+        	</div>
+        </div>
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+                    <form id="writeform" action="edit"  method="post">
+                	<div class="table-wrap">
+                	
+                	<input type="hidden" name="boardnum" value="${board.boardnum }">
+                    <table class="table myaccordion table-hover" id="accordion">
                         <tr>
-                        <th style="width: 50px;">번호</th>
+                          <td>제목</td>
+                          <td>
+                             <input type="text" name="title" id="title" style="width:1000px;" value="${board.title}">
+                          </td>
                         </tr>
                         <tr>
-                        <th style="width: 50px;">${essay.essaynum}</th>
-                        
-                        </tr>
-                         
-                        <tr>
-                        <th style="width: 50px;">감상문 작성일</th>
+                          <td>내용</td> 
+                          <td>
+                             <textarea name="content" id="content" style="width:1000px;height:200px;resize:none;">${board.content}</textarea>
+                          </td>
                         </tr>
                         <tr>
-                        <th style="width: 50px;">${essay.inputdate}</th>
+                        	<td colspan="2">
+                        		<input type="submit" value="수정" style="margin-left: 500px"/>
+                        	</td>
                         </tr>
- 
-                        <tr>
-                            <th style="width: 50px;">작성자 아이디</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 50px;">${essay.id}</th>
-                        </tr>   
                     </table>
-                    <br>
-    <section article>
-            <div class="col-lg-12" style="padding-left: 10%;">
-            <div class="col-lg-12" style="padding-right: 10%;">
-                <div class="section_tittle">
-                <table border="1">
-                
-
-                <tr>
-                    <td colspan="6" height="500">${essay.title}독후감 내용 읽어들이기</td>
-                </tr>
-                </table>
-                
-                <!-- 본인 글인 경우에만 보이기 -->
-				<c:if test="${loginId == board.id}">
-					<!-- 현재글 삭제하기-->
-					<a href="javascript:deleteCheck(${board.boardnum})">삭제</a>
-					<!-- 현재글 수정하기-->
-					<a href="edit?boardnum=${board.boardnum}">수정</a>
-				</c:if>
-					
-				<!-- 목록보기-->
-				<a href="list">목록보기</a>
-                </div>
+                    
+                    </div>
+                    </form>
+                </div> 
             </div>
-            </div>        
         </section>
-    </section>
-</body>
-    
-
-    
-
-                             
-
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -278,5 +268,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      <script src="../resources/js/custom.js"></script>
 </body>
 
-</html>
 </html>

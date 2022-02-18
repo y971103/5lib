@@ -160,7 +160,7 @@ public class BoardController {
 		
 		Board board = dao.getBoard(boardnum);
 		model.addAttribute("board", board);
-		return "boardjsp/editForm";
+		return "boardjsp/boardedit";
 	}
 	
 	/**
