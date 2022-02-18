@@ -10,7 +10,7 @@
 <insert id="insertReview" parameterType="Review">
 	insert into review (
 		reviewnum
-		, booknum
+		, isbn
 		, id
 		, content
 		, inputdate
@@ -18,7 +18,7 @@
 	)
 	values (
 		review_seq.nextval				
-		, #{booknum}
+		, #{isbn}
 		, #{content}
 		, #{id}
 	)
