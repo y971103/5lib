@@ -87,7 +87,19 @@ public class BoardController {
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
 		ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		//마스킹 추가
+		logger.debug("list: {}", boardlist);
 		
+		for (Board board : boardlist) {
+			//작성자(ID)값 가져오기
+			String finalID = board.getId();
+			//가져온 ID의 글자수 
+			int length = finalID.length();
+			length = length -3;
+			finalID = finalID.substring(0, length);
+			finalID = finalID + "***";
+			board.setId(finalID);
+		}
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("boardlist", boardlist);
