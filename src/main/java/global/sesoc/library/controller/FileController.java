@@ -24,14 +24,14 @@ public class FileController {
 	public void download(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 	// realPath : 상대경로에서 절대적인 경로로 변경하기 위해 사용하는 숨겨진 진짜 파일 경로. 소비자들에게 노출되어서는 안되며 수시로 변경된다.
-    String realPath = request.getSession().getServletContext().getRealPath("/resources/file");
+    String realPath = request.getSession().getServletContext().getRealPath("/resources/file/Epub 파일 목록");
     String path = realPath + "\\" + "moby-dick.epub";
     logger.info(path);
     
     byte[] fileByte = FileUtils.readFileToByteArray(new File(path));
 
     response.setContentType("application/octet-stream");
-    response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode("moby-dick.epub", "UTF-8")+"\";");
+    response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode("[공지영] 고등어.epub", "UTF-8")+"\";");
     response.setHeader("Content-Transfer-Encoding", "binary");
 
     response.getOutputStream().write(fileByte);
