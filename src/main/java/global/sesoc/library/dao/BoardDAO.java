@@ -23,6 +23,7 @@ public class BoardDAO {
 	public int insertBoard(Board board) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		int result = mapper.insertBoard(board);
+		mapper.writenotice(board);
 		return result;
 	}
 	

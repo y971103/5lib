@@ -68,6 +68,7 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
+	
 	/**
 	 * 글목록
 	 */
