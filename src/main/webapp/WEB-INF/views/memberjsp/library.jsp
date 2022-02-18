@@ -102,9 +102,9 @@
 <form id="pagingForm" method="get" action="list">
 	<input type="hidden" name="page" id="page" />
 	<select name ="type">
-		<option value = "1">=전체=</option>
-		<option value = "2">=제목=</option>
-		<option value = "3">=내용=</option>
+		<option value = "1">=제목=</option>
+		<option value = "2">=저자=</option>
+		<option value = "3">=출판사=</option>
 		</select>
 			검색해주세요 : <input type="text"  name="searchText" value="${searchText}" />
 	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
