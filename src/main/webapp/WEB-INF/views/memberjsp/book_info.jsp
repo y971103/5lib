@@ -38,7 +38,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -49,13 +49,13 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/member/index"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Mypage
@@ -67,7 +67,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown_1"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Board
@@ -86,8 +86,8 @@
 							<h2>
 								${sessionScope.loginId}님 <br>
 							</h2>
-							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="update" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
+							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
@@ -101,6 +101,8 @@
 
     <!-- Product Details Section Begin -->
     <section>
+		<table class="book">
+		<c:forEach var="book" items="${booklist}">    
         <div class="container" style="margin-bottom: 20px;">
             <div class="row">       
                 <div style="padding-left: 10%;">
@@ -108,25 +110,34 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3><strong>미드나잇 라이브러리</strong></h3>
+                        <td class="booktitle"> 						<!-- 책 제목 -->
+							<h3><strong><b style="margin-right: 20px;">${book.title}</b></strong></h3>
+						</td>
+					</div>
                         <div>
                             <ul>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>저자</strong></span>
                                     <div>
-                                       메트 헤이그
+                                    	<td class="bookauthor">		<!-- 책 저자 -->
+                                       		<h3><strong><b style="margin-right: 20px;">${book.author}</b></strong></h3>
+                                    	</td>
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출판사</strong></span>
                                     <div>
-                                        인플루엔셜
+                                        <td class="bookpublisher">		<!-- 책 출판사 -->
+                                       		<h3><strong><b style="margin-right: 20px;">${book.publisher}</b></strong></h3>
+                                    	</td>
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
-                                        2021.04.28
+                                        <td class="bookp_date">			<!-- 책 출간 일자 -->
+                                       		<h3><strong><b style="margin-right: 20px;">${book.p_date}</b></strong></h3>
+                                    	</td>
                                     </div>
                                 </li>
                             </ul>
@@ -137,17 +148,21 @@
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">
-                                    죽기로 결심한 주인공 ‘노라 시드’가 삶과 죽음 사이에 존재하는 미스터리한 도서관 ‘미드나잇 라이브러리’에서
-                                     눈을 뜨며 시작되는 이 소설은 노라가 인생의 두 번째 기회를 얻으며, 가장 완벽한 삶을 찾기 위한 모험을 떠나는 이야기이다. 
+                                    <td class="bookintroduce">			<!-- 책 소개 글 -->
+                                       		<h3><strong><b style="margin-right: 20px;">${book.introduce}</b></strong></h3>
+                                    </td>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <br>
+                    <br>																		<!-- 다운로드 경로는 따로 해줘야 함. -->
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
                 </div>
-                
+                </c:forEach>
+            </table>
+            <!-- 여기까지 책에 대한 순수한 정보  -->
+            
                 <div class="col-lg-12" style="padding-left: 10%;">
                     <div class="product__details__tab" style="padding-right: 23%;">
                         <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
@@ -157,29 +172,36 @@
                         </ul>
                         <div class="tab-content">
                             <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">좋은 책입니다!!!!!!!!!!</div>
+                                  <table class="review">
+									<c:forEach var="review" items="${reviewlist}">
+                                		<td class="reviewid">
+											<b style="margin-right: 20px;">${review.id}</b>
+										</td>
+                               		<span>
+                                		<td class="reviewinputdate">
+											<b style="margin-right: 20px;">${review.inputdate}</b>
+										</td>
+                                	</span>
+                                	<div class="one_line">
+                                		<td class="reviewcontent">
+											${review.content}<hr>
+										</td>
+									</div>
+									</c:forEach>
+								</table> 
                             </div>
-                            <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">으아아아아아ㅏ아아아아아아아ㅏㅇ</div>
-                            </div>
-                            <div class="line_bottom">
-                                <span>아이디</span>
-                                <span>2022.02.13</span>
-                                <div class="one_line">이거 가능 하겠지? css 너무 난잡하네</div>
-                            </div>
-
+							<form action="reviewWrite" method="post">
                             <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> <input type="submit" value="등록" class="sub_review">
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> 
+                                <input type="submit" value="등록" class="sub_review">
                             </div>
-                            
+                            </form>
                         </div>
                     </div>
                 </div>
-
+			<!-- 여기까지 한줄평에 대한 정보 -->
+			
+			
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
                 <div class="row" style="margin-left: 10%;">
                     <div class="photo" style="margin-right: 22px;">

@@ -28,6 +28,17 @@
 		)
 </insert>
 
+<!-- 관리자가 글쓰면 공지사항으로 저장 -->
+<update id="writenotice" parameterType="int">
+	update
+		board
+	set
+		board_type = 2,
+		title = '[공지]'|| title
+	where
+		id = 'admin'
+</update>
+
 <!-- 공지사항 게시글 읽기 -->
 <select id="getBoard" parameterType="int" resultType="Board">
 	select 
@@ -79,7 +90,7 @@
 	where 
 		title like '%' || #{searchText} || '%'
 	</if>
-	order by boardnum desc
+	order by board_type desc, boardnum desc
 </select>
 
 <!-- <select id="listBoard" parameterType="string" resultType="Board">
