@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+.nav-item{
+	padding-left: 0px;
+}
+#nav-link, #navbarDropdown, #navbarDropdown_1{
+	padding-top: 32px;
+}
+.btn_1, .btn_2{
+	margin-bottom: 5px;
+}
+h2{
+	margin-bottom: 14px;
+}
