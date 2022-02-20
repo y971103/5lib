@@ -169,7 +169,7 @@ public class BookController {
 			return "view";
 		}
 
-		//이미지파일 다운로드
+		//kakaobook 테이블에서 이미지파일 가져오기  <img src="download?filename=${book.thumbnail}">
 		@RequestMapping(value = "download", method = RequestMethod.GET)
 		public String fileDownload(String filename, HttpServletResponse response) {
 			

@@ -104,8 +104,7 @@
             <div class="row"> 
             <c:forEach var="book" items="${kakaobooklist}" begin="0" end="0">       
                 <div style="padding-left: 10%;">
-                 <img src="../resources/img/test22.jpg" alt="">
-                    <img src="download?filename=${book.thumbnail}">
+                    <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
@@ -165,7 +164,8 @@
                             </div>
                             </c:forEach>
  							 <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> <input type="submit" value="등록" class="sub_review">
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> 
+                                <input type="submit" value="등록" class="sub_review">
                             </div>
                             
                         </div>
@@ -173,20 +173,15 @@
                 </div>
 
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
+                      
                 <div class="row" style="margin-left: 10%;">
+                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
                     <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
+                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
                     </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="../resources/img/rec1.jpg" alt="">
-                    </div>
+            	</c:forEach>
                 </div>
+                
             </div>
         </div>
     </section>

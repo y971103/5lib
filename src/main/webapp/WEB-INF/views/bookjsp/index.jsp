@@ -157,7 +157,7 @@
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
-            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="11">
+            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="8">
                 <figure class="snip1283">
                     <img src="download?filename=${book.thumbnail}">
                     <figcaption>
