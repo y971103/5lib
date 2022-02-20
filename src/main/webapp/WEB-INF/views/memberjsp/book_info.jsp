@@ -133,7 +133,7 @@
                         </div>
                         
                         
-                        <h4><strong>책 소개</strong></h4>
+                        <h4 style="color:black;"><strong>책 소개</strong></h4>
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">

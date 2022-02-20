@@ -10,19 +10,19 @@
 		<link rel="stylesheet" href="../resources/contact_css/css/main.css" />
 		<link rel="icon" href="../resources/img/favicon.png">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-        <!-- owl carousel CSS -->
-        <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
-        <!-- themify CSS -->
-        <link rel="stylesheet" href="../resources/css/themify-icons.css">
-        <!-- flaticon CSS -->
-        <link rel="stylesheet" href="../resources/css/flaticon.css">
-        <!-- fontawesome CSS -->
-        <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
-        <!-- hover CSS -->
-        <link rel="stylesheet" href="../resources/css/hover.css">
-        <!-- style CSS -->
-        <link rel="stylesheet" href="../resources/css/style.css">
+	    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+	    <!-- owl carousel CSS -->
+	    <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
+	    <!-- themify CSS -->
+	    <link rel="stylesheet" href="../resources/css/themify-icons.css">
+	    <!-- flaticon CSS -->
+	    <link rel="stylesheet" href="../resources/css/flaticon.css">
+	    <!-- fontawesome CSS -->
+	    <link rel="stylesheet" href="../resources/fontawesome/css/all.min.css">
+	    <!-- hover CSS -->
+	    <link rel="stylesheet" href="../resources/css/hover.css">
+	    <!-- style CSS -->
+	    <link rel="stylesheet" href="../resources/css/style.css">
 	</head>
 	<body>
    <!--:헤더 시작::-->
@@ -77,11 +77,11 @@
                                 </ul>
                             </div>
                            <c:if test="${loginId != null}">
-							<h4>
+							<h2 style="letter-spacing: 0px;">
 								${sessionScope.loginId}님 <br>
-							</h4>
-							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
+							</h2>
+							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 0px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 0px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
