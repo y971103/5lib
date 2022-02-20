@@ -100,35 +100,34 @@
     <!-- 헤더 끝-->
     <!-- Product Details Section Begin -->
     <section>
-		<table class="book">
-		<c:forEach var="book" items="${kakaobooklist}" begin="0" end="0">    
-        <div class="container" style="margin-bottom: 20px;">
-            <div class="row">       
+        <div class="container" style="margin-bottom: 20px; padding-left: 90px">
+            <div class="row"> 
+            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="0">       
                 <div style="padding-left: 10%;">
-                     <img src="../resources/img/test22.jpg" alt="">
+                 <img src="../resources/img/test22.jpg" alt="">
+                    <img src="download?filename=${book.thumbnail}">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
-							<h3><strong>${book.title}</strong></h3>
-					</div>
+                        <h3><strong>${book.title}</strong></h3>
                         <div>
                             <ul>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>저자</strong></span>
                                     <div>
-                                 		${book.authors}
+                                     	${book.authors}
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출판사</strong></span>
                                     <div>
-										${book.publisher}
+                                        ${book.publisher}
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
-                                    	${book.datetime}
+                                        ${book.datetime}
                                     </div>
                                 </li>
                             </ul>
@@ -139,19 +138,17 @@
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">
-                                       ${book.contents}
+                                   ${book.contents}
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <br>																		<!-- 다운로드 경로는 따로 해줘야 함. -->
+                    </c:forEach>
+                    <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
                 </div>
-                </c:forEach>
-            </table>
-            <!-- 여기까지 책에 대한 순수한 정보  -->
-            
+                
                 <div class="col-lg-12" style="padding-left: 10%;">
                     <div class="product__details__tab" style="padding-right: 23%;">
                         <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
@@ -160,37 +157,21 @@
                             </li>
                         </ul>
                         <div class="tab-content">
+                        	<c:forEach var="review" items="${reviewlist}">
                             <div class="line_bottom">
-                                  <table class="review">
-									<c:forEach var="review" items="${reviewlist}">
-                                		<td class="reviewid">
-											<b style="margin-right: 20px;">${review.id}</b>
-										</td>
-                               		<span>
-                                		<td class="reviewinputdate">
-											<b style="margin-right: 20px;">${review.inputdate}</b>
-										</td>
-                                	</span>
-                                	<div class="one_line">
-                                		<td class="reviewcontent">
-											${review.content}<hr>
-										</td>
-									</div>
-									</c:forEach>
-								</table> 
+                                <span>${review.id}</span>
+                                <span>${review.inputdate}</span>
+                                <div class="one_line">${review.content}</div>
                             </div>
-							<form action="reviewWrite" method="post">
-                            <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> 
-                                <input type="submit" value="등록" class="sub_review">
+                            </c:forEach>
+ 							 <div>
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> <input type="submit" value="등록" class="sub_review">
                             </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
-			<!-- 여기까지 한줄평에 대한 정보 -->
-			
-			
+
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
                 <div class="row" style="margin-left: 10%;">
                     <div class="photo" style="margin-right: 22px;">
