@@ -32,9 +32,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-
+<style type="text/css">
+       
+       .main-body{
+          /* background-color: blue; */
+          background-image: url(http://file.edupre.co.kr/plan/clips/thumb/5/clips_20180906153305_0205.JPG.thumb.300);
+          background-position: left center;
+          background-repeat: no-repeat;
+       }
+       
+    
+    </style>
     
 </head>
+
 
 <body>
 
@@ -107,7 +118,7 @@
     <!-- 헤더 끝-->
      <!--essayRead 에세이 읽기 폼 --> 
 <body> 
-    <section class="ftco-section">
+    <section class="ftco-section main-body">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-4">
@@ -116,9 +127,49 @@
                     <hr>
                 </div>
             </div>
-            
+          
     <section article>
-            <div class="col-lg-12" style="padding-left: 10%;">
+    <div class="container">
+      <div class="row">
+      
+      	<p class="hits">조회수: ${essay.hits}</p>
+      	
+         <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+        
+            <thead>
+               <tr>
+                  <th colspan="3" style="background-color: #eeeeee; text-align: center;">글보기</th>                  
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td style="width: 20%;">제목</td>
+                  <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
+                  <td colspan="2"></td>
+               </tr>
+               <tr>
+                  <td>작성자ID</td>
+                  <td colspan="2">${essay.id}</td>
+                
+               </tr>
+               <tr>
+                  <td>작성일자</td>
+                  <td colspan="2">${essay.inputdate}</td>
+               </tr>
+               <tr>
+                  <td>내용</td>
+                  <td colspan="2" style="min-height: 200px; text-align: left;">z<br>z<br>z<br>z<br></td>
+               </tr>
+            </tbody>
+         </table>
+         <a href="bbs.jsp" class="btn btn-primary">목록</a>
+         
+               <a href="" class="btn btn-primary">수정</a>
+               <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="" class="btn btn-primary">삭제</a>
+            
+      </div>
+   </div>
+           <%--  <div class="col-lg-12" style="padding-left: 10%;">
                 <div class="col-lg-12" style="padding-right: 10%;">
                <table border="1">
                 
@@ -158,18 +209,18 @@
                 </table>
                 
                 <!-- 본인 글인 경우에만 보이기 -->
-				<c:if test="${loginId == essay.id}">
-					<!-- 현재글 삭제하기-->
-					<a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
-					<!-- 현재글 수정하기-->
-					<a href="edit?boardnum=${essay.essaynum}">수정</a>
-				</c:if>
-					
-				<!-- 목록보기-->
-				<a href="list">목록보기</a>
+            <c:if test="${loginId == essay.id}">
+               <!-- 현재글 삭제하기-->
+               <a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
+               <!-- 현재글 수정하기-->
+               <a href="edit?boardnum=${essay.essaynum}">수정</a>
+            </c:if>
+               
+            <!-- 목록보기-->
+            <a href="list">목록보기</a>
                 </div>
             </div>
-            </div>        
+            </div>      --%>   
         </section>
     </section>
 </body>
