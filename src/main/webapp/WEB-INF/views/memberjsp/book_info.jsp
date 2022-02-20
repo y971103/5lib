@@ -105,38 +105,30 @@
         <div class="container" style="margin-bottom: 20px;">
             <div class="row">       
                 <div style="padding-left: 10%;">
-                    <img src="download?filename=${book.thumbnail}">
+                     <img src="../resources/img/test22.jpg" alt="">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <td class="booktitle"> 						<!-- 책 제목 -->
-							<h3><strong><b style="margin-right: 20px;">${book.title}</b></strong></h3>
-						</td>
+							<h3><strong>${book.title}</strong></h3>
 					</div>
                         <div>
                             <ul>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>저자</strong></span>
                                     <div>
-                                    	<td class="bookauthor">		<!-- 책 저자 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.authors}</b></strong></h3>
-                                    	</td>
+                                 		${book.authors}
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출판사</strong></span>
                                     <div>
-                                        <td class="bookpublisher">		<!-- 책 출판사 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.publisher}</b></strong></h3>
-                                    	</td>
+										${book.publisher}
                                     </div>
                                 </li>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
-                                        <td class="bookp_date">			<!-- 책 출간 일자 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.datetime}</b></strong></h3>
-                                    	</td>
+                                    	${book.datetime}
                                     </div>
                                 </li>
                             </ul>
@@ -147,9 +139,7 @@
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">
-                                    <td class="bookintroduce">			<!-- 책 소개 글 -->
-                                       		<h3><strong><b style="margin-right: 20px;">${book.contents}</b></strong></h3>
-                                    </td>
+                                       ${book.contents}
                                 </li>
                             </ul>
                         </div>
