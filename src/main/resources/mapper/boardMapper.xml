@@ -65,19 +65,28 @@
 </update>
 
 <!-- 전체 글 개수 -->
-<select id="getTotal" parameterType="string" resultType="int">
+<select id="getTotal" parameterType="notice_search" resultType="int">
 	select 
 		count(*)
 	from 
 		board
 	<if test="_parameter != null">
-	where 
+<where>
+	<if test='type == "1"'>
+		title like '%' || #{searchText} || '%' OR id like '%' || #{searchText} || '%'
+	</if>
+	<if test='type == "2"'>
 		title like '%' || #{searchText} || '%'
 	</if>
+	<if test='type == "3"'>
+		id like '%' || #{searchText} || '%'
+	</if>
+</where>
+</if>
 </select>
 
 <!-- 현재 페이지 공지사항 목록 -->
-<select id="listBoard" parameterType="string" resultType="Board">
+<select id="listBoard" parameterType="notice_search" resultType="Board">
 	select 
 		boardnum
 		, title
@@ -87,17 +96,17 @@
 	from 
 		board
 	<if test="_parameter != null">
-where 
+<where>
 		<if test='type == "1"'>
-			title like '%' || #{searchText} || '%' OR contents like '%' || #{searchText} || '%'
+			title like '%' || #{searchText} || '%' OR id like '%' || #{searchText} || '%'
 		</if>
 		<if test='type == "2"'>
 			title like '%' || #{searchText} || '%'
 		</if>
 		<if test='type == "3"'>
-			contents like '%' || #{searchText} || '%'
+			id like '%' || #{searchText} || '%'
 		</if>
-
+</where> 
 	</if>
 	order by board_type desc, boardnum desc
 </select>

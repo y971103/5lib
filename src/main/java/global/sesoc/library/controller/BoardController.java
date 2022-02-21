@@ -18,6 +18,7 @@ import global.sesoc.library.dao.BoardDAO;
 import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Reply;
+import global.sesoc.library.vo.notice_Search;
 
 @Controller
 @RequestMapping("board")
@@ -75,18 +76,18 @@ public class BoardController {
 	@RequestMapping (value="list", method=RequestMethod.GET)
 	public String list (
 			@RequestParam(value="page", defaultValue="1") int page
-			, @RequestParam(value="searchText", defaultValue="") String searchText
+			, notice_Search notice_search
 			, Model model) {
 		
-		logger.debug("page: {}, searchText: {}", page, searchText);
+		logger.debug("page: {}, notice_search: {}", page, notice_search);
 		
-		int total = dao.getTotal(searchText);			//전체 글 개수
+		int total = dao.getTotal(notice_search);			//전체 글 개수
 		
 		//페이지 계산을 위한 객체 생성
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-		ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<Board> boardlist = dao.listBoard(notice_search, navi.getStartRecord(), navi.getCountPerPage());	
 		
 		//마스킹 추가
 		logger.debug("list: {}", boardlist);
@@ -105,7 +106,7 @@ public class BoardController {
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("navi", navi);
-		model.addAttribute("searchText", searchText);
+		model.addAttribute("notice_search", notice_search);
 		
 		return "boardjsp/notice_QnA";
 	}
@@ -245,24 +246,24 @@ public class BoardController {
 	@RequestMapping(value="essaylist", method=RequestMethod.GET)
 	public String essaylist(
 		@RequestParam(value="page", defaultValue="1") int page
-		, @RequestParam(value="searchText", defaultValue="") String searchText
+		, @RequestParam(value="notice_search", defaultValue="") notice_Search notice_search
 		, Model model) {
 	
-	logger.debug("page: {}, searchText: {}", page, searchText);
+	logger.debug("page: {}, searchText: {}", page, notice_search);
 	
-	int total = dao.getTotal(searchText);			//전체 글 개수
+	int total = dao.getTotal(notice_search);			//전체 글 개수
 	
 	//페이지 계산을 위한 객체 생성
 	PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 	
 	//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-	ArrayList<Board> boardlist = dao.listBoard(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+	ArrayList<Board> boardlist = dao.listBoard(notice_search, navi.getStartRecord(), navi.getCountPerPage());	
 	
 	
 	//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 	model.addAttribute("boardlist", boardlist);
 	model.addAttribute("navi", navi);
-	model.addAttribute("searchText", searchText);
+	model.addAttribute("notice_search", notice_search);
 	
 		
 		return "boardjsp/essaylist";
