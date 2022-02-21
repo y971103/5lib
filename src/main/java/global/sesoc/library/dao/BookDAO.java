@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
@@ -59,4 +60,12 @@ public class BookDAO {
 		List<Kakaobook> book = mapper.selectKakaobook();
 		return book;
 	}
+
+	public List<Book> selectBook() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		List<Book> booknum = mapper.selectBook();
+		return booknum;
+	}
+
+	
 }
