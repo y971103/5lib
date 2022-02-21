@@ -159,6 +159,17 @@
                 </div>
             </div>
         </div>
+    	<form id="pagingForm" method="get" action="list">
+	<input type="hidden" name="page" id="page" />
+	<select name ="type">
+		<option value = "1">=전체=</option>
+		<option value = "2">=제목=</option>
+		<option value = "3">=id=</option>
+		</select>
+			제목 : <input type="text"  name="searchText" value="${searchText}" />
+	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
+</form>
+<!-- /검색폼 --> 
     </div>
 </section>
 
