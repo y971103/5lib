@@ -117,83 +117,23 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>Top Places to visit</h2>
+                        <h2>책 리스트</h2>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
                 <div class="row" >
-                    <div>
-                        <a href="book_info">
-                        <img src="../resources/img/li1.jpg" alt="sample83" />
-                        <div>
-                          <h3>Fleece Marigold</h3>
-                          <p>최은영 지음</p>
-                        </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
+                <c:forEach var="book" items="${kakaobooklist}" begin="0" end="15">
+                    <div style="margin-bottom:8px;">       
+                        <a href="book_info?isbn=${book.isbn}">
+                           <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
+                            <div style="margin-top:5px;">
+                              <h4>저자-${book.authors}</h4>
                             </div>
                         </a>
                     </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>    
-                    <div>
-                        <a href="book_info">
-                            <img src="../resources/img/li1.jpg" alt="sample83" />
-                            <div>
-                              <h3>Fleece Marigold</h3>
-                            </div>
-                        </a>
-                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
+                </c:forEach>
                 <a href="#" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>

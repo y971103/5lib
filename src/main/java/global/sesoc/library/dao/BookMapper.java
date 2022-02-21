@@ -21,4 +21,6 @@ public ArrayList<Kakaobook> selectKakaobook();
 
 public int insertKakaobook(Kakaobook kakaobook);
 
+public Kakaobook getBook(String isbn);
+
 }
