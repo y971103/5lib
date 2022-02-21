@@ -36,8 +36,8 @@
 		<mvc:interceptor>
 			<!-- 특정 네임스페이스 하위의 모든 경로에 대하여 다음과 같이 와일드카드 지정 가능 -->
 			<!-- <mvc:mapping path="/board/**" /> -->
-			<mvc:mapping path="/board/write" />
-			<mvc:mapping path="/board/download" />
+			<mvc:mapping path="/board/boardwrite" />
+			<mvc:mapping path="/essay/essaywrite" />
 			<mvc:mapping path="/board/delete" />
 			<mvc:mapping path="/board/edit" />
 			<mvc:mapping path="/board/replyWrite" />

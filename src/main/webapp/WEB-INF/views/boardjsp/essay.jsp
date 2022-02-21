@@ -34,14 +34,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
     
-    <script>
-	function pagingFormSubmit(currentPage) {
-		var form = document.getElementById('pagingForm');
-		var page = document.getElementById('page');
-		page.value = currentPage;
-		form.submit();
-	}
-	</script>
+<script>
+function alertSend(a){
+	alert(a);
+	alert('로그인');
+}
+</script>
 </head>
 
 <body>
@@ -168,17 +166,6 @@
                 </div>
             </div>
         </div>
-    	<form id="pagingForm" method="get" action="list">
-			<input type="hidden" name="page" id="page" />
-			<select name ="type">
-				<option value = "1">=전체=</option>
-				<option value = "2">=제목=</option>
-				<option value = "3">=id=</option>
-			</select>
-					제목 : <input type="text"  name="searchText" value="${searchText}" />
-			<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
-		</form>
-<!-- /검색폼 --> 
     </div>
 </section>
 
