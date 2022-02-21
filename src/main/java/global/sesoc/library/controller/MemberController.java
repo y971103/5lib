@@ -112,9 +112,13 @@ public class MemberController {
 		return "memberjsp/viewer";
 	}
 	
-	@RequestMapping(value="library", method=RequestMethod.GET)
-	public String library() {
-		
+	
+	@RequestMapping(value="library",method=RequestMethod.GET)
+	public String list2(Model model) {
+		logger.debug("kakaobook 진입");
+		List<Kakaobook> kakaobooklist = dao.select();
+		logger.debug("결과:{}",kakaobooklist);
+		model.addAttribute("kakaobooklist",kakaobooklist);
 		return "memberjsp/library";
 	}
 	
