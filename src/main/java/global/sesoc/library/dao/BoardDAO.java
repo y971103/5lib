@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Reply;
+import global.sesoc.library.vo.notice_Search;
 
 
 @Repository
@@ -43,21 +44,21 @@ public class BoardDAO {
 	
 	
 	//글 목록
-	public ArrayList<Board> listBoard(String searchText, int startRecord, int countPerPage) {
+	public ArrayList<Board> listBoard(notice_Search notice_search, int startRecord, int countPerPage) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		//전체 검색 결과 중 읽을 시작위치와 개수. 나머지는 다음 페이지로 넘긴다 mybatis에 있는 기능이다.
 		RowBounds rb = new RowBounds(startRecord, countPerPage);
 		
 		//검색어와 읽을 범위를 전달
-		ArrayList<Board> boardlist = mapper.listBoard(searchText, rb);
+		ArrayList<Board> boardlist = mapper.listBoard(notice_search, rb);
 		return boardlist;
 	}
 
 	
 	//전체 글 개수
-	public int getTotal(String searchText) {
+	public int getTotal(notice_Search notice_search) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-		int total = mapper.getTotal(searchText);
+		int total = mapper.getTotal(notice_search);
 		return total;
 	}
 
@@ -104,6 +105,8 @@ public class BoardDAO {
 		int result = mapper.updateReply(reply);
 		return result;
 	}
+
+
 	
 
 
