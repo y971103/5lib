@@ -169,7 +169,7 @@
                 </c:forEach>
             
                    
-                <a href="top_place.html" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
+                <a href="<c:url value="/member/library"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
