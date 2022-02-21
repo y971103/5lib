@@ -34,6 +34,5 @@ public interface BoardMapper {
 
 	public void writenotice(Board board);
 	
-	
 
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Essay;
+import global.sesoc.library.vo.essay_Search;
 
 @Repository
 public class EssayDAO {
@@ -41,19 +42,19 @@ public class EssayDAO {
 		return result;
 	}
 
-	public int getTotal(String searchText) {
+	public int getTotal(essay_Search essay_search) {
 		EssayMapper mapper = sqlSession.getMapper(EssayMapper.class);
-		int total = mapper.getTotal(searchText);
+		int total = mapper.getTotal(essay_search);
 		return total;
 	}
 
-	public ArrayList<Essay> listEssay(String searchText, int startRecord, int countPerPage) {
+	public ArrayList<Essay> listEssay(essay_Search essay_search, int startRecord, int countPerPage) {
 		EssayMapper mapper = sqlSession.getMapper(EssayMapper.class);
 		//전체 검색 결과 중 읽을 시작위치와 개수. 나머지는 다음 페이지로 넘긴다 mybatis에 있는 기능이다.
 		RowBounds rb = new RowBounds(startRecord, countPerPage);
 		
 		//검색어와 읽을 범위를 전달
-		ArrayList<Essay> essaylist = mapper.listEssay(searchText, rb);
+		ArrayList<Essay> essaylist = mapper.listEssay(essay_search, rb);
 		return essaylist;
 	}
 

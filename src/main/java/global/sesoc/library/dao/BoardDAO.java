@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Reply;
+import global.sesoc.library.vo.essay_Search;
 import global.sesoc.library.vo.notice_Search;
 
 
@@ -105,6 +106,7 @@ public class BoardDAO {
 		int result = mapper.updateReply(reply);
 		return result;
 	}
+
 
 
 	

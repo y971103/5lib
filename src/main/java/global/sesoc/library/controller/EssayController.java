@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import global.sesoc.library.dao.EssayDAO;
 import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Essay;
+import global.sesoc.library.vo.essay_Search;
 
 @Controller
 @RequestMapping("essay")
@@ -75,24 +76,24 @@ private static final Logger logger = LoggerFactory.getLogger(BoardController.cla
 	@RequestMapping (value="list", method=RequestMethod.GET)
 	public String list (
 			@RequestParam(value="page", defaultValue="1") int page
-			, @RequestParam(value="searchText", defaultValue="") String searchText
+			, @RequestParam(value="essay_search", defaultValue="") essay_Search essay_search
 			, Model model) {
 		
-		logger.debug("page: {}, searchText: {}", page, searchText);
+		logger.debug("page: {}, essay_search: {}", page, essay_search);
 		
-		int total = dao.getTotal(searchText);			//전체 글 개수
+		int total = dao.getTotal(essay_search);			//전체 글 개수
 		
 		//페이지 계산을 위한 객체 생성
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		
 		//검색어와 시작 위치, 페이지당 글 수를 전달하여 목록 읽기
-		ArrayList<Essay> essaylist = dao.listEssay(searchText, navi.getStartRecord(), navi.getCountPerPage());	
+		ArrayList<Essay> essaylist = dao.listEssay(essay_search, navi.getStartRecord(), navi.getCountPerPage());	
 		
 		
 		//페이지 정보 객체와 글 목록, 검색어를 모델에 저장
 		model.addAttribute("essaylist", essaylist);
 		model.addAttribute("navi", navi);
-		model.addAttribute("searchText", searchText);
+		model.addAttribute("essay_search", essay_search);
 		
 		return "boardjsp/essay";
 	}
