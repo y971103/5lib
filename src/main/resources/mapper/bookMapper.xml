@@ -78,9 +78,9 @@
 </select>
 
 
-<!-- 해당하는 Booknum의 책 정보 가져오기 (Book DB용)
+<!-- 해당하는 Booknum의 책 정보 가져오기 (Book DB용)-->
 <select id="selectBook" resultType="Book">
 		select booknum from book
-</select>-->
+</select>
 
 </mapper>

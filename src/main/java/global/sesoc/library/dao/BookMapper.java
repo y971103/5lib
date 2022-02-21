@@ -1,7 +1,9 @@
 package global.sesoc.library.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
@@ -22,5 +24,7 @@ public ArrayList<Kakaobook> selectKakaobook();
 public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getBook(String isbn);
+
+public List<Book> selectBook();
 
 }

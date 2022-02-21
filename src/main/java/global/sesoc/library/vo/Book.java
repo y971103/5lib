@@ -10,9 +10,7 @@ public class Book {
 	private String p_date;
 	private float score;
 	private String introduce;
-	private int genre_type;
 	private int book_photo;
-	private int bookfile;
 	private int genre_num;
 	
 	public Book(int booknum, String title, String author, String publisher, String p_date, float score,
@@ -25,9 +23,7 @@ public class Book {
 		this.p_date = p_date;
 		this.score = score;
 		this.introduce = introduce;
-		this.genre_type = genre_type;
 		this.book_photo = book_photo;
-		this.bookfile = bookfile;
 		this.genre_num = genre_num;
 	}
 
@@ -87,28 +83,12 @@ public class Book {
 		this.introduce = introduce;
 	}
 
-	public int getGenre_type() {
-		return genre_type;
-	}
-
-	public void setGenre_type(int genre_type) {
-		this.genre_type = genre_type;
-	}
-
 	public int getBook_photo() {
 		return book_photo;
 	}
 
 	public void setBook_photo(int book_photo) {
 		this.book_photo = book_photo;
-	}
-
-	public int getBookfile() {
-		return bookfile;
-	}
-
-	public void setBookfile(int bookfile) {
-		this.bookfile = bookfile;
 	}
 
 	public int getGenre_num() {
@@ -122,8 +102,8 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [booknum=" + booknum + ", title=" + title + ", author=" + author + ", publisher=" + publisher
-				+ ", p_date=" + p_date + ", score=" + score + ", introduce=" + introduce + ", genre_type=" + genre_type
-				+ ", book_photo=" + book_photo + ", bookfile=" + bookfile + ", genre_num=" + genre_num + "]";
+				+ ", p_date=" + p_date + ", score=" + score + ", introduce=" + introduce + ", genre_type="
+				+ ", book_photo=" + book_photo + ", bookfile=" + ", genre_num=" + genre_num + "]";
 	}
 	
 	
