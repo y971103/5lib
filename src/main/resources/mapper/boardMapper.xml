@@ -33,7 +33,8 @@
 		update
 		board
 		set
-		board_type = 2,
+		board_type
+		= 2,
 		title = '[공지]'|| title
 		where
 		id = 'admin'
@@ -47,7 +48,8 @@
 		, id
 		, hits
 		, content
-		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
+		, to_char(inputdate, 'YYYY-MM-DD
+		HH24:MI:SS') inputdate
 		from
 		board
 		where
@@ -74,7 +76,8 @@
 		<if test="_parameter != null">
 			<where>
 				<if test='type == "1"'>
-					title like '%' || #{searchText} || '%' OR id like '%' || #{searchText}
+					title like '%' || #{searchText} || '%' OR id like '%' ||
+					#{searchText}
 					|| '%'
 				</if>
 				<if test='type == "2"'>
@@ -88,22 +91,22 @@
 	</select>
 
 	<!-- 현재 페이지 공지사항 목록 -->
-	<select id="listBoard" parameterType="notice_search"
-		resultType="Board">
+	<select id="listBoard" parameterType="notice_search" resultType="Board">
 		select
 		boardnum
 		, title
 		, id
 		, hits
-		, to_char(inputdate, 'YYYY-MM-DD HH24:MI:SS') inputdate
+		, to_char(inputdate, 'YYYY-MM-DD
+		HH24:MI:SS') inputdate
 		from
 		board
 		<if test="_parameter != null">
 			<where>
 				<if test='type == "1"'>
-					title like '%' || #{searchText} || '%' OR id like '%' || #{searchText}
-					||
-					'%'
+					title like '%' || #{searchText} || '%' OR id like '%' ||
+					#{searchText}
+					||'%'
 				</if>
 				<if test='type == "2"'>
 					title like '%' || #{searchText} || '%'
@@ -137,11 +140,13 @@
 		update
 		board
 		set
-		title = #{title}
+		title =
+		#{title}
 		, content = #{content}
 		where
 		boardnum = #{boardnum}
-		and id = #{id}
+		and id =
+		#{id}
 	</update>
 
 
@@ -193,7 +198,8 @@
 		update
 		reply
 		set
-		content = #{content}
+		content =
+		#{content}
 		where
 		replynum = #{replynum}
 		and id = #{id}

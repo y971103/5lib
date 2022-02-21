@@ -98,7 +98,7 @@
 				</if>
 			</where>
 		</if>
-		order by board_type desc, boardnum desc
+		order by essaynum desc
 	</select>
 
 	<!-- 에세이 삭제 -->

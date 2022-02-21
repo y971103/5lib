@@ -22,7 +22,7 @@ import global.sesoc.library.vo.essay_Search;
 @Controller
 @RequestMapping("essay")
 public class EssayController {
-private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+private static final Logger logger = LoggerFactory.getLogger(EssayController.class);
 	
 	@Autowired
 	EssayDAO dao;
@@ -76,7 +76,7 @@ private static final Logger logger = LoggerFactory.getLogger(BoardController.cla
 	@RequestMapping (value="list", method=RequestMethod.GET)
 	public String list (
 			@RequestParam(value="page", defaultValue="1") int page
-			, @RequestParam(value="essay_search", defaultValue="") essay_Search essay_search
+			, essay_Search essay_search
 			, Model model) {
 		
 		logger.debug("page: {}, essay_search: {}", page, essay_search);
