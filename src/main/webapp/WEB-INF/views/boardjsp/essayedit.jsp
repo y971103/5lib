@@ -114,12 +114,23 @@
 <body>
 <h1>수정폼</h1>
     <div id="wrapper">
-
+<input type="hidden" name="essaynum" value="${essay.essaynum }">
 	<form id="write" action="essay_write" method="post" >
-
-		<div id="margin">Title: <input class="title" type="text" name="title"></div>
-        <!--  <div id="margin">Book: <input class="title" type="text" name="booknum"></div>-->
-		<textarea placeholder="Enter something funny." id="text" name="content" style="overflow: break-word; "></textarea>  
+	
+	
+	
+		
+		
+		<!-- <div id="margin">Title: <input class="title" type="text" name="title"></div>  -->
+	
+		
+         <div id="margin">Book: 
+    
+     
+      	  <input class="title" type="text" name="title" value="${essay.title}"></div>
+                          
+       <textarea name="content" id="text" style="overflow: break-word;">${essay.content}</textarea>
+	 <!--  <textarea placeholder="Enter something funny." id="text" name="content" style="overflow: break-word; "></textarea> -->
 		<br>
 		<input type="submit" id="button" value="저장">
 		
