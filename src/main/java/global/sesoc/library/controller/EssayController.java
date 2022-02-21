@@ -168,6 +168,6 @@ private static final Logger logger = LoggerFactory.getLogger(EssayController.cla
 		//글 수정 처리
 		dao.updateEssay(essay);
 		//원래의 글읽기 화면으로 이동 
-		return "essayjsp/essayRead";
+		return "redirect:read?essaynum=" + essay.getEssaynum();
 	}
 }

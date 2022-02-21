@@ -174,6 +174,7 @@
          </table>
          
        <c:if test="${loginId == essay.id}">
+<<<<<<< HEAD
         <!-- 현재글 삭제하기-->
 		<a href="javascript:deleteCheck(${essay.essaynum})">삭제하기</a>
         <!-- 현재글 수정하기-->
@@ -183,6 +184,19 @@
        <a href="essay?list=${essay.essaynum}">목록보기</a> &nbsp;&nbsp;&nbsp;
       <!-- 현재글 삭제하기-->
 		<a href="javascript:deleteCheck(${essay.essaynum})">삭제하기</a>
+=======
+       
+         <!-- 현재글 삭제하기-->
+		<a href="javascript:deleteCheck(${essay.essaynum})">삭제하기</a>
+		
+		 <!-- 현재글 수정하기-->
+	   <a href="edit?essaynum=${essay.essaynum}">수정하기</a> &nbsp;&nbsp;&nbsp;
+       </c:if>
+       
+        <!-- 목록보기 -->
+       <a href="essay?list=${essay.essaynum}">목록보기</a> &nbsp;&nbsp;&nbsp;
+      
+>>>>>>> c458b895851e4c9408646d6e19b97aa8c8b77f79
        
        
       </div>

@@ -114,8 +114,9 @@
 <body>
 <h1>수정폼</h1>
     <div id="wrapper">
-<input type="hidden" name="essaynum" value="${essay.essaynum }">
-	<form id="write" action="essay_write" method="post" >
+
+	<form id="write" action="edit" method="post" >
+	<input type="hidden" name="essaynum" value="${essay.essaynum }">
 	
 	
 	
