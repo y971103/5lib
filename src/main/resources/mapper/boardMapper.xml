@@ -87,8 +87,17 @@
 	from 
 		board
 	<if test="_parameter != null">
-	where 
-		title like '%' || #{searchText} || '%'
+where 
+		<if test='type == "1"'>
+			title like '%' || #{searchText} || '%' OR contents like '%' || #{searchText} || '%'
+		</if>
+		<if test='type == "2"'>
+			title like '%' || #{searchText} || '%'
+		</if>
+		<if test='type == "3"'>
+			contents like '%' || #{searchText} || '%'
+		</if>
+
 	</if>
 	order by board_type desc, boardnum desc
 </select>
