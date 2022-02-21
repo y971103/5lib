@@ -66,9 +66,17 @@
 		select * from kakao_book
 </select>
 
+
+<!-- 같은 isbn의 책 정보 가져오기 (카카오 API용)-->
 <select id="getBook" resultType="Kakaobook">
 		select *
 		from kakao_book where isbn = #{isbn}
+</select>
+
+
+<!-- 해당하는 Booknum의 책 정보 가져오기 (Book DB용)-->
+<select id="selectBook" resultType="Book">
+		select booknum from book
 </select>
 
 </mapper>
