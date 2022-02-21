@@ -11,16 +11,13 @@ CREATE TABLE book
 	-- 출판 일자
 	p_date date,
 	-- 평점
-	score float,
-	-- 장르
-	genre_type number,
+	score float default 0,
 	-- 책 소개글
 	introduce varchar2(2000),
 	-- 책 사진
-	book_photo number,
-	-- 책 파일
-	bookfile number,
-	genre_num number(2) NOT NULL,
+	book_photo number default 0,
+	-- 잘르
+	genre_num varchar2(100) NOT NULL,
 	PRIMARY KEY (booknum)
 );
 
