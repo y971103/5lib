@@ -174,11 +174,11 @@
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
                       
                 <div class="row" style="margin-left: 10%;">
-                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
-                    <div class="photo" style="margin-right: 22px;">
-                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
-                    </div>
-            	</c:forEach>
+	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
+	                    <div class="photo" style="margin-right: 22px;">
+	                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
+	                    </div>
+	            	</c:forEach>
                 </div>
                 
             </div>

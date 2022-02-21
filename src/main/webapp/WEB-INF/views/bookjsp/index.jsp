@@ -26,6 +26,8 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
     
+    <link rel="stylesheet" href="../resources/css/search.css">
+    
 </head>
 
 <body>
@@ -98,16 +100,16 @@
     </header>
     <!-- 헤더 끝-->
     <!-- 검색폼 -->
-<form id="pagingForm" method="get" action="list">
-	<input type="hidden" name="page" id="page" />
-	<select name ="type">
-		<option value = "1">=전체=</option>
-		<option value = "2">=제목=</option>
-		<option value = "3">=내용=</option>
+	<form id="pagingForm" method="get" action="list">
+		<input type="hidden" name="page" id="page" />
+		<select name ="type" id="type">
+			<option value = "1">전체</option>
+			<option value = "2">제목</option>
+			<option value = "3">저자</option>
 		</select>
-			제목 : <input type="text"  name="searchText" value="${searchText}" />
-	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
-</form>
+		<input type="text"  name="searchText" id="searchText" value="${searchText}" placeholder="도서  혹은 저자 검색" />
+		<input type="submit" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn" ><!-- 1페이지로 전달한다는 뜻 -->
+	</form>
 <!-- /검색폼 --> 
 
     <!-- 도서 슬라이드(배너)-->
@@ -159,12 +161,13 @@
             <div class="row" style="margin-left: 7%;">
             <c:forEach var="book" items="${kakaobooklist}" begin="0" end="8">
                 <figure class="snip1283">
+                <a href="<c:url value="/member/book_info?isbn=${book.isbn}"/>">
                     <img src="download?filename=${book.thumbnail}">
                     <figcaption>
                       <h3>${book.title}</h3>
                       <p>${book.contents}</p>
                     </figcaption>
-                    <a href="#"></a>
+                    </a>
                   </figure>
                 </c:forEach>
             
