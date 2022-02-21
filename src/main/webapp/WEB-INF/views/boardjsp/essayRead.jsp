@@ -45,6 +45,13 @@
     </style>
     
 </head>
+    <script>
+    function deleteCheck(essaynum){
+    	if(confirm("정말 삭제하시겠습니까?")){
+    		location.href = 'delete?essaynum=' + essaynum;
+    	}
+    }
+    </script>
 
 
 <body>
@@ -144,9 +151,9 @@
             <tbody>
                <tr>
                   <td style="width: 20%;">제목</td>
-                  <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
-                  <td colspan="2"></td>
+                  <td colspan="2">${essay.title} </td>
                </tr>
+               
                <tr>
                   <td>작성자ID</td>
                   <td colspan="2">${essay.id}</td>
@@ -156,74 +163,42 @@
                   <td>작성일자</td>
                   <td colspan="2">${essay.inputdate}</td>
                </tr>
+               
                <tr>
                   <td>내용</td>
-                  <td colspan="2" style="min-height: 200px; text-align: left;">z<br>z<br>z<br>z<br></td>
+                  <td colspan="2">${essay.content}</td> 
                </tr>
+       
+               
             </tbody>
          </table>
-         <a href="bbs.jsp" class="btn btn-primary">목록</a>
          
-               <a href="" class="btn btn-primary">수정</a>
-               <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="" class="btn btn-primary">삭제</a>
-            
+       <c:if test="${loginId == essay.id}">
+       <!-- 목록보기 -->
+       <a href="essay?list=${essay.essaynum}">목록보기</a> &nbsp;&nbsp;&nbsp;
+       
+       <!-- 현재 글 수정하기 -->
+       <a href="essay?essaynum=${essay.essaynum}">수정하기</a> &nbsp;&nbsp;&nbsp;<br>
+       
+      
+      <!-- 현재글 삭제하기-->
+		<a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
+       
+       </c:if>
+        
       </div>
    </div>
-           <%--  <div class="col-lg-12" style="padding-left: 10%;">
-                <div class="col-lg-12" style="padding-right: 10%;">
-               <table border="1">
-                
-                        <tr>
-                        <th style="width: 50px;">번호</th>
-                        </tr>
-                        <tr>
-                        <th style="width: 50px;">${essay.essaynum}</th>
-                        
-                        </tr>
-                         
-                        <tr>
-                        <th style="width: 50px;">감상문 작성일</th>
-                        </tr>
-                        <tr>
-                        <th style="width: 50px;">${essay.inputdate}</th>
-                        </tr>
- 
-                        <tr>
-                            <th style="width: 50px;">작성자 아이디</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 50px;">${essay.id}</th>
-                        </tr>   
-                    </table>
-                    <br>
-    <section article>
-            <div class="col-lg-12" style="padding-left: 10%;">
-            <div class="col-lg-12" style="padding-right: 10%;">
-                <div class="section_tittle">
-                <table border="1">
-                
 
-                <tr>
-                    <td colspan="6" height="500">${essay.title}독후감 내용 읽어들이기</td>
-                </tr>
-                </table>
-                
-                <!-- 본인 글인 경우에만 보이기 -->
-            <c:if test="${loginId == essay.id}">
-               <!-- 현재글 삭제하기-->
-               <a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
-               <!-- 현재글 수정하기-->
-               <a href="edit?boardnum=${essay.essaynum}">수정</a>
-            </c:if>
-               
-            <!-- 목록보기-->
-            <a href="list">목록보기</a>
-                </div>
-            </div>
-            </div>      --%>   
         </section>
     </section>
 </body>
+
+
+				
+				<!-- 현재글 수정하기
+				<a href="edit?boardnum=${board.boardnum}">수정</a> -->
+            
+       
     
 
     
