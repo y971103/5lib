@@ -177,15 +177,14 @@
        <!-- 목록보기 -->
        <a href="essay?list=${essay.essaynum}">목록보기</a> &nbsp;&nbsp;&nbsp;
        
-       <!-- 현재 글 수정하기 -->
-       <a href="essay?essaynum=${essay.essaynum}">수정하기</a> &nbsp;&nbsp;&nbsp;<br>
-       
-      
-      <!-- 현재글 삭제하기-->
-		<a href="javascript:deleteCheck(${essay.essaynum})">삭제</a>
-       
+       <!-- 현재글 수정하기-->
+	   <a href="edit?essaynum=${essay.essaynum}">수정하기</a> &nbsp;&nbsp;&nbsp;
        </c:if>
-        
+       
+      <!-- 현재글 삭제하기-->
+		<a href="javascript:deleteCheck(${essay.essaynum})">삭제하기</a>
+       
+       
       </div>
    </div>
 

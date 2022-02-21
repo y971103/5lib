@@ -33,6 +33,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+    
+<script>
+function alertSend(a){
+	alert(a);
+	alert('로그인');
+}
+</script>
 </head>
 
 <body>
@@ -115,7 +122,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-            <a href="essaywrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
+            <a href="essaywrite" class="btn_2 text-cnter" style="margin-left: 1000px;" onclick="alertSend(111)">글쓰기</a>
                 <div class="table-wrap">
                 	<br></br>
                 	
