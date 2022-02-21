@@ -102,7 +102,7 @@
     <section>
         <div class="container" style="margin-bottom: 20px; padding-left: 90px">
             <div class="row"> 
-            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="0">       
+
                 <div style="padding-left: 10%;">
                     <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
                 </div>
@@ -142,7 +142,6 @@
                             </ul>
                         </div>
                     </div>
-                    </c:forEach>
                     <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">

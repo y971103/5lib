@@ -117,18 +117,18 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>Top Places to visit</h2>
+                        <h2>책 리스트</h2>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
                 <div class="row" >
-                <c:forEach var="book" items="${kakaobooklist}" begin="0" end="7">
-                    <div>       
-                          <a href="book_info">
+                <c:forEach var="book" items="${kakaobooklist}" begin="0" end="15">
+                    <div style="margin-bottom:8px;">       
+                        <a href="book_info?isbn=${book.isbn}">
                            <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
-                            <div>
-                              <h3>Fleece Marigold</h3>
+                            <div style="margin-top:5px;">
+                              <h4>저자-${book.authors}</h4>
                             </div>
                         </a>
                     </div>

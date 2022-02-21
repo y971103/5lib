@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.MemberDAO;
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
@@ -125,11 +126,10 @@ public class MemberController {
 	final String dir = "/bookimage/";
 	
 	@RequestMapping(value="book_info",method=RequestMethod.GET)
-	public String list(Model model) {
-		logger.debug("kakaobook 진입");
-		List<Kakaobook> kakaobooklist = dao.select();
-		logger.debug("결과:{}",kakaobooklist);
-		model.addAttribute("kakaobooklist",kakaobooklist);
+	public String list(Model model, String isbn) {
+		
+		Kakaobook book = dao.getBook(isbn);
+		model.addAttribute("book", book);
 		return "memberjsp/book_info";
 	}
 	

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.dao.MemberMapper;
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
@@ -45,6 +46,13 @@ public class MemberDAO {
 	public List<Kakaobook> select() {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		List<Kakaobook> book = mapper.selectKakaobook();
+		return book;
+	}
+
+	public Kakaobook getBook(String isbn) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		//해당 번호의 글정보 읽기
+		Kakaobook book = mapper.getBook(isbn);
 		return book;
 	}
 

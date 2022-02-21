@@ -64,6 +64,11 @@
 <!-- 카카오 책 정보 API 구현 -->
 <select id="selectKakaobook" resultType="Kakaobook">
 		select * from kakao_book
-	</select>
+</select>
+
+<select id="getBook" resultType="Kakaobook">
+		select *
+		from kakao_book where isbn = #{isbn}
+</select>
 
 </mapper>
