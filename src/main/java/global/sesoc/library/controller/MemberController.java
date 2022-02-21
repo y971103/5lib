@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.MemberDAO;
-import global.sesoc.library.vo.Essay;
+import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
@@ -114,25 +114,44 @@ public class MemberController {
 	}
 	
 	
+//	@RequestMapping(value="library",method=RequestMethod.GET)
+//	public String list(Model model) {
+//		logger.info("book 진입");
+//		List<Book> booklist = dao.selectBook();
+//		logger.info("결과:{}",booklist);
+//		model.addAttribute("booklist",booklist);
+//		return "memberjsp/library";
+//	}
+//	
+//	@RequestMapping(value="book_info",method=RequestMethod.GET)
+//	public String list(Model model, int booknum) {
+//		
+//		Book book = dao.getBook(booknum);
+//		model.addAttribute("book", book);
+//		return "memberjsp/book_info";
+//	}
+							
+						//라이브러리 페이지 하나 더 만들 예정
 	@RequestMapping(value="library",method=RequestMethod.GET)
-	public String list2(Model model) {
+	public String list(Model model) {
 		logger.debug("kakaobook 진입");
-		List<Kakaobook> kakaobooklist = dao.select();
+		List<Kakaobook> kakaobooklist = dao.selectKakaobook();
 		logger.debug("결과:{}",kakaobooklist);
 		model.addAttribute("kakaobooklist",kakaobooklist);
 		return "memberjsp/library";
 	}
 	
-	final String dir = "/bookimage/";
 	
 	@RequestMapping(value="book_info",method=RequestMethod.GET)
 	public String list(Model model, String isbn) {
-		
-		Kakaobook book = dao.getBook(isbn);
+		Kakaobook book = dao.getKakaoBook(isbn);
+		logger.info("결과1:{}",book);
 		model.addAttribute("book", book);
+		logger.info("결과:{}",book);
 		return "memberjsp/book_info";
 	}
 	
+	final String dir = "/bookimage/";
 	//kakaobook 테이블에서 이미지파일 가져오기  <img src="download?filename=${book.thumbnail}">
 	@RequestMapping(value = "download", method = RequestMethod.GET)
 	public String fileDownload(String filename, HttpServletResponse response) {

@@ -36,7 +36,7 @@ public class FileController {
     String realPath = request.getSession().getServletContext().getRealPath("/resources/file/Epub 파일 목록");
     
     
-		List<Book> Booklist = dao.selectBook();
+		List<Book> Booklist = dao.selectBooknum();
 		model.addAttribute("Booklist", Booklist);
     
     	for (Book i : Booklist) {

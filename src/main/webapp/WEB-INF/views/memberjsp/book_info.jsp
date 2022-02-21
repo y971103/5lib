@@ -104,7 +104,8 @@
             <div class="row"> 
 
                 <div style="padding-left: 10%;">
-                    <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
+             
+                   <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
@@ -114,6 +115,7 @@
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>저자</strong></span>
                                     <div>
+                                     	<%-- ${book.author} --%>
                                      	${book.authors}
                                     </div>
                                 </li>
@@ -126,6 +128,7 @@
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
+                                        <%-- ${book.pdate} --%>
                                         ${book.datetime}
                                     </div>
                                 </li>
@@ -137,6 +140,7 @@
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">
+                                  <%--  ${book.introduce} --%>
                                    ${book.contents}
                                 </li>
                             </ul>
