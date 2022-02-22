@@ -218,7 +218,7 @@ public class BookController {
 			logger.info("결과:{}",book);
 			model.addAttribute("book", book);
 			logger.info("결과:{}",book);
-			return "boookjsp/kakaobook_info";
+			return "bookjsp/kakaobook_info";
 		}
 		
 		
