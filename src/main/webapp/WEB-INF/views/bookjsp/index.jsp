@@ -165,6 +165,7 @@
                     <img src="download?filename=${book.thumbnail}">
                     <figcaption>
                       <h3>${book.title}</h3>
+                      <p>${book.authors}</p>
                       <p>${book.contents}</p>
                     </figcaption>
                     </a>
