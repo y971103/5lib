@@ -3,9 +3,9 @@ CREATE TABLE kakaobook
 	-- 저자
 	authors varchar2(20),
 	-- 제목
-	title varchar2(20),
+	title varchar2(100),
 	-- 내용
-	contents varchar2(20),
+	contents varchar2(2000),
 	-- 출간일자
 	datetime varchar2(100), 
 	-- isbn코드
