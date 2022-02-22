@@ -19,12 +19,17 @@ public int updateReview(Review review);
 //한줄평 목록 출력
 public ArrayList<Review> listReview(int booknum);
 
+
+// 카카오 책 정보 관련
 public ArrayList<Kakaobook> selectKakaobook();
 
 public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getKakaoBook(String isbn);
 
+
+
+// Book DB 관련
 public List<Book> selectBooknum();
 
 public Book getBook(int booknum);

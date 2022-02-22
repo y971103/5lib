@@ -3,10 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>book_info</title>
+    <title>Library</title>
     <link rel="icon" href="../resources/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -22,12 +24,6 @@
     <link rel="stylesheet" href="../resources/css/hover.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
 </head>
 
 <body>
@@ -55,7 +51,7 @@
                                         <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             My page
@@ -67,7 +63,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdown_1"
+                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Board
@@ -82,12 +78,12 @@
                                     </li>
                                 </ul>
                             </div>
-                            <c:if test="${loginId != null}">
+                           <c:if test="${loginId != null}">
 							<h2>
 								${sessionScope.loginId}님 <br>
 							</h2>
-							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
+							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="update" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
@@ -96,97 +92,57 @@
                 </div>
             </div>
         </div>
+ 
     </header>
     <!-- 헤더 끝-->
-    <!-- Product Details Section Begin -->
-    <section>
-        <div class="container" style="margin-bottom: 20px; padding-left: 90px">
-            <div class="row"> 
 
-                <div style="padding-left: 10%;">
-             	   <img src="download?filename=${book.book_photo}" style="width:273px; height:395px;"> 
-                </div>
-                <div class="col-lg-6">
-                    <div class="product__details__text">
-                        <h3><strong>${book.title}</strong></h3>
-                        <div>
-                            <ul>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>저자</strong></span>
-                                    <div>                             
-                                     	${book.author}
-                                    </div>
-                                </li>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>출판사</strong></span>
-                                    <div>
-                                        ${book.publisher}
-                                    </div>
-                                </li>
-                                <li class="binfo">
-                                    <span style="font-size: large;"><strong>출간</strong></span>
-                                    <div>
-                                        ${book.pdate}                                 
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        
-                        <h4 style="color:black;"><strong>책 소개</strong></h4>
-                        <div>
-                            <ul>
-                                <li style="width: 500px;" class="binfo">
-                                   ${book.introduce}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
-                    <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
-                </div>
-                
-                <div class="col-lg-12" style="padding-left: 10%;">
-                    <div class="product__details__tab" style="padding-right: 23%;">
-                        <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">한 줄 리뷰</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                        	<c:forEach var="review" items="${reviewlist}">
-                            <div class="line_bottom">
-                                <span>${review.id}</span>
-                                <span>${review.inputdate}</span>
-                                <div class="one_line">${review.content}</div>
-                            </div>
-                            </c:forEach>
- 							 <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> 
-                                <input type="submit" value="등록" class="sub_review">
-                            </div>
-                            
-                        </div>
+    <!-- Header part end-->
+    
+           <!-- 검색폼 -->
+<form id="pagingForm" method="get" action="list">
+	<input type="hidden" name="page" id="page" />
+	<select name ="type">
+		<option value = "1">=제목=</option>
+		<option value = "2">=저자=</option>
+		<option value = "3">=출판사=</option>
+		</select>
+			검색해주세요 : <input type="text"  name="searchText" value="${searchText}" />
+	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
+</form>
+<!-- /검색폼 --> 
+
+    <!--책 보여 주는데-->
+    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #d1f8d8, #faffff);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2>책 리스트</h2>
                     </div>
                 </div>
-
-                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
-                      
-                <div class="row" style="margin-left: 10%;">
-	                <c:forEach var="book" items="${booklist}" begin="1" end="4"> 
-	                    <div class="photo" style="margin-right: 22px;">
-	                        <img src="download?filename=${book.book_photo}" style="width:180px; height:261px;">
-	                    </div>
-	            	</c:forEach>
-                </div>
-                
+            </div>
+            <div class="row" style="margin-left: 7%;">
+         	<div class="row" >
+               <c:forEach var="book" items="${kakaobooklist}" begin="0" end="15">
+                    <div style="margin-bottom:8px;">       
+                        <a href="kakaobook_info?isbn=${book.isbn}">
+                           <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
+                            <div style="margin-top:5px;">
+                              <h4>저자-${book.authors}</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
+                </c:forEach> 
+                <a href="#" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
-    <!-- Product Details Section End -->
+    <!--top place end-->
 
-    <!-- Footer Section Begin -->
+    <!-- footer part start-->
+    
+    <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
@@ -206,6 +162,7 @@
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
                             <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                 method="get" class="form-inline">
                                 <input class="form-control" name="EMAIL" placeholder="Your Email Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
@@ -229,7 +186,7 @@
                         <p>4156, New garden, New York, USA
                                 +880 362 352 783</p>
                         <span>contact@martine.com</span>
-                      
+                       
                     </div>
                 </div>
             </div>
@@ -239,39 +196,37 @@
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
                         <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
+    <!-- footer part end-->
 
-    <!-- Js Plugins -->
-
-     <!-- jquery plugins here-->
-     <script src="../resources/js/jquery-1.12.1.min.js"></script>
-     <!-- popper js -->
-     <script src="../resources/js/popper.min.js"></script>
-     <!-- bootstrap js -->
-     <script src="../resources/js/bootstrap.min.js"></script>
-     <!-- magnific js -->
-     <script src="../resources/js/jquery.magnific-popup.js"></script>
-     <!-- swiper js -->
-     <script src="../resources/js/owl.carousel.min.js"></script>
-     <!-- masonry js -->
-     <script src="../resources/js/masonry.pkgd.js"></script>
-     <!-- masonry js -->
-     <script src="../resources/js/jquery.nice-select.min.js"></script>
-     <script src="../resources/js/gijgo.min.js"></script>
-     <!-- contact js -->
-     <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
-     <script src="../resources/js/jquery.form.js"></script>
-     <script src="../resources/js/jquery.validate.min.js"></script>
-     <script src="../resources/js/mail-script.js"></script>
-     <script src="../resources/js/contact.js"></script>
-     <!-- custom js -->
-     <script src="../resources/js/custom.js"></script>
+    <!-- jquery plugins here-->
+    <script src="../resources/js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../resources/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../resources/js/bootstrap.min.js"></script>
+    <!-- magnific js -->
+    <script src="../resources/js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../resources/js/owl.carousel.min.js"></script>
+    <!-- masonry js -->
+    <script src="../resources/js/masonry.pkgd.js"></script>
+    <!-- masonry js -->
+    <script src="../resources/js/jquery.nice-select.min.js"></script>
+    <script src="../resources/js/gijgo.min.js"></script>
+    <!-- contact js -->
+    <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../resources/js/jquery.form.js"></script>
+    <script src="../resources/js/jquery.validate.min.js"></script>
+    <script src="../resources/js/mail-script.js"></script>
+    <script src="../resources/js/contact.js"></script>
+    <!-- custom js -->
+    <script src="../resources/js/custom.js"></script>
 </body>
 </html>

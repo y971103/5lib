@@ -123,7 +123,7 @@
             </div>
             <div class="row" style="margin-left: 7%;">
          	<div class="row" >
-                 <!-- <c:forEach var="book" items="${booklist}" begin="0" end="3">
+                 <c:forEach var="book" items="${booklist}" begin="0" end="3">
                     <div style="margin-bottom:8px;">       
                         <a href="book_info?booknum=${book.booknum}">
                            <img src="download?filename=${book.book_photo}" style="width:230px; height:333px;">
@@ -133,18 +133,7 @@
                         </a>
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
-                </c:forEach> -->
-               <c:forEach var="book" items="${kakaobooklist}" begin="0" end="15">
-                    <div style="margin-bottom:8px;">       
-                        <a href="book_info?isbn=${book.isbn}">
-                           <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
-                            <div style="margin-top:5px;">
-                              <h4>저자-${book.authors}</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
-                </c:forEach> 
+                </c:forEach>
                 <a href="#" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>

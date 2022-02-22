@@ -104,7 +104,8 @@
             <div class="row"> 
 
                 <div style="padding-left: 10%;">
-             	   <img src="download?filename=${book.book_photo}" style="width:273px; height:395px;"> 
+             
+                   <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
@@ -113,8 +114,8 @@
                             <ul>
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>저자</strong></span>
-                                    <div>                             
-                                     	${book.author}
+                                    <div>
+                                     	${book.authors}
                                     </div>
                                 </li>
                                 <li class="binfo">
@@ -126,7 +127,7 @@
                                 <li class="binfo">
                                     <span style="font-size: large;"><strong>출간</strong></span>
                                     <div>
-                                        ${book.pdate}                                 
+                                        ${book.datetime}
                                     </div>
                                 </li>
                             </ul>
@@ -137,7 +138,7 @@
                         <div>
                             <ul>
                                 <li style="width: 500px;" class="binfo">
-                                   ${book.introduce}
+                                   ${book.contents}
                                 </li>
                             </ul>
                         </div>
@@ -174,9 +175,9 @@
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
                       
                 <div class="row" style="margin-left: 10%;">
-	                <c:forEach var="book" items="${booklist}" begin="1" end="4"> 
+	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
 	                    <div class="photo" style="margin-right: 22px;">
-	                        <img src="download?filename=${book.book_photo}" style="width:180px; height:261px;">
+	                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
 	                    </div>
 	            	</c:forEach>
                 </div>

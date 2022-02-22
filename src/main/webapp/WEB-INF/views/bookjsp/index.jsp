@@ -148,7 +148,7 @@
     <!-- 도서 슬라이드(배너) 끝-->
     <!-- Header part end-->
 
-    <!--책 보여 주는데-->
+    <!--책 보여 주는 곳-->
     <section class="top_place section_padding" style="padding-top:80px;">
         <div class="container">
             <div class="row justify-content-center">

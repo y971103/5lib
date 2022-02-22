@@ -114,41 +114,41 @@ public class MemberController {
 	}
 	
 	
-//	@RequestMapping(value="library",method=RequestMethod.GET)
-//	public String list(Model model) {
-//		logger.info("book 진입");
-//		List<Book> booklist = dao.selectBook();
-//		logger.info("결과:{}",booklist);
-//		model.addAttribute("booklist",booklist);
-//		return "memberjsp/library";
-//	}
-//	
-//	@RequestMapping(value="book_info",method=RequestMethod.GET)
-//	public String list(Model model, int booknum) {
-//		
-//		Book book = dao.getBook(booknum);
-//		model.addAttribute("book", book);
-//		return "memberjsp/book_info";
-//	}
-							
-						//라이브러리 페이지 하나 더 만들 예정
 	@RequestMapping(value="library",method=RequestMethod.GET)
 	public String list(Model model) {
+		logger.info("book 진입");
+		List<Book> booklist = dao.selectBook();
+		logger.info("결과:{}",booklist);
+		model.addAttribute("booklist",booklist);
+		return "memberjsp/library";
+	}
+	
+	@RequestMapping(value="book_info",method=RequestMethod.GET)
+	public String list(Model model, int booknum) {
+		
+		Book book = dao.getBook(booknum);
+		model.addAttribute("book", book);
+		return "memberjsp/book_info";
+	}
+							
+						//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
+	@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
+	public String kakaolist(Model model) {
 		logger.debug("kakaobook 진입");
 		List<Kakaobook> kakaobooklist = dao.selectKakaobook();
 		logger.debug("결과:{}",kakaobooklist);
 		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "memberjsp/library";
+		return "memberjsp/kakaolibrary";
 	}
 	
-	
-	@RequestMapping(value="book_info",method=RequestMethod.GET)
+						//북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
+	@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 	public String list(Model model, String isbn) {
 		Kakaobook book = dao.getKakaoBook(isbn);
 		logger.info("결과1:{}",book);
 		model.addAttribute("book", book);
 		logger.info("결과:{}",book);
-		return "memberjsp/book_info";
+		return "memberjsp/kakaobook_info";
 	}
 	
 	final String dir = "/bookimage/";

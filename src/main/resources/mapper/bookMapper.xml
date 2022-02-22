@@ -6,104 +6,104 @@
 <!-- 게시판 처리 SQL -->
 <mapper namespace="global.sesoc.library.dao.BookMapper">
 
-<!-- 한줄평 저장 -->
-<insert id="insertReview" parameterType="Review">
-	insert into review (
-		reviewnum
-		, isbn
-		, id
-		, content
-		, inputdate
-		, likecnt
-	)
-	values (
-		review_seq.nextval				
-		, #{isbn}
-		, #{content}
-		, #{id}
-	)
-</insert>
-
-<!-- 한줄평 삭제 -->
-<delete id="deleteReview" parameterType="Review">
-	delete from
-		review
-	where
-		reviewnum = #{reviewnum}
-		and id = #{id}
-</delete>
-
-<!-- 한줄평 목록 -->
-<select id="listReview" parameterType="int" resultType="Review">
-	select 
-		reviewnum
-		, id
-		, to_char(inputdate, 'YYYY-MM-DD') inputdate
-		, content
-	, likecnt 	좋아요 기능 추후에 협의	
-	from 
-		review
-	where
-		booknum = #{booknum}
-	order by 
-		reviewnum desc
-</select>
-
-<!-- 한줄평 수정 -->
-<update id="updateReview" parameterType="Review">
-	update
-		review
-	set
-		content = #{content}
-	where
-		reviewnum = #{reviewnum}
-		and id = #{id}
-</update>
-
-
-<!-- 카카오 책 정보 API 구현 -->
-<select id="selectKakaobook" resultType="Kakaobook">
-		select * from kakao_book
-</select>
-
-
-<!-- 같은 isbn의 책 정보 가져오기 (카카오 API용)-->
-<select id="getKakaoBook" resultType="Kakaobook">
+	<!-- 한줄평 저장 -->
+	<insert id="insertReview" parameterType="Review">
+		insert into review (
+			reviewnum
+			, isbn
+			, id
+			, content
+			, inputdate
+			, likecnt
+		)
+		values (
+			review_seq.nextval				
+			, #{isbn}
+			, #{content}
+			, #{id}
+		)
+	</insert>
+	
+	<!-- 한줄평 삭제 -->
+	<delete id="deleteReview" parameterType="Review">
+		delete from
+			review
+		where
+			reviewnum = #{reviewnum}
+			and id = #{id}
+	</delete>
+	
+	<!-- 한줄평 목록 -->
+	<select id="listReview" parameterType="int" resultType="Review">
 		select 
-			thumbnail
-			, title
-			, authors
-			, publisher
-			, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
-			contents
-		from
-			kakao_book 
-		where isbn = #{isbn}
-</select>
-
-<!-- DB 책 정보 구현 -->
-<!-- <select id="selectBook" resultType="book">
-		select * from book
-</select> -->
-
-<!-- 같은 booknum의 책 정보 가져오기 (Book DB용)-->
-<!-- <select id="getBook" resultType="book">
-		select 
-			book_photo
-			, title
-			, author
-			, publisher
-			, pdate
-			, introduce
-		from
-			book 
-		where booknum = #{booknum}
-</select> -->
-
-
-<!-- 해당하는 Booknum의 책 epub 파일 가져오기 (Book DB용)-->
-<select id="selectBooknum" resultType="book">
-		select booknum from book
-</select>
+			reviewnum
+			, id
+			, to_char(inputdate, 'YYYY-MM-DD') inputdate
+			, content
+		, likecnt 	좋아요 기능 추후에 협의	
+		from 
+			review
+		where
+			booknum = #{booknum}
+		order by 
+			reviewnum desc
+	</select>
+	
+	<!-- 한줄평 수정 -->
+	<update id="updateReview" parameterType="Review">
+		update
+			review
+		set
+			content = #{content}
+		where
+			reviewnum = #{reviewnum}
+			and id = #{id}
+	</update>
+	
+	
+	<!-- 카카오 책 정보 API 구현 -->
+	<select id="selectKakaobook" resultType="Kakaobook">
+			select * from kakao_book
+	</select>
+	
+	
+	<!-- 같은 isbn의 책 정보 가져오기 (카카오 API용)-->
+	<select id="getKakaoBook" resultType="Kakaobook">
+			select 
+				thumbnail
+				, title
+				, authors
+				, publisher
+				, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
+				contents
+			from
+				kakao_book 
+			where isbn = #{isbn}
+	</select>
+	
+	<!-- DB 책 정보 구현 -->
+	<select id="selectBook" resultType="book">
+			select * from book
+	</select> 
+	
+	<!-- 같은 booknum의 책 정보 가져오기 (Book DB용)-->
+	<select id="getBook" resultType="book">
+			select 
+				book_photo
+				, title
+				, author
+				, publisher
+				, pdate
+				, introduce
+			from
+				book 
+			where booknum = #{booknum}
+	</select> 
+	
+	
+	<!-- 해당하는 Booknum의 책 epub 파일 가져오기 (Book DB용)-->
+	<select id="selectBooknum" resultType="book">
+			select booknum from book
+	</select>
 
 </mapper>
