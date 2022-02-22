@@ -175,7 +175,7 @@
                
                 <tr>
                   <td style="width: 50%;">조회수 </td>
-               
+               		 <td rowspan ="11" >${board.content} </td>
                 </tr>
 
                 <tr>
