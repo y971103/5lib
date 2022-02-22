@@ -68,18 +68,41 @@
 
 
 <!-- 같은 isbn의 책 정보 가져오기 (카카오 API용)-->
-<select id="getBook" resultType="Kakaobook">
+<select id="getKakaoBook" resultType="Kakaobook">
 		select 
-			thumbnail, title, authors, publisher, 
-			SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
+			thumbnail
+			, title
+			, authors
+			, publisher
+			, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
 			contents
 		from
-			kakao_book where isbn = #{isbn}
+			kakao_book 
+		where isbn = #{isbn}
 </select>
 
+<!-- DB 책 정보 구현 -->
+<!-- <select id="selectBook" resultType="book">
+		select * from book
+</select> -->
 
-<!-- 해당하는 Booknum의 책 정보 가져오기 (Book DB용)-->
-<select id="selectBook" resultType="Book">
+<!-- 같은 booknum의 책 정보 가져오기 (Book DB용)-->
+<!-- <select id="getBook" resultType="book">
+		select 
+			book_photo
+			, title
+			, author
+			, publisher
+			, pdate
+			, introduce
+		from
+			book 
+		where booknum = #{booknum}
+</select> -->
+
+
+<!-- 해당하는 Booknum의 책 epub 파일 가져오기 (Book DB용)-->
+<select id="selectBooknum" resultType="book">
 		select booknum from book
 </select>
 

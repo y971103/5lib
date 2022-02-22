@@ -61,11 +61,11 @@ public class BookDAO {
 		return book;
 	}
 
-	public List<Book> selectBook() {
-		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		List<Book> booknum = mapper.selectBook();
-		return booknum;
-	}
+	/*
+	 * public List<Book> selectBooknum() { BookMapper mapper =
+	 * sqlSession.getMapper(BookMapper.class); List<Book> booknum =
+	 * mapper.selectBooknum(); return booknum; }
+	 */
 
 	
 }

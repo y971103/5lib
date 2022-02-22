@@ -23,8 +23,12 @@ public ArrayList<Kakaobook> selectKakaobook();
 
 public int insertKakaobook(Kakaobook kakaobook);
 
-public Kakaobook getBook(String isbn);
+public Kakaobook getKakaoBook(String isbn);
 
-public List<Book> selectBook();
+public List<Book> selectBooknum();
+
+public Book getBook(int booknum);
+
+public ArrayList<Book> selectBook();
 
 }

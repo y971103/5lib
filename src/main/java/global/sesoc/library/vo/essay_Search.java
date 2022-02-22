@@ -29,6 +29,6 @@ public class essay_Search {
 		return "notice_Search [type=" + type + ", searchText=" + searchText + "]";
 	}
 	
-	
+	 
 
 }
