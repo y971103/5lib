@@ -71,7 +71,7 @@
                                         <a class="nav-link" id="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="nav-link" href="<c:url value="/member/library"/>">Library</a>
+                                        <a class="nav-link" id="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle"  id="navbarDropdown"

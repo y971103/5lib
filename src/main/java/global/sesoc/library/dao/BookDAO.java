@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
@@ -44,7 +43,9 @@ public class BookDAO {
 		ArrayList<Review> reviewlist = mapper.listReview(booknum);
 		return reviewlist;
 	}
-
+	
+	
+	
 	public int insertKakaobook(Kakaobook kakaobook) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		int result = 0;
@@ -59,10 +60,24 @@ public class BookDAO {
 		return book;
 	}
 
+
+	public List<Kakaobook> selectKakaoBooknum() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
+		List<Kakaobook> kakaobooknum = mapper.selectKakaoBooknum(); 
+		return kakaobooknum; 
+	}	 
 	
-	 public List<Book> selectBooknum() { BookMapper mapper =
-	 sqlSession.getMapper(BookMapper.class); List<Book> booknum =
-	 mapper.selectBooknum(); return booknum; }
-	 
+	public List<Kakaobook> selectKakaobook() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		List<Kakaobook> book = mapper.selectKakaobook();
+		return book;
+	}
+
+	public Kakaobook getKakaoBook(String isbn) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		//해당 번호의 글정보 읽기
+		Kakaobook book = mapper.getKakaoBook(isbn);
+		return book;
+	}
 
 }

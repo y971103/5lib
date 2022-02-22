@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.MemberDAO;
-import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
@@ -101,89 +100,6 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-//	@RequestMapping(value="index", method=RequestMethod.GET)
-//	public String index() {
-//		
-//		return "memberjsp/index";
-//	}
-	
-	@RequestMapping(value="viewer", method=RequestMethod.GET)
-	public String viewer() {
-				
-		return "memberjsp/viewer";
-	}
-	
-	
-	@RequestMapping(value="library",method=RequestMethod.GET)
-	public String list(Model model) {
-		logger.info("book 진입");
-		List<Book> booklist = dao.selectBook();
-		logger.info("결과:{}",booklist);
-		model.addAttribute("booklist",booklist);
-		return "memberjsp/library";
-	}
-	
-	@RequestMapping(value="book_info",method=RequestMethod.GET)
-	public String list(Model model, int booknum) {
-		
-		Book book = dao.getBook(booknum);
-		model.addAttribute("book", book);
-		return "memberjsp/book_info";
-	}
-							
-						//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
-	@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
-	public String kakaolist(Model model) {
-		logger.debug("kakaobook 진입");
-		List<Kakaobook> kakaobooklist = dao.selectKakaobook();
-		logger.debug("결과:{}",kakaobooklist);
-		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "memberjsp/kakaolibrary";
-	}
-	
-						//북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
-	@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
-	public String list(Model model, String isbn) {
-		Kakaobook book = dao.getKakaoBook(isbn);
-		logger.info("결과1:{}",book);
-		model.addAttribute("book", book);
-		logger.info("결과:{}",book);
-		return "memberjsp/kakaobook_info";
-	}
-	
-	final String dir = "/bookimage/";
-	//kakaobook 테이블에서 이미지파일 가져오기  <img src="download?filename=${book.thumbnail}">
-	@RequestMapping(value = "download", method = RequestMethod.GET)
-	public String fileDownload(String filename, HttpServletResponse response) {
-		
-		try {
-			response.setHeader("Content-Disposition", " attachment;filename="+ URLEncoder.encode(filename, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		
-		//저장된 파일 경로
-		String fullPath = dir + filename;
-		
-		//서버의 파일을 읽을 입력 스트림과 클라이언트에게 전달할 출력스트림
-		FileInputStream filein = null;
-		ServletOutputStream fileout = null;
-		
-		try {
-			filein = new FileInputStream(fullPath);
-			fileout = response.getOutputStream();
-			
-			//Spring의 파일 관련 유틸 이용하여 출력
-			FileCopyUtils.copy(filein, fileout);
-			
-			filein.close();
-			fileout.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
 	
 	@RequestMapping(value="contact", method=RequestMethod.GET)
 	public String contact() {

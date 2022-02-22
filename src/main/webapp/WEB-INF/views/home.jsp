@@ -24,7 +24,7 @@
 </ul>
 <a href="book/kakaobook">메인화면단</a>
 <br>
-<a href="member/viewer">뷰어</a>
+<a href="book/viewer">뷰어</a>
 <br>
 <!-- <a href="book/kakaobook">카카오 책 정보</a> -->
 <br>

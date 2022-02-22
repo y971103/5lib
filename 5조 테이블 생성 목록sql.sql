@@ -1,24 +1,22 @@
-CREATE TABLE book
+CREATE TABLE kakaobook
 (
-	-- 책 번호
-	booknum number NOT NULL,
-	-- 책 제목
-	title varchar2(200),
-	-- 작가
-	author varchar2(20),
+	-- 저자
+	authors varchar2(20),
+	-- 내용
+	contents varchar2(20),
+	-- 출간일자
+	datetime varchar2(100), 
+	-- isbn코드
+	isbn varchar2(200),
 	-- 출판사
-	publisher varchar2(50),
-	-- 출판 일자
-	p_date date,
-	-- 평점
-	score float default 0,
-	-- 책 소개글
-	introduce varchar2(2000),
-	-- 책 사진
-	book_photo number default 0,
-	-- 잘르
-	genre_num varchar2(100) NOT NULL,
-	PRIMARY KEY (booknum)
+	publisher varchar2(20),
+	-- 썸네일
+	thumbnail varchar2(200),
+	-- 제목
+	title varchar2(20),
+	-- 책 번호(DB)
+	booknum number,
+	PRIMARY KEY (isbn)
 );
 
 
@@ -178,11 +176,6 @@ ALTER TABLE shelf
 	REFERENCES book (booknum)
 ;
 
-ALTER TABLE book
-	ADD FOREIGN KEY (genre_num)
-	REFERENCES genre_info (genre_num)
-;
-
 ALTER TABLE genre
 	ADD FOREIGN KEY (genre_num)
 	REFERENCES genre_info (genre_num)
@@ -238,17 +231,7 @@ ALTER TABLE QnA_reply
 	REFERENCES QnA (QnAnum)
 ;
 
-COMMENT ON COLUMN book.booknum IS '책 번호';
-COMMENT ON COLUMN book.title IS '책 제목';
-COMMENT ON COLUMN book.author IS '작가';
 
-COMMENT ON COLUMN book.publisher IS '출판사';
-COMMENT ON COLUMN book.p_date IS '출판 일자';
-COMMENT ON COLUMN book.score IS '평점';
-COMMENT ON COLUMN book.genre_type IS '장르';
-COMMENT ON COLUMN book.introduce IS '책 소개글';
-COMMENT ON COLUMN book.book_photo IS '책 사진';
-COMMENT ON COLUMN book.bookfile IS '책 파일';
 COMMENT ON COLUMN comments.commentnum IS '나만 보는 리뷰 번호 (줄글)';
 COMMENT ON COLUMN comments.content IS '나만 보는 리뷰 내용';
 COMMENT ON COLUMN comments.id IS '회원 아이디';
@@ -293,7 +276,9 @@ COMMENT ON COLUMN shelf.shelfnum IS '내 서재에 등록된 책 수';
 COMMENT ON COLUMN shelf.id IS '회원 아이디';
 COMMENT ON COLUMN shelf.booknum IS '책 번호';
 
-
+-- kakaobook 테이블에 insert 예시
+insert into kakao_book (authors, contents, datetime, isbn, price, publisher, sale_price , status, thumbnail, title, translators) 
+values ('염한승', '집가고 싶다', '2021-02-22', '12345556', 100, 'kita', 50, '비정상', '3.jpg', '정신나감', null); 
 
 -- 게시판 글 번호에 사용할 시퀀스
 create sequence board_seq;

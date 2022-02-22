@@ -52,7 +52,7 @@
                                         <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/member/library"/>">Library</a>
+                                        <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdown"
@@ -161,10 +161,11 @@
             <div class="row" style="margin-left: 7%;">
             <c:forEach var="book" items="${kakaobooklist}" begin="0" end="8">
                 <figure class="snip1283">
-                <a href="<c:url value="/member/book_info?isbn=${book.isbn}"/>">
+                <a href="<c:url value="/book/kakaobook_info?isbn=${book.isbn}"/>">
                     <img src="download?filename=${book.thumbnail}">
                     <figcaption>
                       <h3>${book.title}</h3>
+                      <p>${book.authors}</p>
                       <p>${book.contents}</p>
                     </figcaption>
                     </a>
@@ -172,7 +173,7 @@
                 </c:forEach>
             
                    
-                <a href="<c:url value="/member/library"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
+                <a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
