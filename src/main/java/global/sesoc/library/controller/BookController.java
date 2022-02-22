@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.library.dao.BookDAO;
-import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
@@ -84,11 +83,11 @@ public class BookController {
 		dao.updateReview(review);
 		//원래의 글읽기 화면으로 이동 
 		return "redirect:read?Booknum=" + review.getBooknum();
-	}
+	}	
 	
 	//kakaobook arraylist
 	@RequestMapping(value="kakaobook",method=RequestMethod.GET)
-	public String list(Model model) {
+	public String Kakaolist(Model model) {
 		logger.debug("kakaobook 진입");
 		List<Kakaobook> kakaobooklist = dao.select();
 		logger.debug("결과:{}",kakaobooklist);
@@ -201,5 +200,32 @@ public class BookController {
 
 			return null;
 		}
-	
+							
+		//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
+		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
+		public String kakaolist(Model model) {
+			logger.debug("kakaobook 진입");
+			List<Kakaobook> kakaobooklist = dao.selectKakaobook();
+			logger.debug("결과:{}",kakaobooklist);
+			model.addAttribute("kakaobooklist",kakaobooklist);
+			return "bookjsp/kakaolibrary";
+		}
+		
+		//북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
+		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
+		public String list(Model model, String isbn) {
+			Kakaobook book = dao.getKakaoBook(isbn);
+			logger.info("결과:{}",book);
+			model.addAttribute("book", book);
+			logger.info("결과:{}",book);
+			return "boookjsp/kakaobook_info";
+		}
+		
+		
+		@RequestMapping(value="viewer", method=RequestMethod.GET)
+		public String viewer() {
+					
+			return "bookjsp/viewer";
+		}
+			
 }
