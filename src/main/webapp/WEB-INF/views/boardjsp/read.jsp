@@ -112,22 +112,31 @@
     </header>
     <!-- 헤더 끝-->
 
+    <body> 
+    <section class="ftco-section main-body">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <br></br>
+                    <h1 class="heading-section">Board The Read</h1>
+                    <hr>
+                </div>
+            </div>
+    
+    
+    
     
 
-    <!--게시판 읽기-->                               
+                              
 	<!--Borad The Read 게시판 읽기-->                               
     <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #ffffff);"> <!-- #99b19c-->
         <div id="main">
        
-        <div class="container" style="padding-top:1px;">
+        <div class="container" style="padding-top:px;">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     
-                    <div class="text-center">
-                        <h3>Board The Read</h3>  
-                        <div class="line_bottom"></div>
-                        <div class="one_line"> </div>
-                          
+                  
                     </div>
                 </div>
             </div>
@@ -136,39 +145,72 @@
     
     <br><br>
     
-    <section article>
-        <div class="col-lg-12" style="padding-left: 10%;">
-        <div class="col-lg-12" style="padding-right: 23%;">
-            <div class="section_tittle">
-            <table border="2">
-                <tr>
-                  <th style="width: 160px;">작성일</th>
-                  <td style="width: 300px;">${board.inputdate}</td>
+    <body> 
+    <section class="ftco-section main-body">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <br></br>
                   
-                   
-                  <th style="width: 160px;">작성자</th>
-                  <td style="width: 300px;">${board.id}</td>
-                </tr>
-
+                    <hr>
+                </div>
+            </div>
+          
+    <section article>
+    <div class="container">
+      <div class="row">
+      
+      	
+      	
+         <table class="table table-striped" style="text-align: center; border: 3px solid #b7c9b8">
+        
+            <thead>
+               <tr>
+                  <th colspan="3" style="background-color:#abc9b6; text-align: center;">내가 쓴 게시물</th>                  
+               </tr>
+               
+            </thead>
+            <tbody>
+               
                 <tr>
-                  <th style="width: 160px;">제목</th>
-                  <td style="width: 300px;">${board.title}</td>
-
-                  <th style="width: 160px;">조회수</th>
-                  <td style="width: 300px;">${board.hits}</td>
+                  <td style="width: 10%;">조회수 </td>
                 </tr>
-
+                
                 <tr>
-                  <th style="width: 160px;">수정하기</th>
-                  <td style="width: 300px;">${board.hits}</td>
-                </tr>
+                  <td colspan="1">${board.hits} </td>
+               </tr>
 
+               <tr>
+                  <td style="width: 40%;">작성일</td>
+              </tr>
+                
+               
+               <tr>
+                  <td colspan="1">${board.inputdate} </td>
+               </tr>
+
+               <tr>
+                  <td>작성자ID</td>
+               </tr>
+               
                 <tr>
-                  <td colspan="6" height="400">${board.content}</td>
+                  <td colspan="1">${board.id}</td>
                 </tr>
-            </table>
-            
-            <c:if test="${loginId == board.id}">
+                
+           
+               <tr>
+                  <td>제목</td>  
+                </tr>
+                
+                <tr>
+                  <td colspan="1">${board.title}</td>
+               </tr>
+               
+
+            </tbody>
+         </table>
+         
+   <c:if test="${loginId == board.id}">
 				<!-- 현재글 삭제하기-->
 				<a href="javascript:deleteCheck(${board.boardnum})">삭제</a>
 				<!-- 현재글 수정하기-->
@@ -212,9 +254,7 @@
         </div>
         </div>
         <br><br>
-        <hr>
-            
-
+        <hr>         
         </section>
 
     <!-- footer part start-->

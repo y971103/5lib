@@ -123,6 +123,7 @@
         </div>
     </header>
     <!-- 헤더 끝-->
+    
      <!--essayRead 에세이 읽기 폼 --> 
 <body> 
     <section class="ftco-section main-body">
@@ -181,8 +182,7 @@
        </c:if>
        <!-- 목록보기 -->
        <a href="essay?list=${essay.essaynum}">목록보기</a> &nbsp;&nbsp;&nbsp;
-       
-       
+
       </div>
    </div>
 
