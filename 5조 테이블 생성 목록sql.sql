@@ -2,6 +2,8 @@ CREATE TABLE kakaobook
 (
 	-- 저자
 	authors varchar2(20),
+	-- 제목
+	title varchar2(20),
 	-- 내용
 	contents varchar2(20),
 	-- 출간일자
@@ -12,8 +14,6 @@ CREATE TABLE kakaobook
 	publisher varchar2(20),
 	-- 썸네일
 	thumbnail varchar2(200),
-	-- 제목
-	title varchar2(20),
 	-- 책 번호(DB)
 	booknum number,
 	PRIMARY KEY (isbn)
