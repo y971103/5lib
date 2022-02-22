@@ -29,7 +29,7 @@ public class KakaoController {
 	@Autowired
     BookDAO dao;
 	
-	@GetMapping("/download2")
+	@GetMapping("/download")
 	public void download(HttpServletRequest request, HttpServletResponse response, Model model) throws IOException {
 
 	// realPath : 상대경로에서 절대적인 경로로 변경하기 위해 사용하는 숨겨진 진짜 파일 경로. 소비자들에게 노출되어서는 안되며 수시로 변경된다.

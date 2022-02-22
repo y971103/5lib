@@ -3,7 +3,6 @@ package global.sesoc.library.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import global.sesoc.library.vo.Book;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 
@@ -29,13 +28,5 @@ public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getKakaoBook(String isbn);
 
-
-
-// Book DB 관련
-public ArrayList<Book> selectBook();
-
-public List<Book> selectBooknum();
-
-public Book getBook(int booknum);
 
 }
