@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -30,16 +29,16 @@ public class FileController {
     BookDAO dao;
 	
 	@GetMapping("/download")
-	public void download(HttpServletRequest request, HttpServletResponse response, Model model, int BookList) throws IOException {
+	public void download(HttpServletRequest request, HttpServletResponse response, Model model) throws IOException {
 
 	// realPath : 상대경로에서 절대적인 경로로 변경하기 위해 사용하는 숨겨진 진짜 파일 경로. 소비자들에게 노출되어서는 안되며 수시로 변경된다.
-    String realPath = request.getSession().getServletContext().getRealPath("/resources/file/Epub 파일 목록");
+    String realPath = request.getSession().getServletContext().getRealPath("resources/file/Epub 파일 목록");
     
     
-		List<Book> Booklist = dao.selectBooknum();
-		model.addAttribute("Booklist", Booklist);
+		List<Book> booklist = dao.selectBooknum();
+		model.addAttribute("Booklist", booklist);
     
-    	for (Book i : Booklist) {
+    	for (Book i : booklist) {
     
     	String path = realPath + "\\" + i.getBooknum() + ".epub";
     	logger.info(path);

@@ -86,9 +86,20 @@ public class BookController {
 		return "redirect:read?Booknum=" + review.getBooknum();
 	}
 	
+	//book arraylist
+		@RequestMapping(value="book",method=RequestMethod.GET)
+		public String Booklist(Model model) {
+			logger.debug("book DB 진입");
+			List<Book> Booklist = dao.select2();
+			logger.debug("결과:{}",Booklist);
+			model.addAttribute("Booklist",Booklist);
+			return "bookjsp/index";
+		}
+	
+	
 	//kakaobook arraylist
 	@RequestMapping(value="kakaobook",method=RequestMethod.GET)
-	public String list(Model model) {
+	public String Kakaolist(Model model) {
 		logger.debug("kakaobook 진입");
 		List<Kakaobook> kakaobooklist = dao.select();
 		logger.debug("결과:{}",kakaobooklist);

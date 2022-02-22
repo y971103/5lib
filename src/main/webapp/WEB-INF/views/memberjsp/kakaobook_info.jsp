@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
+                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download2'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
                 </div>
                 

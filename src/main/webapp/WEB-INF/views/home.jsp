@@ -22,7 +22,7 @@
 </c:if>	
 	<li><a href="board/list">게시판</a></li>
 </ul>
-<a href="book/kakaobook">메인화면단</a>
+<a href="book/book">메인화면단</a>
 <br>
 <a href="member/viewer">뷰어</a>
 <br>

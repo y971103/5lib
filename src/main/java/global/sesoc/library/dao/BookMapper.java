@@ -23,6 +23,8 @@ public ArrayList<Review> listReview(int booknum);
 // 카카오 책 정보 관련
 public ArrayList<Kakaobook> selectKakaobook();
 
+public List<Kakaobook> selectKakaoBooknum();
+
 public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getKakaoBook(String isbn);
@@ -30,10 +32,10 @@ public Kakaobook getKakaoBook(String isbn);
 
 
 // Book DB 관련
+public ArrayList<Book> selectBook();
+
 public List<Book> selectBooknum();
 
 public Book getBook(int booknum);
-
-public ArrayList<Book> selectBook();
 
 }

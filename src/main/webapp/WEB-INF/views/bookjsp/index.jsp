@@ -159,13 +159,13 @@
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
-            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="8">
+            <c:forEach var="book" items="${booklist}" begin="0" end="8">
                 <figure class="snip1283">
-                <a href="<c:url value="/member/book_info?isbn=${book.isbn}"/>">
-                    <img src="download?filename=${book.thumbnail}">
+                <a href="<c:url value="/member/book_info?booknum=${book.booknum}"/>">
+                    <img src="download?filename=${book.book_photo}">
                     <figcaption>
                       <h3>${book.title}</h3>
-                      <p>${book.contents}</p>
+                      <p>${book.content}</p>
                     </figcaption>
                     </a>
                   </figure>

@@ -60,9 +60,22 @@ public class BookDAO {
 	}
 
 	
-	 public List<Book> selectBooknum() { BookMapper mapper =
-	 sqlSession.getMapper(BookMapper.class); List<Book> booknum =
-	 mapper.selectBooknum(); return booknum; }
-	 
+	public List<Book> select2() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		List<Book> book = mapper.selectBook();
+		return book;
+	}
+	
+	 public List<Book> selectBooknum() { 
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
+	 	List<Book> booknum = mapper.selectBooknum(); 
+		return booknum; 
+	 }
+
+	public List<Kakaobook> selectKakaoBooknum() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
+		List<Kakaobook> kakaobooknum = mapper.selectKakaoBooknum(); 
+		return kakaobooknum; 
+	}	 
 
 }

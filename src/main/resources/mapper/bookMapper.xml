@@ -81,6 +81,12 @@
 			where isbn = #{isbn}
 	</select>
 	
+	<!-- 해당하는 Kakaobooknum의 책 epub 파일 랜덤하게 가져오기 -->
+	<select id="selectKakaoBooknum" resultType="Kakaobook">
+			select isbn from kakao_book
+	</select>
+	
+	
 	<!-- DB 책 정보 구현 -->
 	<select id="selectBook" resultType="book">
 			select * from book

@@ -101,12 +101,6 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-//	@RequestMapping(value="index", method=RequestMethod.GET)
-//	public String index() {
-//		
-//		return "memberjsp/index";
-//	}
-	
 	@RequestMapping(value="viewer", method=RequestMethod.GET)
 	public String viewer() {
 				
