@@ -19,6 +19,10 @@ CREATE TABLE kakaobook
 	PRIMARY KEY (isbn)
 );
 
+-- kakaobook 테이블에 insert 예시
+insert into kakaobook (authors, title, contents, datetime, isbn, publisher, thumbnail, booknum) 
+values ('염한승', '책 제목', '내용', '2021-02-22', '12345556', '출판사', '3.jpg', 3); 
+
 
 CREATE TABLE comments
 (
@@ -276,9 +280,7 @@ COMMENT ON COLUMN shelf.shelfnum IS '내 서재에 등록된 책 수';
 COMMENT ON COLUMN shelf.id IS '회원 아이디';
 COMMENT ON COLUMN shelf.booknum IS '책 번호';
 
--- kakaobook 테이블에 insert 예시
-insert into kakao_book (authors, contents, datetime, isbn, price, publisher, sale_price , status, thumbnail, title, translators) 
-values ('염한승', '집가고 싶다', '2021-02-22', '12345556', 100, 'kita', 50, '비정상', '3.jpg', '정신나감', null); 
+
 
 -- 게시판 글 번호에 사용할 시퀀스
 create sequence board_seq;
