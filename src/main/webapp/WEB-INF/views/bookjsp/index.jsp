@@ -173,7 +173,7 @@
                 </c:forEach>
             
                    
-                <a href="<c:url value="/book/library"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
+                <a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
