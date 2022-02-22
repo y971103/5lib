@@ -40,7 +40,7 @@
 		var page = document.getElementById('page');
 		page.value = currentPage;
 		form.submit();
-	}
+	}c
     
 <script>
 function alertSend(a){
@@ -53,7 +53,7 @@ function alertSend(a){
 <body>
 
    <body>
-   <!--:헤더 시작::-->
+   <!--:헤더 시작::--> 
    <header class="main_menu">
         <div class="main_menu_iner">
             <div class="container">
