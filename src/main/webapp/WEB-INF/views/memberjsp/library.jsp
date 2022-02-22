@@ -134,7 +134,8 @@
                     </div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
                 </c:forEach>
-                <a href="#" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
+                
+                <a href="<c:url value="/member/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
             </div>
         </div>
     </section>
