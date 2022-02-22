@@ -63,7 +63,7 @@
 	
 	<!-- 카카오 책 정보 API 구현 -->
 	<select id="selectKakaobook" resultType="Kakaobook">
-			select * from kakao_book
+			select * from kakaobook
 	</select>
 	
 	
@@ -77,13 +77,13 @@
 				, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
 				contents
 			from
-				kakao_book 
+				kakaobook 
 			where isbn = #{isbn}
 	</select>
 	
 	<!-- 해당하는 Kakaobooknum의 책 epub 파일 랜덤하게 가져오기 -->
 	<select id="selectKakaoBooknum" resultType="Kakaobook">
-			select isbn from kakao_book
+			select isbn from kakaobook
 	</select>
 	
 </mapper>
