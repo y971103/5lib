@@ -16,6 +16,8 @@ CREATE TABLE kakaobook
 	thumbnail varchar2(200),
 	-- 책 번호(DB)
 	booknum number,
+	-- 장르
+	genre varchar2(200),
 	PRIMARY KEY (isbn)
 );
 
