@@ -174,7 +174,7 @@
                 </tr>
                 
                 <tr>
-              	    <td width = "300" height="500" colspan="8">${board.content}</td>
+              	    <td align=center width = "300" height="500" colspan="8">${board.content}</td>
                 </tr>
                 
 
@@ -193,25 +193,34 @@
             	
         <!-- 리플 작성 폼 시작 -->
           <tr>
-           	   <form id="reply" action="replyWrite" method="post">
-               <td><textarea cols = "137"  rows="1.5" name="content"></textarea></td><br>
-               
+        <form id="reply" action="replyWrite" method="post">
+              <td><textarea cols = "137"  rows="1.5" name="content"></textarea></td><br>
+               <form>
                <input type = "submit" value="저장하기">
+               </form>
+               
          </tr>
+         <br>
           <!-- 리플 작성 폼 끝 -->
            
-              <!-- 리플 목록 출력 -->    
-			<c:forEach var="reply" items="${replylist}">
+              <!-- 리플 목록 출력 시작  --> 
+         <table>   
+			<c:forEach var="reply" items="${replynum}">
 				<tr>
 					<td class="replyid">
 						<b style="margin-right: 20px;">${reply.id}</b><hr>
 					</td>
-		
 				</tr>
-			</c:forEach>	
-				</form>
-		</tr>
-
+				
+				<tr>
+		<!-- 리플 수정 폼이 나타날 위치 -->
+				<tr>
+					<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
+				</tr>
+			</c:forEach>
+		 </table>
+	</form>
+	
           <!-- 리플 목록 출력 끝-->   
         
       </section>
