@@ -226,8 +226,10 @@ public class BookController {
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
+            ArrayList<Review> reviewlist = dao.listReview(isbn);
 			logger.info("결과:{}",book);
 			model.addAttribute("book", book);
+            model.addAttribute("reviewlist", reviewlist);
 			logger.info("결과:{}",book);
 			return "bookjsp/kakaobook_info";
 		}
