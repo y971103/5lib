@@ -29,6 +29,7 @@
                     <input type="text" class="input-field" placeholder="Name" name="name" required>
                     <div style="color: #999; height: 50px;">Favorite Genre
                     <select name="genre_num" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
+                    	<option value="인문">Humanities</option>
                         <option value="소설">Novel</option>  
                         <option value="여행">Travel</option>
                         <option value="에세이">Essay</option>
