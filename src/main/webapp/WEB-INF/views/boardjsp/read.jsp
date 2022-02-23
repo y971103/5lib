@@ -129,7 +129,7 @@
 
                               
 	<!--Borad The Read 게시판 읽기-->                               
-    <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #ffffff);"> <!-- #99b19c-->
+    <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #95a194);"> 
       
        
        
@@ -144,115 +144,89 @@
     
     <body> 
     <section class="ftco-section main-body">
-        <div class="container">
-           
-                <div class="col-md-6 text-center mb-4">
-                    
-               
-                </div>
-            </div>
+        <div class="container"> </div>
           
     <section article>
     <div class="container">
-      <div class="row">
+     
+         <table class="table table-striped" style="text-align: center; border: 1px solid #ffffff">
 
-         <table class="table table-striped" style="text-align: center; border: 0px solid #b7c9b8">
-        
+       
             <thead>
-               <tr>
-                  <th style="background-color:#abc9b6; text-align: center;">보여주고 싶은 것 </th>
-                  <th style="background-color:#abc9b6; text-align: center;">내가 쓴 게시물</th> 
-               </tr>
-               
+              
             </thead>
+            
             <tbody>
-               
                 <tr>
-                  <td style="width: 50%;">조회수 </td>
-               		 <td rowspan ="11" >${board.content} </td>
+                	<th style="width:100px;">제목 : </th>
+                	<td style="width:1100px;" colspan="8">${board.title}</td>
                 </tr>
 
                 <tr>
-                  <td colspan="1">${board.hits} </td>
-               </tr>
-
-
-               <tr>
-                  <td style="width: 50%;">작성일</td>
-              </tr>                
-               <tr>
-                  <td colspan="1">${board.inputdate} </td>
-               </tr>
-
-
-               <tr>
-                  <td style="width: 50%;">작성자ID</td>
-               </tr>
-                <tr>
-                  <td colspan="1">${board.id}</td>
-                </tr>
-                
-                
-           
-               <tr>
-                  <td>제목</td>  
+                	<th style="width:100px;">ID: </th>
+                	<td style="width:100px;" colspan="1" >${board.id}</td>
+                	
+                	<th style="width:100px;">작성일: </th>
+                	<td style="width:100px;" colspan="1">${board.inputdate}</td>
+                	
+					<th style="width:100px;">조회수: </th>
+                	<td style="width:100px;" colspan="1">${board.hits}</td>
                 </tr>
                 
                 <tr>
-                  <td colspan="1">${board.title}</td>
-               </tr>
-               
-                <tr>
-                  <td>내용</td>  
+              	    <td align=center width = "300" height="500" colspan="8">${board.content}</td>
                 </tr>
                 
-                <tr>
-                  <td colspan="1">${board.content}</td>
-               </tr>
-               
 
             </tbody>
          </table>
          
   		<c:if test="${loginId == board.id}">
-				<!-- 현재글 삭제하기-->
+		<!-- 현재글 삭제하기-->
 				<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
-				<!-- 현재글 수정하기-->
+		<!-- 현재글 수정하기-->
 				<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
 		</c:if>
+		<!-- 현재 글 목록보기 -->
             	<a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
-            	<br>
-
-
-    <section>
-            <div class="text-center">
-            <form id="reply" action="replyWrite" method="post">
-                <h3>댓글</h3>
-                <textarea cols="100" rows="1" name="content">
-   
-                </textarea>
-                <input type = "submit" value="저장하기">
-               </form>  
-            <table class="reply">
-			<c:forEach var="reply" items="${replylist}">
+            	<br><br><br>
+            	
+        <!-- 리플 작성 폼 시작 -->
+          <tr>
+        <form id="reply" action="replyWrite" method="post">
+              <td><textarea cols = "137"  rows="1.5" name="content"></textarea></td><br>
+               <form>
+               <input type = "submit" value="저장하기">
+               </form>
+               
+         </tr>
+         <br>
+          <!-- 리플 작성 폼 끝 -->
+           
+              <!-- 리플 목록 출력 시작  --> 
+         <table>   
+			<c:forEach var="reply" items="${replynum}">
 				<tr>
 					<td class="replyid">
 						<b style="margin-right: 20px;">${reply.id}</b><hr>
 					</td>
-					<td class="replycontent">
-						${reply.content}<hr>
-					</td>
-				</tr>	
-		 
+				</tr>
+				
+				<tr>
+		<!-- 리플 수정 폼이 나타날 위치 -->
+				<tr>
+					<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
+				</tr>
 			</c:forEach>
-			</table> 
-      
-            </div>
-        </div>
-        </div>
-        <br><br>
-        <hr>         
+		 </table>
+	</form>
+	
+          <!-- 리플 목록 출력 끝-->   
+        
       </section>
+</section>
+
+
 
 
     <!-- footer part start-->

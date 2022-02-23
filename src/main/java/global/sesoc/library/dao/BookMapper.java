@@ -16,7 +16,7 @@ public int deleteReview(Review review);
 //한줄평 수정 
 public int updateReview(Review review);
 //한줄평 목록 출력
-public ArrayList<Review> listReview(int booknum);
+public ArrayList<Review> listReview(String isbn);
 
 
 // 카카오 책 정보 관련

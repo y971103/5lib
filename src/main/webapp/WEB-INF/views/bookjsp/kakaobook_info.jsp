@@ -199,10 +199,12 @@ function createReader(bookData) {
                             </div>
                             </c:forEach>
  							 <div>
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review"> 
+ 							 	<form id="reviewWrite" action="reviewWrite" method="post">
+ 							 	<input type="hidden" name="isbn" value="${book.isbn}" />
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review" name="content"> 
                                 <input type="submit" value="등록" class="sub_review">
+                                </form>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

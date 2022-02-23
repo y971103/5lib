@@ -38,9 +38,9 @@ public class BookDAO {
 	}
 
 	// 북 정보에 달린 한줄평 목록
-	public ArrayList<Review> listReview(int booknum) {
+	public ArrayList<Review> listReview(String isbn) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		ArrayList<Review> reviewlist = mapper.listReview(booknum);
+		ArrayList<Review> reviewlist = mapper.listReview(isbn);
 		return reviewlist;
 	}
 	
