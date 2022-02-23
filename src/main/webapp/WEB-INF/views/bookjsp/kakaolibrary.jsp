@@ -47,11 +47,23 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="<c:url value="/book/kakaolibrary"/>" id="navbarDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Library
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="<c:url value="/board/humanities"/>">Humanities</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/novel"/>">Novel</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/horror"/>">Horror</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/foreignnovel"/>">Foreign Novel</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/poem"/>">Poem</a>
+                                            <a class="dropdown-item" href="<c:url value="/board/socialscience"/>">Social Science</a>
+                                        </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             My page
@@ -142,7 +154,7 @@
 				<br>
 				<div class="row" style="margin-left: 7%;">
          			<div class="row" >
-						<c:forEach var="book" items="${kakaobooklist}" begin="16" end="59">
+						<c:forEach var="book" items="${kakaobooklist}">
                     	<div style="margin-bottom:8px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
                         <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
