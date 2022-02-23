@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.vo.Kakaobook;
+import global.sesoc.library.vo.Reply;
 import global.sesoc.library.vo.Review;
 
 
@@ -56,10 +57,8 @@ public class BookController {
 		review.setId(id);
 		
 		logger.debug("저장할 한줄 리뷰 정보 : {}", review);
-		
 		//리플 정보를 DB에 저장
 		dao.insertReview(review);
-		
 		//읽던 게시글로 되돌아 감
 		return "redirect:kakaobook_info?isbn=" + review.getIsbn();
 	}
@@ -226,8 +225,10 @@ public class BookController {
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
+			ArrayList<Review> reviewlist = dao.listReview(isbn);
 			logger.info("결과:{}",book);
 			model.addAttribute("book", book);
+			model.addAttribute("reviewlist", reviewlist);
 			logger.info("결과:{}",book);
 			return "bookjsp/kakaobook_info";
 		}

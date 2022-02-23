@@ -157,11 +157,11 @@
                         </ul>
                         <div class="tab-content">
                         	<c:forEach var="review" items="${reviewlist}">
-                            <div class="line_bottom">
-                                <span>${review.id}</span>
-                                <span>${review.inputdate}</span>
-                                <div class="one_line">${review.content}</div>
-                            </div>
+	                            <div class="line_bottom">
+	                                <span>${review.id}</span>
+	                                <span>${review.inputdate}</span>
+	                                <div class="one_line">${review.content}</div>
+	                            </div>
                             </c:forEach>
  							 <div>
  							 	<form id="reviewWrite" action="reviewWrite" method="post">
