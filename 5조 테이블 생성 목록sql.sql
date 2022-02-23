@@ -318,7 +318,7 @@ CREATE TABLE review
 	-- 한줄평 번호 (라이브러리)
 	reviewnum number NOT NULL,
 	-- 한줄평 작성 날짜
-	inputdate date,
+	inputdate date default sysdate,
 	-- 한줄평 내용
 	content varchar2(200),
 	-- 한줄평 좋아요
@@ -326,9 +326,16 @@ CREATE TABLE review
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 책 번호
-	booknum number NOT NULL,
+	isbn varchar2(200) NOT NULL,
 	PRIMARY KEY (reviewnum)
 );
+
+ALTER TABLE review
+	ADD FOREIGN KEY (isbn)
+	REFERENCES kakaobook (isbn)
+;
+
+create sequence review_seq;
 
 CREATE TABLE shelf
 (
@@ -350,10 +357,7 @@ ALTER TABLE essay
 	REFERENCES book (booknum)
 ;
 
-ALTER TABLE review
-	ADD FOREIGN KEY (booknum)
-	REFERENCES book (booknum)
-;
+
 
 ALTER TABLE shelf
 	ADD FOREIGN KEY (booknum)

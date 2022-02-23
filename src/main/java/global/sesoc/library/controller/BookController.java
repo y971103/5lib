@@ -42,18 +42,26 @@ public class BookController {
 
 	
 // 한줄 리뷰 관련 컨트롤러	
+	/**
+	 * 한줄 리뷰 등록
+	 */
 	@RequestMapping (value="reviewWrite", method=RequestMethod.POST)
-	public String insertReview (Review review, HttpSession session, Model model) {
+	public String insertReview (
+			Review review,
+			HttpSession session,
+			Model model) {
 		
 		//세션에서 로그인한 사용자의 아이디를 읽어서 Reply객체의 작성자 정보에 세팅
 		String id = (String) session.getAttribute("loginId");
 		review.setId(id);
 		
+		logger.debug("저장할 한줄 리뷰 정보 : {}", review);
+		
 		//리플 정보를 DB에 저장
 		dao.insertReview(review);
 		
 		//읽던 게시글로 되돌아 감
-		return "redirect:read?Booknum=" + review.getBooknum();
+		return "redirect:kakaobook_info?isbn=" + review.getIsbn();
 	}
 	
 	/**
@@ -66,7 +74,7 @@ public class BookController {
 		review.setId(id);
 		
 		dao.deleteReview(review);
-		return "redirect:read?Booknum=" + review.getBooknum();
+		return "redirect:kakaobook_info?isbn=" + review.getIsbn();
 	}
 	
 	/**
@@ -82,8 +90,11 @@ public class BookController {
 		//리플  수정 처리
 		dao.updateReview(review);
 		//원래의 글읽기 화면으로 이동 
-		return "redirect:read?Booknum=" + review.getBooknum();
-	}	
+		return "redirect:kakaobook_info?isbn=" + review.getIsbn();
+	}
+	
+
+	
 	
 	//kakaobook arraylist
 	@RequestMapping(value="kakaobook",method=RequestMethod.GET)

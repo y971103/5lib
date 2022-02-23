@@ -7,26 +7,25 @@
 <mapper namespace="global.sesoc.library.dao.BookMapper">
 
 	<!-- 한줄평 저장 -->
-	<insert id="insertReview" parameterType="Review">
+	<insert id="insertReview" parameterType="review">
 		insert into review (
 			reviewnum
 			, isbn
 			, id
 			, content
-			, inputdate
-			, likecnt
 		)
 		values (
 			review_seq.nextval				
 			, #{isbn}
-			, #{content}
 			, #{id}
+			, #{content}
 		)
 	</insert>
 	
 	<!-- 한줄평 삭제 -->
-	<delete id="deleteReview" parameterType="Review">
-		delete from
+	<delete id="deleteReview" parameterType="review">
+		delete
+		from
 			review
 		where
 			reviewnum = #{reviewnum}
@@ -34,17 +33,17 @@
 	</delete>
 	
 	<!-- 한줄평 목록 -->
-	<select id="listReview" parameterType="int" resultType="Review">
+	<select id="listReview" parameterType="String" resultType="review">
 		select 
 			reviewnum
+			, isbn
 			, id
 			, to_char(inputdate, 'YYYY-MM-DD') inputdate
 			, content
-		, likecnt 	좋아요 기능 추후에 협의	
 		from 
 			review
 		where
-			booknum = #{booknum}
+			isbn = #{isbn}
 		order by 
 			reviewnum desc
 	</select>
@@ -71,9 +70,11 @@
 	<select id="getKakaoBook" resultType="Kakaobook">
 			select 
 				thumbnail
+				, isbn
 				, title
 				, authors
 				, publisher
+				, booknum
 				, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
 				contents
 			from
