@@ -135,7 +135,7 @@
             </div>
             <div class="row" style="margin-left: 7%;">
          		<div class="row" >
-               		<c:forEach var="book" items="${kakaobooklist}" begin="0" end="15">
+               		<c:forEach var="book" items="${kakaobooklist}">
                     	<div style="margin-bottom:8px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
                           	<img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
@@ -148,26 +148,6 @@
                </div>
             </div>
             <br>
-            <div>
-				<a href=#none class="btn_1 text-cnter"  style="margin-left: 500px;" id="show" onclick="if(hide.style.display=='none') {hide.style.display='';show.innerText='책 더보기'} else {hide.style.display='none';show.innerText='▶펼치기'}">책 더보기</a>
-				<div id="hide" style="display: none">
-				<br>
-				<div class="row" style="margin-left: 7%;">
-         			<div class="row" >
-						<c:forEach var="book" items="${kakaobooklist}">
-                    	<div style="margin-bottom:8px;">       
-                        <a href="kakaobook_info?isbn=${book.isbn}">
-                        <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
-                        <div style="margin-top:5px;">
-                        </div>
-                        </a>
-                    	</div>
-                    	<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
-                		</c:forEach> 
-					</div>
-				</div>
-            	</div>
-        	</div>
         	
         	
     </section>
