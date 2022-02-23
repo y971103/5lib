@@ -122,18 +122,10 @@
                     <hr>
                 </div>
             </div>
-    
-    
-    
-    
-
-                              
-	<!--Borad The Read 게시판 읽기-->                               
+               
+	<!--Borad The Read 게시판 읽기 폼 -->                               
     <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #95a194);"> 
-      
-       
-       
-                  
+
                     </div>
                 </div>
             </div>
@@ -158,9 +150,10 @@
             
             <tbody>
                 <tr>
-                	<th style="width:100px;">제목 : </th>
+                	<th style="width:100px;"><h4>제목 : </h4> </th>
                 	<td style="width:1100px;" colspan="8">${board.title}</td>
                 </tr>
+                
 
                 <tr>
                 	<th style="width:100px;">ID: </th>
@@ -174,7 +167,7 @@
                 </tr>
                 
                 <tr>
-              	    <td align=center width = "300" height="500" colspan="8">${board.content}</td>
+              	    <td width = "300" height="500" colspan="8">${board.content}</td>
                 </tr>
                 
 
