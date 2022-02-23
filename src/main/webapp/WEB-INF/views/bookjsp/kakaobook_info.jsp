@@ -29,7 +29,37 @@
     rel="stylesheet">
 
 </head>
+<script type="text/javascript" charset="utf-8">
 
+function fileSelected2(event) {
+ 	// "http://"로 시작하는 현재 경로 구해서 처리하는 것으로 수정
+	var url = 'http://localhost:8888/library/resources/file/epubfile/1.epub';
+
+	   fetch(url)
+	   .then(function (response) {
+	      return response.blob();
+	   })
+	   .then(function (blob) {
+        	new Epub(blob, createReader);
+	   });
+}
+
+function createReader(bookData) {
+	_bookData = bookData;
+ Monocle.Reader("reader", bookData,  // The id of the reader element and the book data.
+     { flipper: Monocle.Flippers.Instant,  // The rest is just fanciness:
+       panels: Monocle.Panels.Magic },     // No animation and click anywhere
+     function (reader) {                   // to turn pages.
+         var stencil = new Monocle.Controls.Stencil(reader);  // Make internal links work.
+         reader.addControl(stencil);
+         var toc = Monocle.Controls.Contents(reader);         // Add a table of contents.
+         reader.addControl(toc, 'popover', { hidden: true });
+         createBookTitle(reader, { start: function () { reader.showControl(toc); } });
+     }
+ );
+}
+
+</script>
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
@@ -146,6 +176,11 @@
                     <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
+                    <div id="reader" class="ui-widget-content">
+						<input type="button" value="샘플 읽기" onclick="fileSelected2(event)">
+					</div>
+                    
+                    
                 </div>
                 
                 <div class="col-lg-12" style="padding-left: 10%;">
