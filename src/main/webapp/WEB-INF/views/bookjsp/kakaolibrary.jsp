@@ -142,7 +142,7 @@
 				<br>
 				<div class="row" style="margin-left: 7%;">
          			<div class="row" >
-						<c:forEach var="book" items="${kakaobooklist}" begin="16" end="51">
+						<c:forEach var="book" items="${kakaobooklist}" begin="16" end="59">
                     	<div style="margin-bottom:8px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
                         <img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
