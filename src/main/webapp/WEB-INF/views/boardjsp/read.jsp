@@ -220,15 +220,16 @@
             </tbody>
          </table>
          
-   <c:if test="${loginId == board.id}">
+  			 <c:if test="${loginId == board.id}">
 				<!-- 현재글 삭제하기-->
-				<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a><br><br><br><br><br><br>
+				<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
 				<!-- 현재글 수정하기-->
-				<a href="edit?boardnum=${board.boardnum}">수정하기</a><br><br><br><br><br><br>
+				<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
 			</c:if>
             
             <a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
             
+        
         	</div>
         </div>
         </div>        
@@ -238,7 +239,7 @@
       
         <div class="col-lg-12" style="padding-left: 10%;">
         <div class="col-lg-12" style="padding-right: 23%;">     
-            <div class="text-left">
+            <div class="text-center">
             <form id="reply" action="replyWrite" method="post">
                 <h3>댓글</h3>
                 <textarea cols="100" rows="1" name="content">
