@@ -145,7 +145,13 @@
       	
       	
          <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-        
+        <style>
+        	table {
+        	
+        	width: 100px;
+        	borer: 1px;
+        	}
+        </style>
             <thead>
                <tr>
                                  
@@ -153,13 +159,14 @@
             </thead>
             <tbody>
                <tr>
-                  <td style="width:120px;">제목</td>
-                  <td style="width:1100px;" colspan="8">${essay.title} </td>
+               
+                  <td style="width:120px;"><h4>제목</h4></td>
+                  <td style="width:1100px;" colspan="4">${essay.title} </td>
                </tr>
               
                <tr>
                   <th style="width:120px;">ID: </th>
-                  <td style="width:100px;" colspan="8">${essay.id}</td>
+                  <td style="width:100px;" colspan="2">${essay.id}</td>
                 
 
                   <th style="width:100px;">조회수: </th>
@@ -168,7 +175,7 @@
                
                <tr>
                    <th style="width:100px;">작성일자: </th>
-               	  <td style="width:100px;" colspan="1">${essay.inputdate}</td>
+               	  <td style="width:100px;" colspan="4">${essay.inputdate}</td>
                </tr>
                
                <tr>

@@ -124,11 +124,9 @@
             </div>
                
 	<!--Borad The Read 게시판 읽기 폼 -->                               
-    <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #95a194);"> 
-
-                    </div>
-                </div>
-            </div>
+	    <section class="top_place section_padding" style="padding:0px; background: linear-gradient(135deg, #95a194);"> 
+	
+	    </section>
         </div>
     </section>
     
@@ -183,29 +181,48 @@
 		<!-- 현재 글 목록보기 -->
             	<a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
             	<br><br><br>
-            	
+  </div>          	
         <!-- 리플 작성 폼 시작 -->
-          <tr>
-        <form id="reply" action="replyWrite" method="post">
-              <td><textarea cols = "137"  rows="1.5" name="content"></textarea></td><br>
+
+        <form id="replyfomr" action="replyWrite" method="post" >
+        
+              <textarea cols = "137"  rows="1.5" name="content"></textarea><br>
                <form>
-               <input type = "submit" value="저장하기">
+               	<input type = "submit" value="저장하기">
                </form>
-               
-         </tr>
-         <br>
+
+    
           <!-- 리플 작성 폼 끝 -->
-           
+              <br>
               <!-- 리플 목록 출력 시작  --> 
-         <table>   
-			<c:forEach var="reply" items="${replynum}">
+          	<table border="1" style="background-color: red"> 
+          	<tr>
+          		<td>ㅁㅁㅁㄴㅇㄹ</td>
+          	</tr>
+			<c:forEach var="reply" items="${replylist}">
 				<tr>
 					<td class="replyid">
-						<b style="margin-right: 20px;">${reply.id}</b><hr>
+						<b>${reply.id}</b><hr>
+					</td>
+					
+					<td class ="replytext">
+						<b>${reply.text}</b>
+					</td>
+					
+					<td>
+					<td class="replybutton"> 
+					  <c:if : test=${loginId ==reply.id}">
+					  {<a href =""javascript:replyEditForm(${reply.replynum}, ${reply.boardnum}, '${reply.text}')">수정</a>]"
+					</c:if>
+			<td class="replybutton">
+			<c:if test="${loginId == reply.id}">
+				[<a href="javascript:replyDelete(${reply.replynum}, ${reply.boardnum })">삭제</a>]
+			</c:if>
+		</td>
 					</td>
 				</tr>
 				
-				<tr>
+				
 		<!-- 리플 수정 폼이 나타날 위치 -->
 				<tr>
 					<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
