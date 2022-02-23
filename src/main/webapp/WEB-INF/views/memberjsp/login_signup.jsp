@@ -30,11 +30,19 @@
                     <div style="color: #999; height: 50px;">Favorite Genre
                     <select name="genre_num" class="checkbox" style="margin-top: 15px; margin-right: 0px; margin-left: 39px;">
                         <option value="인문">Humanities</option>
+<<<<<<< HEAD
                         <option value="일반소설">Novel</option>
                         <option value="추리/공포소설">Horror</option>
                         <option value="해외소설">Foreign Novel </option>
                         <option value="시">Poem</option>
                         <option value="사회과학">Social Science</option>
+=======
+                        <option value="소설">Novel</option>  
+                        <option value="여행">Travel</option>
+                        <option value="에세이">Essay</option>
+                        <option value="자기계발">Self-development</option>
+                        <option value="라이프스타일">Life-style</option>
+>>>>>>> 23c4049826ce392a09e202551e70d869a876591b
                     </select></div>
                    <div style="color: #999; margin-bottom: 20px;">
                     Subscribe &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
