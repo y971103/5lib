@@ -176,7 +176,6 @@ App.prototype.doOpenBook = function () {
     fi.style.display = "none";
     fi.type = "file";
     fi.onchange = event => {
-        
         var reader = new FileReader();
         reader.addEventListener("load", () => {
             var arr = (new Uint8Array(reader.result)).subarray(0, 2);
