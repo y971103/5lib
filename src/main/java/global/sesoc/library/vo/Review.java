@@ -3,23 +3,26 @@ package global.sesoc.library.vo;
 
 public class Review {
 	private int reviewnum;
-	private int booknum;
+	private String isbn;
 	private String id;
 	private String content;
 	private String inputdate;
 	private int likecnt;
 	
 	
-	public Review(int reviewnum, int booknum, String id, String content, String inputdate, int likecnt) {
+	public Review(int reviewnum, String isbn, String id, String content, String inputdate, int likecnt) {
 		super();
 		this.reviewnum = reviewnum;
-		this.booknum = booknum;
+		this.isbn = isbn;
 		this.id = id;
 		this.content = content;
 		this.inputdate = inputdate;
 		this.likecnt = likecnt;
 	}
 
+	public Review() {
+		
+	}
 
 	public int getReviewnum() {
 		return reviewnum;
@@ -31,13 +34,13 @@ public class Review {
 	}
 
 
-	public int getBooknum() {
-		return booknum;
+	public String getIsbn() {
+		return isbn;
 	}
 
 
-	public void setBooknum(int booknum) {
-		this.booknum = booknum;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 
@@ -83,7 +86,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [reviewnum=" + reviewnum + ", booknum=" + booknum + ", id=" + id + ", content=" + content
+		return "Review [reviewnum=" + reviewnum + ", isbn=" + isbn + ", id=" + id + ", content=" + content
 				+ ", inputdate=" + inputdate + ", likecnt=" + likecnt + "]";
 	}
 	
