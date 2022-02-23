@@ -33,7 +33,7 @@
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
-        <div class="main_menu_iner">
+        <div class="main_menu_iner"  style="height: 80px;">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
@@ -113,9 +113,9 @@
 <!-- /검색폼 --> 
 
     <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
+    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
         <div class="container">
-            <div class="row ">
+            <div class="row " style="height: 80px;">
                 <div class="col-xl-6">
                     <div class="section_tittle">
                         <h2>Best seller</h2>
@@ -143,42 +143,14 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-top: 50px;">
+            	<a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">Read More Books</a>
+        	</div>
         </div>
+        
     </section>
     <!-- 도서 슬라이드(배너) 끝-->
     <!-- Header part end-->
-
-    <!--책 보여 주는 곳-->
-    <section class="top_place section_padding" style="padding-top:80px;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="section_tittle text-center">
-                        <h2>이런 책은 어떠세요?</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-left: 7%;">
-            <c:forEach var="book" items="${kakaobooklist}" begin="0" end="8">
-                <figure class="snip1283">
-                <a href="<c:url value="/book/kakaobook_info?isbn=${book.isbn}"/>">
-                    <img src="download?filename=${book.thumbnail}">
-                    <figcaption>
-                      <h3>${book.title}</h3>
-                      <p>${book.authors}</p>
-                      <p>${book.contents}</p>
-                    </figcaption>
-                    </a>
-                  </figure>
-                </c:forEach>
-            
-                   
-                <a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">책 더보기</a>
-            </div>
-        </div>
-    </section>
-    <!--top place end-->
-
     <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
