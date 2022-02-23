@@ -112,12 +112,12 @@
 <!-- /검색폼 --> 
 
     <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #d1f8d8, #faffff);">
+    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #20592a, #335353);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>책 리스트</h2>
+                        <h2 style="color: white;">책 리스트</h2>
                     </div>
                 </div>
             </div>
