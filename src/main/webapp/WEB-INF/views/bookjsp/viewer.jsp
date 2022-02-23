@@ -33,7 +33,7 @@
 
             document.onreadystatechange = function () {
               if (document.readyState == "complete") {
-                window.reader = ePubReader("../resources/viewer/test.epub", {
+                window.reader = ePubReader("../resources/file/1.epub", {
                    restore: true
                  });
               }
