@@ -155,19 +155,13 @@
     <section article>
     <div class="container">
       <div class="row">
-      
-      	
-      	
+
          <table class="table table-striped" style="text-align: center; border: 0px solid #b7c9b8">
         
             <thead>
                <tr>
                   <th style="background-color:#abc9b6; text-align: center;">보여주고 싶은 것 </th>
                   <th style="background-color:#abc9b6; text-align: center;">내가 쓴 게시물</th> 
-                  
-           
-                      
-                
                </tr>
                
             </thead>
@@ -220,25 +214,17 @@
             </tbody>
          </table>
          
-  			 <c:if test="${loginId == board.id}">
+  		<c:if test="${loginId == board.id}">
 				<!-- 현재글 삭제하기-->
 				<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
 				<!-- 현재글 수정하기-->
 				<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
-			</c:if>
-            
-            <a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
-            
-        
-        	</div>
-        </div>
-        </div>        
-    </section>
+		</c:if>
+            	<a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
+            	<br>
+
 
     <section>
-      
-        <div class="col-lg-12" style="padding-left: 10%;">
-        <div class="col-lg-12" style="padding-right: 23%;">     
             <div class="text-center">
             <form id="reply" action="replyWrite" method="post">
                 <h3>댓글</h3>
@@ -266,7 +252,8 @@
         </div>
         <br><br>
         <hr>         
-        </section>
+      </section>
+
 
     <!-- footer part start-->
     <footer class="footer-area">
