@@ -215,14 +215,14 @@ public class BoardController {
 	 * 리플 삭제
 	 */
 	@RequestMapping (value="replyDelete", method=RequestMethod.GET)
-	public String deleteQnAReply(Reply reply, HttpSession session) {
+	public String replyDelete(Reply reply, HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
 		
 		//삭제할 글 번호와 본인 글인지 확인할 로그인아이디
 		reply.setId(id);
 		
 		dao.deleteReply(reply);
-		return "redirect:read?Boardnum=" + reply.getBoardnum();
+		return "redirect:read?boardnum=" + reply.getBoardnum();
 	}
 	
 	/**

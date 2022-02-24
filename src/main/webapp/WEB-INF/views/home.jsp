@@ -9,22 +9,54 @@
 	document.write( '<p>' + Math.floor( jbRandom * 10 ) + '</p>' );
 	
 	
-		var popup;
+	var uri = 'http://localhost:8888/library/book/viewer';
+		var popupName = 'newwin';
+		var options = 'width=300,height=200,left=300';
+		var openDialog = function(uri, name, options, closeCallback) {
+		        var win = window.open(uri, name, options);
+		        var interval = window.setInterval(function() {
+		            try {
+		                if (win == null || win.closed) {
+		                    window.clearInterval(interval);
+		                    closeCallback(win);
+		                }
+		            }
+		            catch (e) {
+		            }
+		        }, 1000);
+		        return win ;
+		    };
+		function popOpen() {
+			//열기시작
+			let start = new Date();
+			alert('시간 측정 시작')
+		    openDialog(uri, popupName, options, function(win) {
+			//닫은 후
+			let end = new Date();
+			let time = (end - start)/1000/60;
+			alert(time+'분의 시간동안 사이트가 켜졌습니다.');
+		   	});
+		}
+	
+	
+/*		var popup;
 
 		function openPopup() {
 		  document.querySelector('.target').textContent = '팝업창 열림';
 		  popup = window.open('http://www.naver.com', "팝업창", "width = 500, height = 500, top = 50, left = 50, location = no");
 
-		  popup.addEventListener('beforeunload', function() {
+		  
+		  popup.addEventListener('unload', function() {
 			    document.querySelector('.target').textContent = '팝업창 닫힘';
 			  });
 		}
+*/
+		/*let start = new Date();  // 시작
+		popOpen()
+		let end = new Date();  // 종료
 
-		//let start = new Date();  // 시작
-		//openPopup()
-		//let end = new Date();  // 종료
-
-		//document.write(end - start); // 경과시간(밀리초)
+		document.write(end - start); // 경과시간(밀리초)
+		*/
 </script>
 	
 </head>
@@ -59,5 +91,6 @@
 <button type="button" onclick="openPopup()">버튼</button>
 <p class="target"></p>
 
+<button type="button" onclick="popOpen()">버튼2</button>
 </body>
 </html>
