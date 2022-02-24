@@ -130,6 +130,7 @@ public class BoardController {
 		//본문글정보와 리플 목록을 모델에 저장
 		model.addAttribute("board", board);
 		model.addAttribute("replylist", replylist);
+		logger.debug("read.jsp를 가기전에 실행되는 컨트롤러의 모델에 저장한 replylist목록: {}", replylist);
 		
 		return "boardjsp/read";
 	}
