@@ -3,12 +3,14 @@ package global.sesoc.library.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.book_Search;
 
 @Repository
 public class BookDAO {
@@ -54,22 +56,20 @@ public class BookDAO {
 		return result;
 	}
 
-	public List<Kakaobook> select() {
-		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		List<Kakaobook> book = mapper.selectKakaobook();
-		return book;
-	}
-
 
 	public List<Kakaobook> selectKakaoBooknum() {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
 		List<Kakaobook> kakaobooknum = mapper.selectKakaoBooknum(); 
 		return kakaobooknum; 
 	}	 
-	
-	public List<Kakaobook> selectKakaobook() {
+	//책 목록
+	public List<Kakaobook> selectKakaobook(book_Search book_search, int startRecord, int countPerPage) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		List<Kakaobook> book = mapper.selectKakaobook();
+		//전체 검색 결과 중 읽을 시작위치와 개수.
+		RowBounds rb = new RowBounds(startRecord, countPerPage);
+		
+		//검색어와 읽을 범위를 전달
+		List<Kakaobook> book = mapper.selectKakaobook(book_search, rb);
 		return book;
 	}
 
@@ -78,6 +78,13 @@ public class BookDAO {
 		//해당 번호의 글정보 읽기
 		Kakaobook book = mapper.getKakaoBook(isbn);
 		return book;
+	}
+
+	//전체 글 개수
+	public int getTotal(book_Search book_search) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		int total = mapper.getTotal(book_search);
+		return total;
 	}
 
 }

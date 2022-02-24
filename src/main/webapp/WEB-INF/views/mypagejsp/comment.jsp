@@ -27,7 +27,6 @@
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
-        
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
         <script>
             $(document).ready(function() {
@@ -57,7 +56,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +67,7 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" id="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
+                                        <a class="nav-link" id="nav-link" href="<c:url value="/book/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
@@ -80,9 +79,9 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -117,52 +116,81 @@
         </div>
     </header>
         <!-- 헤더 끝-->
-<!--nav탭 드롭다운 보여주는 곳-->
+
+        <!--nav탭 드롭다운 보여주는 곳-->
         <body class="is-preload">
             <!-- Wrapper-->
-         <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
+         <div id="wrapper">
          <!-- Nav -->
          <nav id="nav">
                <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
-               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
-               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
+               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
+               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark active3"><span>Comment</span></a>            
          </nav>
-         <div id="main">
-            <!-- Comment 감상공유 -->
-                <article id="Comment" class="panel">  
-                    <header>
-                        <h2 class="c_review" style="margin-left: 38%;">내 독서 습관</h2>
-                    </header>                      
-                    <section style="margin-left: 25%;">
-                        <div class="container" style="margin-bottom: 10px;">
-                            <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
-                                 <class="binfo">   
-                                    <div class="c_title">
-                                     	  총 85분 동안 독서를 했습니다.
+            <!--main css-->
+            <div id="main">
+                <!-- Comment 감상공유 -->
+                    <article id="Comment" class="panel">                        
+                        <section>
+                            <div class="container" style="margin-bottom: 10px;">
+                                <div class="row">       
+                                    <div style="padding-left: 7%;">
+                                        <img src="../resources/img/li1.jpg" alt="">
                                     </div>
-                            </div>    
-                        </br> </br>
-                            <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
-                                 <class="binfo">   
-                                    <div class="c_title">
-                                   	    금요일에 가장 많이 읽었습니다.
-                                    </div>
-                            </div>    
+                                     <class="binfo">   
+                                     <div class="c_title">
+                                       	 미드나잇&nbsp;라이브러리
+                                     </div>
+                                     <h3 class="c_review">책 리뷰</h3>
+                                     <form action="" method="post">  
+                                     <div class="row">
+                                        <div class="col-12">
+                                            <div class="c_content">
+                                           	         불편한데 자꾸 가고 싶은 편의점이 있다!
+                                            	힘들게 살아낸 오늘을 위로하는 편의점의 밤
+                                           		 정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
+                                            	'망원동 브라더스' 김호연의 '동네 이야기' 시즌 2
+                                        </div>
+                                    <input type="submit" value="공유하기">
+                                   </form>
+                                    </div>           
+                                </div>
+                            </div>
+                            <hr>  
+                        </section>
+
+                        <div>
+                        <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>
-            </div>
-          
-                    </section>
-               </div>
-             
-                </article>
-</div>
+                        
+                       <section id="textDiv">
+                            <div class="container" style="margin-bottom: 10px;">
+                                <div class="row" id="textDiv">       
+                                    <div style="padding-left: 7%;">
+                                        <img src="../resources/img/li1.jpg" alt="">
+                                    </div>
+                                     <class="binfo">   
+                                     <div>
+                                        	미드나잇&nbsp;라이브러리
+                                     </div>
+                                     <form>  
+                                     <div class="row">
+                               <div class="col-12">
+                                <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
+                               <div id="test_cnt">(0 / 180)</div> 
+                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">   
+                                   </form>
+                                    </div>           
+                                </div>
+                            </div>
+                            <hr>  
+                        </section>
+                   </div>
+                   <hr>  
+                   </article>
+			</div>
+		</div>
 
-
-</div>
-      
-      
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>
         <script src="../resources/assets/js/browser.min.js"></script>

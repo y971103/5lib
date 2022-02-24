@@ -24,11 +24,15 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.library.dao.BookDAO;
+import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.book_Search;
+
 
 
 
@@ -39,7 +43,9 @@ public class BookController {
 	
 	@Autowired
 	BookDAO dao;
-
+	
+	final int countPerPage = 8;
+	final int pagePerGroup = 5;	
 	
 // 한줄 리뷰 관련 컨트롤러	
 	/**
@@ -94,19 +100,6 @@ public class BookController {
 	}
 	
 
-	
-	
-	//kakaobook arraylist
-	@RequestMapping(value="kakaobook",method=RequestMethod.GET)
-	public String Kakaolist(Model model) {
-		logger.debug("kakaobook 진입");
-		List<Kakaobook> kakaobooklist = dao.select();
-		logger.debug("결과:{}",kakaobooklist);
-		model.addAttribute("kakaobooklist",kakaobooklist);
-		return "bookjsp/index";
-	}
-	
-	
 	//이미지 파일 저장 경로 (서버의 절대경로)
 		final String dir = "/bookimage/";
 		
@@ -168,16 +161,6 @@ public class BookController {
 			return filename;
 		}
 		
-		//책 정보 출력 
-		@RequestMapping(value = "/view", method = RequestMethod.GET)
-		public String view(Model model) {
-			
-			List<Kakaobook> kakaobook = dao.select();
-
-			
-			model.addAttribute("kakaobook", kakaobook);
-			return "view";
-		}
 
 		//kakaobook 테이블에서 이미지파일 가져오기  <img src="download?filename=${book.thumbnail}">
 		@RequestMapping(value = "download", method = RequestMethod.GET)
@@ -211,14 +194,34 @@ public class BookController {
 
 			return null;
 		}
+		
+		@RequestMapping(value="index",method=RequestMethod.GET)
+		public String index() {
+			
+			return "bookjsp/index";
+		}
+		
 							
 		//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
-		public String kakaolist(Model model) {
-			logger.debug("kakaobook 진입");
-			List<Kakaobook> kakaobooklist = dao.selectKakaobook();
+		public String kakaolibrary(
+				@RequestParam(value="page", defaultValue="1") int page
+				, book_Search book_search
+				, Model model) {
+			
+			logger.debug("page: {}, book_search: {}", page, book_search);
+			
+			int total = dao.getTotal(book_search);
+			
+			PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
+			
+			List<Kakaobook> kakaobooklist = dao.selectKakaobook(book_search, navi.getStartRecord(), navi.getCountPerPage());
 			logger.debug("결과:{}",kakaobooklist);
+			
 			model.addAttribute("kakaobooklist",kakaobooklist);
+			model.addAttribute("navi", navi);
+			model.addAttribute("book_search", book_search);
+			
 			return "bookjsp/kakaolibrary";
 		}
 		
@@ -226,8 +229,10 @@ public class BookController {
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
+            ArrayList<Review> reviewlist = dao.listReview(isbn);
 			logger.info("결과:{}",book);
 			model.addAttribute("book", book);
+            model.addAttribute("reviewlist", reviewlist);
 			logger.info("결과:{}",book);
 			return "bookjsp/kakaobook_info";
 		}

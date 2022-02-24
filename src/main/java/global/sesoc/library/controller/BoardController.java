@@ -130,6 +130,7 @@ public class BoardController {
 		//본문글정보와 리플 목록을 모델에 저장
 		model.addAttribute("board", board);
 		model.addAttribute("replylist", replylist);
+		logger.debug("read.jsp를 가기전에 실행되는 컨트롤러의 모델에 저장한 replylist목록: {}", replylist);
 		
 		return "boardjsp/read";
 	}
@@ -188,13 +189,13 @@ public class BoardController {
 		dao.updateBoard(board);
 		//원래의 글읽기 화면으로 이동 
 		return "redirect:read?boardnum=" + board.getBoardnum();
-	}
+		}
 	
 	/**
 	 * 리플 저장 처리
 	 */
 	@RequestMapping (value="replyWrite", method=RequestMethod.POST)
-	public String insertreply(
+	public String replyWrite(
 			Reply reply, 
 			HttpSession session, 
 			Model model) {
@@ -241,26 +242,5 @@ public class BoardController {
 		return "redirect:read?Boardnum=" + reply.getBoardnum();
 	}
 	
-
-	@RequestMapping(value="comment", method=RequestMethod.GET)
-	public String comment() {
-			
-		return "boardjsp/comment";
-	}
-	
-	@RequestMapping(value="habit", method=RequestMethod.GET)
-	public String habit() {
-			
-		return "boardjsp/habit";
-	}
-	
-	@RequestMapping(value="shelf", method=RequestMethod.GET)
-	public String shelf() {
-			
-		return "boardjsp/shelf";
-	}
-	
-	
-
 	
 }

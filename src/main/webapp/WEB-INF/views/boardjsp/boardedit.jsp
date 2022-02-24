@@ -76,7 +76,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +90,7 @@
                                         <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
+                                        <a class="nav-link" href="<c:url value="/book/index"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdown"
@@ -99,9 +99,9 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">

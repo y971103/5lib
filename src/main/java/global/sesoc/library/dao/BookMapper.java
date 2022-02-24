@@ -3,8 +3,11 @@ package global.sesoc.library.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
+
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.book_Search;
 
 public interface BookMapper {
 
@@ -20,13 +23,15 @@ public ArrayList<Review> listReview(String isbn);
 
 
 // 카카오 책 정보 관련
-public ArrayList<Kakaobook> selectKakaobook();
+public ArrayList<Kakaobook> selectKakaobook(book_Search book_search, RowBounds rb);
 
 public List<Kakaobook> selectKakaoBooknum();
 
 public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getKakaoBook(String isbn);
+
+public int getTotal(book_Search book_search);
 
 
 }

@@ -36,10 +36,11 @@
        
        .main-body{
           /* background-color: blue; */
-          background-image: url(http://file.edupre.co.kr/plan/clips/thumb/5/clips_20180906153305_0205.JPG.thumb.300);
+          /* background-image: url(http://file.edupre.co.kr/plan/clips/thumb/5/clips_20180906153305_0205.JPG.thumb.300);
+         
           background-position: left center;
           background-repeat: no-repeat;
-       }
+       } */
        
     
     </style>
@@ -129,40 +130,52 @@
     <section class="ftco-section main-body">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-4">
+                <div class="col-md-6 text-center mb-6">
                     <br></br>
                     <h1 class="heading-section">essayRead</h1>
                     <hr>
                 </div>
             </div>
+         </div>
           
     <section article>
     <div class="container">
       <div class="row">
       
-      	<p class="hits">조회수: ${essay.hits}</p>
+      	
       	
          <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-        
+        <style>
+        	table {
+        	
+        	width: 100px;
+        	borer: 1px;
+        	}
+        </style>
             <thead>
                <tr>
-                  <th colspan="3" style="background-color: #eeeeee; text-align: center;">글보기</th>                  
+                                 
                </tr>
             </thead>
             <tbody>
                <tr>
-                  <td style="width: 20%;">제목</td>
-                  <td colspan="2">${essay.title} </td>
+               
+                  <td style="width:120px;"><h4>제목</h4></td>
+                  <td style="width:1100px;" colspan="4">${essay.title} </td>
+               </tr>
+              
+               <tr>
+                  <th style="width:120px;">ID: </th>
+                  <td style="width:100px;" colspan="2">${essay.id}</td>
+                
+
+                  <th style="width:100px;">조회수: </th>
+                  <td style="width:100px;" colspan="8">${essay.hits}</td>
                </tr>
                
                <tr>
-                  <td>작성자ID</td>
-                  <td colspan="2">${essay.id}</td>
-                
-               </tr>
-               <tr>
-                  <td>작성일자</td>
-                  <td colspan="2">${essay.inputdate}</td>
+                   <th style="width:100px;">작성일자: </th>
+               	  <td style="width:100px;" colspan="4">${essay.inputdate}</td>
                </tr>
                
                <tr>
