@@ -31,3 +31,15 @@ input::placeholder{
 	color: #65a16a;
 	align: center;
 }
+.navigator{
+	padding-left:42%;
+	
+}
+.navigator a{
+	color: white;
+	font-size: 20px;
+}
+.navigator a:hover{
+	color: #6a4e78;
+	font-size: 22px;
+}

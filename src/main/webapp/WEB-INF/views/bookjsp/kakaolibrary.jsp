@@ -81,9 +81,9 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -126,9 +126,9 @@
 	<form id="pagingForm" method="get" action="kakaolibrary">
 		<input type="hidden" name="page" id="page" />
 		<select name ="type" id="type">
-			<option value = "1">제목</option>
-			<option value = "2">저자</option>
-			<option value = "3">장르</option>
+			<option value = "1">통합</option>
+			<option value = "2">제목</option>
+			<option value = "3">저자</option>
 		</select> 
 			<input type="text"  name="searchText" value="${searchText}" id="searchText" placeholder="검색어를 입력해 주세요"/>
 			<input type="button" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn"><!-- 1페이지로 전달한다는 뜻 -->
@@ -136,7 +136,7 @@
 	<!-- /검색폼 --> 
 
     <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #20592a, #335353);">
+    <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
@@ -160,24 +160,24 @@
                </div>
             </div>
             <br>
-        	
+            <!-- 페이지 이동 부분 -->
+		   <div id="navigator" class="navigator">    
+		                     
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+					<c:if test="${counter == navi.currentPage}"><b></c:if>
+						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+					<c:if test="${counter == navi.currentPage}"></b></c:if>
+				</c:forEach>
+				&nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+			</div>
         	
     </section>
     <!--top place end-->
 	
-	<div id="navigator">
-	<!-- 페이지 이동 부분 -->                      
-		<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
-	
-		<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
-			<c:if test="${counter == navi.currentPage}"><b></c:if>
-				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-			<c:if test="${counter == navi.currentPage}"></b></c:if>
-		</c:forEach>
-		&nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
 	
 	<!-- /페이지 이동 끝 -->    
 	

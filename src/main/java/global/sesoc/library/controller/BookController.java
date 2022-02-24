@@ -31,6 +31,8 @@ import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.book_Search;
+
 
 
 
@@ -42,7 +44,7 @@ public class BookController {
 	@Autowired
 	BookDAO dao;
 	
-	final int countPerPage = 10;
+	final int countPerPage = 8;
 	final int pagePerGroup = 5;	
 	
 // 한줄 리뷰 관련 컨트롤러	
@@ -204,21 +206,21 @@ public class BookController {
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
 		public String kakaolibrary(
 				@RequestParam(value="page", defaultValue="1") int page
-				, @RequestParam(value="searchText", defaultValue="") String searchText
+				, book_Search book_search
 				, Model model) {
 			
-			logger.debug("page: {}, searchText: {}", page, searchText);
+			logger.debug("page: {}, book_search: {}", page, book_search);
 			
-			int total = dao.getTotal(searchText);
+			int total = dao.getTotal(book_search);
 			
 			PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 			
-			List<Kakaobook> kakaobooklist = dao.selectKakaobook(searchText, navi.getStartRecord(), navi.getCountPerPage());
+			List<Kakaobook> kakaobooklist = dao.selectKakaobook(book_search, navi.getStartRecord(), navi.getCountPerPage());
 			logger.debug("결과:{}",kakaobooklist);
 			
 			model.addAttribute("kakaobooklist",kakaobooklist);
 			model.addAttribute("navi", navi);
-			model.addAttribute("searchText", searchText);
+			model.addAttribute("book_search", book_search);
 			
 			return "bookjsp/kakaolibrary";
 		}

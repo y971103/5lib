@@ -242,26 +242,5 @@ public class BoardController {
 		return "redirect:read?Boardnum=" + reply.getBoardnum();
 	}
 	
-
-	@RequestMapping(value="comment", method=RequestMethod.GET)
-	public String comment() {
-			
-		return "boardjsp/comment";
-	}
-	
-	@RequestMapping(value="habit", method=RequestMethod.GET)
-	public String habit() {
-			
-		return "boardjsp/habit";
-	}
-	
-	@RequestMapping(value="shelf", method=RequestMethod.GET)
-	public String shelf() {
-			
-		return "boardjsp/shelf";
-	}
-	
-	
-
 	
 }
