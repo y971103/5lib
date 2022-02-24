@@ -14,7 +14,7 @@
 <title>book_info</title>
 <link rel="icon" href="../resources/img/favicon.png">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="../resources/css/bootstrap.min2.css">
 <!-- owl carousel CSS -->
 <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
 <!-- themify CSS -->
@@ -55,7 +55,55 @@
     	}
     	return true;			
     }
+  
+  //리플 수정
+    function replyEditForm(replynum, content) {
+	  	alert('리플 수정하기 눌렀을때 넘어온거 확인');
+	  	alert(replynum, content);
+    	//해당 리플번호를 붙여 생성한 <div>태그에 접근
+    	var div = document.getElementById("div"+replynum);
+    	
+    	var str = '<form name="editForm' + replynum + '" action="replyEdit" method="post">';
+    	str += '<input type="hidden" name="replynum" value="'+replynum+'">';
+    	str += '<input type="hidden" name="boardnum" value="'+boardnum+'">';
+    	str += '&nbsp;';
+    	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
+    	str += '&nbsp;';
+    	str += '<a href="javascript:replyEdit(document.editForm' + replynum + ')">[저장]</a>';
+    	str += '&nbsp;';
+    	str += '<a href="javascript:replyEditCancle(document.getElementById(\'div' + replynum + '\'))">[취소]</a>';
+    	str += '</form>';
+    	div.innerHTML = str;
+    }
+
+    //리플 수정 취소
+    function replyEditCancle(div) {
+    	div.innerHTML = '';
+    }
+
+    //리플 수정 정보 저장
+    function replyEdit(form) {
+    	if (confirm('수정된 내용을 저장하시겠습니까?')) {
+    		form.submit();
+    	}
+    }
+
+    //리플 삭제
+    function replyDelete(replynum, boardnum) {
+    	if (confirm('리플을 삭제하시겠습니까?')) {
+    		location.href='replyDelete?replynum=' + replynum + '&boardnum=' + boardnum;
+    	}
+    }
+    
     </script>
+    
+    <style>
+    	.contentsTd{
+    		text-align: center;
+    		vertical-align: middle;
+    	}
+    
+    </style>
 </head>
 
 <body>
@@ -143,7 +191,7 @@
 				</div>
 			</div>
 
-			<!--Borad The Read 게시판 읽기 폼 -->
+			<!--Board The Read 게시판 읽기 폼 -->
 			<section class="top_place section_padding"
 				style="padding: 0px; background: linear-gradient(135deg, #95a194);">
 
@@ -159,10 +207,12 @@
 
 		<section>
 			<div class="container">
+			<div class="display_table">
+			
+			
 
 				<table class="table table-striped"
 					style="text-align: center; border: 1px solid #ffffff">
-
 
 					<thead>
 
@@ -187,7 +237,8 @@
 						</tr>
 
 						<tr>
-							<td width="300" height="500" colspan="8">${board.content}</td>
+							
+							<td class="contentsTd" width="300" height="500" colspan="8">${board.content}</td>
 						</tr>
 
 
@@ -204,51 +255,67 @@
 				<!-- 현재 글 목록보기 -->
 				<a href="<c:url value="/board/notice_QnA"/>">목록보기</a> <br>
 				<br>
-				<br>
-			</div>		<!-- container div -->
-			<h1>dddd출력확인</h1>
-
-
-			<div style="background-color: yellow">
+			
+			</div>	
+				
+			<h4>댓글 작성란</h4>
+			<!-- container div -->
 				<!-- 리플 작성 폼 시작 -->
 				<form id="replyform" action="replyWrite" method="post"
 					onsubmit="return replyFormCheck();">
 					<input type="hidden" name="boardnum" value="${board.boardnum}">
-					<input type="text" name="text" id="retext" style="width: 500px;">
+					<input type="text" name="content" id="content" style="width:1000px;">
+
 					<input type="submit" value="확인" />
-				</form>
-			</div>
+					<br><br>
+					<!-- 리플 작성 폼 끝-->
+					
+					<!-- 리플 목록 출력 시작 -->
+				<section class="ftco-section main-body">
+					<div class="container"></div>
 
-			<br>
+					<section>
+					<table class="table table-striped"
+					style="text-align: center; border: 1px solid #ffffff">
+					
 
-			<!-- 리플 목록 출력 시작  -->
-			<table class="reply">
-				<c:forEach var="reply" items="${replylist}">
+					</table>
+					</section>
+				</section> 
+
+					<table class="reply" border="1" style="center;">
+			
+					<c:forEach var="reply" items="${replylist}">
+					
 					<tr>
-						<td class="replyid"><b>${reply.id}</b></td>
+						<td style="width:100px" colspan="1">${reply.id}</td>
+						<td style="width:100px" colspan="1">${reply.content}</td> 
 
-						<td class="replycontent"><b>${reply.content}</b></td>
+						<!-- 리플 수정 -->
+						<td class="replybutton">
+						<c:if test="${loginId == reply.id}">
+							<a href="javascript:replyEditForm(${reply.replynum}, ${reply.content})">수정</a>
+						</c:if>
+						</td>
+						
+						<!--리플 삭제 -->
+						<td class="replybutton">
+						<c:if test="${loginId == reply.id}">
+								<a href="javascript:replyDelete(${reply.replynum})">삭제</a>
+						</c:if>
+						</td>
 
-						<td class="replybutton"><c:if test="${loginId == reply.id}">
-								<a
-									href="javascript:replyEditForm(${reply.replynum}, ${reply.content})">수정</a>
-							</c:if></td>
-
-						<td class="replybutton"><c:if test="${loginId == reply.id}">
-								<a
-									href="javascript:replyDelete(${reply.replynum})">삭제</a>
-							</c:if></td>
-
-					</tr>
+					</tr>		
 
 					<tr>
 						<!-- 리플 수정 폼이 나타날 위치 -->
 						<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
 					</tr>
-				</c:forEach>
-			</table>
-			<!-- 리플 목록 출력 끝-->
-
+						</c:forEach>
+</table>
+				</form>
+			</div>
+			<!-- 리플 작성 폼 끝 -->
 		</section>
 	</section>
 
