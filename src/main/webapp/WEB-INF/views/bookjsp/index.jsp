@@ -33,12 +33,12 @@
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
-        <div class="main_menu_iner"  style="height: 80px;">
+        <div class="main_menu_iner">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,7 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/book/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
@@ -99,18 +99,6 @@
         </div>
     </header>
     <!-- 헤더 끝-->
-    <!-- 검색폼 -->
-	<form id="pagingForm" method="get" action="list">
-		<input type="hidden" name="page" id="page" />
-		<select name ="type" id="type">
-			<option value = "1">전체</option>
-			<option value = "2">제목</option>
-			<option value = "3">저자</option>
-		</select>
-		<input type="text"  name="searchText" id="searchText" value="${searchText}" placeholder="도서  혹은 저자 검색" />
-		<input type="submit" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn" ><!-- 1페이지로 전달한다는 뜻 -->
-	</form>
-<!-- /검색폼 --> 
 
     <!-- 도서 슬라이드(배너)-->
     <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >

@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 
@@ -24,17 +25,28 @@
     <link rel="stylesheet" href="../resources/css/hover.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
+    
+      <link rel="stylesheet" href="../resources/css/search.css">
+    
+    <script>
+		function pagingFormSubmit(currentPage) {
+			var form = document.getElementById('pagingForm');
+			var page = document.getElementById('page');
+			page.value = currentPage;
+			form.submit();
+		}
+	</script>
 </head>
 
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
-        <div class="main_menu_iner">
+        <div class="main_menu_iner"  style="height: 80px;">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +57,7 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/book/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="<c:url value="/book/kakaolibrary"/>" id="navbarDropdown"
@@ -110,18 +122,18 @@
 
     <!-- Header part end-->
     
-           <!-- 검색폼 -->
-<form id="pagingForm" method="get" action="list">
-	<input type="hidden" name="page" id="page" />
-	<select name ="type">
-		<option value = "1">=제목=</option>
-		<option value = "2">=저자=</option>
-		<option value = "3">=출판사=</option>
-		</select>
-			검색해주세요 : <input type="text"  name="searchText" value="${searchText}" />
-	<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
-</form>
-<!-- /검색폼 --> 
+    <!-- 검색폼 -->
+	<form id="pagingForm" method="get" action="kakaolibrary">
+		<input type="hidden" name="page" id="page" />
+		<select name ="type" id="type">
+			<option value = "1">제목</option>
+			<option value = "2">저자</option>
+			<option value = "3">장르</option>
+		</select> 
+			<input type="text"  name="searchText" value="${searchText}" id="searchText" placeholder="검색어를 입력해 주세요"/>
+			<input type="button" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn"><!-- 1페이지로 전달한다는 뜻 -->
+	</form>
+	<!-- /검색폼 --> 
 
     <!--책 보여 주는데-->
     <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #20592a, #335353);">
@@ -152,7 +164,23 @@
         	
     </section>
     <!--top place end-->
-
+	
+	<div id="navigator">
+	<!-- 페이지 이동 부분 -->                      
+		<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+	
+		<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+			<c:if test="${counter == navi.currentPage}"><b></c:if>
+				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+			<c:if test="${counter == navi.currentPage}"></b></c:if>
+		</c:forEach>
+		&nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+	
+	<!-- /페이지 이동 끝 -->    
+	
     <!-- footer part start-->
     
     <!-- 푸터 시작-->
