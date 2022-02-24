@@ -27,7 +27,6 @@
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
-        
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
         <script>
             $(document).ready(function() {
@@ -80,9 +79,9 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -117,52 +116,52 @@
         </div>
     </header>
         <!-- 헤더 끝-->
-<!--nav탭 드롭다운 보여주는 곳-->
-        <body class="is-preload">
+  <!--nav탭 드롭다운 보여주는 곳-->
+        <head>
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
+        </head>
+            <body class="is-preload">
             <!-- Wrapper-->
-         <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
-         <!-- Nav -->
-         <nav id="nav">
-               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
-               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
+			<div id="wrapper">
+
+			<!-- Nav -->
+            <nav id="nav">
+               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open active1"><span>Shelf</span></a>
+               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
                <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
-         <div id="main">
-            <!-- Comment 감상공유 -->
-                <article id="Comment" class="panel">  
-                    <header>
-                        <h2 class="c_review" style="margin-left: 38%;">내 독서 습관</h2>
-                    </header>                      
-                    <section style="margin-left: 25%;">
-                        <div class="container" style="margin-bottom: 10px;">
-                            <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
-                                 <class="binfo">   
-                                    <div class="c_title">
-                                     	  총 85분 동안 독서를 했습니다.
-                                    </div>
-                            </div>    
-                        </br> </br>
-                            <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
-                                 <class="binfo">   
-                                    <div class="c_title">
-                                   	    금요일에 가장 많이 읽었습니다.
-                                    </div>
-                            </div>    
-                        </div>
-            </div>
-          
-                    </section>
-               </div>
-             
-                </article>
+            <!--main css-->
+            <div id="main" style="margin-bottom: 50px;">
+                <!--Habit 통계-->
+                    <article id="Habit" class="panel">
+                        <header>
+                            <h2 class="c_review">내 서재</h2>
+                        </header>
+                        
+                        <section>
+                            <div class="row"> <!--가로 255 이상의 이미지 사용하면 됨-->
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test1.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test2.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test3.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
+                                </div>
+                                <div class="col-4 col-6-medium col-12-small">
+                                    <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+    </div>  
 </div>
 
-
-</div>
-      
-      
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>
         <script src="../resources/assets/js/browser.min.js"></script>

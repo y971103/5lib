@@ -91,10 +91,10 @@
 										id="navbarDropdown" role="button" data-toggle="dropdown"
 										aria-haspopup="true" aria-expanded="false"> My page </a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-											<a class="dropdown-item" href="<c:url value="/board/shelf"/>"
+											<a class="dropdown-item" href="<c:url value="/mypage/shelf"/>"
 												id="navbarDropdown">내 서재</a> <a class="dropdown-item"
-												href="<c:url value="/board/habit"/>">통계</a> <a
-												class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+												href="<c:url value="/mypage/habit"/>">통계</a> <a
+												class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
 										</div></li>
 									<li class="nav-item dropdown"><a
 										class="nav-link dropdown-toggle" id="navbarDropdown_1"
