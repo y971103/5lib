@@ -136,7 +136,7 @@
 	<!-- /검색폼 --> 
 
     <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px; background: linear-gradient(135deg, #20592a, #335353);">
+    <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
@@ -160,24 +160,24 @@
                </div>
             </div>
             <br>
-        	
+            <!-- 페이지 이동 부분 -->
+		   <div id="navigator" class="navigator">    
+		                     
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+					<c:if test="${counter == navi.currentPage}"><b></c:if>
+						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+					<c:if test="${counter == navi.currentPage}"></b></c:if>
+				</c:forEach>
+				&nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+			</div>
         	
     </section>
     <!--top place end-->
 	
-	<div id="navigator">
-	<!-- 페이지 이동 부분 -->                      
-		<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
-	
-		<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
-			<c:if test="${counter == navi.currentPage}"><b></c:if>
-				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-			<c:if test="${counter == navi.currentPage}"></b></c:if>
-		</c:forEach>
-		&nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
 	
 	<!-- /페이지 이동 끝 -->    
 	
