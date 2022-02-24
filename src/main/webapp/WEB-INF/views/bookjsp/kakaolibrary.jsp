@@ -26,6 +26,8 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
     
+      <link rel="stylesheet" href="../resources/css/search.css">
+    
     <script>
 		function pagingFormSubmit(currentPage) {
 			var form = document.getElementById('pagingForm');
@@ -39,7 +41,7 @@
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
-        <div class="main_menu_iner">
+        <div class="main_menu_iner"  style="height: 80px;">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
@@ -123,13 +125,13 @@
     <!-- 검색폼 -->
 	<form id="pagingForm" method="get" action="kakaolibrary">
 		<input type="hidden" name="page" id="page" />
-		<!--  <select name ="type">
-			<option value = "1">=제목=</option>
-			<option value = "2">=저자=</option>
-			<option value = "3">=출판사=</option>
-		</select>-->
-			검색해주세요 : <input type="text"  name="searchText" value="${searchText}" />
-			<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
+		<select name ="type" id="type">
+			<option value = "1">제목</option>
+			<option value = "2">저자</option>
+			<option value = "3">장르</option>
+		</select> 
+			<input type="text"  name="searchText" value="${searchText}" id="searchText" placeholder="검색어를 입력해 주세요"/>
+			<input type="button" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn"><!-- 1페이지로 전달한다는 뜻 -->
 	</form>
 	<!-- /검색폼 --> 
 
