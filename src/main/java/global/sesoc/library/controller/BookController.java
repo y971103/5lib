@@ -42,7 +42,7 @@ public class BookController {
 	@Autowired
 	BookDAO dao;
 	
-	final int countPerPage = 10;
+	final int countPerPage = 8;
 	final int pagePerGroup = 5;	
 	
 // 한줄 리뷰 관련 컨트롤러	
