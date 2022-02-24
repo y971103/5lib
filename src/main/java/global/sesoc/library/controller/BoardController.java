@@ -222,7 +222,7 @@ public class BoardController {
 		reply.setId(id);
 		
 		dao.deleteReply(reply);
-		return "redirect:read?Boardnum=" + reply.getBoardnum();
+		return "redirect:read?boardnum=" + reply.getBoardnum();
 	}
 	
 	/**
