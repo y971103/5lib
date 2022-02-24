@@ -3,6 +3,7 @@ package global.sesoc.library.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -54,12 +55,6 @@ public class BookDAO {
 		return result;
 	}
 
-	public List<Kakaobook> select() {
-		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		List<Kakaobook> book = mapper.selectKakaobook();
-		return book;
-	}
-
 
 	public List<Kakaobook> selectKakaoBooknum() {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
@@ -67,9 +62,12 @@ public class BookDAO {
 		return kakaobooknum; 
 	}	 
 	
-	public List<Kakaobook> selectKakaobook() {
+	public List<Kakaobook> selectKakaobook(String searchText, int startRecord, int countPerPage) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		List<Kakaobook> book = mapper.selectKakaobook();
+		
+		RowBounds rb = new RowBounds(startRecord, countPerPage);
+		
+		List<Kakaobook> book = mapper.selectKakaobook(searchText, rb);
 		return book;
 	}
 
@@ -78,6 +76,12 @@ public class BookDAO {
 		//해당 번호의 글정보 읽기
 		Kakaobook book = mapper.getKakaoBook(isbn);
 		return book;
+	}
+
+	public int getTotal(String searchText) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		int total = mapper.getTotal(searchText);
+		return total;
 	}
 
 }
