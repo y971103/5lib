@@ -39,6 +39,18 @@
     		location.href = 'delete?boardnum=' + boardnum;
     	}
     }
+    
+  //리플 쓰기 폼 체크
+    function replyFormCheck() {
+    	var retext = document.getElementById('retext');
+    	if (retext.value.length < 5) {
+    		alert('리플 내용을 입력하세요.');
+    		retext.focus();
+    		retext.select();
+    		return false;
+    	}
+    	return true;			
+    }
     </script>
 </head>
 
@@ -172,71 +184,63 @@
             </tbody>
          </table>
          
-  		<c:if test="${loginId == board.id}">
+  	<c:if test="${loginId == board.id}">
 		<!-- 현재글 삭제하기-->
-				<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
+		<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
 		<!-- 현재글 수정하기-->
-				<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
-		</c:if>
+		<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
+	</c:if>
 		<!-- 현재 글 목록보기 -->
-            	<a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
+       	<a href="<c:url value="/board/notice_QnA"/>">목록보기</a>
             	<br><br><br>
-  </div>          	
-        <!-- 리플 작성 폼 시작 -->
+       
+       aaaaaaaaaa  	
+        <form id="replyform" action="replyWrite" method="post" onsubmit="return replyFormCheck();">
 
-        <form id="replyfomr" action="replyWrite" method="post" >
-        
-              <textarea cols = "137"  rows="1.5" name="content"></textarea><br>
-               <form>
-               	<input type = "submit" value="저장하기">
-               </form>
+        	<input type="hidden" name="boardnum" value=${board.boardnum}>
+        	<input type="text" name="text" id="retext" style="width:500px;"/>
+			<input type="submit" value="확인"/>
+		 </form>
+		 bbb		 
+       <br>
+  </div>   
 
-    
-          <!-- 리플 작성 폼 끝 -->
-              <br>
-              <!-- 리플 목록 출력 시작  --> 
-          	<table border="1" style="background-color: red"> 
-          	<tr>
-          		<td>ㅁㅁㅁㄴㅇㄹ</td>
-          	</tr>
-			<c:forEach var="reply" items="${replylist}">
-				<tr>
-					<td class="replyid">
-						<b>${reply.id}</b><hr>
-					</td>
+          <!-- 리플 목록 출력 시작  -->     
+          <table class ="reply">
+		<c:forEach var="reply" items="${replylist}">
+			<tr>
+				<td class="replyid">
+				<b>${reply.id}</b>
+				</td>
 					
-					<td class ="replytext">
-						<b>${reply.text}</b>
-					</td>
+				<td class ="replycontent">
+				<b>${reply.content}</b>
+				</td>
 					
-					<td>
-					<td class="replybutton"> 
-					  <c:if : test=${loginId ==reply.id}">
-					  {<a href =""javascript:replyEditForm(${reply.replynum}, ${reply.boardnum}, '${reply.text}')">수정</a>]"
-					</c:if>
-			<td class="replybutton">
+				<td class="replybutton">
 			<c:if test="${loginId == reply.id}">
-				[<a href="javascript:replyDelete(${reply.replynum}, ${reply.boardnum })">삭제</a>]
+				<a href="javascript:replyEditForm(${reply.replynum}, ${reply.boardlist}, ${reply.text})">수정</a>
 			</c:if>
 		</td>
-					</td>
-				</tr>
-				
-				
+		
+		<td class="replybutton">
+			<c:if test="${loginId == reply.id}">
+				<a href="javascript:replyDelete(${reply.replynum}, ${reply.boardlist})">삭제</a>
+			</c:if>
+		</td>
+		
+		</tr>
+		
+		<tr>
 		<!-- 리플 수정 폼이 나타날 위치 -->
-				<tr>
-					<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
-				</tr>
-			</c:forEach>
-		 </table>
-	</form>
-	
-          <!-- 리플 목록 출력 끝-->   
+		<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
+		</tr>
+ 	</c:forEach>
+</table>
+	<!-- 리플 목록 출력 끝-->   
         
       </section>
 </section>
-
-
 
 
     <!-- footer part start-->
@@ -338,4 +342,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
-</html>
+

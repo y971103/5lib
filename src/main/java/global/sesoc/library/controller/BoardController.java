@@ -188,13 +188,13 @@ public class BoardController {
 		dao.updateBoard(board);
 		//원래의 글읽기 화면으로 이동 
 		return "redirect:read?boardnum=" + board.getBoardnum();
-	}
+		}
 	
 	/**
 	 * 리플 저장 처리
 	 */
 	@RequestMapping (value="replyWrite", method=RequestMethod.POST)
-	public String insertreply(
+	public String replyWrite(
 			Reply reply, 
 			HttpSession session, 
 			Model model) {
