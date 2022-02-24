@@ -126,9 +126,9 @@
 	<form id="pagingForm" method="get" action="kakaolibrary">
 		<input type="hidden" name="page" id="page" />
 		<select name ="type" id="type">
-			<option value = "1">제목</option>
-			<option value = "2">저자</option>
-			<option value = "3">장르</option>
+			<option value = "1">통합</option>
+			<option value = "2">제목</option>
+			<option value = "3">저자</option>
 		</select> 
 			<input type="text"  name="searchText" value="${searchText}" id="searchText" placeholder="검색어를 입력해 주세요"/>
 			<input type="button" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn"><!-- 1페이지로 전달한다는 뜻 -->
