@@ -9,7 +9,7 @@
 	document.write( '<p>' + Math.floor( jbRandom * 10 ) + '</p>' );
 	
 	
-	var uri = 'http://www.naver.com';
+	var uri = 'http://localhost:8888/library/book/viewer';
 		var popupName = 'newwin';
 		var options = 'width=300,height=200,left=300';
 		var openDialog = function(uri, name, options, closeCallback) {
@@ -28,10 +28,13 @@
 		    };
 		function popOpen() {
 			//열기시작
+			let start = new Date();
 			alert('시간 측정 시작')
 		    openDialog(uri, popupName, options, function(win) {
 			//닫은 후
-			alert('시간 측정 끝');
+			let end = new Date();
+			let time = (end - start)/1000/60;
+			alert(time+'분의 시간동안 사이트가 켜졌습니다.');
 		   	});
 		}
 	
