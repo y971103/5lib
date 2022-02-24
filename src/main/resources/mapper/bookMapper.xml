@@ -68,7 +68,8 @@
 			kakaobook
 		<if test="_parameter != null">
 		where 
-			title like '%' || #{searchText} || '%'
+			title like '%' || #{searchText} || '%' or
+			authors like '%' || #{searchText} || '%'
 		</if>
 	</select>
 	
