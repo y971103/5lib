@@ -127,9 +127,9 @@
 
 			<!-- Nav -->
             <nav id="nav">
-               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open active1"><span>Shelf</span></a>
-               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
-               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
+               <a href="<c:url value="/mypage/shelf"/>" class="icon solid fa-book-open active1"><span>Shelf</span></a>
+               <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
+               <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
             <!--main css-->
             <div id="main" style="margin-bottom: 50px;">
