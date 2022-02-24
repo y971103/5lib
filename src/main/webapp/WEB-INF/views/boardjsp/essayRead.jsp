@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>book_info</title>
     <link rel="icon" href="../resources/img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+   <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min2.css">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
     <!-- themify CSS -->
@@ -177,11 +177,20 @@
                    <th style="width:100px;">작성일자: </th>
                	  <td style="width:100px;" colspan="4">${essay.inputdate}</td>
                </tr>
-               
+         <%--       
                <tr>
                   <td>내용</td>
-                  <td colspan="2">${essay.content}</td> 
+                  <td colspan="2"${essay.content}</td> 
                </tr>
+                --%>
+               
+               
+               <tr>
+				<td colspan="2" height="500">${essay.content}</td>
+				</tr>
+				
+				
+               
        
                
             </tbody>
