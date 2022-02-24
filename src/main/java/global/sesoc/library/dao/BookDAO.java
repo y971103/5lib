@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.book_Search;
 
 @Repository
 public class BookDAO {
@@ -61,13 +62,14 @@ public class BookDAO {
 		List<Kakaobook> kakaobooknum = mapper.selectKakaoBooknum(); 
 		return kakaobooknum; 
 	}	 
-	
-	public List<Kakaobook> selectKakaobook(String searchText, int startRecord, int countPerPage) {
+	//책 목록
+	public List<Kakaobook> selectKakaobook(book_Search book_search, int startRecord, int countPerPage) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		
+		//전체 검색 결과 중 읽을 시작위치와 개수.
 		RowBounds rb = new RowBounds(startRecord, countPerPage);
 		
-		List<Kakaobook> book = mapper.selectKakaobook(searchText, rb);
+		//검색어와 읽을 범위를 전달
+		List<Kakaobook> book = mapper.selectKakaobook(book_search, rb);
 		return book;
 	}
 
@@ -78,9 +80,10 @@ public class BookDAO {
 		return book;
 	}
 
-	public int getTotal(String searchText) {
+	//전체 글 개수
+	public int getTotal(book_Search book_search) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		int total = mapper.getTotal(searchText);
+		int total = mapper.getTotal(book_search);
 		return total;
 	}
 

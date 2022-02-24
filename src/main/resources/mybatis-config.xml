@@ -12,6 +12,7 @@
 		<typeAlias type="global.sesoc.library.vo.Kakaobook" alias="kakaobook" />
 		<typeAlias type="global.sesoc.library.vo.notice_Search" alias="notice_search" />
 		<typeAlias type="global.sesoc.library.vo.essay_Search" alias="essay_search" /> 
+		<typeAlias type="global.sesoc.library.vo.book_Search" alias="book_search" /> 
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />

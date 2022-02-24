@@ -67,9 +67,19 @@
 		from 
 			kakaobook
 		<if test="_parameter != null">
-		where 
-			title like '%' || #{searchText} || '%' or
-			authors like '%' || #{searchText} || '%'
+			<where>
+				<if test='type == "1"'>
+					title like '%' || #{searchText} || '%' OR authors like '%' ||
+					#{searchText}
+					||'%'
+				</if>
+				<if test='type == "2"'>
+					title like '%' || #{searchText} || '%'
+				</if>
+				<if test='type == "3"'>
+					authors like '%' || #{searchText} || '%'
+				</if>
+			</where>
 		</if>
 	</select>
 	
@@ -96,14 +106,25 @@
 	</select>
 	
 	<!-- 전체 글 개수 (검색 필터링 후) -->
-	<select id="getTotal" parameterType="string" resultType="int">
+	<select id="getTotal" parameterType="book_search" resultType="int">
 		select 
 			count(*)
 		from 
 			kakaobook 
 		<if test="_parameter != null">
-		where 
-			title like '%' || #{searchText} || '%'
+			<where>
+				<if test='type == "1"'>
+					title like '%' || #{searchText} || '%' OR authors like '%' ||
+					#{searchText}
+					|| '%'
+				</if>
+				<if test='type == "2"'>
+					title like '%' || #{searchText} || '%'
+				</if>
+				<if test='type == "3"'>
+					authors like '%' || #{searchText} || '%'
+				</if>
+			</where>
 		</if>
 	</select>
 	
