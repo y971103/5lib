@@ -48,7 +48,7 @@
         <script src="../resources/viewer/screenfull.min.js"></script>
 
         <!-- Render -->
-        <script src="../resources/viewer/epub1.js"></script>
+        <script src="../resources/viewer/epub.js"></script>
 
         <!-- Reader -->
         <script src="../resources/viewer/reader.js"></script>
