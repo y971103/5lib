@@ -59,6 +59,41 @@ function createReader(bookData) {
  );
 }
 
+//한줄리뷰 수정 정보 저장
+function reviewUpdate(form) {
+	if (confirm('수정된 내용을 저장하시겠습니까?')) {
+		form.submit();
+	}
+}
+
+//한줄리뷰 삭제
+function reviewDelete(reviewnum, isbn) {
+	if (confirm('리플을 삭제하시겠습니까?')) {
+		location.href='reviewDelete?reviewnum=' + reviewnum + '&isbn=' + isbn;
+	}
+}
+
+function reviewUpdateForm(reviewnum, isbn, retext) {
+	//해당 리플번호를 붙여 생성한 <div>태그에 접근
+	var div = document.getElementById("div"+reviewnum);
+	
+	var str = '<form name="editForm' + reviewnum + '" action="reviewUpdate" method="post">';
+	str += '<input type="hidden" name="reviewnum" value="'+reviewnum+'">';
+	str += '<input type="hidden" name="isbn" value="'+isbn+'">';
+	str += '&nbsp;';
+	str += '<input type="text" name="text" value="' + retext + '" style="width:530px;">';
+	str += '&nbsp;';
+	str += '<a href="javascript:reviewEdit(document.editForm' + reviewnum + ')">[저장]</a>';
+	str += '&nbsp;';
+	str += '<a href="javascript:reviewEditCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
+	str += '</form>';
+	div.innerHTML = str;
+}
+
+function reviewUpdateCancle(div) {
+	div.innerHTML = '';
+}
+
 </script>
 <body>
    <!--:헤더 시작::-->
@@ -195,7 +230,14 @@ function createReader(bookData) {
                             <div class="line_bottom">
                                 <span>${review.id}</span>
                                 <span>${review.inputdate}</span>
+                                <c:if test="${loginId == review.id}">
+									<a href="javascript:reviewUpdateForm(${review.reviewnum}, ${review.isbn}, '${review.content}')">수정</a>
+								</c:if>
+                                <c:if test="${loginId == review.id}">
+									<a href="javascript:reviewDelete(${review.reviewnum}, ${review.isbn})">삭제</a>
+								</c:if>
                                 <div class="one_line">${review.content}</div>
+                                
                             </div>
                             </c:forEach>
  							 <div>
