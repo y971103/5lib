@@ -301,7 +301,7 @@
 						<!--리플 삭제 -->
 						<td class="replybutton">
 						<c:if test="${loginId == reply.id}">
-								<a href="javascript:replyDelete(${reply.replynum})">삭제</a>
+								<a href="javascript:replyDelete(${reply.replynum},${reply.boardnum})">삭제</a>
 						</c:if>
 						</td>
 
