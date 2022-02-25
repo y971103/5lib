@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>book_info</title>
     <link rel="icon" href="../resources/img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+   <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../resources/css/bootstrap.min2.css">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="../resources/css/owl.carousel.min.css">
     <!-- themify CSS -->
@@ -87,9 +87,9 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -177,11 +177,20 @@
                    <th style="width:100px;">작성일자: </th>
                	  <td style="width:100px;" colspan="4">${essay.inputdate}</td>
                </tr>
-               
+         <%--       
                <tr>
                   <td>내용</td>
-                  <td colspan="2">${essay.content}</td> 
+                  <td colspan="2"${essay.content}</td> 
                </tr>
+                --%>
+               
+               
+               <tr>
+				<td colspan="2" height="500">${essay.content}</td>
+				</tr>
+				
+				
+               
        
                
             </tbody>

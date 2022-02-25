@@ -123,9 +123,9 @@
          <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
          <!-- Nav -->
          <nav id="nav">
-               <a href="<c:url value="/board/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
-               <a href="<c:url value="/board/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
-               <a href="<c:url value="/board/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
+               <a href="<c:url value="/mypage/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
+               <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
+               <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
          <div id="main">
             <!-- Comment 감상공유 -->

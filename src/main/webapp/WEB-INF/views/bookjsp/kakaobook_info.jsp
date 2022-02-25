@@ -31,34 +31,6 @@
 </head>
 <script type="text/javascript" charset="utf-8">
 
-function fileSelected2(event) {
- 	// "http://"로 시작하는 현재 경로 구해서 처리하는 것으로 수정
-	var url = 'http://localhost:8888/library/resources/file/epubfile/1.epub';
-
-	   fetch(url)
-	   .then(function (response) {
-	      return response.blob();
-	   })
-	   .then(function (blob) {
-        	new Epub(blob, createReader);
-	   });
-}
-
-function createReader(bookData) {
-	_bookData = bookData;
- Monocle.Reader("reader", bookData,  // The id of the reader element and the book data.
-     { flipper: Monocle.Flippers.Instant,  // The rest is just fanciness:
-       panels: Monocle.Panels.Magic },     // No animation and click anywhere
-     function (reader) {                   // to turn pages.
-         var stencil = new Monocle.Controls.Stencil(reader);  // Make internal links work.
-         reader.addControl(stencil);
-         var toc = Monocle.Controls.Contents(reader);         // Add a table of contents.
-         reader.addControl(toc, 'popover', { hidden: true });
-         createBookTitle(reader, { start: function () { reader.showControl(toc); } });
-     }
- );
-}
-
 //한줄리뷰 수정 정보 저장
 function reviewUpdate(form) {
 	if (confirm('수정된 내용을 저장하시겠습니까?')) {
@@ -103,7 +75,7 @@ function reviewUpdateCancle(div) {
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/kakaobook"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -114,7 +86,7 @@ function reviewUpdateCancle(div) {
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/kakaobook"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/book/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
@@ -126,9 +98,9 @@ function reviewUpdateCancle(div) {
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/shelf"/>" id="navbarDropdown">내 서재</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/habit"/>">통계</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/comment"/>">리뷰</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
+                                            <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -211,9 +183,6 @@ function reviewUpdateCancle(div) {
                     <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
-                    <div id="reader" class="ui-widget-content">
-						<input type="button" value="샘플 읽기" onclick="fileSelected2(event)">
-					</div>
                     
                     
                 </div>
