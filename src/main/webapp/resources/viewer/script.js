@@ -237,7 +237,7 @@ App.prototype.doReset = function () {
     this.qs(".info .series-index").innerHTML = "";
     this.qs(".info .author").innerHTML = "";
     this.qs(".info .description").innerHTML = "";
-    this.qs(".book").innerHTML = '<div class="empty-wrapper"><div class="empty"><div class="app-name"><div><img src="libservice.png"></div></div><div class="message"><a href="javascript:ePubViewer.doOpenBook();" class="big-button">여기를 클릭!</a></div></div></div>';
+    this.qs(".book").innerHTML = '<div class="empty-wrapper"><div class="empty"><div class="app-name"><div><img src="../resources/img/logo.png"></div></div><div class="message"><a href="javascript:ePubViewer.doOpenBook();" class="big-button">여기를 클릭!</a></div></div></div>';
     this.qs(".sidebar-button").classList.add("hidden");
     this.qs(".bar button.prev").classList.add("hidden");
     this.qs(".bar button.next").classList.add("hidden");
