@@ -383,6 +383,7 @@ ALTER TABLE review
 
 create sequence review_seq;
 
+
 CREATE TABLE shelf
 (
 	-- 내 서재에 등록된 날짜
@@ -390,8 +391,17 @@ CREATE TABLE shelf
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 책 번호
-	isbn varchar2(200) NOT NULL
+	isbn varchar2(200) NOT NULL,
+	-- 복합키
+    	CONSTRAINT shelf_PK PRIMARY KEY(id, isbn)
 );
+
+desc shelf;
+
+insert into shelf (id, isbn) values ('aaa', '9788936436957');
+insert into shelf (id, isbn) values ('aaa', '9788932003979');
+insert into shelf (id, isbn) values ('ccccccc', '9788932003979');
+
 
 ALTER TABLE comments
 	ADD FOREIGN KEY (booknum)
