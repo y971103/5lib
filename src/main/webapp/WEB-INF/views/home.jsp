@@ -8,7 +8,6 @@
 	var jbRandom = Math.random();
 	document.write( '<p>' + Math.floor( jbRandom * 10 ) + '</p>' );
 	
-	
 	var uri = 'http://localhost:8888/library/book/viewer';
 		var popupName = 'newwin';
 		var options = 'width=1920,height=1080';
@@ -35,35 +34,17 @@
 			let end = new Date();
 			let second = (end - start)/1000;
 			let minute = second / 60;
-			alert(Math.round(minute)+'분의 시간동안 사이트가 켜졌습니다.');
+			var time = Math.round(minute);
+			alert(time +'분의 시간동안 사이트가 켜졌습니다.');
+			document.getElementById('time').value = time;
 		   	});
 		}
-	
-	
-/*		var popup;
 
-		function openPopup() {
-		  document.querySelector('.target').textContent = '팝업창 열림';
-		  popup = window.open('http://www.naver.com', "팝업창", "width = 500, height = 500, top = 50, left = 50, location = no");
-
-		  
-		  popup.addEventListener('unload', function() {
-			    document.querySelector('.target').textContent = '팝업창 닫힘';
-			  });
-		}
-*/
-		/*let start = new Date();  // 시작
-		popOpen()
-		let end = new Date();  // 종료
-
-		document.write(end - start); // 경과시간(밀리초)
-		*/
 </script>
 	
 </head>
 <body>
 <h1>[ web5 ]</h1>
-승환이 수정함ff
 <c:if test="${sessionScope.loginId != null}">
 	<p>${sessionScope.loginName} (${sessionScope.loginId})님 로그인 중</p>
 </c:if>
@@ -88,10 +69,8 @@
   <a href="http://localhost:8888/library/download">파일 다운로드</a>
 </div>
 <br>
-
-<button type="button" onclick="openPopup()">버튼</button>
-<p class="target"></p>
-
 <button type="button" onclick="popOpen()">버튼2</button>
+<br>
+<input type="text" id="time">
 </body>
 </html>
