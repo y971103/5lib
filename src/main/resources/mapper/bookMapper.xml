@@ -132,4 +132,9 @@
 		</if>
 	</select>
 	
+	<!-- 위시리스트 저장 -->
+	<insert id="addwishlist" parameterType="map">
+		insert into shelf (id, isbn) values (#{id}, #{isbn})
+	</insert>
+	
 </mapper>

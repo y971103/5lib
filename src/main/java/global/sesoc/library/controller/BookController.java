@@ -10,6 +10,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.ServletOutputStream;
@@ -245,5 +246,20 @@ public class BookController {
 		}
 			
 		
-		
+		@ResponseBody
+		@RequestMapping(value="addwishlist",method=RequestMethod.POST)
+		public void wishlist(HttpSession session, String isbn) {
+			//로그인한 사용자의 아이디를 세션에서 읽기
+			String id = (String) session.getAttribute("loginId");
+			
+			//ID와  ISBN을 HashMap에 저장
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("id", id);
+			map.put("isbn", isbn);
+			
+			//DAO로 맵을 전달
+			dao.addwishlist(map);
+			
+		}
+
 }

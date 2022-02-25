@@ -1,6 +1,7 @@
 package global.sesoc.library.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -32,6 +33,8 @@ public int insertKakaobook(Kakaobook kakaobook);
 public Kakaobook getKakaoBook(String isbn);
 
 public int getTotal(book_Search book_search);
+//위시리스트 저장
+public int addwishlist(HashMap<String, String> map);
 
 
 }

@@ -1,6 +1,7 @@
 package global.sesoc.library.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -85,6 +86,14 @@ public class BookDAO {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		int total = mapper.getTotal(book_search);
 		return total;
+	}
+
+	//위시리스트 추가
+	public int addwishlist(HashMap<String, String> map) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		int result = mapper.addwishlist(map);
+		return result;
+		
 	}
 
 }

@@ -27,9 +27,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+    
+     <!-- jquery plugins here-->
+     <script src="../resources/js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../resources/js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../resources/js/bootstrap.min.js"></script>
+     <!-- magnific js -->
+     <script src="../resources/js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../resources/js/owl.carousel.min.js"></script>
+     <!-- masonry js -->
+     <script src="../resources/js/masonry.pkgd.js"></script>
+     <!-- masonry js -->
+     <script src="../resources/js/jquery.nice-select.min.js"></script>
+     <script src="../resources/js/gijgo.min.js"></script>
+     <!-- contact js -->
+     <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
+     <script src="../resources/js/jquery.form.js"></script>
+     <script src="../resources/js/jquery.validate.min.js"></script>
+     <script src="../resources/js/mail-script.js"></script>
+     <script src="../resources/js/contact.js"></script>
+     <!-- custom js -->
+     <script src="../resources/js/custom.js"></script>
+    
 
 </head>
 <script type="text/javascript" charset="utf-8">
+
+$(document).ready(function () {
+	//"위시리스트" 버튼 클릭하면 실행됨
+	$('#wishbt').on('click', function () {
+		//현재 페이지에 출력중인 책의 ISBN을 전달하면서 ajax요청
+
+		$.ajax({
+			url: 'addwishlist',
+			method: 'post',
+			data: {'isbn' : '${book.isbn}'},
+			success: function () {
+				alert('찜!');
+			},
+			error : function () {
+				//에러메세지 출력
+			}
+		});
+		
+
+	});
+});
 
 //한줄리뷰 수정 정보 저장
 function reviewUpdate(form) {
@@ -230,7 +276,11 @@ function reviewUpdateCancle(div) {
 	                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
 						<input type="hidden" id="time">
 					</form>
-                    
+					
+					<!-- 찜 기능 처리 -->
+                    <p><input type="button" id="wishbt" value="위시리스트에 담기"></p>
+
+
                 </div>
                 
                 <div class="col-lg-12" style="padding-left: 10%;">
@@ -345,28 +395,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- Js Plugins -->
 
-     <!-- jquery plugins here-->
-     <script src="../resources/js/jquery-1.12.1.min.js"></script>
-     <!-- popper js -->
-     <script src="../resources/js/popper.min.js"></script>
-     <!-- bootstrap js -->
-     <script src="../resources/js/bootstrap.min.js"></script>
-     <!-- magnific js -->
-     <script src="../resources/js/jquery.magnific-popup.js"></script>
-     <!-- swiper js -->
-     <script src="../resources/js/owl.carousel.min.js"></script>
-     <!-- masonry js -->
-     <script src="../resources/js/masonry.pkgd.js"></script>
-     <!-- masonry js -->
-     <script src="../resources/js/jquery.nice-select.min.js"></script>
-     <script src="../resources/js/gijgo.min.js"></script>
-     <!-- contact js -->
-     <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
-     <script src="../resources/js/jquery.form.js"></script>
-     <script src="../resources/js/jquery.validate.min.js"></script>
-     <script src="../resources/js/mail-script.js"></script>
-     <script src="../resources/js/contact.js"></script>
-     <!-- custom js -->
-     <script src="../resources/js/custom.js"></script>
 </body>
 </html>
