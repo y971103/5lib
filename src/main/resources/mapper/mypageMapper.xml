@@ -4,7 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 게시판 처리 SQL -->
-<mapper namespace="global.sesoc.library.dao.mypageMapper">
-
+<mapper namespace="global.sesoc.library.dao.MypageMapper">
+	<insert id="counttime" parameterType="habit">
+	insert
+	into
+		habit
+		(
+			id
+			, time
+		)
+	values
+		(
+			#{id}
+			, #{time}
+		)
+</insert>
 
 </mapper>
