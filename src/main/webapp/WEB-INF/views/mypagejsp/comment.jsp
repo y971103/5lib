@@ -178,18 +178,27 @@
                                <div class="col-12">
                                 <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
                                <div id="test_cnt">(0 / 180)</div> 
-                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">   
-                                   </form>
-                                    </div>           
+                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
+                               	
+         					     </form>
+                                    </div>
+                                               
                                 </div>
                             </div>
                             <hr>  
+                              <!-- comment 한쥴 리뷰란 -->
+                              
+                              
+                              
                         </section>
                    </div>
                    <hr>  
                    </article>
-			</div>
-		</div>
+						</div>
+					</div>
+					
+					
+
 
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>
@@ -197,6 +206,10 @@
         <script src="../resources/assets/js/breakpoints.min.js"></script>
         <script src="../resources/assets/js/util.js"></script>
         <script src="../resources/assets/js/main.js"></script>
+
+
+
+
 
  <!-- footer part start-->
   <footer class="footer-area">
