@@ -62,6 +62,7 @@
 	
 
 	<insert id="counttime" parameterType="habit">
+
 		insert into
 			habit
 			(
