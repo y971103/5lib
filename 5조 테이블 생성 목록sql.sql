@@ -385,8 +385,8 @@ create sequence review_seq;
 
 CREATE TABLE shelf
 (
-	-- 내 서재에 등록된 책 수
-	shelfnum number NOT NULL,
+	-- 내 서재에 등록된 날짜
+	inputdate date DEFAULT SYSDATE,
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 책 번호
