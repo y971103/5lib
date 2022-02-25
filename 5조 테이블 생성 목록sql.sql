@@ -390,7 +390,7 @@ CREATE TABLE shelf
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
 	-- 책 번호
-	booknum number NOT NULL
+	isbn varchar2(200) NOT NULL
 );
 
 ALTER TABLE comments
@@ -406,8 +406,13 @@ ALTER TABLE essay
 
 
 ALTER TABLE shelf
-	ADD FOREIGN KEY (booknum)
-	REFERENCES book (booknum)
+	ADD FOREIGN KEY (isbn)
+	REFERENCES kakaobook (isbn)
+;
+
+ALTER TABLE shelf
+	ADD FOREIGN KEY (id)
+	REFERENCES members (id)
 ;
 
 ALTER TABLE genre
@@ -455,10 +460,7 @@ ALTER TABLE review
 	REFERENCES members (id)
 ;
 
-ALTER TABLE shelf
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
-;
+
 
 ALTER TABLE QnA_reply
 	ADD FOREIGN KEY (QnAnum)
@@ -522,4 +524,7 @@ create sequence reply_seq;
 create sequence essay_seq;
 
 -- 한줄평 댓글 번호에 사용할 시퀀스
-create sequence review_seq;		
+create sequence review_seq;	
+
+-- shelf(내 서재)에 사용할 시퀀스
+create sequence shelf_seq;		
