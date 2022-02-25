@@ -36,7 +36,7 @@ public class FileController {
     
     
 		List<Kakaobook> booklist = dao.selectKakaoBooknum();
-		model.addAttribute("Booklist", booklist);
+		model.addAttribute("Kakaobooklist", booklist);
     
     	for (Kakaobook i : booklist) {
     	
