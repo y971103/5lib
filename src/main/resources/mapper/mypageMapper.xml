@@ -4,6 +4,63 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 게시판 처리 SQL -->
+
+<mapper namespace="global.sesoc.library.dao.mypageMapper">
+	
+	<!-- 내 서재에 책 코멘트 등록 -->
+	<insert id="insertComments" parameterType="comments">
+		insert into comments (
+			commentnum
+			, id
+			, content
+			, booknum
+		)
+		values (
+			--comments_seq.nextval				
+			, #{commentnum}
+			, #{id}
+			, #{content}
+			, #{booknum}
+		)
+	</insert>
+	
+	<!-- 등록한 내 서재 책 코멘트 삭제 -->
+	<delete id="deleteComments" parameterType="comments">
+		delete
+		from
+			comments
+		where
+			commentnum = #{commentnum}
+			and id = #{id}
+	</delete>
+	
+	<!-- 등록한 내 서재 책 코멘트 내용 수정 -->
+	<update id="updateComments" parameterType="comments">
+		update
+			comments
+		set
+			content = #{content}
+		where
+			commentnum = #{commentnum}
+			and id = #{id}
+	</update>
+	
+	<!-- 코멘트 내용 목록 -->
+	<select id="listComments" parameterType="int" resultType="comments">
+		select 
+			commentnum
+			, booknum
+			, id
+			, content
+		from 
+			comments
+		where
+			booknum = #{booknum}
+		order by 
+			commentnum desc
+	</select>
+	
+
 <mapper namespace="global.sesoc.library.dao.MypageMapper">
 	<insert id="counttime" parameterType="habit">
 	insert

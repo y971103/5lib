@@ -14,6 +14,14 @@ public class Comments {
 		this.id = id;
 		this.booknum = booknum;
 	}
+	
+	
+	
+	public Comments() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public int getCommentnum() {
 		return commentnum;
