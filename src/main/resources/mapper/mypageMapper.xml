@@ -10,12 +10,14 @@
 	into
 		habit
 		(
-			id
+			inputdate 
+			, id
 			, time
 		)
 	values
 		(
-			#{id}
+			#{inputdate} 
+			, #{id}
 			, #{time}
 		)
 </insert>
