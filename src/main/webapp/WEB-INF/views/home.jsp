@@ -71,6 +71,10 @@
 <br>
 <button type="button" onclick="popOpen()">버튼2</button>
 <br>
+
+<form id="counttime" action="counttime" method="post">
 <input type="text" id="time">
+<input type="submit" value="저장"/>
+</form>
 </body>
 </html>
