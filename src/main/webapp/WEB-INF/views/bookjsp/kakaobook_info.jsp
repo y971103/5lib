@@ -97,9 +97,19 @@ function reviewUpdateCancle(div) {
 			//'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
 			alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
 			document.getElementById('time').value = time;
+			
+			if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+	            alert("취소(아니오)를 누르셨습니다.");
+	        } else {
+	        	 var form = document.getElementById("t1");
+	        	 form.action = "counttime";
+	        	 form.mothod = "POST";
+	        	 form.submit();
+	       		 }
 		   	});
 		}
 
+		
 </script>
 <body>
    <!--:헤더 시작::-->
@@ -216,8 +226,10 @@ function reviewUpdateCancle(div) {
                     </div>
                     <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
-                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
-					<input type="hidden" id="time">
+                    <form method="post" id="t1" onsubmit="return false;">
+	                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
+						<input type="hidden" id="time">
+					</form>
                     
                 </div>
                 
