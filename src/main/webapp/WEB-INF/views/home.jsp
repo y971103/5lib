@@ -11,7 +11,7 @@
 	
 	var uri = 'http://localhost:8888/library/book/viewer';
 		var popupName = 'newwin';
-		var options = 'width=300,height=200,left=300';
+		var options = 'width=1920,height=1080';
 		var openDialog = function(uri, name, options, closeCallback) {
 		        var win = window.open(uri, name, options);
 		        var interval = window.setInterval(function() {
@@ -33,8 +33,9 @@
 		    openDialog(uri, popupName, options, function(win) {
 			//닫은 후
 			let end = new Date();
-			let time = (end - start)/1000/60;
-			alert(time+'분의 시간동안 사이트가 켜졌습니다.');
+			let second = (end - start)/1000;
+			let minute = second / 60;
+			alert(Math.round(minute)+'분의 시간동안 사이트가 켜졌습니다.');
 		   	});
 		}
 	
