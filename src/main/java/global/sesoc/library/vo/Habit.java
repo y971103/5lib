@@ -7,6 +7,10 @@ public class Habit {
 	private int amount;
 	private String inputdate;
 	
+	public Habit() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Habit(String id, int time, int amount, String inputdate) {
 		super();
