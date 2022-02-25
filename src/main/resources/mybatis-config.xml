@@ -13,11 +13,13 @@
 		<typeAlias type="global.sesoc.library.vo.notice_Search" alias="notice_search" />
 		<typeAlias type="global.sesoc.library.vo.essay_Search" alias="essay_search" /> 
 		<typeAlias type="global.sesoc.library.vo.book_Search" alias="book_search" /> 
+		<typeAlias type="global.sesoc.library.vo.Comments" alias="comments" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/boardMapper.xml" /> 
 		<mapper resource="mapper/essayMapper.xml" /> 
 		<mapper resource="mapper/bookMapper.xml" />  
+		<!-- <mapper resource="mapper/mypageMapper.xml" /> -->
 	</mappers>
 </configuration>
