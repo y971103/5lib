@@ -134,13 +134,13 @@
             <!--main css-->
             <div id="main" style="margin-bottom: 50px;">
                 <!--Habit 통계-->
-                    <article id="Habit" class="panel">
-                        <header>
-                            <h2 class="c_review">내 서재</h2>
-                        </header>
-                        
-                        <section>
-                            <div class="row"> <!--가로 255 이상의 이미지 사용하면 됨-->
+			<article id="Habit" class="panel">
+				<header>
+					<h2 class="c_review">내 서재</h2>
+				</header>
+
+				<section>
+					<!--  <div class="row"> 가로 255 이상의 이미지 사용하면 됨
                                 <div class="col-4 col-6-medium col-12-small">
                                     <a href="Shelf.html" class="image fit"><img src="../resources/img/test1.jpg" alt=""></a>
                                 </div>
@@ -156,10 +156,24 @@
                                 <div class="col-4 col-6-medium col-12-small">
                                     <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
                                 </div>
-                            </div>
-                        </section>
-                    </article>
-    </div>  
+                            </div> -->
+					<div class="row" style="margin-left: 7%;">
+						<div class="row">
+							<c:forEach var="book" items="${kakaobooklist}">
+								<div style="margin-bottom: 8px;">
+									<a href="kakaobook_info?isbn=${book.isbn}"> <img
+										src="download?filename=${book.thumbnail}"
+										style="width: 230px; height: 333px;">
+										<div style="margin-top: 5px;"></div>
+									</a>
+								</div>
+								<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							</c:forEach>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>  
 </div>
 
 <!-- Scripts -->

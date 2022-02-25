@@ -88,10 +88,10 @@ public class MypageController {
 		String id = (String) session.getAttribute("loginId");
 		habit.setId(id);
 		
-		logger.debug("책 읽은 시간 : {}", habit);
+		logger.info("책 읽은 시간 : {}", habit);
 		
 		//dao.counttime(habit);
 		
-		return "mypagejsp/habit";
+		return "redirect";
 	}
 }

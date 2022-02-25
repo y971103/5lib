@@ -1,10 +1,16 @@
 package global.sesoc.library.dao;
 
+
 import java.util.ArrayList;
 
 import global.sesoc.library.vo.Comments;
 
+import global.sesoc.library.vo.Habit;
+
+
 public interface MypageMapper {
+
+	public int counttime(Habit habit);
 	
 	//내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments);
