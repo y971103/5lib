@@ -43,10 +43,10 @@ public class MypageController {
 		comments.setId(id);
 		
 		logger.debug("저장할 내 서재 책 정보: {}", comments);
+		return "mypagejsp/comment";
+		//dao.insertComments(comments);
 		
-		dao.insertComments(comments);
-		
-		return "redirect:comment?booknum="+ comments.getBooknum();
+		//return "redirect:comment?booknum="+ comments.getBooknum();
 	}
 	
 	
