@@ -93,7 +93,7 @@ function reviewUpdateCancle(div) {
 			let end = new Date();
 			let second = (end - start)/1000;
 			let minute = second / 60;
-			var time = Math.round(minute);
+			var time = Math.ceil(minute);
 			//'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
 			alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
 			document.getElementById('time').value = time;
