@@ -78,20 +78,5 @@ public class MypageController {
 	
 	
 	
-	//회원 id에 읽은 시간 저장
-	@RequestMapping(value="counttime", method=RequestMethod.POST)
-	public String counttime(
-			HttpSession session
-			, Model model
-			, Habit habit ) {
-		
-		String id = (String) session.getAttribute("loginId");
-		habit.setId(id);
-		
-		logger.info("책 읽은 시간 : {}", habit);
-		
-		//dao.counttime(habit);
-		
-		return "redirect";
-	}
+	
 }

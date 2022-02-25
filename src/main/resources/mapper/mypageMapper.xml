@@ -59,6 +59,21 @@
 		order by 
 			commentnum desc
 	</select>
+	
+	<insert id="counttime" parameterType="habit">
+    insert
+    into
+        habit
+        (
+            id
+            , time
+        )
+    values
+        (
+            #{id}
+            , #{time}
+        )
+</insert>
 </mapper>
 	
 

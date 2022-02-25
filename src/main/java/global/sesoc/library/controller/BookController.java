@@ -29,7 +29,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.library.dao.BookDAO;
+import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
 import global.sesoc.library.vo.book_Search;
@@ -44,6 +46,9 @@ public class BookController {
 	
 	@Autowired
 	BookDAO dao;
+	
+	@Autowired
+	MypageDAO dao2;
 	
 	final int countPerPage = 8;
 	final int pagePerGroup = 5;	
@@ -260,6 +265,23 @@ public class BookController {
 			//DAO로 맵을 전달
 			dao.addwishlist(map);
 			
+		}
+		
+		//회원 id에 읽은 시간 저장
+		@RequestMapping(value="counttime", method=RequestMethod.POST)
+		public String counttime(
+				HttpSession session
+				, Model model
+				, Habit habit ) {
+			
+			String id = (String) session.getAttribute("loginId");
+			habit.setId(id);
+			
+			logger.info("책 읽은 시간 : {}", habit);
+			
+			dao2.counttime(habit);
+			
+			return "bookjsp/index";
 		}
 
 }
