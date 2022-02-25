@@ -65,6 +65,40 @@ function reviewUpdateForm(reviewnum, isbn, retext) {
 function reviewUpdateCancle(div) {
 	div.innerHTML = '';
 }
+</script>
+<script>
+	var uri = 'http://localhost:8888/library/book/viewer';
+		var popupName = 'newwin';
+		var options = 'width=1920,height=1080';
+		var openDialog = function(uri, name, options, closeCallback) {
+		        var win = window.open(uri, name, options);
+		        var interval = window.setInterval(function() {
+		            try {
+		                if (win == null || win.closed) {
+		                    window.clearInterval(interval);
+		                    closeCallback(win);
+		                }
+		            }
+		            catch (e) {
+		            }
+		        }, 1000);
+		        return win ;
+		    };
+		function popOpen() {
+			//열기시작
+			let start = new Date();
+			alert('시간 측정 시작 / 나중에 지울예정') 
+		    openDialog(uri, popupName, options, function(win) {
+			//닫은 후
+			let end = new Date();
+			let second = (end - start)/1000;
+			let minute = second / 60;
+			var time = Math.round(minute);
+			//'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
+			alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
+			document.getElementById('time').value = time;
+		   	});
+		}
 
 </script>
 <body>
@@ -182,8 +216,8 @@ function reviewUpdateCancle(div) {
                     </div>
                     <br>
                     <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
-                    <input type="button" value="E-Pub 뷰어 열기" class="readbt" onClick="location.href='viewer'">
-                    
+                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
+					<input type="hidden" id="time">
                     
                 </div>
                 
