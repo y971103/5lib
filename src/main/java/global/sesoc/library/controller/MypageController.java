@@ -36,7 +36,7 @@ public class MypageController {
 	
 	
 	// 코멘트 작성하기
-	@RequestMapping(value="insertComment", method=RequestMethod.GET)
+	@RequestMapping(value="comment", method=RequestMethod.GET)
 	public String insertComments (Comments comments, HttpSession session, Model model) {
 		
 		String id = (String) session.getAttribute("loginId"); 

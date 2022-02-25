@@ -5,7 +5,7 @@
 
 <!-- 게시판 처리 SQL -->
 
-<mapper namespace="global.sesoc.library.dao.mypageMapper">
+<mapper namespace="global.sesoc.library.dao.MypageMapper">
 	
 	<!-- 내 서재에 책 코멘트 등록 -->
 	<insert id="insertComments" parameterType="comments">
@@ -16,7 +16,7 @@
 			, booknum
 		)
 		values (
-			--comments_seq.nextval				
+			comments_seq.nextval				
 			, #{commentnum}
 			, #{id}
 			, #{content}
@@ -61,22 +61,19 @@
 	</select>
 	
 
-<mapper namespace="global.sesoc.library.dao.MypageMapper">
 	<insert id="counttime" parameterType="habit">
-	insert
-	into
-		habit
-		(
-			inputdate 
-			, id
+
+		insert into
+			habit
+			(
+			id
 			, time
-		)
-	values
-		(
-			#{inputdate} 
-			, #{id}
+			)
+		values
+			(
+			#{id}
 			, #{time}
-		)
-</insert>
+			)
+	</insert>
 
 </mapper>
