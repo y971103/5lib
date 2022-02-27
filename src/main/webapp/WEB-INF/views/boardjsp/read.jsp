@@ -57,9 +57,8 @@
     }
   
   //리플 수정
-    function replyEditForm(replynum, content) {
+    function replyEditForm(replynum, boardnum, retext) {
 	  	alert('리플 수정하기 눌렀을때 넘어온거 확인');
-	  	alert(replynum, content);
     	//해당 리플번호를 붙여 생성한 <div>태그에 접근
     	var div = document.getElementById("div"+replynum);
     	
@@ -261,12 +260,11 @@
 			<h4>댓글 작성란</h4>
 			<!-- container div -->
 				<!-- 리플 작성 폼 시작 -->
-				<form id="replyform" action="replyWrite" method="post"
-					onsubmit="return replyFormCheck();">
+				<form id="replyform" action="replyWrite" method="post" onsubmit="return replyFormCheck();">
 					<input type="hidden" name="boardnum" value="${board.boardnum}">
-					<input type="text" name="content" id="content" style="width:1000px;">
-
+					<input type="text" name="content" id="retext" style="width:1000px;">
 					<input type="submit" value="확인" />
+				</form>
 					<br><br>
 					<!-- 리플 작성 폼 끝-->
 					
@@ -283,37 +281,30 @@
 					</section>
 				</section> 
 
-					<table class="reply" border="1" style="center;">
-			
-					<c:forEach var="reply" items="${replylist}">
-					
+			<table class="reply" border="1">
+				<c:forEach var="reply" items="${replylist}">
 					<tr>
 						<td style="width:100px" colspan="1">${reply.id}</td>
 						<td style="width:100px" colspan="1">${reply.content}</td> 
-
 						<!-- 리플 수정 -->
 						<td class="replybutton">
 						<c:if test="${loginId == reply.id}">
-							<a href="javascript:replyEditForm(${reply.replynum}, ${reply.content})">수정</a>
+							<a href="javascript:replyEditForm(${reply.replynum}, ${reply.boardnum},'${reply.content}')">수정</a>
 						</c:if>
 						</td>
-						
 						<!--리플 삭제 -->
 						<td class="replybutton">
 						<c:if test="${loginId == reply.id}">
 								<a href="javascript:replyDelete(${reply.replynum},${reply.boardnum})">삭제</a>
 						</c:if>
 						</td>
-
 					</tr>		
-
 					<tr>
 						<!-- 리플 수정 폼이 나타날 위치 -->
-						<td class="white" colspan="4"><div id="div${reply.replynum}"></div></td>
+						<td colspan="4"><div id="div${reply.replynum}"></div></td>
 					</tr>
-						</c:forEach>
-</table>
-				</form>
+				</c:forEach>
+			</table>
 			</div>
 			<!-- 리플 작성 폼 끝 -->
 		</section>
