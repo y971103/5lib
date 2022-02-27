@@ -99,11 +99,11 @@ function reviewUpdateForm(reviewnum, isbn, retext) {
 	str += '<input type="hidden" name="reviewnum" value="'+reviewnum+'">';
 	str += '<input type="hidden" name="isbn" value="'+isbn+'">';
 	str += '&nbsp;';
-	str += '<input type="text" name="text" value="' + retext + '" style="width:530px;">';
+	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewEdit(document.editForm' + reviewnum + ')">[저장]</a>';
+	str += '<a href="javascript:reviewUpdate(document.editForm' + reviewnum + ')">[저장]</a>';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewEditCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
+	str += '<a href="javascript:reviewUpdateCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
 	str += '</form>';
 	div.innerHTML = str;
 }
@@ -302,13 +302,14 @@ function reviewUpdateCancle(div) {
 									<a href="javascript:reviewDelete(${review.reviewnum}, ${review.isbn})">삭제</a>
 								</c:if>
                                 <div class="one_line">${review.content}</div>
+                                <div id="div${review.reviewnum}"></div>
                                 
                             </div>
                             </c:forEach>
  							 <div>
  							 	<form id="reviewWrite" action="reviewWrite" method="post">
  							 	<input type="hidden" name="isbn" value="${book.isbn}" />
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review" name="content"> 
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요" class="write_review" name="content"> 
                                 <input type="submit" value="등록" class="sub_review">
                                 </form>
                             </div>
