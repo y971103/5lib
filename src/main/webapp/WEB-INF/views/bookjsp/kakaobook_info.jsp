@@ -148,7 +148,7 @@ function reviewUpdateCancle(div) {
 	            alert("취소(아니오)를 누르셨습니다.");
 	        } else {
 	        	 var form = document.getElementById("t1");
-	        	 form.action = "counttime";
+	        	 form.action = "countTime";
 	        	 form.mothod = "POST";
 	        	 form.submit();
 	       		 }

@@ -74,7 +74,16 @@ public class MypageController {
 		return "redirect:comment?booknum=" + comments.getBooknum();
 	}
 	
-	
+	//id별 독서시간
+	@RequestMapping (value="selectTime", method=RequestMethod.POST)
+	public String selectTime (HttpSession session, Habit habit) {
+		
+		String id = (String) session.getAttribute("loginId");
+		habit.setId(id);
+		
+		dao.selectTime(habit);
+		return "mypagejsp/habit";
+	}
 	
 	
 	

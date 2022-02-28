@@ -10,7 +10,7 @@ import global.sesoc.library.vo.Habit;
 
 public interface MypageMapper {
 
-	public int counttime(Habit habit);
+	public int countTime(Habit habit);
 	
 	//내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments);
@@ -20,6 +20,8 @@ public interface MypageMapper {
 	public int updateComments(Comments comments);
 	//내 서재 책 코멘트 목록
 	public ArrayList<Comments> listComments(int booknum);
+
+	public Habit selectTime(Habit habit);
 	
 	
 }

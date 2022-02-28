@@ -268,8 +268,8 @@ public class BookController {
 		}
 		
 		//회원 id에 읽은 시간 저장
-		@RequestMapping(value="counttime", method=RequestMethod.POST)
-		public String counttime(
+		@RequestMapping(value="countTime", method=RequestMethod.POST)
+		public String countTime(
 				HttpSession session
 				, Model model
 				, Habit habit ) {
@@ -279,7 +279,7 @@ public class BookController {
 			
 			logger.info("책 읽은 시간 : {}", habit);
 			
-			dao2.counttime(habit);
+			dao2.countTime(habit);
 			
 			return "bookjsp/index";
 		}

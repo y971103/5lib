@@ -60,7 +60,8 @@
 			commentnum desc
 	</select>
 	
-	<insert id="counttime" parameterType="habit">
+	<!-- 독서시간 재기 -->
+	<insert id="countTime" parameterType="habit">
     insert
     into
         habit
@@ -74,7 +75,19 @@
             , #{time}
         )
 </insert>
+
+	<!-- id별 독서시간 합계 -->
+	<select id="selectTime" parameterType="habit">
+	select
+		sum(time) as new_time
+	from
+		habit
+	where
+		id=#{id}
+	</select>
 </mapper>
+
+	
 	
 
 <!-- 

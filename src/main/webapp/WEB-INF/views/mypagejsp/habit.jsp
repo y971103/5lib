@@ -129,40 +129,36 @@
          </nav>
          <div id="main">
             <!-- Comment 감상공유 -->
-                <article id="Comment" class="panel">  
+                <article id="Comment" class="panel">
+                <c:if test="${loginId != null}">  
                     <header>
-                        <h2 class="c_review" style="margin-left: 38%;">내 독서 습관</h2>
+                        <h2 class="c_review" style="margin-left: 38%;">${sessionScope.loginId}님의 독서 습관</h2>
                     </header>                      
                     <section style="margin-left: 25%;">
                         <div class="container" style="margin-bottom: 10px;">
+                        	<c:if test="${loginId == habit.id}">
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
                                  <class="binfo">   
                                     <div class="c_title">
-                                     	  총 85분 동안 독서를 했습니다.
+                                     	  총 ${new_time}분 동안 독서를 했습니다.
                                     </div>
                             </div>    
-                        </br> </br>
+                        	</br> </br>
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
                                  <class="binfo">   
-                                    <div class="c_title">
+                                   <div class="c_title">
                                    	    금요일에 가장 많이 읽었습니다.
-                                    </div>
-                            </div>    
+                                   </div>
+                            </div>
+                            </c:if>    
                         </div>
-            </div>
-          
                     </section>
-               </div>
-             
+                </c:if>
                 </article>
-</div>
-
-
-</div>
-      
-      
+            </div>
+            </div>
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>
         <script src="../resources/assets/js/browser.min.js"></script>

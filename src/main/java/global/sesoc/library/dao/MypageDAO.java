@@ -48,11 +48,18 @@ public class MypageDAO {
 		return listComments;
 	}
 
-	public int counttime(Habit habit) {
+	public int countTime(Habit habit) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		int result = mapper.counttime(habit);
+		int result = mapper.countTime(habit);
 
 		return result;
+	}
+
+	public Habit selectTime(Habit habit) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		Habit time = mapper.selectTime(habit);
+		return time;
+		
 	}	
 	
 }
