@@ -21,7 +21,8 @@ public interface MypageMapper {
 	//내 서재 책 코멘트 목록
 	public ArrayList<Comments> listComments(int booknum);
 
-	public Habit selectTime(Habit habit);
+	public ArrayList<Habit> selectTime(String id);
+
 	
 	
 }

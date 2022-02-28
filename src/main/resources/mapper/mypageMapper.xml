@@ -76,10 +76,12 @@
         )
 </insert>
 
-	<!-- id별 독서시간 합계 -->
-	<select id="selectTime" parameterType="habit">
+	<!-- id별 독서시간 -->
+	<select id="selectTime" parameterType="string" resultType="int">
 	select
-		sum(time) as new_time
+		time
+		, id
+		<!--  , to_char(inputdate, 'YYYY-MM-DD') inputdate-->
 	from
 		habit
 	where

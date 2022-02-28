@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
+import global.sesoc.library.vo.Kakaobook;
 
 
 @Repository
@@ -55,11 +56,12 @@ public class MypageDAO {
 		return result;
 	}
 
-	public Habit selectTime(Habit habit) {
+	public ArrayList<Habit> selectTime(String id) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		Habit time = mapper.selectTime(habit);
-		return time;
-		
-	}	
+		ArrayList<Habit> habitlist = mapper.selectTime(id);
+		return habitlist;
+	}
+
+	
 	
 }
