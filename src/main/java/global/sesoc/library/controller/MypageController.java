@@ -1,5 +1,7 @@
 package global.sesoc.library.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
+import global.sesoc.library.vo.Kakaobook;
+import global.sesoc.library.vo.Shelf;
 
 @Controller
 @RequestMapping("mypage")
@@ -28,12 +32,25 @@ public class MypageController {
 		return "mypagejsp/shelf";
 	}
 	
+	
+	
 	@RequestMapping(value="habit", method=RequestMethod.GET)
-	public String habit() {
-			
+	public String habit(HttpSession session, Model model) {
+		logger.info("안녕하세여{}");
+		String id = (String) session.getAttribute("loginId");
+		ArrayList<Habit> habitlist = dao.selectTime(id);
+		model.addAttribute("habitlist", habitlist);
+		logger.debug("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
 		return "mypagejsp/habit";
 	}
 	
+	@RequestMapping(value="commentlist", method=RequestMethod.GET)
+	public String commentlist(HttpSession session, Model model, Shelf shelf) {
+		String id = (String) session.getAttribute("loginId");
+		ArrayList<Shelf> shelflist = dao.select(id);
+		model.addAttribute("booklist", shelflist);
+		return "mypagejsp/comment";
+	}
 	
 	// 코멘트 작성하기
 	@RequestMapping(value="comment", method=RequestMethod.GET)
@@ -74,16 +91,16 @@ public class MypageController {
 		return "redirect:comment?booknum=" + comments.getBooknum();
 	}
 	
-	//id별 독서시간
-	@RequestMapping (value="selectTime", method=RequestMethod.POST)
-	public String selectTime (HttpSession session, Habit habit) {
-		
-		String id = (String) session.getAttribute("loginId");
-		habit.setId(id);
-		
-		dao.selectTime(habit);
-		return "mypagejsp/habit";
-	}
+//	//id별 독서시간
+//	@RequestMapping (value="selectTime", method=RequestMethod.GET)
+//	public String selectTime (HttpSession session, Model model) {
+//		logger.debug("안녕하세여{}");
+//		String id = (String) session.getAttribute("loginId");
+//		ArrayList<Habit> habitlist = dao.selectTime(id);
+//		model.addAttribute("habitlist", habitlist);
+//		logger.debug("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
+//		return "mypagejsp/habit";
+//	}
 	
 	
 	
