@@ -134,7 +134,7 @@
 	
 	<!-- 위시리스트 저장 -->
 	<insert id="addwishlist" parameterType="map">
-		insert into shelf (id, isbn) values (#{id}, #{isbn})
+		insert into shelf (id, isbn, thumbnail) values (#{id}, #{isbn}, #{thumbnail})
 	</insert>
 	
 	<select id="recommendKakaobook" resultType="Kakaobook">
