@@ -140,33 +140,37 @@
                                        <div class="table-wrap">
                                     		<table class="table myaccordion table-hover" id="accordion">
                                     		   <thead>
-                                    		   <p>찜한 도서 리스트</p>
+                                    		   <p>찜한 도서 리스트 게시판</p>
 						                        <tr>
-						                          <th>&nbsp&nbsp</th>
+						                          <th>&nbsp;&nbsp;</th>
 						                          <th>도서 제목</th>
 						                          <th>저자 </th>
 						                          <th>찜한 날짜 </th>                
 						                        </tr>
 						                      </thead>
 											<tbody>
-						                      	<c:forEach var="board" items="${comment}">
-						                        <tr>
-						                          <td scope="row">&nbsp&nbsp</td>
-						              
-						                          <td>${shelf.isbn}</td>
-						                          <td>${board.hits}</td>
-						                          <td>${board.inputdate}</td>
-						                        </tr>
-						                        </c:forEach>
+									
+						        <c:forEach var="comment" items="${commentlist}">
+				                  	 <tr>	
+				                  	 
+				                   	 	<td>
+				                        <a href="kakaobook_info?isbn=${book.isbn}"></a>
+				                    	</td>
+				                    	<td>
+				                    	sdf
+				                    	</td>
+				                           
+				                           
+				                      
+				                  	</tr>    
+				               	</c:forEach> 
+  
 						                      </tbody>
-												                      
-						                      
+											
 						                      </table>
-						                                    </div>           
+						                       </div>           
 						                                </div>
 						                            </div>
-						                            
-						                           
 						                        </section>
 
 
