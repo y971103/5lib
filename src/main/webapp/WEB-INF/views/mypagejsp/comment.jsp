@@ -134,37 +134,35 @@
                 <!-- Comment 찜한 도서 보여주는 게시판 -->
                     <article id="Comment" class="panel">                        
                         <section>
-                            <div class="container" style="margin-bottom: 10px;">
-                                <div class="row">
-                                    <div class="col-12">
-                                       <div class="table-wrap">
+                        	<div class="container" style="margin-bottom: 10px;">
+                            	<div class="row">
+                                	<div class="col-12">
+                                    	<div class="table-wrap">
                                     		<table class="table myaccordion table-hover" id="accordion">
-                                    		   <thead>
-                                    		   <p>찜한 도서 리스트 게시판</p>
+                                    		<thead>
+                                    			<p>찜한 도서 리스트 게시판</p>
 						                        <tr>
 						                          <th>&nbsp;&nbsp;</th>
 						                          <th>도서 제목</th>
 						                          <th>저자 </th>
 						                          <th>찜한 날짜 </th>                
 						                        </tr>
-						                      </thead>
+						                    </thead>
 											<tbody>
-									
-						        <c:forEach var="shelf" items="${shelflist}">
-				                  	 <tr>	
-				                  	 
-				                   	 	<td>
-				                        <a>${shelf.isbn}></a>
-				                    	</td>
-				                  	</tr>    
-				               	</c:forEach>   
+											<c:forEach var="shelf" items="${shelflist}">
+				                  			 <tr>	
+				                   	 		 	<td>
+				                        		${shelf.isbn}
+				                    			</td>
+				                  			</tr>    
+				               				</c:forEach> 	  
 						            	    </tbody>
-											
-						                      </table>
-						                       </div>           
-						                    </div>
-						                            </div>
-						                        </section>
+						                	</table>
+						            	</div>           
+						        	</div>
+						    	</div>
+							</div>
+						</section>
                         <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>

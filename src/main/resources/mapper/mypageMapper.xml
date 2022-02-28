@@ -48,16 +48,11 @@
 	<!-- 코멘트 내용 목록 -->
 	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 
-			commentnum
-			, isbn
-			, id
-			, content
+			isbn
 		from 
-			comments
+			shelf
 		where
-			isbn = #{isbn}
-		order by 
-			commentnum desc
+			id = #{id}
 	</select>
 	
 	<!-- 독서시간 재기 -->
