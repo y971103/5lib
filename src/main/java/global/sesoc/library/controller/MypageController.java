@@ -92,6 +92,8 @@ public class MypageController {
 		return "redirect:comment?booknum=" + comments.getBooknum();
 	}
 	
+	
+	
 //	//id별 독서시간
 //	@RequestMapping (value="selectTime", method=RequestMethod.GET)
 //	public String selectTime (HttpSession session, Model model) {

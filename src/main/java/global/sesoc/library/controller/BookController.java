@@ -253,6 +253,7 @@ public class BookController {
 		}
 			
 		
+		//ajax 세팅
 		@ResponseBody
 		@RequestMapping(value="addwishlist",method=RequestMethod.POST)
 		public void wishlist(HttpSession session, String isbn, String thumbnail) {
