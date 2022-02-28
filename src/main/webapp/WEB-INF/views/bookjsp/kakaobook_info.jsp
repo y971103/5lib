@@ -64,7 +64,7 @@ $(document).ready(function () {
 		$.ajax({
 			url: 'addwishlist',
 			method: 'post',
-			data: {'isbn' : '${book.isbn}'},
+			data: {'isbn' : '${book.isbn}', 'thumbnail' : '${thumbnail}'},
 			success: function () {
 				alert('찜!');
 			},

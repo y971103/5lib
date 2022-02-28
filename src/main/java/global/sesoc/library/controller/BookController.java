@@ -255,7 +255,7 @@ public class BookController {
 		
 		@ResponseBody
 		@RequestMapping(value="addwishlist",method=RequestMethod.POST)
-		public void wishlist(HttpSession session, String isbn) {
+		public void wishlist(HttpSession session, String isbn, String thumbnail) {
 			//로그인한 사용자의 아이디를 세션에서 읽기
 			String id = (String) session.getAttribute("loginId");
 			
@@ -263,6 +263,9 @@ public class BookController {
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("id", id);
 			map.put("isbn", isbn);
+			map.put("thumbnail", thumbnail);
+			
+			
 			
 			//DAO로 맵을 전달
 			dao.addwishlist(map);
