@@ -4,14 +4,18 @@ package global.sesoc.library.vo;
 public class Shelf {
 	private int shelfnum;
 	private String id;
-	private int booknum;
+	private String isbn;
 	
 	
-	public Shelf(int shelfnum, String id, int booknum) {
+	public Shelf(int shelfnum, String id, String isbn) {
 		super();
 		this.shelfnum = shelfnum;
 		this.id = id;
-		this.booknum = booknum;
+		this.isbn = isbn;
+	}
+	
+	public Shelf() {
+		
 	}
 
 
@@ -35,19 +39,19 @@ public class Shelf {
 	}
 
 
-	public int getBooknum() {
-		return booknum;
+	public String getIsbn() {
+		return isbn;
 	}
 
 
-	public void setBooknum(int booknum) {
-		this.booknum = booknum;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Shelf [shelfnum=" + shelfnum + ", id=" + id + ", booknum=" + booknum + "]";
+		return "Shelf [shelfnum=" + shelfnum + ", id=" + id + ", isbn=" + isbn + "]";
 	}
 	
 }
