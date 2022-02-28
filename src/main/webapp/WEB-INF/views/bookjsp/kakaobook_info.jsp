@@ -322,7 +322,9 @@ function reviewUpdateCancle(div) {
                 <div class="row" style="margin-left: 10%;">
 	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
 	                    <div class="photo" style="margin-right: 22px;">
+	                    <a href="kakaobook_info?isbn=${book.isbn}">
 	                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
+	                    </a>
 	                    </div>
 	            	</c:forEach>
                 </div>

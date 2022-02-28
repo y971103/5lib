@@ -137,4 +137,11 @@
 		insert into shelf (id, isbn) values (#{id}, #{isbn})
 	</insert>
 	
+	<select id="recommendKakaobook" resultType="Kakaobook">
+		select 
+			*
+		from 
+			kakaobook
+	</select>
+	
 </mapper>

@@ -96,4 +96,11 @@ public class BookDAO {
 		
 	}
 
+	//이런 책은 어떠세요 에서 쓸 부분
+	public List<Kakaobook> recommendKakaobook() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
+		List<Kakaobook> book = mapper.recommendKakaobook(); 
+		return book;
+	}
+
 }
