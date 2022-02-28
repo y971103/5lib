@@ -15,6 +15,7 @@
 		<typeAlias type="global.sesoc.library.vo.book_Search" alias="book_search" /> 
 		<typeAlias type="global.sesoc.library.vo.Comments" alias="comments" />
 		<typeAlias type="global.sesoc.library.vo.Habit" alias="habit" />
+		<typeAlias type="global.sesoc.library.vo.Shelf" alias="shelf" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />

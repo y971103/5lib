@@ -46,16 +46,16 @@
 	</update>
 	
 	<!-- 코멘트 내용 목록 -->
-	<select id="listComments" parameterType="int" resultType="comments">
+	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 
 			commentnum
-			, booknum
+			, isbn
 			, id
 			, content
 		from 
 			comments
 		where
-			booknum = #{booknum}
+			isbn = #{isbn}
 		order by 
 			commentnum desc
 	</select>

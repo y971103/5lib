@@ -150,32 +150,21 @@
 						                      </thead>
 											<tbody>
 									
-						        <c:forEach var="comment" items="${commentlist}">
+						        <c:forEach var="shelf" items="${shelflist}">
 				                  	 <tr>	
 				                  	 
 				                   	 	<td>
-				                        <a href="kakaobook_info?isbn=${book.isbn}"></a>
+				                        <a>${shelf.isbn}></a>
 				                    	</td>
-				                    	<td>
-				                    	sdf
-				                    	</td>
-				                           
-				                           
-				                      
 				                  	</tr>    
-				               	</c:forEach> 
-  
-						                      </tbody>
+				               	</c:forEach>   
+						            	    </tbody>
 											
 						                      </table>
 						                       </div>           
-						                                </div>
+						                    </div>
 						                            </div>
 						                        </section>
-
-
-
-
                         <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>

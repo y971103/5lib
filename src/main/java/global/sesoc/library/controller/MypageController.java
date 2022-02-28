@@ -47,7 +47,7 @@ public class MypageController {
 	@RequestMapping(value="commentlist", method=RequestMethod.GET)
 	public String commentlist(HttpSession session, Model model, Shelf shelf) {
 		String id = (String) session.getAttribute("loginId");
-		ArrayList<Shelf> shelflist = dao.select(id);
+		ArrayList<Shelf> shelflist = dao.listshelf(id);
 		model.addAttribute("booklist", shelflist);
 		return "mypagejsp/comment";
 	}

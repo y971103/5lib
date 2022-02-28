@@ -11,6 +11,7 @@ import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
+import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.notice_Search;
 
 
@@ -22,10 +23,10 @@ public class MypageDAO {
 
 	
 	//commentlist(게시판 보여주기) 
-	public ArrayList<commentlist> listcomment(booklist, shelflist) {
-		mypageMapper mapper = sqlSession.getMapper(BoardMapper.class);
-		ArrayList<shelf> shelflist = mapper.select(id);
-		return commentlist;
+	public ArrayList<Shelf> listshelf(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		return shelflist;
 	}
 	
 
