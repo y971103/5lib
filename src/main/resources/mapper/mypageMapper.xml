@@ -49,6 +49,7 @@
 	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 
 			isbn
+			, to_char(inputdate, 'YYYY-MM-DD') inputdate
 		from
 			shelf
 		where
