@@ -47,6 +47,7 @@ public class BoardDAO {
 	//글 목록
 	public ArrayList<Board> listBoard(notice_Search notice_search, int startRecord, int countPerPage) {
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+		
 		//전체 검색 결과 중 읽을 시작위치와 개수. 나머지는 다음 페이지로 넘긴다 mybatis에 있는 기능이다.
 		RowBounds rb = new RowBounds(startRecord, countPerPage);
 		
