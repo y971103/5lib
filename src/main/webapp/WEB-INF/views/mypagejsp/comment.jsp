@@ -151,9 +151,10 @@
 											<tbody>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
-				                   	 		 	<td>
-				                        		${shelf.isbn}
-				                    			</td>
+				                   	 		 	<td>${shelf.isbn}</td>
+				                    			<td></td>
+				                    			<td></td>
+				                    			<td>${shelf.inputdate}</td>
 				                  			</tr>    
 				               				</c:forEach> 	  
 						            	    </tbody>

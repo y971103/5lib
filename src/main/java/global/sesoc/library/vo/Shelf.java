@@ -5,13 +5,15 @@ public class Shelf {
 	private int shelfnum;
 	private String id;
 	private String isbn;
+	private String inputdate;
 	
 	
-	public Shelf(int shelfnum, String id, String isbn) {
+	public Shelf(int shelfnum, String id, String isbn, String inputdate) {
 		super();
 		this.shelfnum = shelfnum;
 		this.id = id;
 		this.isbn = isbn;
+		this.inputdate = inputdate;
 	}
 	
 	public Shelf() {
@@ -47,11 +49,19 @@ public class Shelf {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+	
+	public String getInputdate() {
+		return inputdate;
+	}
 
+
+	public void setInputdate(String inputdate) {
+		this.inputdate = inputdate;
+	}
 
 	@Override
 	public String toString() {
-		return "Shelf [shelfnum=" + shelfnum + ", id=" + id + ", isbn=" + isbn + "]";
+		return "Shelf [shelfnum=" + shelfnum + ", id=" + id + ", isbn=" + isbn + ", inputdate=" + inputdate + "]";
 	}
 	
 }

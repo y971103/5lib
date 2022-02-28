@@ -43,7 +43,7 @@ public class MypageController {
 		String id = (String) session.getAttribute("loginId");
 		ArrayList<Habit> habitlist = dao.selectTime(id);
 		model.addAttribute("habitlist", habitlist);
-		logger.debug("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
+		logger.info("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
 		return "mypagejsp/habit";
 	}
 	
