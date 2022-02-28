@@ -49,7 +49,8 @@
 	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 
 			isbn
-		from 
+			, to_char(inputdate, 'YYYY-MM-DD') inputdate
+		from
 			shelf
 		where
 			id = #{id}
@@ -72,11 +73,11 @@
 </insert>
 
 	<!-- id별 독서시간 -->
-	<select id="selectTime" parameterType="string" resultType="int">
+	<select id="selectTime" parameterType="string" resultType="habit">
 	select
 		time
 		, id
-		<!--  , to_char(inputdate, 'YYYY-MM-DD') inputdate-->
+		, to_char(inputdate, 'YYYY-MM-DD') inputdate
 	from
 		habit
 	where

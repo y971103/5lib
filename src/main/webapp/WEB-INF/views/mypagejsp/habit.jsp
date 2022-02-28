@@ -137,13 +137,15 @@
                         <div class="container" style="margin-bottom: 10px;">
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
-                                 <%-- <class="binfo"> --%>
-                                <%--  <c:forEach var="habit" items="${habitlist}">  --%>  
+                                <%-- <class="binfo"> --%>
+                                <c:forEach var="habit" items="${habitlist}">
                                     <div class="c_title">
-                                     	  ${habitlist.time}분 동안 독서를 했습니다.
+                                     	  ${habit.inputdate}에 ${habit.time}분 동안 독서를 했습니다.
                                     </div>
-                               <%--   </c:forEach> --%>
+                                </c:forEach>
+                                <%-- </class> --%>
                             </div>
+                            <br><br>
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
                                  <%-- <class="binfo"> --%>   
