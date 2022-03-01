@@ -390,6 +390,10 @@ CREATE TABLE shelf
 	inputdate date DEFAULT SYSDATE,
 	-- 회원 아이디
 	id varchar2(20) NOT NULL,
+	-- 저자
+	authors varchar2(50),
+	-- 제목
+	title varchar2(100),
 	-- 책 번호
 	isbn varchar2(200) NOT NULL,
 	-- 썸네일
