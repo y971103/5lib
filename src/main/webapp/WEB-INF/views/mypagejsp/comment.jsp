@@ -168,6 +168,7 @@
 						</section>
 						<!-- 찜한 도서 게시판 끝 -->
 						
+						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
                         <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>
@@ -195,7 +196,7 @@
                                 </div>
                             </div>
                             <hr>  
-                              <!-- comment 한쥴 리뷰란 -->
+                             
                               
                               
                               
