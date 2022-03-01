@@ -153,10 +153,11 @@
 				                  			 <tr>	
 						  <%--                 	<td>
                       	   					 	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
-                          						</td>
-				         	 --%> 	 		 	<td>${shelf.isbn}</td>	
-				                    			<td>${shelf.inputdate}</td>
-				                    			<td>${shelf.inputdate}</td>
+                          						</td> --%>
+                          						<td>${shelf.title}</td>
+                          						<td>${shelf.inputdate}</td>
+				         	 		 		 	<td>${shelf.isbn}</td>	
+				                    			
 				                  			</tr>    
 				               				</c:forEach> 	  
 						            	    </tbody>
