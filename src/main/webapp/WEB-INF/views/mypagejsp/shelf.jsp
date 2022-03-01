@@ -165,7 +165,7 @@
                                     		<thead>
                                     			<p>찜한 도서 리스트 게시판</p>
 						                        <tr>
-						                          <th>&nbsp;&nbsp;</th>
+						                          <th>ISBN</th>
 						                          <th>도서 제목</th>
 						                          <th>저자 </th>
 						                          <th>찜한 날짜 </th>                
@@ -175,8 +175,8 @@
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
 				                   	 		 	<td>${shelf.isbn}</td>
-				                    			<td></td>
-				                    			<td></td>
+				                    			<td>${shelf.title}</td>
+				                    			<td>${shelf.authors}</td>
 				                    			<td>${shelf.inputdate}</td>
 				                  			</tr>    
 				               				</c:forEach> 	  

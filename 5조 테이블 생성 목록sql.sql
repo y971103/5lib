@@ -1,24 +1,24 @@
 CREATE TABLE kakaobook
 (
-	-- 저자
-	authors varchar2(50),
-	-- 제목
-	title varchar2(100),
-	-- 내용
-	contents varchar2(2000),
-	-- 출간일자
-	datetime varchar2(100), 
-	-- isbn코드
-	isbn varchar2(200),
-	-- 출판사
-	publisher varchar2(50),
-	-- 썸네일
-	thumbnail varchar2(200),
-	-- 책 번호(DB)
-	booknum number,
-	-- 장르
-	genre varchar2(200),
-	PRIMARY KEY (isbn)
+   -- 저자
+   authors varchar2(50),
+   -- 제목
+   title varchar2(100),
+   -- 내용
+   contents varchar2(2000),
+   -- 출간일자
+   datetime varchar2(100), 
+   -- isbn코드
+   isbn varchar2(200),
+   -- 출판사
+   publisher varchar2(50),
+   -- 썸네일
+   thumbnail varchar2(200),
+   -- 책 번호(DB)
+   booknum number,
+   -- 장르
+   genre varchar2(200),
+   PRIMARY KEY (isbn)
 );
 
 
@@ -252,133 +252,133 @@ values ('지그문트 프로이트', '정신분석 강의', '은밀한 것, 숨�
 
 CREATE TABLE comments
 (
-	-- 나만 보는 리뷰 번호 (줄글)
-	commentnum number NOT NULL,
-	-- 나만 보는 리뷰 내용
-	content varchar2(2000),
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 책 번호
-	booknum number NOT NULL,
-	PRIMARY KEY (commentnum)
+   -- 나만 보는 리뷰 번호 (줄글)
+   commentnum number NOT NULL,
+   -- 나만 보는 리뷰 내용
+   content varchar2(2000),
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   -- 책 번호
+   booknum number NOT NULL,
+   PRIMARY KEY (commentnum)
 );
 
 CREATE TABLE essay
 (
-	-- 에세이(독후감) 번호 (남들 다 봄)
-	essaynum number NOT NULL,
-	-- 에세이 제목
-	title varchar2(200),
-	-- 에세이 내용
-	content varchar2(2000),
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 에세이 작성 일자
-	inputdate date DEFAULT SYSDATE,
-	-- 조회수
-	hits number,
-	PRIMARY KEY (essaynum)
+   -- 에세이(독후감) 번호 (남들 다 봄)
+   essaynum number NOT NULL,
+   -- 에세이 제목
+   title varchar2(200),
+   -- 에세이 내용
+   content varchar2(2000),
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   -- 에세이 작성 일자
+   inputdate date DEFAULT SYSDATE,
+   -- 조회수
+   hits number,
+   PRIMARY KEY (essaynum)
 );
 
 CREATE TABLE genre
 (
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	genre_num number(2) NOT NULL,
-	UNIQUE (id, genre_num)
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   genre_num number(2) NOT NULL,
+   UNIQUE (id, genre_num)
 );
 
 CREATE TABLE genre_info
 (
-	genre_num number(2) NOT NULL,
-	genre_name varchar2(100),
-	PRIMARY KEY (genre_num)
+   genre_num number(2) NOT NULL,
+   genre_name varchar2(100),
+   PRIMARY KEY (genre_num)
 );
 
 CREATE TABLE habit
 (
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 독서 시간
-	time number,
-	-- 읽은 권수
-	amount number,
-	-- 타임과 비교할 현재 시각
-	inputdate date DEFAULT SYSDATE
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   -- 독서 시간
+   time number,
+   -- 읽은 권수
+   amount number,
+   -- 타임과 비교할 현재 시각
+   inputdate date DEFAULT SYSDATE
 );
 
 CREATE TABLE members
 (
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 회원 비밀번호
-	password varchar2 NOT NULL,
-	-- 회원 이름
-	name varchar2(20),
-	-- 회원 전화번호
-	phone number,
-	-- 회원 이메일
-	email varchar2(20),
-	-- 회원 구독 정보
-	sub varchar2(20),
-	genre_num varchar2(20),
-	PRIMARY KEY (id)
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   -- 회원 비밀번호
+   password varchar2 NOT NULL,
+   -- 회원 이름
+   name varchar2(20),
+   -- 회원 전화번호
+   phone number,
+   -- 회원 이메일
+   email varchar2(20),
+   -- 회원 구독 정보
+   sub varchar2(20),
+   genre_num varchar2(20),
+   PRIMARY KEY (id)
 );
 
 CREATE TABLE board
 (
-	-- 게시판 번호 
-	boardnum number NOT NULL,
-	-- 게시판 타입 (공지사항, QnA)
-	board_type number,
-	-- 글 제목 
-	title varchar2(200),
-	-- 조회수 
-	hits number,
-	-- 글 내용 
-	content varchar2(2000),
-	-- 작성 시간 
-	inputdate date DEFAULT SYSDATE,
-	-- 아이디 
-	id varchar2(20) NOT NULL,
-	PRIMARY KEY (boardnum)
+   -- 게시판 번호 
+   boardnum number NOT NULL,
+   -- 게시판 타입 (공지사항, QnA)
+   board_type number,
+   -- 글 제목 
+   title varchar2(200),
+   -- 조회수 
+   hits number,
+   -- 글 내용 
+   content varchar2(2000),
+   -- 작성 시간 
+   inputdate date DEFAULT SYSDATE,
+   -- 아이디 
+   id varchar2(20) NOT NULL,
+   PRIMARY KEY (boardnum)
 );
 
 
 CREATE TABLE reply
 (
-	-- 게시글 댓글 번호 
-	replynum number NOT NULL,
-	-- 게시글 댓글 내용 
-	content varchar2(200) NOT NULL,
-	-- 댓글 아이디 
-	id varchar2(20) NOT NULL,
-	-- 게시글 번호 
-	boardnum number NOT NULL,
-	PRIMARY KEY (replynum)
+   -- 게시글 댓글 번호 
+   replynum number NOT NULL,
+   -- 게시글 댓글 내용 
+   content varchar2(200) NOT NULL,
+   -- 댓글 아이디 
+   id varchar2(20) NOT NULL,
+   -- 게시글 번호 
+   boardnum number NOT NULL,
+   PRIMARY KEY (replynum)
 );
 
 
 CREATE TABLE review
 (
-	-- 한줄평 번호 (라이브러리)
-	reviewnum number NOT NULL,
-	-- 한줄평 작성 날짜
-	inputdate date default sysdate,
-	-- 한줄평 내용
-	content varchar2(200),
-	-- 한줄평 좋아요
-	likecnt number,
-	-- 회원 아이디
-	id varchar2(20) NOT NULL,
-	-- 책 번호
-	isbn varchar2(200) NOT NULL,
-	PRIMARY KEY (reviewnum)
+   -- 한줄평 번호 (라이브러리)
+   reviewnum number NOT NULL,
+   -- 한줄평 작성 날짜
+   inputdate date default sysdate,
+   -- 한줄평 내용
+   content varchar2(200),
+   -- 한줄평 좋아요
+   likecnt number,
+   -- 회원 아이디
+   id varchar2(20) NOT NULL,
+   -- 책 번호
+   isbn varchar2(200) NOT NULL,
+   PRIMARY KEY (reviewnum)
 );
 
 ALTER TABLE review
-	ADD FOREIGN KEY (isbn)
-	REFERENCES kakaobook (isbn)
+   ADD FOREIGN KEY (isbn)
+   REFERENCES kakaobook (isbn)
 ;
 
 create sequence review_seq;
@@ -410,77 +410,77 @@ insert into shelf (id, isbn) values ('ccccccc', '9788932003979');
 
 
 ALTER TABLE comments
-	ADD FOREIGN KEY (booknum)
-	REFERENCES book (booknum)
+   ADD FOREIGN KEY (booknum)
+   REFERENCES book (booknum)
 ;
 
 ALTER TABLE essay
-	ADD FOREIGN KEY (booknum)
-	REFERENCES book (booknum)
+   ADD FOREIGN KEY (booknum)
+   REFERENCES book (booknum)
 ;
 
 
 
 ALTER TABLE shelf
-	ADD FOREIGN KEY (isbn)
-	REFERENCES kakaobook (isbn)
+   ADD FOREIGN KEY (isbn)
+   REFERENCES kakaobook (isbn)
 ;
 
 ALTER TABLE shelf
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE genre
-	ADD FOREIGN KEY (genre_num)
-	REFERENCES genre_info (genre_num)
+   ADD FOREIGN KEY (genre_num)
+   REFERENCES genre_info (genre_num)
 ;
 
 ALTER TABLE comments
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE essay
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE genre
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE habit
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE notice
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE QnA
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE QnA_reply
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 ALTER TABLE review
-	ADD FOREIGN KEY (id)
-	REFERENCES members (id)
+   ADD FOREIGN KEY (id)
+   REFERENCES members (id)
 ;
 
 
 
 ALTER TABLE QnA_reply
-	ADD FOREIGN KEY (QnAnum)
-	REFERENCES QnA (QnAnum)
+   ADD FOREIGN KEY (QnAnum)
+   REFERENCES QnA (QnAnum)
 ;
 
 
@@ -540,7 +540,7 @@ create sequence reply_seq;
 create sequence essay_seq;
 
 -- 한줄평 댓글 번호에 사용할 시퀀스
-create sequence review_seq;	
+create sequence review_seq;   
 
 -- shelf(내 서재)에 사용할 시퀀스
-create sequence shelf_seq;		
+create sequence shelf_seq;      

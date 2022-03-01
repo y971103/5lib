@@ -99,11 +99,11 @@ function reviewUpdateForm(reviewnum, isbn, retext) {
 	str += '<input type="hidden" name="reviewnum" value="'+reviewnum+'">';
 	str += '<input type="hidden" name="isbn" value="'+isbn+'">';
 	str += '&nbsp;';
-	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
+	str += '<input type="text" name="text" value="' + retext + '" style="width:530px;">';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewUpdate(document.editForm' + reviewnum + ')">[저장]</a>';
+	str += '<a href="javascript:reviewEdit(document.editForm' + reviewnum + ')">[저장]</a>';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewUpdateCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
+	str += '<a href="javascript:reviewEditCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
 	str += '</form>';
 	div.innerHTML = str;
 }
@@ -117,7 +117,7 @@ function reviewUpdateCancle(div) {
 		var popupName = 'newwin';
 		var options = 'width=1920,height=1080';
 		var openDialog = function(uri, name, options, closeCallback) {
-		        var win = window.open(uri, name, options);
+		        var win = window.open(uri, name, options)
 		        var interval = window.setInterval(function() {
 		            try {
 		                if (win == null || win.closed) {
@@ -130,10 +130,11 @@ function reviewUpdateCancle(div) {
 		        }, 1000);
 		        return win ;
 		    };
+		    
 		function popOpen() {
-			//열기시작
+			//열기시
 			let start = new Date();
-			alert('시간 측정 시작 / 나중에 지울예정') 
+			alert('시간 측정 시작') 
 		    openDialog(uri, popupName, options, function(win) {
 			//닫은 후
 			let end = new Date();
@@ -141,14 +142,14 @@ function reviewUpdateCancle(div) {
 			let minute = second / 60;
 			var time = Math.ceil(minute);
 			//'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
-			alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
+			alert(time +'분의 시간동안 사이트가 켜졌습니다.');
 			document.getElementById('time').value = time;
 			
 			if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
 	            alert("취소(아니오)를 누르셨습니다.");
 	        } else {
 	        	 var form = document.getElementById("t1");
-	        	 form.action = "countTime";
+	        	 form.action = "counttime"
 	        	 form.mothod = "POST";
 	        	 form.submit();
 	       		 }
@@ -157,51 +158,7 @@ function reviewUpdateCancle(div) {
 
 		
 </script>
-<script src="resources/viewer/script.js">
-App.prototype.doBook = function (url, opts) {
-    this.qs(".book").innerHTML = "Loading";
-
-    opts = opts || {
-        encoding: "binary"
-    };
-    console.log("doBook", url, opts);
-    this.doReset();
-
-    try {
-        this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/5.epub', opts);
-        this.qs(".book").innerHTML = "";
-        this.state.rendition = this.state.book.renderTo(this.qs(".book"), {});
-    } catch (err) {
-        this.fatal("error loading book", err);
-        throw err;
-    }
-
-    this.state.book.ready.then(this.onBookReady.bind(this)).catch(this.fatal.bind(this, "error loading book"));
-
-    this.state.book.loaded.navigation.then(this.onNavigationLoaded.bind(this)).catch(this.fatal.bind(this, "error loading toc"));
-    this.state.book.loaded.metadata.then(this.onBookMetadataLoaded.bind(this)).catch(this.fatal.bind(this, "error loading metadata"));
-    this.state.book.loaded.cover.then(this.onBookCoverLoaded.bind(this)).catch(this.fatal.bind(this, "error loading cover"));
-
-    this.state.rendition.hooks.content.register(this.applyTheme.bind(this));
-    this.state.rendition.hooks.content.register(this.loadFonts.bind(this));
-
-    this.state.rendition.on("relocated", this.onRenditionRelocated.bind(this));
-    this.state.rendition.on("click", this.onRenditionClick.bind(this));
-    this.state.rendition.on("keyup", this.onKeyUp.bind(this));
-    this.state.rendition.on("displayed", this.onRenditionDisplayedTouchSwipe.bind(this));
-    this.state.rendition.on("relocated", this.onRenditionRelocatedUpdateIndicators.bind(this));
-    this.state.rendition.on("relocated", this.onRenditionRelocatedSavePos.bind(this));
-    this.state.rendition.on("started", this.onRenditionStartedRestorePos.bind(this));
-    this.state.rendition.on("displayError", this.fatal.bind(this, "error rendering book"));
-
-    this.state.rendition.display();
-
-    if (this.state.dictInterval) window.clearInterval(this.state.dictInterval);
-    this.state.dictInterval = window.setInterval(this.checkDictionary.bind(this), 50);
-    this.doDictionary(null);
-
-
-</script>
+<script src="../resources/viewer/script.js"></script>
 
 <body>
    <!--:헤더 시작::-->
@@ -317,14 +274,12 @@ App.prototype.doBook = function (url, opts) {
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <form method="post" id="t1" onsubmit="return false;">
-	                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
+	                    <button type="button" onclick="popOpen()" class="readbt">책 읽기</button>
 						<input type="hidden" id="time" name="time">
 					</form>
+					 <input type="button" id="wishbt" value="찜하기" class="readbt" >
 					
-					<!-- 찜 기능 처리 -->
-                    <p><input type="button" id="wishbt" value="위시리스트에 담기"></p>
 
 
                 </div>
@@ -348,14 +303,13 @@ App.prototype.doBook = function (url, opts) {
 									<a href="javascript:reviewDelete(${review.reviewnum}, ${review.isbn})">삭제</a>
 								</c:if>
                                 <div class="one_line">${review.content}</div>
-                                <div id="div${review.reviewnum}"></div>
                                 
                             </div>
                             </c:forEach>
  							 <div>
  							 	<form id="reviewWrite" action="reviewWrite" method="post">
  							 	<input type="hidden" name="isbn" value="${book.isbn}" />
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요" class="write_review" name="content"> 
+                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review" name="content"> 
                                 <input type="submit" value="등록" class="sub_review">
                                 </form>
                             </div>
@@ -366,39 +320,29 @@ App.prototype.doBook = function (url, opts) {
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요? </h2>
                       
                 <div class="row" style="margin-left: 10%;">
-                
-	               <c:forEach var = "i" begin = "1" end = "4">
-		                <c:set var="ran"><%= java.lang.Math.round(java.lang.Math.random() * 50) %></c:set>
-		                 <c:forEach var="book" items="${kakaobooklist}"> 
-		                	<c:if test = "${ran == book.booknum}">
-			                    <div class="photo" style="margin-right: 22px;">
-			                    <a href="kakaobook_info?isbn=${book.isbn}">
-			                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
-			                    </a>
-			                    </div>
-		                    </c:if>
-	            		</c:forEach>
-	            	</c:forEach>	
-	            		
+	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
+	                    <div class="photo" style="margin-right: 22px;">
+	                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
+	                    </div>
+	            	</c:forEach>
                 </div>
                 
             </div>
         </div>
     </section>
     <!-- Product Details Section End -->
- <!-- 푸터 시작-->
+
+    <!-- Footer Section Begin -->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-5">
                     <div class="single-footer-widget">
-                        <h4>Project Members</h4>
+                        <h4>Discover Destination</h4>
                         <ul>
-                            <li><a href="#">최승환</a></li>
-                            <li><a href="#">김기도</a></li>
-                            <li><a href="#">김소휘</a></li>
-                            <li><a href="#">김은지</a></li>
-                            <li><a href="#">염한승</a></li>
+                            <li><a href="#">Miami, USA</a></li>
+                            <li><a href="#">California, USA</a></li>
+                            <li><a href="#">London, UK</a></li>
                         </ul>
 
                     </div>
@@ -408,7 +352,6 @@ App.prototype.doBook = function (url, opts) {
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
                             <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                 method="get" class="form-inline">
                                 <input class="form-control" name="EMAIL" placeholder="Your Email Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
@@ -428,8 +371,11 @@ App.prototype.doBook = function (url, opts) {
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
-                        <h4>Address Of Our Project </h4>
-                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
+                        <h4>Contact Us</h4>
+                        <p>4156, New garden, New York, USA
+                                +880 362 352 783</p>
+                        <span>contact@martine.com</span>
+                      
                     </div>
                 </div>
             </div>
@@ -439,14 +385,14 @@ App.prototype.doBook = function (url, opts) {
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
                         <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- footer part end-->
+    <!-- Footer Section End -->
 
     <!-- Js Plugins -->
 
