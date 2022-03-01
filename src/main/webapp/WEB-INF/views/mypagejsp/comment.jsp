@@ -145,21 +145,23 @@
                                     		<thead> </thead>
                                     			<tbody>
 						                     <tr>
-						                          <td>ISBN</td>
+						               		      <td>책 표지</td>
+						                          <td>도서명</td>
 						                          <td>찜한 날짜 </td>   
-						                          <td>도서명</td>             
+						                          <td>ISBN</td>             
 						                     </tr>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
-						  <%--                 	<td>
-                      	   					 	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
-                          						</td> --%>
-                          						<td>${shelf.title}</td>
+												<td>${shelf.thumbnail}</td>
+									<!-- 		<td> <a href id="sldwn"></a></td> -->
+											
+												<td>${shelf.title}</td>
+												
                           						<td>${shelf.inputdate}</td>
 				         	 		 		 	<td>${shelf.isbn}</td>	
-				                    			
 				                  			</tr>    
-				               				</c:forEach> 	  
+				               				</c:forEach> 
+				               			
 						            	    </tbody>
 						                	</table>
 						            	</div>           
@@ -170,9 +172,9 @@
 						<!-- 찜한 도서 게시판 끝 -->
 						
 						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
-                        <div>
+                        <!-- <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
-                        </div>
+                        </div> -->
                         
                        <section id="textDiv">
                             <div class="container" style="margin-bottom: 10px;">

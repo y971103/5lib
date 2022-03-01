@@ -27,8 +27,10 @@
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
+        <link rel="stylesheet" href="../resources/css/dark.css">
         
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
+         <script src="../resources/js/dark.js"></script>
         <script>
             $(document).ready(function() {
                 $('#textDiv').hide();
@@ -186,6 +188,19 @@
 
                 </div>
             </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
+                    </div>
+                </div>
             
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
