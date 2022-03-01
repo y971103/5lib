@@ -65,11 +65,11 @@
 
 	<!-- id별 총 독서시간 -->
    <select id="selectTime" parameterType="string" resultType="habit">
-  select
+    select
       sum(time) as time,
-	  (select * from (select to_char(inputdate, 'day') 
+	  (select day from (select to_char(inputdate, 'day') as day, count(to_char(inputdate, 'day')) as ct
 	  from habit where id=#{id} group by to_char(inputdate, 'day') 
-	  order by to_char(inputdate, 'day') desc) where rownum=1) as inputdate
+	  order by count(to_char(inputdate, 'day')) desc) where rownum=1) as inputdate
    from
       habit
         where id = #{id}
@@ -80,6 +80,8 @@
 	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 
 			isbn
+			, authors
+			, title
 			, to_char(inputdate, 'YYYY-MM-DD') inputdate
 		from
 			shelf
