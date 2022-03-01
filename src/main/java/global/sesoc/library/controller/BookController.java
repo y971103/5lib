@@ -289,7 +289,7 @@ public class BookController {
 			
 			dao2.countTime(habit);
 			
-			return "bookjsp/index";
+			return "redirect:kakaolibrary";
 		}
 
 }

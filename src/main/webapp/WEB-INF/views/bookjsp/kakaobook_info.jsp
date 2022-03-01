@@ -113,51 +113,51 @@ function reviewUpdateCancle(div) {
 }
 </script>
 <script>
-	var uri = 'http://localhost:8888/library/book/viewer';
-		var popupName = 'newwin';
-		var options = 'width=1920,height=1080';
-		var openDialog = function(uri, name, options, closeCallback) {
-		        var win = window.open(uri, name, options)
-		        var interval = window.setInterval(function() {
-		            try {
-		                if (win == null || win.closed) {
-		                    window.clearInterval(interval);
-		                    closeCallback(win);
-		                }
-		            }
-		            catch (e) {
-		            }
-		        }, 1000);
-		        return win ;
-		    };
-		    
-		function popOpen() {
-			//열기시
-			let start = new Date();
-			alert('시간 측정 시작') 
-		    openDialog(uri, popupName, options, function(win) {
-			//닫은 후
-			let end = new Date();
-			let second = (end - start)/1000;
-			let minute = second / 60;
-			var time = Math.ceil(minute);
-			//'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
-			alert(time +'분의 시간동안 사이트가 켜졌습니다.');
-			document.getElementById('time').value = time;
-			
-			if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
-	            alert("취소(아니오)를 누르셨습니다.");
-	        } else {
-	        	 var form = document.getElementById("t1");
-	        	 form.action = "counttime"
-	        	 form.mothod = "POST";
-	        	 form.submit();
-	       		 }
-		   	});
-		}
+   var uri = 'http://localhost:8888/library/book/viewer';
+      var popupName = 'newwin';
+      var options = 'width=1920,height=1080';
+      var openDialog = function(uri, name, options, closeCallback) {
+              var win = window.open(uri, name, options);
+              var interval = window.setInterval(function() {
+                  try {
+                      if (win == null || win.closed) {
+                          window.clearInterval(interval);
+                          closeCallback(win);
+                      }
+                  }
+                  catch (e) {
+                  }
+              }, 1000);
+              return win ;
+          };
+      function popOpen() {
+         //열기시작
+         let start = new Date();
+         alert('시간 측정 시작 / 나중에 지울예정') 
+          openDialog(uri, popupName, options, function(win) {
+         //닫은 후
+         let end = new Date();
+         let second = (end - start)/1000;
+         let minute = second / 60;
+         var time = Math.ceil(minute);
+         //'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
+         alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
+         document.getElementById('time').value = time;
+         
+         if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+               alert("취소(아니오)를 누르셨습니다.");
+           } else {
+               var form = document.getElementById("t1");
+               form.action = "countTime";
+               form.mothod = "POST";
+               form.submit();
+                 }
+            });
+      }
 
-		
+      
 </script>
+
 <script src="../resources/viewer/script.js"></script>
 
 <body>
@@ -319,12 +319,21 @@ function reviewUpdateCancle(div) {
 
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요? </h2>
                       
-                <div class="row" style="margin-left: 10%;">
-	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
-	                    <div class="photo" style="margin-right: 22px;">
-	                        <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
-	                    </div>
-	            	</c:forEach>
+                  <div class="row" style="margin-left: 10%;">
+                
+                  <c:forEach var = "i" begin = "1" end = "4">
+                      <c:set var="ran"><%= java.lang.Math.round(java.lang.Math.random() * 50) %></c:set>
+                       <c:forEach var="book" items="${kakaobooklist}"> 
+                         <c:if test = "${ran == book.booknum}">
+                             <div class="photo" style="margin-right: 22px;">
+                             <a href="kakaobook_info?isbn=${book.isbn}">
+                                 <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
+                             </a>
+                             </div>
+                          </c:if>
+                     </c:forEach>
+                  </c:forEach>   
+                     
                 </div>
                 
             </div>
