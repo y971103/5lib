@@ -149,7 +149,7 @@
 										aria-expanded="false"> Board </a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
 											<a class="dropdown-item"
-												href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a> <a
+												ㄹhref="<c:url value="/board/notice_QnA"/>">Notice & QnA</a> <a
 												class="dropdown-item" href="<c:url value="/essay/essay"/>">Essay</a>
 										</div></li>
 									<li class="nav-item"><a class="nav-link"
@@ -193,7 +193,7 @@
 
 			<!--Board The Read 게시판 읽기 폼 -->
 			<section class="top_place section_padding"
-				style="padding: 0px; background: linear-gradient(135deg, #95a194);">
+				style="padding: 0px; background: linear-gradient(135deg, #3a403a);">
 
 			</section>
 		</div>
@@ -212,7 +212,7 @@
 			
 
 				<table class="table table-striped"
-					style="text-align: center; border: 1px solid #ffffff">
+					style="text-align: center; border: 1px solid #3a403a">
 					<thead>
 					</thead>
 					<tbody>
@@ -266,17 +266,7 @@
 					<!-- 리플 작성 폼 끝-->
 					
 					<!-- 리플 목록 출력 시작 -->
-<!-- 				<section class="ftco-section main-body">
-					<div class="container"></div>
 
-					
-					<table class="table table-striped"
-					style="text-align: center; border: 1px solid #ffffff">
-					
-
-					</table>
-					</section>
-				</section>  -->
 			<section>
 			<div class="container">
 			<div class="display_table">
@@ -287,15 +277,16 @@
 					<tr>
 						<td style="width:100px">작성자 ID</td>
 						<td style="width:1100px;" colspan="2">${reply.id}</td>
-				<%-- 		<td colspan="1">${reply.id}</td> --%>
+				
 						<td style="width:1100px" colspan="4">${reply.content}</td>
 						
-					<%-- 	<td style="width:100px" colspan="1">${reply.content}</td>  --%>
+				
 						<!-- 리플 수정 -->
 						<td style="width:100px" class="replybutton">
 						<c:if test="${loginId == reply.id}">
 							<a href="javascript:replyEditForm(${reply.replynum}, ${reply.boardnum},'${reply.content}')">수정</a>
 						</c:if>
+						
 						</td>
 						<!--리플 삭제 -->
 						<td style="width:100px"class="replybutton">
@@ -306,7 +297,7 @@
 					</tr>		
 					<tr>
 						<!-- 리플 수정 폼이 나타날 위치 -->
-						<td colspan="4"><div id="div${reply.replynum}"></div></td>
+						<td style="width:1100px" colspan="4"><div id="div${reply.replynum}"></div></td>
 					</tr>
 					</c:forEach>
 				</table>
