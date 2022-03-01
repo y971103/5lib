@@ -274,15 +274,12 @@ function reviewUpdateCancle(div) {
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <form method="post" id="t1" onsubmit="return false;">
-	                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
-	                   
+	                    <button type="button" onclick="popOpen()" class="readbt">책 읽기</button>
 						<input type="hidden" id="time" name="time">
 					</form>
+					 <input type="button" id="wishbt" value="찜하기" class="readbt" >
 					
-					<!-- 찜 기능 처리 -->
-                    <p><input type="button" id="wishbt" value="위시리스트에 담기"></p>
 
 
                 </div>
@@ -320,7 +317,7 @@ function reviewUpdateCancle(div) {
                     </div>
                 </div>
 
-                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
+                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요? </h2>
                       
                 <div class="row" style="margin-left: 10%;">
 	                <c:forEach var="book" items="${kakaobooklist}" begin="1" end="4"> 
