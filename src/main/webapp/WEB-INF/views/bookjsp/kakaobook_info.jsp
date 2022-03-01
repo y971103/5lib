@@ -340,18 +340,19 @@ function reviewUpdateCancle(div) {
         </div>
     </section>
     <!-- Product Details Section End -->
-
-    <!-- Footer Section Begin -->
+ <!-- 푸터 시작-->
     <footer class="footer-area">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-5">
                     <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
+                        <h4>Project Members</h4>
                         <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
+                            <li><a href="#">최승환</a></li>
+                            <li><a href="#">김기도</a></li>
+                            <li><a href="#">김소휘</a></li>
+                            <li><a href="#">김은지</a></li>
+                            <li><a href="#">염한승</a></li>
                         </ul>
 
                     </div>
@@ -361,6 +362,7 @@ function reviewUpdateCancle(div) {
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
                             <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                 method="get" class="form-inline">
                                 <input class="form-control" name="EMAIL" placeholder="Your Email Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
@@ -380,11 +382,8 @@ function reviewUpdateCancle(div) {
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                      
+                        <h4>Address Of Our Project </h4>
+                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                     </div>
                 </div>
             </div>
@@ -394,14 +393,14 @@ function reviewUpdateCancle(div) {
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
                         <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
+    <!-- footer part end-->
 
     <!-- Js Plugins -->
 

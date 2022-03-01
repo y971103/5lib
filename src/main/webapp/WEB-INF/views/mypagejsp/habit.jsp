@@ -140,7 +140,7 @@
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
                                     <div class="c_title">
-                                     	  ${habit.inputdate}에 ${habit.time}분 동안 독서를 했습니다.
+                                     	  총 ${habit.time}분 동안 독서를 했습니다.
                                     </div>
                                 </c:forEach>
                                 <%-- </class> --%>

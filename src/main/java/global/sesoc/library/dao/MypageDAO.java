@@ -72,6 +72,12 @@ public class MypageDAO {
 		ArrayList<Habit> habitlist = mapper.selectTime(id);
 		return habitlist;
 	}
+	//wishlist(게시판 보여주기) 
+	public ArrayList<Shelf> listWish(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		return shelflist;
+	}
 
 	
 	

@@ -157,20 +157,37 @@
                                     <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
                                 </div>
                             </div> -->
-					<div class="row" style="margin-left: 7%;">
-						<div class="row">
-							<c:forEach var="book" items="${kakaobooklist}">
-								<div style="margin-bottom: 8px;">
-									<a href="kakaobook_info?isbn=${book.isbn}"> <img
-										src="download?filename=${book.thumbnail}"
-										style="width: 230px; height: 333px;">
-										<div style="margin-top: 5px;"></div>
-									</a>
-								</div>
-								<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-							</c:forEach>
-						</div>
-					</div>
+					<div class="container" style="margin-bottom: 10px;">
+                            	<div class="row">
+                                	<div class="col-12">
+                                    	<div class="table-wrap">
+                                    		<table class="table myaccordion table-hover" id="accordion">
+                                    		<thead>
+                                    			<p>찜한 도서 리스트 게시판</p>
+						                        <tr>
+						                          <th>&nbsp;&nbsp;</th>
+						                          <th>도서 제목</th>
+						                          <th>저자 </th>
+						                          <th>찜한 날짜 </th>                
+						                        </tr>
+						                    </thead>
+											<tbody>
+											<c:forEach var="shelf" items="${shelflist}">
+				                  			 <tr>	
+				                   	 		 	<td>${shelf.isbn}</td>
+				                    			<td></td>
+				                    			<td></td>
+				                    			<td>${shelf.inputdate}</td>
+				                  			</tr>    
+				               				</c:forEach> 	  
+						            	    </tbody>
+						                	</table>
+						            	</div>           
+						        	</div>
+						    	</div>
+							</div>
+						</section>
+                        <div>
 				</section>
 			</article>
 		</div>  

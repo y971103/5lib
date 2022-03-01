@@ -27,8 +27,11 @@ public class MypageController {
 	MypageDAO dao;
 	
 	@RequestMapping(value="shelf", method=RequestMethod.GET)
-	public String shelf() {
-			
+	public String shelf(HttpSession session, Model model, Shelf shelf) {
+		String id = (String) session.getAttribute("loginId");
+		ArrayList<Shelf> shelflist = dao.listshelf(id);
+		model.addAttribute("shelflist", shelflist);
+		logger.info("shelflist:{}", shelflist);
 		return "mypagejsp/shelf";
 	}
 	
