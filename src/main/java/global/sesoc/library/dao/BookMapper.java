@@ -36,5 +36,7 @@ public int getTotal(book_Search book_search);
 //위시리스트 저장
 public int addwishlist(HashMap<String, String> map);
 
+public List<Kakaobook> recommendKakaobook();
+
 
 }

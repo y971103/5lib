@@ -127,38 +127,43 @@
                <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar"><span>Habit</span></a>
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark active3"><span>Comment</span></a>            
          </nav>
+         <!--nav탭 드롭다운 끝-->
+         
             <!--main css-->
             <div id="main">
-                <!-- Comment 감상공유 -->
+                <!-- Comment 찜한 도서 보여주는 게시판 -->
                     <article id="Comment" class="panel">                        
                         <section>
-                            <div class="container" style="margin-bottom: 10px;">
-                                <div class="row">       
-                                    <div style="padding-left: 7%;">
-                                        <img src="../resources/img/li1.jpg" alt="">
-                                    </div>
-                                     <class="binfo">   
-                                     <div class="c_title">
-                                       	 미드나잇&nbsp;라이브러리
-                                     </div>
-                                     <h3 class="c_review">책 리뷰</h3>
-                                     <form action="" method="post">  
-                                     <div class="row">
-                                        <div class="col-12">
-                                            <div class="c_content">
-                                           	         불편한데 자꾸 가고 싶은 편의점이 있다!
-                                            	힘들게 살아낸 오늘을 위로하는 편의점의 밤
-                                           		 정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
-                                            	'망원동 브라더스' 김호연의 '동네 이야기' 시즌 2
-                                        </div>
-                                    <input type="submit" value="공유하기">
-                                   </form>
-                                    </div>           
-                                </div>
-                            </div>
-                            <hr>  
-                        </section>
-
+                        	<div class="container" style="margin-bottom: 10px;">
+                            	<div class="row">
+                                	<div class="col-12">
+                                    	<div class="table-wrap">
+                                    		<table class="table myaccordion table-hover" id="accordion">
+                                    		<thead>
+                                    			<p>찜한 도서 리스트 게시판</p>
+						                        <tr>
+						                          <th>&nbsp;&nbsp;</th>
+						                          <th>도서 제목</th>
+						                          <th>저자 </th>
+						                          <th>찜한 날짜 </th>                
+						                        </tr>
+						                    </thead>
+											<tbody>
+											<c:forEach var="shelf" items="${shelflist}">
+				                  			 <tr>	
+				                   	 		 	<td>${shelf.isbn}</td>
+				                    			<td></td>
+				                    			<td></td>
+				                    			<td>${shelf.inputdate}</td>
+				                  			</tr>    
+				               				</c:forEach> 	  
+						            	    </tbody>
+						                	</table>
+						            	</div>           
+						        	</div>
+						    	</div>
+							</div>
+						</section>
                         <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>

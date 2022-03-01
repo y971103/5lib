@@ -2,13 +2,17 @@ package global.sesoc.library.dao;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
+import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
+import global.sesoc.library.vo.Kakaobook;
+import global.sesoc.library.vo.Shelf;
+import global.sesoc.library.vo.notice_Search;
 
 
 @Repository
@@ -17,6 +21,14 @@ public class MypageDAO {
 	@Autowired
 	SqlSession sqlSession;
 
+	
+	//commentlist(게시판 보여주기) 
+	public ArrayList<Shelf> listshelf(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		return shelflist;
+	}
+	
 
 	// 내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments) {
@@ -48,11 +60,25 @@ public class MypageDAO {
 		return listComments;
 	}
 
-	public int counttime(Habit habit) {
+	public int countTime(Habit habit) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		int result = mapper.counttime(habit);
+		int result = mapper.countTime(habit);
 
 		return result;
-	}	
+	}
+
+	public ArrayList<Habit> selectTime(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Habit> habitlist = mapper.selectTime(id);
+		return habitlist;
+	}
+	//wishlist(게시판 보여주기) 
+	public ArrayList<Shelf> listWish(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		return shelflist;
+	}
+
+	
 	
 }

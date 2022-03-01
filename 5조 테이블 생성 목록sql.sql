@@ -392,6 +392,8 @@ CREATE TABLE shelf
 	id varchar2(20) NOT NULL,
 	-- 책 번호
 	isbn varchar2(200) NOT NULL,
+	-- 썸네일
+	thumbnail varchar2(200),
 	-- 복합키
     	CONSTRAINT shelf_PK PRIMARY KEY(id, isbn)
 );

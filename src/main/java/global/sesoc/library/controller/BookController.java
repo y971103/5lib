@@ -235,9 +235,11 @@ public class BookController {
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
+			List<Kakaobook> kakaobooklist = dao.recommendKakaobook();
             ArrayList<Review> reviewlist = dao.listReview(isbn);
 			logger.info("결과:{}",book);
 			model.addAttribute("book", book);
+			model.addAttribute("kakaobooklist",kakaobooklist);
             model.addAttribute("reviewlist", reviewlist);
 			logger.info("결과:{}",book);
 			return "bookjsp/kakaobook_info";
@@ -251,9 +253,10 @@ public class BookController {
 		}
 			
 		
+		//ajax 세팅
 		@ResponseBody
 		@RequestMapping(value="addwishlist",method=RequestMethod.POST)
-		public void wishlist(HttpSession session, String isbn) {
+		public void wishlist(HttpSession session, String isbn, String thumbnail) {
 			//로그인한 사용자의 아이디를 세션에서 읽기
 			String id = (String) session.getAttribute("loginId");
 			
@@ -261,6 +264,9 @@ public class BookController {
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("id", id);
 			map.put("isbn", isbn);
+			map.put("thumbnail", thumbnail);
+			
+			
 			
 			//DAO로 맵을 전달
 			dao.addwishlist(map);
@@ -268,8 +274,8 @@ public class BookController {
 		}
 		
 		//회원 id에 읽은 시간 저장
-		@RequestMapping(value="counttime", method=RequestMethod.POST)
-		public String counttime(
+		@RequestMapping(value="countTime", method=RequestMethod.POST)
+		public String countTime(
 				HttpSession session
 				, Model model
 				, Habit habit ) {
@@ -279,7 +285,7 @@ public class BookController {
 			
 			logger.info("책 읽은 시간 : {}", habit);
 			
-			dao2.counttime(habit);
+			dao2.countTime(habit);
 			
 			return "bookjsp/index";
 		}

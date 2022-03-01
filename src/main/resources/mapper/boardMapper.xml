@@ -194,15 +194,15 @@
 	</select>
 
 	<!-- QnA 리플 수정 -->
-	<update id="updatereply" parameterType="Reply">
+	<update id="updateReply" parameterType="Reply">
 		update
-		reply
+			reply
 		set
-		content =
-		#{content}
+			content =
+			#{content}
 		where
-		replynum = #{replynum}
-		and id = #{id}
+			replynum = #{replynum}
+			and id = #{id}
 	</update>
 
 

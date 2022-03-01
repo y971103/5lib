@@ -230,7 +230,7 @@ public class BoardController {
 	 * @param reply 수정할 리플 정보
 	 */
 	@RequestMapping (value="replyEdit", method=RequestMethod.POST)
-	public String updateQnAreply(HttpSession session, Reply reply) {
+	public String replyEdit(HttpSession session, Reply reply) {
 		
 		//삭제할 리플 정보와 본인 글인지 확인할 로그인아이디
 		String id = (String) session.getAttribute("loginId");
@@ -239,7 +239,7 @@ public class BoardController {
 		//리플  수정 처리
 		dao.updateReply(reply);
 		//원래의 글읽기 화면으로 이동 
-		return "redirect:read?Boardnum=" + reply.getBoardnum();
+		return "redirect:read?boardnum=" + reply.getBoardnum();
 	}
 	
 	
