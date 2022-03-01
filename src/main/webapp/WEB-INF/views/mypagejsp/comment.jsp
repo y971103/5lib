@@ -132,28 +132,30 @@
             <!--main css-->
             <div id="main">
                 <!-- Comment 찜한 도서 보여주는 게시판 -->
-                    <article id="Comment" class="panel">                        
+                    <article id="Comment" class="panel">   
+                    <header>
+					<h2>내 서재 리뷰</h2>
+				</header>                     
                         <section>
                         	<div class="container" style="margin-bottom: 10px;">
                             	<div class="row">
                                 	<div class="col-12">
                                     	<div class="table-wrap">
                                     		<table class="table myaccordion table-hover" id="accordion">
-                                    		<thead>
-                                    			<p>찜한 도서 리스트 게시판</p>
-						                        <tr>
-						                          <th>&nbsp;&nbsp;</th>
-						                          <th>도서 제목</th>
-						                          <th>저자 </th>
-						                          <th>찜한 날짜 </th>                
-						                        </tr>
-						                    </thead>
-											<tbody>
+                                    		<thead> </thead>
+                                    			<tbody>
+						                     <tr>
+						                          <td>ISBN</td>
+						                          <td>찜한 날짜 </td>   
+						                          <td>도서명</td>             
+						                     </tr>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
-				                   	 		 	<td>${shelf.isbn}</td>
-				                    			<td></td>
-				                    			<td></td>
+						  <%--                 	<td>
+                      	   					 	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
+                          						</td>
+				         	 --%> 	 		 	<td>${shelf.isbn}</td>	
+				                    			<td>${shelf.inputdate}</td>
 				                    			<td>${shelf.inputdate}</td>
 				                  			</tr>    
 				               				</c:forEach> 	  
@@ -164,6 +166,8 @@
 						    	</div>
 							</div>
 						</section>
+						<!-- 찜한 도서 게시판 끝 -->
+						
                         <div>
                         <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
                         </div>
@@ -172,7 +176,7 @@
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
                                     <div style="padding-left: 7%;">
-                                        <img src="../resources/img/li1.jpg" alt="">
+                                     <!-- 책 썸네일 들어갈 자리-->
                                     </div>
                                      <class="binfo">   
                                      <div>
