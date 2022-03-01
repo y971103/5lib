@@ -1,0 +1,12 @@
+html {
+  color: #343434;
+}
+
+html.dark {
+  background: #121212;
+  color: #bbb;
+}
+
+html.dark a {
+  color: #3ea6ff;
+}
