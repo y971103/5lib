@@ -274,15 +274,12 @@ function reviewUpdateCancle(div) {
                         </div>
                     </div>
                     <br>
-                    <input type="button" value="E-Pub 파일 다운" class="readbt" onClick="location.href='http://localhost:8888/library/download'">
                     <form method="post" id="t1" onsubmit="return false;">
-	                    <button type="button" onclick="popOpen()" class="readbt">E-Pub 뷰어 열기</button>
-	                   
+	                    <button type="button" onclick="popOpen()" class="readbt">책 읽기</button>
 						<input type="hidden" id="time" name="time">
 					</form>
+					 <input type="button" id="wishbt" value="찜하기" class="readbt" >
 					
-					<!-- 찜 기능 처리 -->
-                    <p><input type="button" id="wishbt" value="위시리스트에 담기"></p>
 
 
                 </div>
