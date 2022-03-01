@@ -62,6 +62,9 @@
 <a href="book/index">메인화면단</a>
 <br>
 <a href="book/viewer">뷰어</a>
+
+<a href="groupBoard">그룹</a>
+
 <br>
 <!-- <a href="book/kakaobook">카카오 책 정보</a> -->
 <br>

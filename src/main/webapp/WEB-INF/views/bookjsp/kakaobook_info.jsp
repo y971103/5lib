@@ -157,6 +157,52 @@ function reviewUpdateCancle(div) {
 
 		
 </script>
+<script src="resources/viewer/script.js">
+App.prototype.doBook = function (url, opts) {
+    this.qs(".book").innerHTML = "Loading";
+
+    opts = opts || {
+        encoding: "binary"
+    };
+    console.log("doBook", url, opts);
+    this.doReset();
+
+    try {
+        this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/5.epub', opts);
+        this.qs(".book").innerHTML = "";
+        this.state.rendition = this.state.book.renderTo(this.qs(".book"), {});
+    } catch (err) {
+        this.fatal("error loading book", err);
+        throw err;
+    }
+
+    this.state.book.ready.then(this.onBookReady.bind(this)).catch(this.fatal.bind(this, "error loading book"));
+
+    this.state.book.loaded.navigation.then(this.onNavigationLoaded.bind(this)).catch(this.fatal.bind(this, "error loading toc"));
+    this.state.book.loaded.metadata.then(this.onBookMetadataLoaded.bind(this)).catch(this.fatal.bind(this, "error loading metadata"));
+    this.state.book.loaded.cover.then(this.onBookCoverLoaded.bind(this)).catch(this.fatal.bind(this, "error loading cover"));
+
+    this.state.rendition.hooks.content.register(this.applyTheme.bind(this));
+    this.state.rendition.hooks.content.register(this.loadFonts.bind(this));
+
+    this.state.rendition.on("relocated", this.onRenditionRelocated.bind(this));
+    this.state.rendition.on("click", this.onRenditionClick.bind(this));
+    this.state.rendition.on("keyup", this.onKeyUp.bind(this));
+    this.state.rendition.on("displayed", this.onRenditionDisplayedTouchSwipe.bind(this));
+    this.state.rendition.on("relocated", this.onRenditionRelocatedUpdateIndicators.bind(this));
+    this.state.rendition.on("relocated", this.onRenditionRelocatedSavePos.bind(this));
+    this.state.rendition.on("started", this.onRenditionStartedRestorePos.bind(this));
+    this.state.rendition.on("displayError", this.fatal.bind(this, "error rendering book"));
+
+    this.state.rendition.display();
+
+    if (this.state.dictInterval) window.clearInterval(this.state.dictInterval);
+    this.state.dictInterval = window.setInterval(this.checkDictionary.bind(this), 50);
+    this.doDictionary(null);
+
+
+</script>
+
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">

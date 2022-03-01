@@ -99,13 +99,13 @@ App.prototype.doBook = function (url, opts) {
     this.qs(".book").innerHTML = "Loading";
 
     opts = opts || {
-        encoding: "epub"
+        encoding: "binary"
     };
     console.log("doBook", url, opts);
     this.doReset();
 
     try {
-        this.state.book = ePub(url, opts);
+        this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/5.epub', opts);
         this.qs(".book").innerHTML = "";
         this.state.rendition = this.state.book.renderTo(this.qs(".book"), {});
     } catch (err) {
@@ -176,7 +176,6 @@ App.prototype.doOpenBook = function () {
     fi.style.display = "none";
     fi.type = "file";
     fi.onchange = event => {
-        
         var reader = new FileReader();
         reader.addEventListener("load", () => {
             var arr = (new Uint8Array(reader.result)).subarray(0, 2);
@@ -199,6 +198,7 @@ App.prototype.doOpenBook = function () {
     document.body.appendChild(fi);
     fi.click();
 };
+
 
 App.prototype.fatal = function (msg, err, usersFault) {
     console.error(msg, err);
@@ -237,7 +237,7 @@ App.prototype.doReset = function () {
     this.qs(".info .series-index").innerHTML = "";
     this.qs(".info .author").innerHTML = "";
     this.qs(".info .description").innerHTML = "";
-    this.qs(".book").innerHTML = '<div class="empty-wrapper"><div class="empty"><div class="app-name"><div><img src="../resources/img/logo.png"></div></div><div class="message"><a href="javascript:ePubViewer.doOpenBook();" class="big-button">여기를 클릭!</a></div></div></div>';
+    this.qs(".book").innerHTML = '<div class="empty-wrapper"><div class="empty"><div class="app-name"><div><img src="../resources/img/logo.png"></div></div><div class="message"><a href="javascript:ePubViewer.doBook();" class="big-button">여기를 클릭!</a></div></div></div>';
     this.qs(".sidebar-button").classList.add("hidden");
     this.qs(".bar button.prev").classList.add("hidden");
     this.qs(".bar button.next").classList.add("hidden");

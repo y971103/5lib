@@ -15,6 +15,10 @@
 		<typeAlias type="global.sesoc.library.vo.book_Search" alias="book_search" /> 
 		<typeAlias type="global.sesoc.library.vo.Comments" alias="comments" />
 		<typeAlias type="global.sesoc.library.vo.Habit" alias="habit" />
+		<typeAlias type="global.sesoc.library.vo.CommunityVO" alias="community" />
+		<typeAlias type="global.sesoc.library.vo.Group_userVO" alias="group_user" /> 
+		<typeAlias type="global.sesoc.library.vo.GroupBoardVO" alias="groupboard" /> 
+		<typeAlias type="global.sesoc.library.vo.GroupReplyVO" alias="groupreply" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
@@ -22,5 +26,6 @@
 		<mapper resource="mapper/essayMapper.xml" /> 
 		<mapper resource="mapper/bookMapper.xml" />  
 		<mapper resource="mapper/mypageMapper.xml" />
+		<mapper resource="mapper/groupMapper.xml" />
 	</mappers>
 </configuration>
