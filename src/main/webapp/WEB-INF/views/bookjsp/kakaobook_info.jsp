@@ -363,7 +363,7 @@ App.prototype.doBook = function (url, opts) {
                     </div>
                 </div>
 
-                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요?</h2>
+                <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요? </h2>
                       
                 <div class="row" style="margin-left: 10%;">
                 
