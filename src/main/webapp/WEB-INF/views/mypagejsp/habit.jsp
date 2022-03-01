@@ -142,16 +142,18 @@
                                     <div class="c_title">
                                      	  총 ${habit.time}분 동안 독서를 했습니다.
                                     </div>
-                                </c:forEach>
+                                
                                 <%-- </class> --%>
                             </div>
                             <br><br>
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
                                  <%-- <class="binfo"> --%>   
-                                   <div class="c_title">
-                                   	    금요일에 가장 많이 읽었습니다.
-                                   </div>
+                               
+                                    <div class="c_title">
+                                     	  ${habit.inputdate}에 가장 많이 독서를 노력 했습니다.
+                                    </div>
+                                </c:forEach>
                             </div>
                                 
                         </div>

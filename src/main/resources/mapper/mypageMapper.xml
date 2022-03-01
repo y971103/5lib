@@ -65,8 +65,11 @@
 
 	<!-- id별 총 독서시간 -->
    <select id="selectTime" parameterType="string" resultType="habit">
-   select
-      sum(time) as time
+    select
+      sum(time) as time,
+	  (select day from (select to_char(inputdate, 'day') as day, count(to_char(inputdate, 'day')) as ct
+	  from habit where id=#{id} group by to_char(inputdate, 'day') 
+	  order by count(to_char(inputdate, 'day')) desc) where rownum=1) as inputdate
    from
       habit
         where id = #{id}
