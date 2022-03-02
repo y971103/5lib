@@ -52,6 +52,9 @@
      <!-- custom js -->
      <script src="../resources/js/custom.js"></script>
     
+     <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/dark.css">  
+    <script src="../resources/js/dark.js"></script>
 
 </head>
 <script type="text/javascript" charset="utf-8">
@@ -277,8 +280,10 @@ function reviewUpdateCancle(div) {
                     <form method="post" id="t1" onsubmit="return false;">
 	                    <button type="button" onclick="popOpen()" class="readbt">책 읽기</button>
 						<input type="hidden" id="time" name="time">
+						
+						<input type="button" id="wishbt" value="찜하기" class="readbt" >
 					</form>
-					 <input type="button" id="wishbt" value="찜하기" class="readbt" >
+					 
 					
 
 
@@ -288,7 +293,7 @@ function reviewUpdateCancle(div) {
                     <div class="product__details__tab" style="padding-right: 23%;">
                         <ul class="nav nav-tabs" style="margin-top: 35px; margin-bottom: 10px;">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">한 줄 리뷰</a>
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab" id="oneLine">한 줄 리뷰</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -341,69 +346,58 @@ function reviewUpdateCancle(div) {
         </div>
     </section>
     <!-- Product Details Section End -->
+ <!-- footer part start-->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-5">
+                <div class="single-footer-widget">
+                    <h4>Project Members</h4>
+                    <ul>
+                        <li><a href="#">최승환</a></li>
+                        <li><a href="#">김기도</a></li>
+                        <li><a href="#">김소휘</a></li>
+                        <li><a href="#">김은지</a></li>
+                        <li><a href="#">염한승</a></li>
+                    </ul>
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
                     <div class="single-footer-widget">
-                        <h4>Discover Destination</h4>
-                        <ul>
-                            <li><a href="#">Miami, USA</a></li>
-                            <li><a href="#">California, USA</a></li>
-                            <li><a href="#">London, UK</a></li>
-                        </ul>
-
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA
-                                +880 362 352 783</p>
-                        <span>contact@martine.com</span>
-                      
-                    </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_icon">
+                    <h4>Address Of Our Project </h4>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
-
+    </div>
+</footer>
+<!-- footer part end-->
     <!-- Js Plugins -->
 
 </body>
