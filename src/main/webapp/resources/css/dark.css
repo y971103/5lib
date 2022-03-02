@@ -56,6 +56,9 @@
         body[data-darkmode=on] h3{
             color: #ffffff !important;
         }
+         body[data-darkmode=on] h4{
+            color: #ffffff !important;
+        }
         body[data-darkmode=on] h1{
             color: #ffffff !important;
         }
