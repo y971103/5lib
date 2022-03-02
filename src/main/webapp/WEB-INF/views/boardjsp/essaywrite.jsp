@@ -121,7 +121,7 @@
         //글쓰기폼 확인
         function formCheck() {
             var title = document.getElementById('title');
-            var content = document.getElementById('content');
+            var content = document.getElementById('text');
             
             if (title.value.length < 5) {
                 alert("제목을 입력하세요.");
@@ -146,7 +146,7 @@
 
 	<form id="write" action="essay_write" method="post" onsubmit="return formCheck();">
 	 
-		<div id="margin">Title: <input class="title" type="text" name="title"></div>
+		<div id="margin" style="color:white;">Title: <input class="title" type="text" name="title" id="title"></div>
 		<textarea placeholder="Enter something funny." id="text" name="content" style="overflow: break-word; "></textarea>  
 		<br>
 		<input type="submit" id="button" value="저장">
