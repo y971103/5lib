@@ -161,29 +161,43 @@
                                     		<thead> </thead>
                                     			<tbody>
 						                     <tr>
-						               		      <td>책 표지</td>
+						               		      <td>책 표지</td>	
 						                          <td>도서명</td>
 						                          <td>찜한 날짜 </td>   
-						                          <td>ISBN</td>             
+						                          <!-- <td>ISBN</td> -->             
 						                     </tr>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
 												
-												<td style="width:90px; height:120px;">
+												<td style="width:150px; height:160px;">
 												<img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
 												</td>
 												 
 			
-										<!-- <div style="margin-top:5px;">
-					                            </div> -->
+
 												<td>
 													<h3 class="sldwn title_font">${shelf.title}</h3>
+										<section id="textDiv">
+				                             <div class="container" style="margin-bottom: 10px;">
+				                                <div class="row" id="textDiv">       
+				                                    <div style="padding-left: 7%;">				                                    
+				                                    </div>
+				                                     <class="binfo">   
+				                                     <form>  
+				                                     <div class="row">
+					                               <div class="col-12">
+					                                <textarea id="test" cols="70" rows="9" style="resize: none;">  </textarea>
+					                               <div id="test_cnt">(0 / 180)</div> 
+					                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
+				         					   	 	 </form>
+				                                </div>
+				                            </div>
+				                       </section>  
 												</td>
                           						<td>${shelf.inputdate}</td>
-				         	 		 		 	<td>${shelf.isbn}</td>	
+				         	 		 		 	<%-- <td>${shelf.isbn}</td>	 --%>
 				                  			</tr>    
-				               				</c:forEach> 
-				               			
+				               				</c:forEach> 				               			
 						            	    </tbody>
 						                	</table>
 						            	</div>           
@@ -193,10 +207,8 @@
 						</section>
 						<!-- 찜한 도서 게시판 끝 -->
 						
-						
 						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
-
-                       <section id="textDiv">
+<%--                        <section id="textDiv">
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
                                     <div style="padding-left: 7%;">
@@ -208,16 +220,17 @@
                                      </div>
                                      <form>  
                                      <div class="row">
-                               <div class="col-12">
-                                <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
-                               <div id="test_cnt">(0 / 180)</div> 
-                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
-                               	
+	                               <div class="col-12">
+	                                <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
+	                               <div id="test_cnt">(0 / 180)</div> 
+	                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
          					     </form>
-                                    </div>
-                                               
                                 </div>
                             </div>
+                       </section>    --%>     
+                                </div>
+                            </div>
+
                             <hr>  
                              
                               
