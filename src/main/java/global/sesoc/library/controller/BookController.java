@@ -210,11 +210,11 @@ public class BookController {
 		}
 		
 							
-		//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
 		public String kakaolibrary(
 				@RequestParam(value="page", defaultValue="1") int page//페이징 변수
 				, book_Search book_search
+				, Kakaobook kakaobook
 				, Model model) {
 			
 			logger.debug("page: {}, book_search: {}", page, book_search);
@@ -233,7 +233,16 @@ public class BookController {
 			return "bookjsp/kakaolibrary";
 		}
 		
-		//북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
+		
+		
+		@RequestMapping(value="kakaocategory",method=RequestMethod.GET)
+		public String kakaocategory(Kakaobook kakaobook , Model model) {
+			// 카테고리별 분류 버튼 생성
+			String category = dao.getCategory(kakaobook);
+			
+			return "bookjsp/kakaolibrary";
+		}
+		
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
@@ -269,7 +278,6 @@ public class BookController {
 			map.put("authors", authors);
 			map.put("title", title);
 			map.put("thumbnail", thumbnail);
-			
 			
 			
 			//DAO로 맵을 전달
