@@ -49,6 +49,19 @@
                 });
             });
         </script>
+        
+        <style type="text/css">
+        	.title_font{
+        		color: white;
+        		cursor: pointer;
+        	
+        	}
+        	
+        	.title_font:hover{
+        		color: black;
+        		transition-duration: 0.3s;
+        	}
+        </style>
     </head>
     
     <body>
@@ -164,12 +177,8 @@
 										<!-- <div style="margin-top:5px;">
 					                            </div> -->
 												<td>
-													<div class="sldwn">${shelf.title}</div>
+													<h3 class="sldwn title_font">${shelf.title}</h3>
 												</td>
-										
-												
-												
-							
                           						<td>${shelf.inputdate}</td>
 				         	 		 		 	<td>${shelf.isbn}</td>	
 				                  			</tr>    
@@ -184,10 +193,9 @@
 						</section>
 						<!-- 찜한 도서 게시판 끝 -->
 						
-						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
 						
-                        
-                        
+						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
+
                        <section id="textDiv">
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
