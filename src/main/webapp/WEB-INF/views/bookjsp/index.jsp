@@ -104,7 +104,7 @@
     <!-- 헤더 끝-->
 
     <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
+    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; "  >
         <div class="container">
             <div class="row " style="height: 80px;">
                 <div class="col-xl-6">
