@@ -109,10 +109,11 @@ App.prototype.doBook = function (url, opts) {
 	var parser = document.createElement('a');
 	parser.href = document.referrer;
 	console.log(parser.hash);  
-	alert(parser.search);
+	var isbn = parser.search;
+	var array = isbn.split("=");
 	
     try {
-        this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/5.epub', opts);
+        this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/'+ array[1] +'.epub', opts);
         this.qs(".book").innerHTML = "";
         this.state.rendition = this.state.book.renderTo(this.qs(".book"), {});
     } catch (err) {
