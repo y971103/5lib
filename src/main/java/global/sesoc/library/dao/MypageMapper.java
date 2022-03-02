@@ -26,8 +26,6 @@ public interface MypageMapper {
 	
 	public ArrayList<Shelf> listshelf(RowBounds rb, String id);
 	
-	public int deleteShelf(Shelf shelf);
-	
 	public ArrayList<Comments> listComments(int booknum);
 
 	public ArrayList<Habit> selectTime(String id);

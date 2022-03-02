@@ -32,11 +32,7 @@ public class MypageDAO {
 		return shelflist;
 	}
 	
-	public int deleteShelf(Shelf shelf) {
-		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		int result = mapper.deleteShelf(shelf);
-		return result;
-	}
+	
 	
 	// 내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments) {

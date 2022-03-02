@@ -156,6 +156,16 @@
 			kakaobook
 	</select>
 	
+	<!-- 찜 삭제 -->
+	<delete id="deleteShelf" parameterType="map">
+		delete 
+		from
+			shelf
+		where
+			isbn = #{isbn}
+		and id = #{id}
+	</delete>
+	
 	
 	<!-- 카테고리별 분류 -->
 	<select id="getCategory" parameterType="Kakaobook" resultType="String">

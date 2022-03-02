@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 @Repository
@@ -110,6 +111,12 @@ public class BookDAO {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		String category = mapper.getCategory(kakaobook);
 		return category;
+	}
+	
+	public int deleteShelf(HashMap<String, String> map) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		int result = mapper.deleteShelf(map);
+		return result;
 	}
 
 }

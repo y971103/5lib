@@ -87,9 +87,23 @@ $(document).ready(function () {
  //shelf에서 제거
 $(document).ready(function() {
 	
-	$('#deletewb').on('click', deleteShelf);
-
+	$('#deletewb').on('click', function(){
+		
+	$.ajax({
+		url: 'deleteShelf',
+		method: 'get',
+		data: {'isbn' : '${book.isbn}', 'authors' : '${book.authors}', 'title' : '${book.title}', 'thumbnail' : '${book.thumbnail}'},
+		success: function () {
+			alert('삭제!');
+		},
+		error : function () {
+			alert('삭제 실패!');//에러메세지 출력
+		}
+	});
+	
+	});
 });
+	
 
 //삭제하기
 function deleteShelf(isbn) {

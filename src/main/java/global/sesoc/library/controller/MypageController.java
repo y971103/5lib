@@ -93,18 +93,8 @@ public class MypageController {
 		return "mypagejsp/shelf";
 	}
 	
-	// shelf에 찜한 도서 삭제하기
-	@RequestMapping (value="deleteShelf", method=RequestMethod.GET)
-	public String deleteShelf (String isbn, HttpSession session) {
-		String id = (String) session.getAttribute("loginId");
-		
-		Shelf shelf = new Shelf();
-		shelf.setIsbn(isbn);
-		shelf.setId(id);
-		
-		int result = dao.deleteShelf(shelf);
-		return "redirect:kakaobook_info?isbn="+ shelf.getIsbn();
-	}
+	
+	
 	
 	
 	/*
