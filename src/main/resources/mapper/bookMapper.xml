@@ -93,12 +93,23 @@
 				, authors
 				, publisher
 				, booknum
-				, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime, 
-				contents
+				, SUBSTR(replace(datetime,'-',''),1,4)||'년 '||SUBSTR(replace(datetime,'-',''),5,2)||'월 '||SUBSTR(replace(datetime,'-',''),7,2)||'일' as datetime 
+				, contents
+				, hits
 			from
 				kakaobook 
 			where isbn = #{isbn}
 	</select>
+	
+	<!-- 조회수 1 증가 -->
+<update id="addHits" parameterType="string">
+	update
+		kakaobook
+	set
+		hits = hits + 1
+	where
+		isbn = #{isbn}
+</update>
 	
 	<!-- 해당하는 Kakaobooknum의 정보 가져오기 -->
 	<select id="selectKakaoBooknum" resultType="Kakaobook">

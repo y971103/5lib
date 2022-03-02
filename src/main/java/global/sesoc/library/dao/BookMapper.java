@@ -38,5 +38,7 @@ public int addwishlist(HashMap<String, String> map);
 
 public List<Kakaobook> recommendKakaobook();
 
+public int addHits(String isbn);
+
 
 }
