@@ -157,7 +157,7 @@
 				                  			 <tr>	
 												<td>${shelf.thumbnail}</td>
 												<td>
-													<p class="sldwn">${shelf.title}</p>
+													<div class="sldwn">${shelf.title}</div>
 												</td>
 										
 												
