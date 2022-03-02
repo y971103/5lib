@@ -95,6 +95,8 @@ public class MypageController {
 	
 	
 	
+	
+	
 	/*
 	 * //북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
 	 * 
@@ -132,6 +134,7 @@ public class MypageController {
 		return "mypagejsp/comment";
 	}
 	
+
 	// 코멘트 작성하기
 //	@RequestMapping(value="comment", method=RequestMethod.GET)
 //	public String insertComments (Comments comments, HttpSession session, Model model) {
@@ -157,6 +160,8 @@ public class MypageController {
 		dao.deleteComments(comments);
 		return "redirect:comment?booknum="+ comments.getBooknum();
 	}
+	
+
 	
 	// 등록한 내 서재 책 코멘트 수정하기
 	@RequestMapping (value="updateComment", method=RequestMethod.POST)

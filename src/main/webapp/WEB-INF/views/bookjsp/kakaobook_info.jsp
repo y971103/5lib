@@ -57,7 +57,11 @@
     <script src="../resources/js/dark.js"></script>
 
 </head>
+
+
 <script type="text/javascript" charset="utf-8">
+
+
 
 $(document).ready(function () {
 	//"위시리스트" 버튼 클릭하면 실행됨
@@ -79,6 +83,37 @@ $(document).ready(function () {
 
 	});
 });
+
+ //shelf에서 제거
+$(document).ready(function() {
+	
+	$('#deletewb').on('click', function(){
+		
+	$.ajax({
+		url: 'deleteShelf',
+		method: 'get',
+		data: {'isbn' : '${book.isbn}', 'authors' : '${book.authors}', 'title' : '${book.title}', 'thumbnail' : '${book.thumbnail}'},
+		success: function () {
+			alert('삭제!');
+		},
+		error : function () {
+			alert('삭제 실패!');//에러메세지 출력
+		}
+	});
+	
+	});
+});
+	
+
+//삭제하기
+function deleteShelf(isbn) {
+	if (confirm('이 도서를 내서재에서 삭제하시겠습니까?')) {
+		location.href = 'deleteShelf?isbn=${shelf.isbn}';
+	}
+} 
+
+
+
 
 //한줄리뷰 수정 정보 저장
 function reviewUpdate(form) {
@@ -281,6 +316,7 @@ function reviewUpdateCancle(div) {
 						<input type="hidden" id="time" name="time">
 						
 						<input type="button" id="wishbt" value="찜하기" class="readbt" >
+						 <input type="button" id="deletewb" value="찜삭제" class="readbt" >
 					</form>
 					 
 					

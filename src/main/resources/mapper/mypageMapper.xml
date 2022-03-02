@@ -101,7 +101,9 @@
 			title
 	</select>
 	
-		<!-- 전체 글 개수 (검색 필터링 후) -->
+		
+	
+		<!-- 전체 위시리스트 개수 (검색 필터링 후) -->
 
 <select id="getTotal" parameterType="string" resultType="int">
 	select 

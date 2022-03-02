@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.library.vo.Comments;
-
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Shelf;
 

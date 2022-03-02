@@ -8,6 +8,7 @@ import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 public interface BookMapper {
@@ -42,5 +43,5 @@ public ArrayList<Kakaobook> selectBestSeller();
 // 카테고리별 분류 버튼 생성
 public String getCategory(Kakaobook kakaobook);
 
-
+public int deleteShelf(HashMap<String, String> map);
 }

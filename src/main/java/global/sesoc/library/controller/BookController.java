@@ -31,9 +31,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
+import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 
@@ -299,6 +301,21 @@ public class BookController {
 			dao2.countTime(habit);
 			
 			return "redirect:kakaolibrary";
+		}
+		
+		// shelf에 찜한 도서 삭제하기
+		@RequestMapping (value="deleteShelf", method=RequestMethod.GET)
+		public void deleteShelf (HttpSession session, String isbn, String authors, String title, String thumbnail) {
+			String id = (String) session.getAttribute("loginId");
+			
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.remove("id", id);
+			map.remove("isbn", isbn);
+			map.remove("authors", authors);
+			map.remove("title", title);
+			map.remove("thumbnail", thumbnail);
+			
+			dao.deleteShelf(map);
 		}
 
 }
