@@ -93,6 +93,13 @@
         body[data-darkmode=on] .darkTitle {
             color: #ffffff !important;
         }
+        body[data-darkmode=on] #searchBtn {
+            color: #65a16a !important;
+        }
+        body[data-darkmode=on] #type {
+            color: #65a16a !important;
+            background-color: #1e1f21;
+        }
         
          body[data-darkmode=on] .client_review {
           background: linear-gradient(135deg, #406b36, #5c6263);
