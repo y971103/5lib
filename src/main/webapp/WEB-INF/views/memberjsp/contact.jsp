@@ -147,7 +147,7 @@
 								</tr>
 								<tr>
 									<td><strong>GitHub</strong></td><br>
-									<th><strong>https://github.com/y971103/5lib</strong></th>
+									<td><strong>https://github.com/y971103/5lib</strong></td>
 								</tr>
 							</table>
 						</div>

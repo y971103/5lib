@@ -10647,7 +10647,10 @@ a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
-  color: #99b19c;
+  color: black;
+}
+.essayPage{
+	color:#68966f;
 }
 a:hover,
 a:focus {
@@ -10697,8 +10700,8 @@ h5,
 .table thead th {
   border: none;
   padding: 30px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: bolder;
   color: white;
 }
 .table tbody tr {

@@ -23,6 +23,24 @@
             background-color: #1e1f21;
             color: #ffffff !important;
         }
+         body[data-darkmode=on] .essayDark {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #696969;
+        }
+         body[data-darkmode=on] .essayHead {
+            background-color: #455c48;
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+         body[data-darkmode=on] table {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            font-weight: 500;
+            border-bottom: 2px solid #696969;
+        }
         body[data-darkmode=on] #hmajor {
             background-color: #1e1f21;
             color: #ffffff !important;
