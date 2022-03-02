@@ -88,6 +88,8 @@
 			shelf
 		where
 			id = #{id}
+		order by 
+			title
 	</select>
 </mapper>
 

@@ -93,6 +93,9 @@
         body[data-darkmode=on] .darkTitle {
             color: #ffffff !important;
         }
+        body[data-darkmode=on] #oneLine {
+            color: #000000 !important;
+        }
         body[data-darkmode=on] #searchBtn {
             color: #65a16a !important;
         }
