@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="../resources/css/dark.css">  
     <script src="../resources/js/dark.js"></script>
 
-    <script>
+    	<script>
         //글쓰기폼 확인
         function formCheck() {
             var title = document.getElementById('title');
