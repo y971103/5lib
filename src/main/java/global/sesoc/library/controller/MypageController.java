@@ -93,6 +93,18 @@ public class MypageController {
 		return "mypagejsp/shelf";
 	}
 	
+	// shelf에 찜한 도서 삭제하기
+	@RequestMapping (value="deleteShelf", method=RequestMethod.GET)
+	public String deleteShelf (String isbn, HttpSession session) {
+		String id = (String) session.getAttribute("loginId");
+		
+		Shelf shelf = new Shelf();
+		shelf.setIsbn(isbn);
+		shelf.setId(id);
+		
+		int result = dao.deleteShelf(shelf);
+		return "redirect:kakaobook_info?isbn="+ shelf.getIsbn();
+	}
 	
 	
 	/*
@@ -132,6 +144,7 @@ public class MypageController {
 		return "mypagejsp/comment";
 	}
 	
+
 	// 코멘트 작성하기
 //	@RequestMapping(value="comment", method=RequestMethod.GET)
 //	public String insertComments (Comments comments, HttpSession session, Model model) {
@@ -157,6 +170,8 @@ public class MypageController {
 		dao.deleteComments(comments);
 		return "redirect:comment?booknum="+ comments.getBooknum();
 	}
+	
+
 	
 	// 등록한 내 서재 책 코멘트 수정하기
 	@RequestMapping (value="updateComment", method=RequestMethod.POST)

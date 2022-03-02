@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.library.vo.Comments;
-
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Shelf;
 
@@ -25,6 +25,8 @@ public interface MypageMapper {
 	//내 서재 책 코멘트 목록
 	
 	public ArrayList<Shelf> listshelf(RowBounds rb, String id);
+	
+	public int deleteShelf(Shelf shelf);
 	
 	public ArrayList<Comments> listComments(int booknum);
 

@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
@@ -292,5 +293,7 @@ public class BookController {
 			
 			return "redirect:kakaolibrary";
 		}
+		
+	
 
 }

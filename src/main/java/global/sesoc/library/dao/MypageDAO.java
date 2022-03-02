@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Comments;
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Shelf;
@@ -31,6 +32,11 @@ public class MypageDAO {
 		return shelflist;
 	}
 	
+	public int deleteShelf(Shelf shelf) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		int result = mapper.deleteShelf(shelf);
+		return result;
+	}
 	
 	// 내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments) {
