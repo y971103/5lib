@@ -15,13 +15,13 @@
 		<typeAlias type="global.sesoc.library.vo.book_Search" alias="book_search" /> 
 		<typeAlias type="global.sesoc.library.vo.Comments" alias="comments" />
 		<typeAlias type="global.sesoc.library.vo.Habit" alias="habit" />
-
+		<typeAlias type="global.sesoc.library.vo.Shelf" alias="shelf" />
+		
 		<typeAlias type="global.sesoc.library.vo.CommunityVO" alias="community" />
 		<typeAlias type="global.sesoc.library.vo.Group_userVO" alias="group_user" /> 
 		<typeAlias type="global.sesoc.library.vo.GroupBoardVO" alias="groupboard" /> 
 		<typeAlias type="global.sesoc.library.vo.GroupReplyVO" alias="groupreply" />
-
-		<typeAlias type="global.sesoc.library.vo.Shelf" alias="shelf" />
+		
 
 	</typeAliases>
 	<mappers>

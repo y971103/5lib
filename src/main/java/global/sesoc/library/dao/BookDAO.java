@@ -58,11 +58,6 @@ public class BookDAO {
 	}
 
 
-	public List<Kakaobook> selectKakaoBooknum() {
-		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
-		List<Kakaobook> kakaobooknum = mapper.selectKakaoBooknum(); 
-		return kakaobooknum; 
-	}	 
 	//책 목록
 	public List<Kakaobook> selectKakaobook(book_Search book_search, int startRecord, int countPerPage) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
@@ -108,6 +103,13 @@ public class BookDAO {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		ArrayList<Kakaobook> bestseller = mapper.selectBestSeller();
 		return bestseller;
+	}
+	
+	// 카테고리별 분류 버튼 생성
+	public String getCategory(Kakaobook kakaobook) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		String category = mapper.getCategory(kakaobook);
+		return category;
 	}
 
 }

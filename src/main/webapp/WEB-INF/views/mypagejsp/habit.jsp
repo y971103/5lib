@@ -139,7 +139,7 @@
                <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
-         <div id='calendar'></div>
+         <div id='calendar' style="color:black;"></div>
          <br>
          <div id="main">
                 <article id="Comment" class="panel">

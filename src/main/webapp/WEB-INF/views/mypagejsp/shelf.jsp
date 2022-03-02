@@ -26,10 +26,15 @@
         <link rel="stylesheet" href="../resources/css/hover.css">
         <!-- style CSS -->
         <link rel="stylesheet" href="../resources/css/style.css">
+        <link rel="stylesheet" href="../resources/css/search.css">
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
+        
+	        <!-- darkMode CSS -->
+	    <link rel="stylesheet" href="../resources/css/dark.css">  
+	    <script src="../resources/js/dark.js"></script>
         <script>
             $(document).ready(function() {
                 $('#textDiv').hide();
@@ -138,10 +143,7 @@
             <!--main css-->
             <div id="main" style="margin-bottom: 50px;">
                 <!--Habit 통계-->
-			<article id="Habit" class="panel">
-				<header>
-					<h2 class="c_review">내 서재</h2>
-				</header>
+			<article id="Habit" class="panel" style="padding:0px;">
 
 				<!-- <section> -->
 					<!--  <div class="row"> 가로 255 이상의 이미지 사용하면 됨
@@ -197,21 +199,21 @@
 							
 							
 							
-							<section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
+	<section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; margin-bottom:0px; background: linear-gradient(135deg, #20592a, #335353);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2 style="color: white;">내 서재</h2>
+                        <h2 style="color: white;">My Books</h2>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-left: 7%;">
-         		<div class="row" >
-               		<c:forEach var="shelf" items="${shelflist}">
+         		<div class="row" style="padding-left:5%;">
+               		<c:forEach var="shelf" items="${shelflist}" begin="0" end="7">
                     	<div style="margin-bottom:8px;">       
-                        <a href="kakaobook_info?isbn=${shelf.isbn}">
-                          	<img src="download?filename=${shelf.thumbnail}" style="width:230px; height:333px;">
+                        <a href="<c:url value="/book/kakaobook_info?isbn=${shelf.isbn}"/>">
+                          	<img src="download?filename=${shelf.thumbnail}" style="width:170px; height:252px;">
                             <div style="margin-top:5px;">
                             </div>
                         </a>
@@ -222,10 +224,7 @@
             </div>
             <br>
             <!-- 페이지 이동 부분 -->
-		  
-        	
-    </section>
-     <div id="navigator">    
+		  <div id="navigator" class="navigator" style="padding-left:330px;">    
 		                     
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
@@ -238,9 +237,12 @@
 				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
 			</div>
+        	
+    </section>
+     
     <!--top place end-->
 	
-	<form id="pagingForm" method="get" action="shelf">
+	<form id="pagingForm" method="get" action="shelf" style="margin-bottom:0px;">
 	<input type="hidden" name="page" id="page" value="1"/>
 	</form>						
 							
@@ -256,8 +258,8 @@
         <script src="../resources/assets/js/util.js"></script>
         <script src="../resources/assets/js/main.js"></script>
 
- <!-- footer part start-->
-  <footer class="footer-area">
+  <!-- footer part start-->
+  <footer class="footer-area" style="padding-top:90px;">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-5">
@@ -273,6 +275,19 @@
 
                 </div>
             </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
+                    </div>
+                </div>
             
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">

@@ -1851,7 +1851,7 @@ input, select, textarea {
 				left: 50%;
 				bottom: -0.75em;
 				margin-left: -0.5em;
-				border-bottom: solid 0em #ffffff;
+				
 				border-left: solid 0.5em transparent;
 				border-right: solid 0.5em transparent;
 				-moz-transition: border-bottom-width .25s ease-in-out;
