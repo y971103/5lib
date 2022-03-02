@@ -45,7 +45,14 @@
                     }
                 });
             });
-        </script>
+        
+		function pagingFormSubmit(currentPage) {
+			var form = document.getElementById('pagingForm');
+			var page = document.getElementById('page');
+			page.value = currentPage;
+			form.submit();
+		}
+	</script>
     </head>
     
     <body>
