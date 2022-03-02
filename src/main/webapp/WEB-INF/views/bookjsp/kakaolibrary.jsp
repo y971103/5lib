@@ -90,7 +90,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/member/contact"/>">Contact</a>
+                                        <a class="nav-link" style="padding-bottom:0px;" href="<c:url value="/member/contact"/>">Contact</a>
                                     </li>
                                 </ul>
                             </div>
