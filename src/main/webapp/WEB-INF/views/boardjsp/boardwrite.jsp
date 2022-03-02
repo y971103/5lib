@@ -64,8 +64,21 @@
 	  color: white;
 	  padding: 16px 32px;
 	  text-decoration: none;
-	  margin: 4px 2px;
 	  cursor: pointer;
+	  margin-left:710px;
+	}
+	
+	table, td, th {
+	  border-collapse : collapse;
+	}
+	table {
+	  width : 100px;
+	  height : 200px;
+	  margin:0 auto; 
+	}
+	td, th {
+	  text-align : center;
+	  vertical-align : middle;
 	}
     </style>
 </head>
@@ -131,9 +144,7 @@
         </div>
     </header>
     <!-- 헤더 끝-->
-
-<section class="ftco-section">
-    <div class="container">
+	<div id="back" style="background-image: URL(../resources/img/qnaback.jpg); background-repeat: no-repeat; background-position: 50% 50%;">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
                 <br></br>
@@ -141,35 +152,26 @@
             <br></br>
         	</div>
         </div>
-            <div class="container">
-                <div class="d-none d-sm-block mb-5 pb-4">
-                    <form id="writeform" action="write"  method="post">
-                	<div class="table-wrap">
-                    <table class="table myaccordion table-hover" id="accordion">
+            
+                    <form id="writeform" action="write" method="post">
+                    <table class="table myaccordion table-hover" id="accordion" style="width:600px;">
                         <tr>
-                          <td class="twrite">제목</td>
-                          <td class="twrite">
-                             <input type="text" name="title" id="title" style="width:1000px;">
+                          <td>제목</td>
+                          <td>
+                             <input type="text" name="title" id="title" style="width:500px;">
                           </td>
                         </tr>
                         <tr>
-                          <td class="twrite">내용</td> 
-                          <td class="twrite">
-                             <textarea name="content" id="content" style="width:1000px;height:200px;resize:none;"></textarea>
+                          <td>내용</td> 
+                          <td>
+                             <textarea name="content" id="content" style="width:500px;height:200px;resize:none;"></textarea>
                           </td>
-                        </tr>
-                        <tr>
-                        	<td colspan="2" class="tsave">
-                        		<input type="submit" value="저장" style="margin-left: 500px"/>
-                        	</td>
                         </tr>
                     </table>
-                    
-                    </div>
+                    <input type="submit" value="저장" />
                     </form>
-                </div> 
-            </div>
-        </section>
+           <br><br>
+       </div>
 
      <!-- footer part start-->
   <footer class="footer-area">
