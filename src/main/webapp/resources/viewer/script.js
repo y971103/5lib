@@ -95,6 +95,8 @@ let App = function (el) {
     this.applyTheme();
 };
 
+
+
 App.prototype.doBook = function (url, opts) {
     this.qs(".book").innerHTML = "Loading";
 
@@ -103,7 +105,12 @@ App.prototype.doBook = function (url, opts) {
     };
     console.log("doBook", url, opts);
     this.doReset();
-
+	
+	var parser = document.createElement('a');
+	parser.href = document.referrer;
+	console.log(parser.hash);
+	alert(parser.search);
+	
     try {
         this.state.book = ePub('http://localhost:8888/library/resources/file/epubfile/5.epub', opts);
         this.qs(".book").innerHTML = "";

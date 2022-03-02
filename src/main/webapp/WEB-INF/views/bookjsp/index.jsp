@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="../resources/css/style.css">
     
     <link rel="stylesheet" href="../resources/css/search.css">
-    
+    <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/dark.css">  
+    <script src="../resources/js/dark.js"></script>
 </head>
 
 <body>
@@ -101,7 +103,7 @@
     <!-- 헤더 끝-->
 
     <!-- 도서 슬라이드(배너)-->
-    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; background: linear-gradient(135deg, #75cc5f, #f1feff);"  >
+    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; "  >
         <div class="container">
             <div class="row " style="height: 80px;">
                 <div class="col-xl-6">
@@ -139,67 +141,58 @@
     </section>
     <!-- 도서 슬라이드(배너) 끝-->
     <!-- Header part end-->
-    <!-- 푸터 시작-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
-                    <div class="single-footer-widget">
-                        <h4>Project Members</h4>
-                        <ul>
-                            <li><a href="#">최승환</a></li>
-                            <li><a href="#">김기도</a></li>
-                            <li><a href="#">김소휘</a></li>
-                            <li><a href="#">김은지</a></li>
-                            <li><a href="#">염한승</a></li>
-                        </ul>
+    <!-- footer part start-->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-5">
+                <div class="single-footer-widget">
+                    <h4>Project Members</h4>
+                    <ul>
+                        <li><a href="#">최승환</a></li>
+                        <li><a href="#">김기도</a></li>
+                        <li><a href="#">김소휘</a></li>
+                        <li><a href="#">김은지</a></li>
+                        <li><a href="#">염한승</a></li>
+                    </ul>
 
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Address Of Our Project </h4>
-                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
-                    </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_icon">
+                    <h4>Address Of Our Project </h4>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer part end-->
+    </div>
+</footer>
+<!-- footer part end-->
 
     <!-- jquery plugins here-->
     <script src="../resources/js/jquery-1.12.1.min.js"></script>

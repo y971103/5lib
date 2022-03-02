@@ -23,6 +23,9 @@
 	    <link rel="stylesheet" href="../resources/css/hover.css">
 	    <!-- style CSS -->
 	    <link rel="stylesheet" href="../resources/css/style.css">
+	     <!-- 다크모드 css,js -->  
+	    <link rel="stylesheet" href="../resources/css/dark.css">
+	    <script src="../resources/js/dark.js"></script>
 	</head>
 	<body>
    <!--:헤더 시작::-->
@@ -95,20 +98,22 @@
 		<!-- Main -->
 			<div id="main">
 
-				<header class="major container medium" style="margin-bottom: 0px; width: 1000px;">
+				<header class="major container medium" id="hmajor" style="margin-bottom: 0px; width: 1000px;">
 					<h1><strong>lib-service</strong></h1>
 					<br />
-					</header>
+				</header>
 
 				<div class="box alt container">
 					<section class="feature left">
 						<a href="#" class="image icon solid fa-tags"><img src="../resources/images/pic09.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Project Purpose</h3>
+							</br></br><br>
 							물리적인 도서의 구입량이 급감하고 있는 반면, 현대인이 인터넷에 연결되어 있는 </br>
 							시간은 취침시간을 제외한 하루종일이라고 해도 과언이 아닐 정도가 되었다. </br>
 							때문에 언제 어디서나 웹에 접속하여 읽고 싶은 도서를 </br>
 							편하게 읽을 수 있게 하는 환경을 구축하는 것이 본 프로젝트의 목표이다.
+							
 						</div>
 					</section>
 					<section class="feature right">
@@ -150,10 +155,10 @@
 					<section class="feature right">
 						<a href="#" class="image icon solid fa-map-marker-alt"><img src="../resources/images/pic11.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Location</h3>
-							<p>(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
-							<p>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
-							<p>전화 02-6000-5378,5379 &nbsp;&nbsp;  팩스 02-6000-5066</p>
+							<h3>Location</h3><br><br><br>
+							<strong>(06090)서울특별시 강남구 학동로 426 (삼성동)</strong><br>
+							<strong>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</strong><br>
+							<strong>전화 02-6000-5378,5379 &nbsp;&nbsp;  팩스 02-6000-5066</strong>
 						</div>
 					</section>
 				</div>
@@ -165,68 +170,58 @@
         <script src="../resources/assets/js/breakpoints.min.js"></script>
         <script src="../resources/assets/js/util.js"></script>
         <script src="../resources/assets/js/main.js"></script>
+ <!-- footer part start-->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between" style="padding-right:100px;">
+            <div class="col-sm-6 col-md-5">
+                <div class="single-footer-widget">
+                    <h4>Project Members</h4>
+                    <ul>
+                        <li><a href="#">최승환</a></li>
+                        <li><a href="#">김기도</a></li>
+                        <li><a href="#">김소휘</a></li>
+                        <li><a href="#">김은지</a></li>
+                        <li><a href="#">염한승</a></li>
+                    </ul>
 
-  <!-- 푸터 시작-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
                     <div class="single-footer-widget">
-                        <h4>Project Members</h4>
-                        <ul>
-                            <li><a href="#">최승환</a></li>
-                            <li><a href="#">김기도</a></li>
-                            <li><a href="#">김소휘</a></li>
-                            <li><a href="#">김은지</a></li>
-                            <li><a href="#">염한승</a></li>
-                        </ul>
-
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Address Of Our Project </h4>
-                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
-                    </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_icon">
+                    <h4 style="width:300px;">Address Of Our Project </h4>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer part end-->
+    </div>
+</footer>
+<!-- footer part end-->
 
 <!-- jquery plugins here-->
 <script src="../resources/js/jquery-1.12.1.min.js"></script>

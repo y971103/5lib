@@ -27,8 +27,12 @@
         <!-- assets main CSS -->
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
-        
+        <link rel="stylesheet" href="../resources/css/dark.css">
+		<!-- 캘린더 -->        
+        <link href="../resources/fullcalendar-5.10.2/lib/main.css" rel="stylesheet" />
+        <script src="../resources/fullcalendar-5.10.2/lib/main.js"></script>
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
+         <script src="../resources/js/dark.js"></script>
         <script>
             $(document).ready(function() {
                 $('#textDiv').hide();
@@ -46,6 +50,14 @@
                     }
                 });
             });
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                  initialView: 'dayGridMonth'
+                });
+                calendar.render();
+              });
         </script>
     </head>
     
@@ -128,7 +140,6 @@
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
          <div id="main">
-            <!-- Comment 감상공유 -->
                 <article id="Comment" class="panel">
                     <header>
                         <h2 class="c_review" style="margin-left: 38%;">${sessionScope.loginId}님의 독서 습관</h2>
@@ -158,10 +169,12 @@
                                 
                         </div>
                     </section>
-                
+                </div>
                 </article>
+                <div id='calendar'></div>
             </div>
-            </div>
+            
+            
 <!-- Scripts -->
         <script src="../resources/assets/js/jquery.min.js"></script>
         <script src="../resources/assets/js/browser.min.js"></script>
@@ -186,6 +199,19 @@
 
                 </div>
             </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
+                    </div>
+                </div>
             
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
