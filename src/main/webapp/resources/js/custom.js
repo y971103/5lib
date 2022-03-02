@@ -10,7 +10,7 @@
       autoplay: true,
       margin: 40,
       autoplayHoverPause: true,
-      autoplayTimeout: 5000,
+      autoplayTimeout: 2000,
       nav: true,
       navText: [
         '<i class="ti-angle-left"></i>',
@@ -46,7 +46,7 @@
       autoplay: true,
       margin: 40,
       autoplayHoverPause: true,
-      autoplayTimeout: 5000,
+      autoplayTimeout: 2000,
       nav: true,
       navText: [
         '<i class="ti-angle-left"></i>',
