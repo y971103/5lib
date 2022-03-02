@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="../resources/css/mypage.css">
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
         <script>
+        
             $(document).ready(function() {
                 $('#textDiv').hide();
 
@@ -172,30 +173,22 @@
 												<td style="width:150px; height:160px;">
 												<img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
 												</td>
-												 
-			
-
+												
 												<td>
-													<h3 class="sldwn title_font">${shelf.title}</h3>
-										<section id="textDiv">
-				                             <div class="container" style="margin-bottom: 10px;">
-				                                <div class="row" id="textDiv">       
-				                                    <div style="padding-left: 7%;">				                                    
-				                                    </div>
-				                                     <class="binfo">   
-				                                     <form>  
-				                                     <div class="row">
-					                               <div class="col-12">
-					                                <textarea id="test" cols="70" rows="9" style="resize: none;">  </textarea>
-					                               <div id="test_cnt">(0 / 180)</div> 
-					                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
-				         					   	 	 </form>
-				                                </div>
-				                            </div>
-				                       </section>  
+													<h3 class="sldwn title_font" value="${shelf.title}"> ${shelf.title}</h3>
+													  <section id="textDiv">
+													<textarea id="test" cols="50" rows="5" style="resize: none;">  </textarea>	
+													<div id="test_cnt">(0 / 180)</div>
+													<form>
+													<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
+	                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
+	                                				 </form>		
+	                       				       		 </section>
+	                              										 
 												</td>
+
                           						<td>${shelf.inputdate}</td>
-				         	 		 		 	<%-- <td>${shelf.isbn}</td>	 --%>
+				         	 		 		 
 				                  			</tr>    
 				               				</c:forEach> 				               			
 						            	    </tbody>
@@ -205,45 +198,39 @@
 						    	</div>
 							</div>
 						</section>
+						                                
+                          </article>
+                            </div>
+                   </div>
+                   <hr>  
+
+					
+					
+						
 						<!-- 찜한 도서 게시판 끝 -->
 						
 						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
-<%--                        <section id="textDiv">
+                    <%--    <section id="textDiv">
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
-                                    <div style="padding-left: 7%;">
-                                    <img src = "${shelf.thumbnail}">
+                                    <div style="padding-left: 7%;">                                   
                                     </div>
                                      <class="binfo">   
-                                     <div>
-                                        	미드나잇&nbsp;라이브러리
-                                     </div>
+                                       <section id="textDiv">
+													
                                      <form>  
                                      <div class="row">
 	                               <div class="col-12">
 	                                <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
 	                               <div id="test_cnt">(0 / 180)</div> 
 	                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
+	                               </div>
+	                               </div>
          					     </form>
                                 </div>
                             </div>
-                       </section>    --%>     
-                                </div>
-                            </div>
+                       </section>      --%>
 
-                            <hr>  
-                             
-                              
-                              
-                              
-                        </section>
-                   </div>
-                   <hr>  
-                   </article>
-						</div>
-					</div>
-					
-					
 
 
 <!-- Scripts -->
@@ -252,9 +239,6 @@
         <script src="../resources/assets/js/breakpoints.min.js"></script>
         <script src="../resources/assets/js/util.js"></script>
         <script src="../resources/assets/js/main.js"></script>
-
-
-
 
 
  <!-- footer part start-->
