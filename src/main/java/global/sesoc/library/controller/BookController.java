@@ -211,7 +211,7 @@ public class BookController {
 		//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
 		public String kakaolibrary(
-				@RequestParam(value="page", defaultValue="1") int page
+				@RequestParam(value="page", defaultValue="1") int page//페이징 변수
 				, book_Search book_search
 				, Model model) {
 			
