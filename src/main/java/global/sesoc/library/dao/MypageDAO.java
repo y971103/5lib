@@ -24,27 +24,14 @@ public class MypageDAO {
 	SqlSession sqlSession;
 
 	
-	//commentlist(게시판 보여주기) 
-	public ArrayList<Shelf> listshelf(String id) {
+	public ArrayList<Shelf> listshelf(int startRecord, int countPerPage, String id) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		RowBounds rb = new RowBounds(startRecord, countPerPage);
+		ArrayList<Shelf> shelflist = mapper.listshelf(rb, id);
 		return shelflist;
 	}
 	
-
 	
-		//책 목록
-		public List<Shelf> selectShelf(int startRecord, int countPerPage) {
-			MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-			//전체 검색 결과 중 읽을 시작위치와 개수.
-			RowBounds rb = new RowBounds(startRecord, countPerPage);
-			
-			//검색어와 읽을 범위를 전달
-			List<Shelf> book = mapper.selectShelf(rb);
-			return book;
-		}
-	
-
 	// 내 서재에 책 코멘트 등록
 	public int insertComments(Comments comments) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
@@ -88,9 +75,10 @@ public class MypageDAO {
 		return habitlist;
 	}
 	//wishlist(게시판 보여주기) 
-	public ArrayList<Shelf> listWish(String id) {
+	public ArrayList<Shelf> listWish(int startRecord, int countPerPage,String id) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		ArrayList<Shelf> shelflist = mapper.listshelf(id);
+		RowBounds rb = new RowBounds(startRecord, countPerPage);
+		ArrayList<Shelf> shelflist = mapper.listshelf(rb, id);
 		return shelflist;
 	}
 
