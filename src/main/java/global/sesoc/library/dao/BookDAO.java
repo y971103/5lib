@@ -78,6 +78,7 @@ public class BookDAO {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 		//해당 번호의 글정보 읽기
 		Kakaobook book = mapper.getKakaoBook(isbn);
+		mapper.addHits(isbn);
 		return book;
 	}
 
@@ -101,6 +102,12 @@ public class BookDAO {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class); 
 		List<Kakaobook> book = mapper.recommendKakaobook(); 
 		return book;
+	}
+
+	public ArrayList<Kakaobook> selectBestSeller() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		ArrayList<Kakaobook> bestseller = mapper.selectBestSeller();
+		return bestseller;
 	}
 
 }
