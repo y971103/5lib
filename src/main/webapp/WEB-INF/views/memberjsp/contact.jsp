@@ -108,7 +108,7 @@
 						<a href="#" class="image icon solid fa-tags"><img src="../resources/images/pic09.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Project Purpose</h3>
-							</br></br><br>
+							<br>
 							물리적인 도서의 구입량이 급감하고 있는 반면, 현대인이 인터넷에 연결되어 있는 </br>
 							시간은 취침시간을 제외한 하루종일이라고 해도 과언이 아닐 정도가 되었다. </br>
 							때문에 언제 어디서나 웹에 접속하여 읽고 싶은 도서를 </br>
@@ -137,17 +137,17 @@
 							<table>
 								<tr>
 									<td><strong>Company</strong></td><br>
-									<td><strong>KITA IT Academy</strong></td>
+									<td>KITA IT Academy</td>
 									
 								</tr>
 								<tr>
 									<td><strong>Team Name</strong></td><br>
-									<td><strong>Digital Master Team 5</strong></td>
+									<td>Digital Master Team 5</td>
 									
 								</tr>
 								<tr>
 									<td><strong>GitHub</strong></td><br>
-									<td><strong>https://github.com/y971103/5lib</strong></td>
+									<td>https://github.com/y971103/5lib</td>
 								</tr>
 							</table>
 						</div>
@@ -155,10 +155,10 @@
 					<section class="feature right">
 						<a href="#" class="image icon solid fa-map-marker-alt"><img src="../resources/images/pic11.jpg" alt="" /></a>
 						<div class="content">
-							<h3>Location</h3><br><br><br>
-							<strong>(06090)서울특별시 강남구 학동로 426 (삼성동)</strong><br>
-							<strong>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</strong><br>
-							<strong>전화 02-6000-5378,5379 &nbsp;&nbsp;  팩스 02-6000-5066</strong>
+							<h3>Location</h3><br><br>
+							<p>(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
+							<p>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
+							<p><strong>전화</strong> 02-6000-5378,5379 &nbsp;&nbsp;  <strong>팩스</strong> 02-6000-5066</p>
 						</div>
 					</section>
 				</div>
