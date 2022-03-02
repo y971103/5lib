@@ -102,14 +102,23 @@
 	</select>
 	
 	<!-- 조회수 1 증가 -->
-<update id="addHits" parameterType="string">
-	update
-		kakaobook
-	set
-		hits = hits + 1
-	where
-		isbn = #{isbn}
-</update>
+	<update id="addHits" parameterType="string">
+		update
+			kakaobook
+		set
+			hits = hits + 1
+		where
+			isbn = #{isbn}
+	</update>
+
+	<!-- 베스트셀러 -->
+	<select id="selectBestSeller" resultType="Kakaobook">
+	select 
+			*
+		from 
+			kakaobook
+		order by hits desc
+	</select>
 	
 	<!-- 해당하는 Kakaobooknum의 정보 가져오기 -->
 	<select id="selectKakaoBooknum" resultType="Kakaobook">

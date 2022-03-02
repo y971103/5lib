@@ -104,4 +104,10 @@ public class BookDAO {
 		return book;
 	}
 
+	public ArrayList<Kakaobook> selectBestSeller() {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		ArrayList<Kakaobook> bestseller = mapper.selectBestSeller();
+		return bestseller;
+	}
+
 }
