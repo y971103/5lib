@@ -153,8 +153,7 @@
             </div>
             <br>
             <!-- 페이지 이동 부분 -->
-		   <div id="navigator" class="navigator">    
-		                     
+		   <div id="navigator" class="navigator">          
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
 				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 

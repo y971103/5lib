@@ -155,7 +155,14 @@
 						                     </tr>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
-												<td>${shelf.thumbnail}</td>
+												
+												<td style="width:90px; height:120px;">
+												<img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
+												</td>
+												 
+			
+										<!-- <div style="margin-top:5px;">
+					                            </div> -->
 												<td>
 													<div class="sldwn">${shelf.title}</div>
 												</td>

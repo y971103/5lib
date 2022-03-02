@@ -80,36 +80,20 @@ public class MypageController {
 	
 	
 	@RequestMapping(value="shelf", method=RequestMethod.GET)
-	public String shelf(HttpSession session, Model model, Shelf shelf) {
+	public String shelf(@RequestParam(value="page", defaultValue="1") int page,
+			HttpSession session, Model model, Shelf shelf) {
 		String id = (String) session.getAttribute("loginId");
-		ArrayList<Shelf> shelflist = dao.listshelf(id);
-		model.addAttribute("shelflist", shelflist);
-		logger.info("shelflist:{}", shelflist);
-		return "mypagejsp/shelf";
-	}
-	
-	
-	//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
-	@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
-	public String kakaolibrary(
-			@RequestParam(value="page", defaultValue="1") int page//페이징 변수
-			, Model model) {
-		
-		logger.debug("page: {}", page);
-		
 		int total = dao.getTotal();
-		
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
-		
-		List<Shelf> listshelf = dao.selectShelf(navi.getStartRecord(), navi.getCountPerPage());
-		logger.debug("결과:{}",listshelf);
-		
-		
+		ArrayList<Shelf> shelflist = dao.listshelf(navi.getStartRecord(), navi.getCountPerPage(), id);
+		model.addAttribute("shelflist", shelflist);
 		model.addAttribute("navi", navi);
-		
+		logger.info("shelflist:{}", shelflist);
 		
 		return "mypagejsp/shelf";
 	}
+	
+	
 	
 	/*
 	 * //북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
@@ -136,10 +120,14 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="comment", method=RequestMethod.GET)
-	public String commentlist(HttpSession session, Model model, Shelf shelf) {
+	public String commentlist(@RequestParam(value="page", defaultValue="1") int page,
+			HttpSession session, Model model, Shelf shelf) {
 		String id = (String) session.getAttribute("loginId");
-		ArrayList<Shelf> shelflist = dao.listshelf(id);
+		int total = dao.getTotal();
+		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
+		ArrayList<Shelf> shelflist = dao.listshelf(navi.getStartRecord(), navi.getCountPerPage(), id);
 		model.addAttribute("shelflist", shelflist);
+		model.addAttribute("navi", navi);
 		logger.info("shelflist:{}", shelflist);
 		return "mypagejsp/comment";
 	}

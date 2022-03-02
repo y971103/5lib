@@ -153,7 +153,8 @@
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
                                     <div class="c_title">
-                                     	  총 ${habit.time}분 동안 독서를 했습니다.
+                                     	  총 ${habit.time}분 동안 독서를 했습니다.<br>
+                                     	  ${habit.month}동안 총 ${habit.mtime}분 독서를 했습니다.
                                     </div>
                                 
                                 <%-- </class> --%>
