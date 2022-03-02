@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="client_review_slider owl-carousel">
-                    	<c:forEach var="book" items="${bestseller}" begin="1" end="8">
+                    	<c:forEach var="book" items="${bestseller}" begin="0" end="7">
                     	<a href="kakaobook_info?isbn=${book.isbn}">
                         <div class="photo">
                             <img src="download?filename=${book.thumbnail}" alt="">
