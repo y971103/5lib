@@ -26,8 +26,6 @@ public ArrayList<Review> listReview(String isbn);
 // 카카오 책 정보 관련
 public ArrayList<Kakaobook> selectKakaobook(book_Search book_search, RowBounds rb);
 
-public List<Kakaobook> selectKakaoBooknum();
-
 public int insertKakaobook(Kakaobook kakaobook);
 
 public Kakaobook getKakaoBook(String isbn);
@@ -41,6 +39,8 @@ public List<Kakaobook> recommendKakaobook();
 public int addHits(String isbn);
 
 public ArrayList<Kakaobook> selectBestSeller();
+// 카테고리별 분류 버튼 생성
+public String getCategory(Kakaobook kakaobook);
 
 
 }
