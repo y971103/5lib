@@ -46,6 +46,22 @@
             color: #ffffff !important;
             border: 1px solid #1e1f21;
         }
+        body[data-darkmode=on] .twrite {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border-top: 1px solid #2e2f30;
+        }
+         body[data-darkmode=on] #accordion {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+             border-bottom: 1px solid #1e1f21;
+        }
+        body[data-darkmode=on] .tsave {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border-top: 1px solid #1e1f21;
+            border-bottom: 1px solid #2e2f30;
+        }
         
         body[data-darkmode=on] .nav-link{
             color: #ffffff !important;

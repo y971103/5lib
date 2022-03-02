@@ -134,7 +134,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
+                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 90%; margin-bottom:15px;">글쓰기</a>
                 <div class="table-wrap">
                 
                 	
