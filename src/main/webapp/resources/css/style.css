@@ -7,14 +7,56 @@
   background-image: linear-gradient(131deg, #feb47b, #ff7e5f, #ff7e5f, #ff7e5f);
 }
 
+@font-face {
+    font-family: 'HoengseongHanu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/HoengseongHanu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '-KITA-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/-KITA-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: lighter;
+    font-style: lighter;
+}
+
+@font-face {
+    font-family: 'WandohopeR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /**************** extend css start ****************/
 /**************** common css start ****************/
 /* line 3, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'CookieRun-Regular';
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* line 9, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
@@ -149,13 +191,13 @@ a:hover {
 /* line 74, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #0c3e72;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'CookieRun-Regular';
 }
 
 /* line 78, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
 p {
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'CookieRun-Regular';
   line-height: 28px;
   font-size: 16px;
   margin-bottom: 0px;
@@ -241,6 +283,7 @@ a:focus, .button:focus, button:focus, .btn:focus {
 
 /* line 139, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
 .section_tittle h2 {
+  font-family: 'WandohopeR';
   font-size: 46px;
   color: #0c720c;
   line-height: 1.1;
@@ -252,14 +295,17 @@ a:focus, .button:focus, button:focus, .btn:focus {
 @media (max-width: 991px) {
   /* line 139, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
   .section_tittle h2 {
-    font-size: 30px;
-    line-height: 35px;
+  	
+    font-family: 'WandohopeR';
+    font-size: 40px;
+    line-height: 100px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   /* line 139, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_common.scss */
   .section_tittle h2 {
+    font-family: 'WandohopeR';
     font-size: 35px;
     line-height: 40px;
   }
@@ -2248,7 +2294,7 @@ ul {
   color: #0c3e72;
   font-size: 16px;
   padding: 38px 22px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "HoengseongHanu";
   text-transform: capitalize;
 }
 
@@ -4279,12 +4325,14 @@ del {
 
 /* line 93, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_elements.scss */
 h1 {
+  font-family: 'CookieRun-Regular';
   font-size: 36px;
 }
 
 /* line 97, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_elements.scss */
 h2 {
-  font-size: 30px;
+  font-family: 'CookieRun-Regular';
+  font-size: 25px;
 }
 
 /* line 101, /Applications/MAMP/htdocs/palash/cl/july 2019/193 Travel/193 travel html/sass/_elements.scss */

@@ -108,7 +108,7 @@ App.prototype.doBook = function (url, opts) {
 	
 	var parser = document.createElement('a');
 	parser.href = document.referrer;
-	console.log(parser.hash);
+	console.log(parser.hash);  
 	alert(parser.search);
 	
     try {

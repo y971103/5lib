@@ -141,7 +141,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2 style="color: white;">책 리스트</h2>
+                        <h2 style="color: white;">Book List</h2>
                     </div>
                 </div>
             </div>
