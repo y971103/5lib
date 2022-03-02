@@ -208,17 +208,7 @@
                             </div>
                         </div>
                         <div class="setting">
-                            <div class="setting-label">About</div>
-                            <div class="setting-content">
-                                ePubViewer v3.1.0
-                                <br /> Copyright 2019
-                                <a href="https://pgaskin.net">Patrick Gaskin</a>
-                                <br />
-                                <a href="https://github.com/pgaskin/ePubViewer">Code</a> |
-                                <a href="https://github.com/pgaskin/ePubViewer/issues">Report an issue</a>
-                                <br />
-                                <br /> This app requires Microsoft Edge 15+, Mozilla Firefox 50+, Chrome 50+, or Safari 10+.
-                            </div>
+                          <img src="../resources/img/logo.png" alt="logo" style="width:260px; height:50px;">
                         </div>
                     </div>
                 </div>
