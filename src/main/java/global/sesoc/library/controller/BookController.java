@@ -73,7 +73,7 @@ public class BookController {
 		dao.insertReview(review);
 		
 		//읽던 게시글로 되돌아 감
-		return "redirect:kakaobook_info?booknum=" + review.getIsbn();
+		return "redirect:kakaobook_info?isbn=" + review.getIsbn();
 	}
 	
 	/**
