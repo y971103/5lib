@@ -15,16 +15,27 @@
 		padding:0px;
 		font-family:Courier, monospace;
 		}
+		
+		@font-face {
+		    font-family: 'WandohopeR';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		
 		body {
-			background:rgb(30, 46, 19) repeat;        
+			background:rgb(30, 46, 19) repeat;  
+			margin-top: 4%;      
 		}
 		#paper {
 			color:#FFF;
 			font-size:20px;
 		}
 		#margin {
+			color: white;
 			margin-left:12px;
-			margin-bottom:20px;
+			margin-bottom:22px;
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -36,9 +47,9 @@
 			overflow:hidden;
 			background-color:#FFF;
 			color:#222;
-			font-family:Courier, monospace;
+			font-family: 'WandohopeR';
 			font-weight:normal;
-			font-size:24px;
+			font-size:20px;
 			resize:none;
 			line-height:40px;
 			padding-left:100px;
@@ -59,7 +70,7 @@
 			border-bottom:3px solid #FFF;
 			color:#FFF;
 			font-size:20px;
-			font-family:Courier, monospace;
+			font-family: 'WandohopeR';
 			height:28px;
 			font-weight:bold;
 			width:220px;
@@ -112,7 +123,7 @@
 
 </head>
 <body>
-<h1>수정폼</h1>
+
     <div id="wrapper">
 
 	<form id="write" action="edit" method="post" >
@@ -125,7 +136,7 @@
 		<!-- <div id="margin">Title: <input class="title" type="text" name="title"></div>  -->
 	
 		
-         <div id="margin">Book: 
+         <div id="margin">Title :  
     
      
       	  <input class="title" type="text" name="title" value="${essay.title}"></div>
