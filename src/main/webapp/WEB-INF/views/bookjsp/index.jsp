@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div style="margin-top: 50px;">
-            	<a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 430px;">Read More Books</a>
+            	<a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 475px;">Read More Books</a>
         	</div>
         </div>
         
