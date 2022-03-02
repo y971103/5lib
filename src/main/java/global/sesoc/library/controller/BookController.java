@@ -202,8 +202,9 @@ public class BookController {
 		}
 		
 		@RequestMapping(value="index",method=RequestMethod.GET)
-		public String index() {
-			
+		public String bestseller(Model model) {
+			ArrayList<Kakaobook> bestseller = dao.selectBestSeller();
+			model.addAttribute("bestseller", bestseller);
 			return "bookjsp/index";
 		}
 		
