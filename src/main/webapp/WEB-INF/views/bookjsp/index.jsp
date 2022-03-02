@@ -27,10 +27,9 @@
     <link rel="stylesheet" href="../resources/css/style.css">
     
     <link rel="stylesheet" href="../resources/css/search.css">
-    
-    <link rel="stylesheet" href="../resources/css/dark.css">
-        
-     <script src="../resources/js/dark.js"></script>
+    <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/dark.css">  
+    <script src="../resources/js/dark.js"></script>
 </head>
 
 <body>
