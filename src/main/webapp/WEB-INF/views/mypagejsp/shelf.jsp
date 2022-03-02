@@ -48,12 +48,7 @@
                 });
             });
             
-		function pagingFormSubmit(currentPage) {
-			var form = document.getElementById('pagingForm');
-			var page = document.getElementById('page');
-			page.value = currentPage;
-			form.submit();
-		}
+		
 	</script>
     </head>
     
@@ -227,7 +222,10 @@
             </div>
             <br>
             <!-- 페이지 이동 부분 -->
-		   <div id="navigator" class="navigator">    
+		  
+        	
+    </section>
+     <div id="navigator">    
 		                     
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
@@ -240,10 +238,11 @@
 				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
 			</div>
-        	
-    </section>
     <!--top place end-->
-							
+	
+	<form id="pagingForm" method="get" action="shelf">
+	<input type="hidden" name="page" id="page" value="1"/>
+	</form>						
 							
 
 			</article>
@@ -298,7 +297,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- footer part end-->
 
 <!-- jquery plugins here-->
-
+	<script>
+	function pagingFormSubmit(currentPage) {
+		var form = document.getElementById('pagingForm');
+		var page = document.getElementById('page');
+		page.value = currentPage;
+		form.submit();
+	}
+	</script>
+	
 	<script src="../resources/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="../resources/js/popper.min.js"></script>
