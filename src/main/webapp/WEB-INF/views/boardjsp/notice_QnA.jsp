@@ -31,7 +31,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-
+	
+	 <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/dark.css">  
+    <script src="../resources/js/dark.js"></script>
+	
 	<script>//검색 버튼
 	function pagingFormSubmit(currentPage) {
 		var form = document.getElementById('pagingForm');
@@ -139,12 +143,12 @@
                           <th>등록일</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody class="darkNotice">
                       	<c:forEach var="board" items="${boardlist}">
                         <tr>
                           <td scope="row">&nbsp&nbsp</td>
                           <td>
-                          	<a href="read?boardnum=${board.boardnum}">${board.title}</a>
+                          	<a href="read?boardnum=${board.boardnum}" class="darkTitle">${board.title}</a>
                           </td>
                           <td>${board.id}</td>
                           <td>${board.hits}</td>
@@ -179,8 +183,8 @@
 				<option value = "2">=제목=</option>
 				<option value = "3">=id=</option>
 			</select>
-					제목 : <input type="text"  name="searchText" value="${searchText}" />
-			<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->>
+					<input type="text"  name="searchText" value="${searchText}" />
+			<input type="button" onclick="pagingFormSubmit(1)" value="검색"><!-- 1페이지로 전달한다는 뜻 -->
 		</form>
 		<!-- /검색폼 --> 
     </div>
@@ -188,67 +192,58 @@
 
 <br></br>
 
- <!-- 푸터 시작-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
-                    <div class="single-footer-widget">
-                        <h4>Project Members</h4>
-                        <ul>
-                            <li><a href="#">최승환</a></li>
-                            <li><a href="#">김기도</a></li>
-                            <li><a href="#">김소휘</a></li>
-                            <li><a href="#">김은지</a></li>
-                            <li><a href="#">염한승</a></li>
-                        </ul>
+  <!-- footer part start-->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-5">
+                <div class="single-footer-widget">
+                    <h4>Project Members</h4>
+                    <ul>
+                        <li><a href="#">최승환</a></li>
+                        <li><a href="#">김기도</a></li>
+                        <li><a href="#">김소휘</a></li>
+                        <li><a href="#">김은지</a></li>
+                        <li><a href="#">염한승</a></li>
+                    </ul>
 
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Address Of Our Project </h4>
-                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
-                    </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_icon">
+                    <h4>Address Of Our Project </h4>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer part end-->
+    </div>
+</footer>
+<!-- footer part end-->
     <!-- Js Plugins -->
 
      <!-- jquery plugins here-->

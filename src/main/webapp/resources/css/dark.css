@@ -15,19 +15,46 @@
             background-color: #1e1f21;
             color: #ffffff !important;
         }
-         body[data-darkmode=on] .menu_fixed {
+        body[data-darkmode=on] .menu_fixed {
             background-color: #1e1f21;
             color: #ffffff !important;
         }
+         body[data-darkmode=on] .dropdown-menu {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+        }
+        body[data-darkmode=on] #hmajor {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border: 1px solid #1e1f21;
+        }
+        
         body[data-darkmode=on] .nav-link{
+            color: #ffffff !important;
+        }
+        body[data-darkmode=on] .dropdown-item{
+            color: #ffffff !important;
+        }
+        body[data-darkmode=on] h3{
+            color: #ffffff !important;
+        }
+        body[data-darkmode=on] h1{
             color: #ffffff !important;
         }
         body[data-darkmode=on] h2{
             color: #ffffff !important;
         }
-      
+         body[data-darkmode=on] th{
+            color: #ffffff !important;
+        } 
+        body[data-darkmode=on] td{
+            color: #ffffff !important;
+        }
          body[data-darkmode=on] .btn_2 {
             background-color: #8f87c4;
+        }
+        body[data-darkmode=on] .darkTitle {
+            color: #ffffff !important;
         }
         
          body[data-darkmode=on] .client_review {

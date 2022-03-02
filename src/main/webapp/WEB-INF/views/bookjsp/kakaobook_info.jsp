@@ -69,7 +69,7 @@ $(document).ready(function () {
 				alert('찜!');
 			},
 			error : function () {
-				//에러메세지 출력
+				alert('이미 찜한 도서입니다!');//에러메세지 출력
 			}
 		});
 		
