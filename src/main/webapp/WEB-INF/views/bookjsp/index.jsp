@@ -115,21 +115,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="client_review_slider owl-carousel">
+                    	<c:forEach var="book" items="${bestseller}" begin="1" end="8">
+                    	<a href="kakaobook_info?isbn=${book.isbn}">
                         <div class="photo">
-                            <img src="../resources/img/test1.jpg" alt="">
+                            <img src="download?filename=${book.thumbnail}" alt="">
                         </div>
-                        <div class="photo">
-                            <img src="../resources/img/test2.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test4.jpg" alt="">
-                        </div>
-                        <div class="photo">
-                            <img src="../resources/img/test3.jpg" alt="">
-                        </div>
+                        </a>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

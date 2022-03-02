@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -18,12 +19,16 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import global.sesoc.library.dao.MypageDAO;
+import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
+import global.sesoc.library.vo.Review;
 import global.sesoc.library.vo.Shelf;
+import global.sesoc.library.vo.book_Search;
 
 @Controller
 @RequestMapping("mypage")
@@ -32,6 +37,10 @@ public class MypageController {
 	
 	@Autowired
 	MypageDAO dao;
+	
+	final int countPerPage = 8;
+	final int pagePerGroup = 5;	
+	
 	
 	//이미지 파일 저장 경로 (서버의 절대경로)
 			final String dir = "/bookimage/";
@@ -79,6 +88,41 @@ public class MypageController {
 		return "mypagejsp/shelf";
 	}
 	
+	
+	//라이브러리 페이지 하나 더 만듦. 카카오 책 정보를 위한 라이브러리 페이지
+	@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
+	public String kakaolibrary(
+			@RequestParam(value="page", defaultValue="1") int page//페이징 변수
+			, Model model) {
+		
+		logger.debug("page: {}", page);
+		
+		int total = dao.getTotal();
+		
+		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
+		
+		List<Shelf> listshelf = dao.selectShelf(navi.getStartRecord(), navi.getCountPerPage());
+		logger.debug("결과:{}",listshelf);
+		
+		
+		model.addAttribute("navi", navi);
+		
+		
+		return "mypagejsp/shelf";
+	}
+	
+	/*
+	 * //북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
+	 * 
+	 * @RequestMapping(value="kakaobook_info",method=RequestMethod.GET) public
+	 * String list(Model model, String isbn) { Kakaobook book =
+	 * dao.getKakaoBook(isbn); List<Kakaobook> kakaobooklist =
+	 * dao.recommendKakaobook(); ArrayList<Review> reviewlist =
+	 * dao.listReview(isbn); logger.info("결과:{}",book); model.addAttribute("book",
+	 * book); model.addAttribute("kakaobooklist",kakaobooklist);
+	 * model.addAttribute("reviewlist", reviewlist); logger.info("결과:{}",book);
+	 * return "bookjsp/kakaobook_info"; }
+	 */
 	
 	
 	@RequestMapping(value="habit", method=RequestMethod.GET)

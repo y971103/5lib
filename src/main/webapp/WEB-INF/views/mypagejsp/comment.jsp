@@ -32,9 +32,12 @@
             $(document).ready(function() {
                 $('#textDiv').hide();
 
-                $('#sldwn').on('click',function(){
+                $('.sldwn').on('click',function(){
                     $('#textDiv').slideToggle();
                 });
+                
+                
+                
 
                 $('#test').on('keyup', function() {
                     $('#test_cnt').html("("+$(this).val().length+" / 180)");
@@ -153,10 +156,13 @@
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
 												<td>${shelf.thumbnail}</td>
-									<!-- 		<td> <a href id="sldwn"></a></td> -->
-											
-												<td>${shelf.title}</td>
+												<td>
+													<div class="sldwn">${shelf.title}</div>
+												</td>
+										
 												
+												
+							
                           						<td>${shelf.inputdate}</td>
 				         	 		 		 	<td>${shelf.isbn}</td>	
 				                  			</tr>    
@@ -172,15 +178,14 @@
 						<!-- 찜한 도서 게시판 끝 -->
 						
 						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
-                        <!-- <div>
-                        <p><button id="sldwn" style="margin-top:0px; margin-left:87%;">글쓰기</button></p>
-                        </div> -->
+						
+                        
                         
                        <section id="textDiv">
                             <div class="container" style="margin-bottom: 10px;">
                                 <div class="row" id="textDiv">       
                                     <div style="padding-left: 7%;">
-                                     <!-- 책 썸네일 들어갈 자리-->
+                                    <img src = "${shelf.thumbnail}">
                                     </div>
                                      <class="binfo">   
                                      <div>

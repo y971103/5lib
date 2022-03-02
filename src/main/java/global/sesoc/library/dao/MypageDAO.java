@@ -1,6 +1,7 @@
 package global.sesoc.library.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +13,7 @@ import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Shelf;
+import global.sesoc.library.vo.book_Search;
 import global.sesoc.library.vo.notice_Search;
 
 
@@ -28,6 +30,19 @@ public class MypageDAO {
 		ArrayList<Shelf> shelflist = mapper.listshelf(id);
 		return shelflist;
 	}
+	
+
+	
+		//책 목록
+		public List<Shelf> selectShelf(int startRecord, int countPerPage) {
+			MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+			//전체 검색 결과 중 읽을 시작위치와 개수.
+			RowBounds rb = new RowBounds(startRecord, countPerPage);
+			
+			//검색어와 읽을 범위를 전달
+			List<Shelf> book = mapper.selectShelf(rb);
+			return book;
+		}
 	
 
 	// 내 서재에 책 코멘트 등록
@@ -78,6 +93,16 @@ public class MypageDAO {
 		ArrayList<Shelf> shelflist = mapper.listshelf(id);
 		return shelflist;
 	}
+
+
+	//전체 글 개수
+	public int getTotal() {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		int total = mapper.getTotal();
+		return total;
+	}
+
+
 
 	
 	

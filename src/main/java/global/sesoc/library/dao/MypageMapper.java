@@ -2,6 +2,9 @@ package global.sesoc.library.dao;
 
 
 import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.library.vo.Comments;
 
@@ -23,9 +26,14 @@ public interface MypageMapper {
 	
 	public ArrayList<Shelf> listshelf(String id);
 	
+	public ArrayList<Shelf> selectShelf(RowBounds rb);
+	
 	public ArrayList<Comments> listComments(int booknum);
 
 	public ArrayList<Habit> selectTime(String id);
+
+	public int getTotal();
+
 
 	
 	
