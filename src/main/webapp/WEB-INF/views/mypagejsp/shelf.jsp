@@ -139,9 +139,6 @@
             <div id="main" style="margin-bottom: 50px;">
                 <!--Habit 통계-->
 			<article id="Habit" class="panel">
-				<header>
-					<h2 class="c_review">내 서재</h2>
-				</header>
 
 				<!-- <section> -->
 					<!--  <div class="row"> 가로 255 이상의 이미지 사용하면 됨
@@ -202,7 +199,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2 style="color: white;">내 서재</h2>
+                        <h2 style="color: white;">My Books</h2>
                     </div>
                 </div>
             </div>
