@@ -330,8 +330,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   direction: rtl;
 }
 .fc-theme-standard .fc-scrollgrid {
-  border: 1px solid rgb(60, 83, 46);
-  border: 1px solid var(--fc-border-color, rgb(60, 83, 46)); /* bootstrap does this. match */
+  border: 1px solid rgb(22, 31, 17);
+  border: 1px solid var(--fc-border-color, rgb(22, 31, 17)); /* bootstrap does this. match */
 }
 .fc .fc-scrollgrid,
 .fc .fc-scrollgrid table {
@@ -384,7 +384,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   /* stickiness */
 }
 .fc .fc-scrollgrid-section-sticky > * {
-  background: #fff;
+  background: rgb(202, 231, 185);
   background: var(--fc-page-bg-color, #fff);
   position: sticky;
   z-index: 3; /* TODO: var */
