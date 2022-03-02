@@ -173,7 +173,7 @@
  <!-- footer part start-->
   <footer class="footer-area">
     <div class="container">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between" style="padding-right:100px;">
             <div class="col-sm-6 col-md-5">
                 <div class="single-footer-widget">
                     <h4>Project Members</h4>
@@ -203,7 +203,7 @@
             
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
-                    <h4>Address Of Our Project </h4>
+                    <h4 style="width:300px;">Address Of Our Project </h4>
                     <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
