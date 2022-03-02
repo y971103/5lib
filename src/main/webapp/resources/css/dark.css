@@ -15,14 +15,19 @@
             background-color: #1e1f21;
             color: #ffffff !important;
         }
-         body[data-darkmode=on] .menu_fixed {
+        body[data-darkmode=on] .menu_fixed {
             background-color: #1e1f21;
             color: #ffffff !important;
+        }
+        body[data-darkmode=on] #hmajor {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border: 1px solid #1e1f21;
         }
         body[data-darkmode=on] .nav-link{
             color: #ffffff !important;
         }
-        body[data-darkmode=on] h2{
+        body[data-darkmode=on] h1,h2,h3{
             color: #ffffff !important;
         }
       
