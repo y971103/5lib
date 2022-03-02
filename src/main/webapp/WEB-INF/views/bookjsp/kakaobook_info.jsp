@@ -57,7 +57,11 @@
     <script src="../resources/js/dark.js"></script>
 
 </head>
+
+
 <script type="text/javascript" charset="utf-8">
+
+
 
 $(document).ready(function () {
 	//"위시리스트" 버튼 클릭하면 실행됨
@@ -79,6 +83,37 @@ $(document).ready(function () {
 
 	});
 });
+
+ //shelf에서 제거
+$(document).ready(function() {
+	
+	$('#deletewb').on('click', function(){
+		
+	$.ajax({
+		url: 'deleteShelf',
+		method: 'get',
+		data: {'isbn' : '${book.isbn}', 'authors' : '${book.authors}', 'title' : '${book.title}', 'thumbnail' : '${book.thumbnail}'},
+		success: function () {
+			alert('삭제!');
+		},
+		error : function () {
+			alert('삭제 실패!');//에러메세지 출력
+		}
+	});
+	
+	});
+});
+	
+
+//삭제하기
+function deleteShelf(isbn) {
+	if (confirm('이 도서를 내서재에서 삭제하시겠습니까?')) {
+		location.href = 'deleteShelf?isbn=${shelf.isbn}';
+	}
+} 
+
+
+
 
 //한줄리뷰 수정 정보 저장
 function reviewUpdate(form) {
@@ -136,7 +171,7 @@ function reviewUpdateCancle(div) {
       function popOpen() {
          //열기시작
          let start = new Date();
-         alert('시간 측정 시작 / 나중에 지울예정') 
+        
           openDialog(uri, popupName, options, function(win) {
          //닫은 후
          let end = new Date();
@@ -144,11 +179,10 @@ function reviewUpdateCancle(div) {
          let minute = second / 60;
          var time = Math.ceil(minute);
          //'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
-         alert(time +'분의 시간동안 사이트가 켜졌습니다. // 주석 확인 바람');
+         //alert(time +'분동안 독서를 했습니다. 지금까지 독서시간을 저장하시겠습니까?');
          document.getElementById('time').value = time;
          
-         if (!confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
-               alert("취소(아니오)를 누르셨습니다.");
+         if (!confirm(time+"분동안 독서를 했습니다. 지금까지 독서시간을 저장하시겠습니까?\n 저장(확인) 또는 삭제(취소)를 선택해주세요.")) {
            } else {
                var form = document.getElementById("t1");
                form.action = "countTime";
@@ -282,6 +316,7 @@ function reviewUpdateCancle(div) {
 						<input type="hidden" id="time" name="time">
 						
 						<input type="button" id="wishbt" value="찜하기" class="readbt" >
+						 <input type="button" id="deletewb" value="찜삭제" class="readbt" >
 					</form>
 					 
 					

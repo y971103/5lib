@@ -9,7 +9,7 @@ public class Kakaobook {
 	String thumbnail;
 	String title;
 	int booknum;
-	String genre_num;
+	String genre;
 
 
 	public Kakaobook() {
@@ -97,13 +97,15 @@ public class Kakaobook {
 		this.booknum = booknum;
 	}
 	
-	public String getGenre_num() {
-		return genre_num;
+	
+
+	public String getGenre() {
+		return genre;
 	}
 
 
-	public void setGenre_num(String genre_num) {
-		this.genre_num = genre_num;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 
@@ -111,7 +113,7 @@ public class Kakaobook {
 	public String toString() {
 		return "Kakaobook [authors=" + authors + ", contents=" + contents + ", datetime=" + datetime + ", isbn=" + isbn
 				+ ", publisher=" + publisher + ", thumbnail=" + thumbnail + ", title=" + title + ", booknum=" + booknum
-				+ ", genre_num=" + genre_num + "]";
+				+ ", genre=" + genre + "]";
 	}
 	
 }
