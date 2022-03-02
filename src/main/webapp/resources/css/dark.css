@@ -23,10 +23,44 @@
             background-color: #1e1f21;
             color: #ffffff !important;
         }
+         body[data-darkmode=on] .essayDark {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #696969;
+        }
+         body[data-darkmode=on] .essayHead {
+            background-color: #455c48;
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+         body[data-darkmode=on] table {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            font-weight: 500;
+            border-bottom: 2px solid #696969;
+        }
         body[data-darkmode=on] #hmajor {
             background-color: #1e1f21;
             color: #ffffff !important;
             border: 1px solid #1e1f21;
+        }
+        body[data-darkmode=on] .twrite {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border-top: 1px solid #2e2f30;
+        }
+         body[data-darkmode=on] #accordion {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+             border-bottom: 1px solid #1e1f21;
+        }
+        body[data-darkmode=on] .tsave {
+            background-color: #1e1f21;
+            color: #ffffff !important;
+            border-top: 1px solid #1e1f21;
+            border-bottom: 1px solid #2e2f30;
         }
         
         body[data-darkmode=on] .nav-link{
@@ -36,6 +70,9 @@
             color: #ffffff !important;
         }
         body[data-darkmode=on] h3{
+            color: #ffffff !important;
+        }
+         body[data-darkmode=on] h4{
             color: #ffffff !important;
         }
         body[data-darkmode=on] h1{
@@ -55,6 +92,16 @@
         }
         body[data-darkmode=on] .darkTitle {
             color: #ffffff !important;
+        }
+        body[data-darkmode=on] #oneLine {
+            color: #000000 !important;
+        }
+        body[data-darkmode=on] #searchBtn {
+            color: #65a16a !important;
+        }
+        body[data-darkmode=on] #type {
+            color: #65a16a !important;
+            background-color: #1e1f21;
         }
         
          body[data-darkmode=on] .client_review {

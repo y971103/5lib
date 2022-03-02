@@ -1,7 +1,13 @@
 package global.sesoc.library.controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -9,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +32,43 @@ public class MypageController {
 	
 	@Autowired
 	MypageDAO dao;
+	
+	//이미지 파일 저장 경로 (서버의 절대경로)
+			final String dir = "/bookimage/";
+			
+			//shelf 테이블에서 이미지파일 가져오기  <img src="download?filename=${book.thumbnail}">
+			@RequestMapping(value = "download", method = RequestMethod.GET)
+			public String fileDownload(String filename, HttpServletResponse response) {
+				
+				try {
+					response.setHeader("Content-Disposition", " attachment;filename="+ URLEncoder.encode(filename, "UTF-8"));
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				}
+				
+				//저장된 파일 경로
+				String fullPath = dir + filename;
+				
+				//서버의 파일을 읽을 입력 스트림과 클라이언트에게 전달할 출력스트림
+				FileInputStream filein = null;
+				ServletOutputStream fileout = null;
+				
+				try {
+					filein = new FileInputStream(fullPath);
+					fileout = response.getOutputStream();
+					
+					//Spring의 파일 관련 유틸 이용하여 출력
+					FileCopyUtils.copy(filein, fileout);
+					
+					filein.close();
+					fileout.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				return null;
+			}
+	
 	
 	@RequestMapping(value="shelf", method=RequestMethod.GET)
 	public String shelf(HttpSession session, Model model, Shelf shelf) {

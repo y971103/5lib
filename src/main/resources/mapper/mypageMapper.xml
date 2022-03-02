@@ -83,10 +83,13 @@
 			, authors
 			, title
 			, to_char(inputdate, 'YYYY-MM-DD') inputdate
+			, thumbnail
 		from
 			shelf
 		where
 			id = #{id}
+		order by 
+			title
 	</select>
 </mapper>
 

@@ -45,6 +45,11 @@
 	}
 	</script>
 	
+	<style>
+		.essayPage{
+	color:#68966f;
+}
+	</style>
 	
     
 </head>
@@ -129,7 +134,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 1000px;">글쓰기</a>
+                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 90%; margin-bottom:15px;">글쓰기</a>
                 <div class="table-wrap">
                 
                 	
@@ -160,17 +165,17 @@
                 
                 <div class="h5 mb-4 text-center">
 				<!-- 페이지 이동 부분 -->                      
-				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
-			
-				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
-					<c:if test="${counter == navi.currentPage}"><b></c:if>
-						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-					<c:if test="${counter == navi.currentPage}"></b></c:if>
-				</c:forEach>
-				&nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+						<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})" class="essayPage">◁◁ </a> &nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})" class="essayPage">◀</a> &nbsp;&nbsp;
+					
+						<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+							<c:if test="${counter == navi.currentPage}"><b></c:if>
+								<a href="javascript:pagingFormSubmit(${counter})" class="essayPage">${counter}</a>&nbsp;
+							<c:if test="${counter == navi.currentPage}"></b></c:if>
+						</c:forEach>
+						&nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})" class="essayPage">▶</a> &nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})" class="essayPage">▷▷</a>
 				</div>
 				
             </div>

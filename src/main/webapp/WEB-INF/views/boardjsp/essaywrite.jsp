@@ -6,8 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Essay</title>
+    <title>Write Essay</title>   
     <style>
+    
+    @font-face {
+    font-family: 'WandohopeR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}      
+    
         * {
 	  	outline:none;
 		border:none;
@@ -36,7 +44,7 @@
 			overflow:hidden;
 			background-color:#FFF;
 			color:#222;
-			font-family:Courier, monospace;
+			font-family: 'WandohopeR';
 			font-weight:normal;
 			font-size:24px;
 			resize:none;
@@ -109,15 +117,36 @@
     		$('#text').autosize();
 		});
     </script>
-
+	<script>
+        //글쓰기폼 확인
+        function formCheck() {
+            var title = document.getElementById('title');
+            var content = document.getElementById('text');
+            
+            if (title.value.length < 5) {
+                alert("제목을 입력하세요.");
+                title.focus();
+                title.select();
+                return false;
+            }
+            if (content.value.length < 5) {
+                alert("내용을 입력하세요.");
+                content.focus();
+                content.select();
+                return false;
+            }
+            return true;
+        }
+        </script>
+	
+	
 </head>
 <body>
-    <div id="wrapper">
+   <div id="wrapper">
 
-	<form id="write" action="essay_write" method="post" >
-
-		<div id="margin">Title: <input class="title" type="text" name="title"></div>
-        <!--  <div id="margin">Book: <input class="title" type="text" name="booknum"></div>-->
+	<form id="write" action="essay_write" method="post" onsubmit="return formCheck();">
+	 
+		<div id="margin" style="color:white;">Title: <input class="title" type="text" name="title" id="title"></div>
 		<textarea placeholder="Enter something funny." id="text" name="content" style="overflow: break-word; "></textarea>  
 		<br>
 		<input type="submit" id="button" value="저장">

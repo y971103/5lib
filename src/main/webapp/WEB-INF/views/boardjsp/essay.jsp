@@ -141,21 +141,21 @@ function alertSend(a){
                     <table class="table">
                       <thead class="thead-primary">
                         <tr>
-                            <th>#</th>
-                            <th>제목</th>
-                          <th>작성자</th>
-                          <th>조회수</th>
-                          <th>등록일</th>
+                          <th class="essayHead">#</th>
+                          <th class="essayHead">제목</th>
+                          <th class="essayHead">작성자</th>
+                          <th class="essayHead">조회수</th>
+                          <th class="essayHead">등록일</th>
                         </tr>
                       </thead>
                       <tbody>
                       	<c:forEach var="essay" items="${essaylist}">
                         <tr class="alert" role="alert">
-                            <td>${essay.essaynum}</td>
-                            <td><a href="read?essaynum=${essay.essaynum}">${essay.title}</a></td>
-                            <td>${essay.id}</td>
-                            <td>${essay.hits}</td>
-                            <td>${essay.inputdate}</td>
+                            <td class="essayDark">${essay.essaynum}</td>
+                            <td class="essayDark"><a href="read?essaynum=${essay.essaynum}" class="essayDark">${essay.title}</a></td>
+                            <td class="essayDark">${essay.id}</td>
+                            <td class="essayDark">${essay.hits}</td>
+                            <td class="essayDark">${essay.inputdate}</td>
                         </tr>
                         </c:forEach>
                       </tbody>
@@ -163,17 +163,17 @@ function alertSend(a){
                     
                     <div class="h5 mb-4 text-center">
 						<!-- 페이지 이동 부분 -->                      
-						<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-						<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})" class="essayPage">◁◁ </a> &nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})" class="essayPage">◀</a> &nbsp;&nbsp;
 					
 						<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
 							<c:if test="${counter == navi.currentPage}"><b></c:if>
-								<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+								<a href="javascript:pagingFormSubmit(${counter})" class="essayPage">${counter}</a>&nbsp;
 							<c:if test="${counter == navi.currentPage}"></b></c:if>
 						</c:forEach>
 						&nbsp;&nbsp;
-						<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
-						<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+						<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})" class="essayPage">▶</a> &nbsp;&nbsp;
+						<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})" class="essayPage">▷▷</a>
 					</div>
                 </div>
             </div>

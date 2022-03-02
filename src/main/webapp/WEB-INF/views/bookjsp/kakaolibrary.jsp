@@ -28,6 +28,10 @@
     
       <link rel="stylesheet" href="../resources/css/search.css">
     
+     <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/dark.css">  
+    <script src="../resources/js/dark.js"></script>
+    
     <script>
 		function pagingFormSubmit(currentPage) {
 			var form = document.getElementById('pagingForm');
@@ -41,7 +45,7 @@
 <body>
    <!--:헤더 시작::-->
    <header class="main_menu">
-        <div class="main_menu_iner"  style="height: 80px;">
+        <div class="main_menu_iner">
             <div class="container">
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
@@ -59,20 +63,8 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/book/index"/>">Home</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="<c:url value="/book/kakaolibrary"/>" id="navbarDropdown"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            Library
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/board/humanities"/>">Humanities</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/novel"/>">Novel</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/horror"/>">Horror</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/foreignnovel"/>">Foreign Novel</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/poem"/>">Poem</a>
-                                            <a class="dropdown-item" href="<c:url value="/board/socialscience"/>">Social Science</a>
-                                        </div>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdown"
@@ -80,14 +72,14 @@
                                             aria-expanded="false">
                                             My page
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog" id="navbarDropdown_1"
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             Board
@@ -102,21 +94,21 @@
                                     </li>
                                 </ul>
                             </div>
-                           <c:if test="${loginId != null}">
+                            <c:if test="${loginId != null}">
 							<h2>
-								${sessionScope.loginId}님 <br>
+								${sessionScope.loginId} ♡  <br>
 							</h2>
-							<a href="logout" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="update" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
+							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="width:80px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="width:120px;height:20px;font-size:12px;padding-right: 0px;padding-left: 17px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
 							</c:if>
 							 <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
                             </c:if>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
- 
     </header>
     <!-- 헤더 끝-->
 
@@ -141,7 +133,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2 style="color: white;">책 리스트</h2>
+                        <h2 style="color: white;">Book List</h2>
                     </div>
                 </div>
             </div>
@@ -180,69 +172,58 @@
 	
 	
 	<!-- /페이지 이동 끝 -->    
-	
-    <!-- footer part start-->
-   <!-- 푸터 시작-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-md-5">
-                    <div class="single-footer-widget">
-                        <h4>Project Members</h4>
-                        <ul>
-                            <li><a href="#">최승환</a></li>
-                            <li><a href="#">김기도</a></li>
-                            <li><a href="#">김소휘</a></li>
-                            <li><a href="#">김은지</a></li>
-                            <li><a href="#">염한승</a></li>
-                        </ul>
+	 <!-- footer part start-->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-5">
+                <div class="single-footer-widget">
+                    <h4>Project Members</h4>
+                    <ul>
+                        <li><a href="#">최승환</a></li>
+                        <li><a href="#">김기도</a></li>
+                        <li><a href="#">김소휘</a></li>
+                        <li><a href="#">김은지</a></li>
+                        <li><a href="#">염한승</a></li>
+                    </ul>
 
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-md-4">
+                    <div class="single-footer-widget">
+                       <div class="darkmode">
+                       <h4>Dark Mode </h4>
+				            <div class="inner">
+				                <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+				                <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+				                <div class="darkmode-bg"></div>
+				            </div>
+        </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="single-footer-widget">
-                        <h4>Subscribe Newsletter</h4>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
-                                </button>
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
-
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                        <p>Subscribe our newsletter to get update news and offers</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_icon">
-                        <h4>Address Of Our Project </h4>
-                        <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
-                    </div>
+            
+            <div class="col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_icon">
+                    <h4>Address Of Our Project </h4>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="ti-heart" aria-hidden="true"></i>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer part end-->
+    </div>
+</footer>
+<!-- footer part end-->
 
     <!-- jquery plugins here-->
     <script src="../resources/js/jquery-1.12.1.min.js"></script>
