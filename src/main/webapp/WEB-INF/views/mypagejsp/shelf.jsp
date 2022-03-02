@@ -139,7 +139,7 @@
 					<h2 class="c_review">내 서재</h2>
 				</header>
 
-				<section>
+				<!-- <section> -->
 					<!--  <div class="row"> 가로 255 이상의 이미지 사용하면 됨
                                 <div class="col-4 col-6-medium col-12-small">
                                     <a href="Shelf.html" class="image fit"><img src="../resources/img/test1.jpg" alt=""></a>
@@ -157,7 +157,7 @@
                                     <a href="Shelf.html" class="image fit"><img src="../resources/img/test4.jpg" alt=""></a>
                                 </div>
                             </div> -->
-					<div class="container" style="margin-bottom: 10px;">
+					<%-- <div class="container" style="margin-bottom: 10px;">
                             	<div class="row">
                                 	<div class="col-12">
                                     	<div class="table-wrap">
@@ -185,10 +185,58 @@
 						            	</div>           
 						        	</div>
 						    	</div>
-							</div>
-						</section>
+							</div> --%>
+														
+						<!-- </section>
                         <div>
-				</section>
+				</section> -->
+							
+							
+							
+							<section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="section_tittle text-center">
+                        <h2 style="color: white;">내 서재</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 7%;">
+         		<div class="row" >
+               		<c:forEach var="shelf" items="${shelflist}">
+                    	<div style="margin-bottom:8px;">       
+                        <a href="kakaobook_info?isbn=${shelf.isbn}">
+                          	<img src="download?filename=${shelf.thumbnail}" style="width:230px; height:333px;">
+                            <div style="margin-top:5px;">
+                            </div>
+                        </a>
+                    	</div>
+                    	<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
+                	</c:forEach> 
+               </div>
+            </div>
+            <br>
+            <!-- 페이지 이동 부분 -->
+		   <div id="navigator" class="navigator">    
+		                     
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
+				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
+					<c:if test="${counter == navi.currentPage}"><b></c:if>
+						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+					<c:if test="${counter == navi.currentPage}"></b></c:if>
+				</c:forEach>
+				&nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
+				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
+			</div>
+        	
+    </section>
+    <!--top place end-->
+							
+							
+
 			</article>
 		</div>  
 </div>
