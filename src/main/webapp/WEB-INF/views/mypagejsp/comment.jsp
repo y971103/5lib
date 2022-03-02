@@ -54,7 +54,7 @@
         	.title_font{
         		color: white;
         		cursor: pointer;
-        	
+        		
         	}
         	
         	.title_font:hover{
