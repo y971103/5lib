@@ -99,11 +99,11 @@ function reviewUpdateForm(reviewnum, isbn, retext) {
 	str += '<input type="hidden" name="reviewnum" value="'+reviewnum+'">';
 	str += '<input type="hidden" name="isbn" value="'+isbn+'">';
 	str += '&nbsp;';
-	str += '<input type="text" name="text" value="' + retext + '" style="width:530px;">';
+	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewEdit(document.editForm' + reviewnum + ')">[저장]</a>';
+	str += '<a href="javascript:reviewUpdate(document.editForm' + reviewnum + ')">[저장]</a>';
 	str += '&nbsp;';
-	str += '<a href="javascript:reviewEditCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
+	str += '<a href="javascript:reviewUpdateCancle(document.getElementById(\'div' + reviewnum + '\'))">[취소]</a>';
 	str += '</form>';
 	div.innerHTML = str;
 }
@@ -303,6 +303,7 @@ function reviewUpdateCancle(div) {
 									<a href="javascript:reviewDelete(${review.reviewnum}, ${review.isbn})">삭제</a>
 								</c:if>
                                 <div class="one_line">${review.content}</div>
+                                <div id="div${review.reviewnum}"></div>
                                 
                             </div>
                             </c:forEach>
