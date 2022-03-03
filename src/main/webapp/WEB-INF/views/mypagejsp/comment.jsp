@@ -210,15 +210,9 @@
                                              <input type="submit" id="button" value="저장">                                          
                                           </form>                                 
                                                                             
-                                          <!-- <form>
-                                             <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/>
-                                                      <input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>
-                                                      
-                                                  </form> -->
-                                                  
-                                                        
-                                                    </section>                                                                
-                                    </td>
+                                         
+                                       </section>                                                                
+                                   </td>
 
                                             <td>${shelf.inputdate}</td>
                                        
