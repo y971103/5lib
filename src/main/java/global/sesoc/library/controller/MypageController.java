@@ -114,14 +114,14 @@ public class MypageController {
 	
 	@RequestMapping(value="habit", method=RequestMethod.GET)
 	public String habit(HttpSession session, Model model) {
+		logger.info("안녕하세여{}");
 		String id = (String) session.getAttribute("loginId");
 		ArrayList<Habit> habitlist = dao.selectTime(id);
 		model.addAttribute("habitlist", habitlist);
-		logger.info(" habitlist:{}", habitlist);
-		
-		ArrayList<Calender> habitcalender = dao.selectCalender(id);
-		model.addAttribute("habitcalender", habitcalender);
-		logger.info("habitcalender:{}", habitcalender);
+		ArrayList<Habit> chartlist = dao.selectTotal(id);
+		model.addAttribute("chartlist", chartlist);
+		logger.info("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
+		logger.info("차트 목록:{}", chartlist);
 		return "mypagejsp/habit";
 	}
 	

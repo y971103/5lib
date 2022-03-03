@@ -94,6 +94,15 @@
     group by id
    </select>
 	
+	   <!-- 차트에 쓰일 쿼리 -->
+    <select id="selectChart" parameterType="string" resultType="habit">
+   select count(distinct isbn) as isbn,
+        to_char(inputdate, 'month') as month
+    	from habit 
+	  	 where id=#{id}
+	     group by to_char(inputdate, 'month')
+		order by to_char(inputdate, 'month')
+   </select>
 		<!-- 위시리스트 내용 목록 -->
 	<select id="listshelf" parameterType="string" resultType="shelf">
 		select 

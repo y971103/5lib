@@ -100,7 +100,11 @@ public class MypageDAO {
 		return habitcalender;
 	}
 
-
+	public ArrayList<Habit> selectTotal(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Habit> chartlist = mapper.selectChart(id);
+		return chartlist;
+	}
 
 
 
