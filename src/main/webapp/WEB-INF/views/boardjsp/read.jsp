@@ -186,7 +186,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-4">
 					<br></br>
-					<h1 class="heading-section" style="margin-left:200px;">Board The Read</h1>
+					<h1 class="heading-section" style="margin-left:70px;">Q & A</h1>
 					<hr>
 				</div>
 			</div>
@@ -216,18 +216,18 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th style="width: 100px;"><h4>제목 :</h4></th>
+							<th style="width: 150px;"><h4>Q. 질문사항 :</h4></th>
 							<td style="width: 1100px;" colspan="8">${board.title}</td>
 						</tr>
 
 						<tr>
-							<th style="width: 100px;">ID:</th>
+							<th style="width: 100px;">ID :</th>
 							<td style="width: 100px;" colspan="1">${board.id}</td>
 
-							<th style="width: 100px;">작성일:</th>
+							<th style="width: 100px;">작성일 :</th>
 							<td style="width: 100px;" colspan="1">${board.inputdate}</td>
 
-							<th style="width: 100px;">조회수:</th>
+							<th style="width: 100px;">조회수 :</th>
 							<td style="width: 100px;" colspan="1">${board.hits}</td>
 						</tr>
 
@@ -253,7 +253,7 @@
 			
 			</div>	
 				
-			<h4>댓글 작성란</h4>
+			<h4>A. 관리자 답변</h4>
 			<!-- container div -->
 				<!-- 리플 작성 폼 시작 -->
 				<form id="replyform" action="replyWrite" method="post" onsubmit="return replyFormCheck();">
