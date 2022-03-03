@@ -71,6 +71,14 @@
                     }
                 });
             });
+            
+
+        });
+        
+            
+            
+            
+            
         </script>
         
         <style type="text/css">
@@ -207,8 +215,16 @@
                                              <br>
                                              <div id="test_cnt">(0 / 180)</div>
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
-                                             <input type="submit" id="button" value="저장">                                          
-                                          </form>                                 
+                                             <input type="submit" id="button" value="저장">                                         
+                                          </form>  
+                                          <c:if test="${loginId == board.id}">
+											<!-- 현재글 삭제하기-->
+											<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
+											<!-- 현재글 수정하기-->
+											<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
+										</c:if>
+                                          
+                                                                         
                                                                             
                                           <!-- <form>
                                              <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/>
