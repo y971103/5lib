@@ -180,12 +180,13 @@
     <!-- 헤더 끝-->
 	
 <body>
+<div id="back" style="background-image: URL(../resources/img/back3.jpg); background-repeat: no-repeat; background-position: 100% 100%;">
 	<section class="ftco-section main-body">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-4">
 					<br></br>
-					<h1 class="heading-section">Board The Read</h1>
+					<h1 class="heading-section" style="margin-left:200px;">Board The Read</h1>
 					<hr>
 				</div>
 			</div>
@@ -200,7 +201,6 @@
 
 	<br>
 	<br>
-<body>
 	<section class="ftco-section main-body">
 		<div class="container"></div>
 
@@ -309,9 +309,7 @@
 			
 			</section>
 			</section>
-		</section>
-	</section>
-
+</div>
 
 	 <!-- footer part start-->
   <footer class="footer-area">

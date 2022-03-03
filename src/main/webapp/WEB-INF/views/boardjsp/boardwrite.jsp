@@ -144,11 +144,11 @@
         </div>
     </header>
     <!-- 헤더 끝-->
-	<div id="back" style="background-image: URL(../resources/img/qnaback.jpg); background-repeat: no-repeat; background-position: 50% 50%;">
+	<div id="back" style="background-image: URL(../resources/img/back3.jpg); background-repeat: no-repeat; background-position: 100% 100%;">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
                 <br></br>
-                <h1 class="heading-section">QnA</h1>
+                <h1 class="heading-section" style="margin-left:710px;">QnA</h1>
             <br></br>
         	</div>
         </div>

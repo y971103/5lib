@@ -84,17 +84,17 @@ $(document).ready(function () {
 	});
 });
 
- //shelf에서 제거
+ //ajax shelf에서 제거
 $(document).ready(function() {
 	
 	$('#deletewb').on('click', function(){
 		
 	$.ajax({
 		url: 'deleteShelf',
-		method: 'get',
+		method: 'post',
 		data: {'isbn' : '${book.isbn}', 'authors' : '${book.authors}', 'title' : '${book.title}', 'thumbnail' : '${book.thumbnail}'},
 		success: function () {
-			alert('삭제!');
+			alert('삭제 성공!');
 		},
 		error : function () {
 			alert('삭제 실패!');//에러메세지 출력

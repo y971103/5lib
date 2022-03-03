@@ -92,6 +92,13 @@ public class BookDAO {
 		return result;
 		
 	}
+	
+	//위시리스트 삭제
+	public int deleteShelf(HashMap<String, String> map) {
+		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		int result = mapper.deleteShelf(map);
+		return result;
+	}
 
 	//이런 책은 어떠세요 에서 쓸 부분
 	public List<Kakaobook> recommendKakaobook() {
@@ -113,10 +120,6 @@ public class BookDAO {
 		return category;
 	}
 	
-	public int deleteShelf(HashMap<String, String> map) {
-		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		int result = mapper.deleteShelf(map);
-		return result;
-	}
+
 
 }

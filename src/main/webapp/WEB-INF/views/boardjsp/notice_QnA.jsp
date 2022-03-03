@@ -128,7 +128,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
                 <br></br>
-                <h1 class="heading-section">Board</h1>
+                <h1 class="heading-section" style="margin-left:500px;">Board</h1>
             </div>
         </div>
         <div class="row">
