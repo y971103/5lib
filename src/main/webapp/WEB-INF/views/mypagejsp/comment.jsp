@@ -31,23 +31,35 @@
         <script>
         
             $(document).ready(function() {
-            	alert('jquery 시작');
+            	/*  alert('jquery 시작'); */
                 $('.textDiv').hide();
 
                 /* J-Query또는 JavaScript 공통 : 해당 이름을 불러올 때 (.클래스 이름)  (#아이디 이름) */
                 $('.sldwn').on('click',function(){
-                	
+                	/* alert('클릭시 보여주기'); */
+                    $('.textDiv').hide();
+	
                 	//지금 누른 제목의 ISBN
                 	var isbn = $(this).attr('isbn');
                 	//보여줘야할 대상의 id를 알아냄
                 	var targetId = 'textDiv' + isbn;
-                	
+                	/* alert('보여주기'+targetId); */
+                  
                 	$('#'+targetId).show();
+                                     	 	
+                });
+                  
                 	
                    /* $('.textDiv')를 모두 감준다
                    	위에 알아낸 id를 가진것만 펼쳐서 보여 */
+                   	//textDiv를 모두 감춘다. 
+                   	
+                   	//숨겨야 할 대상의 id를 찾아냄 
+            	/*	var isbn = $(this).attr('isbn');
+              		var targetId = 'textDiv' + isbn; */
+/*                   	$('#'+textDiv).hide();                     	 	
                 });
-                   
+                   */ 
 
                 $('#test').on('keyup', function() {
                     $('#test_cnt').html("("+$(this).val().length+" / 180)");
@@ -188,13 +200,15 @@
 													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
 													 <section class="textDiv" id="textDiv${shelf.isbn}">
 													   
-														<textarea cols="50" rows="5" style="resize: none;">		</textarea>
+														<textarea cols="70" rows="5" style="resize: none;">		</textarea>
 														<div id="test_cnt">(0 / 180)</div>
 													
 														<form>
 															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
 		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
-	                                					</form>		
+	                                					</form>
+	                                					
+	                                							
 	                       				       		 </section>	                              										 
 												</td>
 
