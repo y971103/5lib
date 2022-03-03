@@ -34,7 +34,13 @@
                 $('#textDiv').hide();
 
                 $('.sldwn').on('click',function(){
-                    $('#textDiv').slideToggle();
+                	//지금 누른 제목의 ISBN
+                	var isbn = $(this).attr('isbn');
+                	//보여줘야할 대상의 id를 알아냄
+                	var targetId = 'textDiv' + isbn;
+                	
+                   $('.textDiv')를 모두 감준다
+                   위에 알아낸 id를 가진것만 펼쳐서 보여준
                 });
                    
 
@@ -173,16 +179,16 @@
 												</td>
 												
 												<td>
-													<h3 class="sldwn title_font"> ${shelf.title}</h3>
-													 <section class id ="textDiv">
+													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
+													 <section class="textDiv" id="textDiv${shelf.isbn}">
 													   
-												<textarea id="test" cols="50" rows="5" style="resize: none;"></textarea>
+												<textarea cols="50" rows="5" style="resize: none;">		</textarea>
 													<div id="test_cnt">(0 / 180)</div>
 													<form>
-													<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
-	                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
-	                                				 </form>		
-	                                				 </textarea>
+														<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
+		                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
+	                                				</form>		
+	                                			
 	                       				       		 </section>	                              										 
 												</td>
 
@@ -202,34 +208,7 @@
                             </div>
                    </div>
                    <hr>  
-
-					
-					
-						
-						<!-- 찜한 도서 게시판 끝 -->
-						
-						<!-- 선택한 찜한 도서 썸네일과 리뷰 작성란 시작  -->
-                    <%--    <section id="textDiv">
-                            <div class="container" style="margin-bottom: 10px;">
-                                <div class="row" id="textDiv">       
-                                    <div style="padding-left: 7%;">                                   
-                                    </div>
-                                     <class="binfo">   
-                                       <section id="textDiv">
-													
-                                     <form>  
-                                     <div class="row">
-	                               <div class="col-12">
-	                                <textarea id="test" cols="77" rows="9" style="resize: none;">  </textarea>
-	                               <div id="test_cnt">(0 / 180)</div> 
-	                               <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 80%;">
-	                               </div>
-	                               </div>
-         					     </form>
-                                </div>
-                            </div>
-                       </section>      --%>
-
+	
 
 
 <!-- Scripts -->

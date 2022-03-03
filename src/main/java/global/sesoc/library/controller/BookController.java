@@ -235,9 +235,10 @@ public class BookController {
 		
 		// 카테고리별 분류 버튼 생성, 조회
 		@RequestMapping(value="kakaocategory",method=RequestMethod.GET)
-		public String kakaocategory(Model model) {
-			ArrayList<Kakaobook> kakaobooklist = dao.getCategory();
-			model.addAttribute("getCategory", kakaobooklist);
+		public String kakaocategory(Kakaobook kakaobook, Model model) {
+			String genre = kakaobook.getGenre();
+			ArrayList<Kakaobook> kakaobooklist = dao.getCategory(genre);
+			model.addAttribute("kakaobooklist", kakaobooklist);
 			return "bookjsp/kakaolibrary";
 		}
 		

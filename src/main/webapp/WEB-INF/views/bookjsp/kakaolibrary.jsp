@@ -43,6 +43,32 @@
 			page.value = currentPage;
 			form.submit();
 		}
+		
+		function humanities(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=인문";
+		}
+		
+		function novel(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=일반소설";
+		}
+		
+		function horror(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=추리/공포소설";
+		}
+		
+		function ForeignNovel(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=해외소설";
+		}
+		
+		function Poem(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=시";
+		}
+		
+		function SocialScience(){
+			location.href = "http://localhost:8888/library/book/kakaocategory?genre=사회과학";
+		}
+		
+		
 	</script>
 	
 </head>
@@ -140,6 +166,7 @@
 	                    </div>
 	             </div>
 	             
+<<<<<<< HEAD
 	              <div class="row"  style="width:125px; float:left; margin-left:20px;">
 		            <form id="genre" method="get" action="kakaocategory">
 						<input type="button" onclick="document.getElementById('인문').submit();" value="인문" class="gradient-btn" style="margin-top:0px;"><br>
@@ -148,6 +175,16 @@
 						<input type="button" onclick="document.getElementById('해외소설').submit();" value="해외소설" class="gradient-btn"><br>
 						<input type="button" onclick="document.getElementById('시').submit();" value="시" class="gradient-btn"><br>
 						<input type="button" onclick="document.getElementById('사회과학').submit();" value="사회과학" class="gradient-btn">
+=======
+	             <div class="row"  style="width:125px; float:left;">
+		            <form id="genre" method="get" action="kakaocategory">
+						<input type="button" onclick="humanities()" value="인문학"><br>
+						<input type="button" onclick="novel()" value="일반소설"><br>
+						<input type="button" onclick="horror();" value="추리/공포소설"><br>
+						<input type="button" onclick="ForeignNovel();" value="해외소설"><br>
+						<input type="button" onclick="Poem();" value="시"><br>
+						<input type="button" onclick="SocialScience();" value="사회과학"><br>
+>>>>>>> 5e1944a750f2303649cc6be42ef28b4aebb4ae2d
 					</form>
 	            </div>
            
