@@ -31,11 +31,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
-import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
-import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 
@@ -210,7 +208,7 @@ public class BookController {
 			return "bookjsp/index";
 		}
 		
-							
+		// 라이브러리 정보 표출					
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
 		public String kakaolibrary(
 				@RequestParam(value="page", defaultValue="1") int page//페이징 변수
@@ -235,15 +233,17 @@ public class BookController {
 		}
 		
 		
-		
+		// 카테고리별 분류 버튼 생성, 조회
 		@RequestMapping(value="kakaocategory",method=RequestMethod.GET)
-		public String kakaocategory(Kakaobook kakaobook , Model model) {
-			// 카테고리별 분류 버튼 생성
-			String category = dao.getCategory(kakaobook);
-			
+		public String kakaocategory(Model model) {
+			ArrayList<Kakaobook> kakaobooklist = dao.getCategory();
+			model.addAttribute("getCategory", kakaobooklist);
 			return "bookjsp/kakaolibrary";
 		}
 		
+		
+		
+		// 책 정보 표출
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
