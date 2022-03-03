@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="../resources/css/style.css">
     
       <link rel="stylesheet" href="../resources/css/search.css">
+      
+      <link rel="stylesheet" href="../resources/css/genreBtn.css">
     
      <!-- darkMode CSS -->
     <link rel="stylesheet" href="../resources/css/dark.css">  
@@ -138,19 +140,19 @@
 	                    </div>
 	             </div>
 	             
-	              <div class="row"  style="width:125px; float:left;">
+	              <div class="row"  style="width:125px; float:left; margin-left:20px;">
 		            <form id="genre" method="get" action="kakaocategory">
-						<input type="button" onclick="document.getElementById('인문').submit();" value="인문"><br>
-						<input type="button" onclick="document.getElementById('일반소설').submit();" value="일반소설"><br>
-						<input type="button" onclick="document.getElementById('추리/공포소설').submit();" value="추리/공포소설"><br>
-						<input type="button" onclick="document.getElementById('해외소설').submit();" value="해외소설"><br>
-						<input type="button" onclick="document.getElementById('시').submit();" value="시"><br>
-						<input type="button" onclick="document.getElementById('사회과학').submit();" value="사회과학">
+						<input type="button" onclick="document.getElementById('인문').submit();" value="인문" class="gradient-btn" style="margin-top:0px;"><br>
+						<input type="button" onclick="document.getElementById('일반소설').submit();" value="일반소설" class="gradient-btn"><br>
+						<input type="button" onclick="document.getElementById('추리/공포소설').submit();" value="추리/공포소설" class="gradient-btn"><br>
+						<input type="button" onclick="document.getElementById('해외소설').submit();" value="해외소설" class="gradient-btn"><br>
+						<input type="button" onclick="document.getElementById('시').submit();" value="시" class="gradient-btn"><br>
+						<input type="button" onclick="document.getElementById('사회과학').submit();" value="사회과학" class="gradient-btn">
 					</form>
 	            </div>
            
             <div class="row" style="margin-left: 11%;">
-         		<div class="row" >
+         		<div class="row" style="margin-left:15px;">
                		<c:forEach var="book" items="${kakaobooklist}">
                     	<div style="margin-bottom:25px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
@@ -165,7 +167,7 @@
             </div>
             <br>
             <!-- 페이지 이동 부분 -->
-		   <div id="navigator" class="navigator">          
+		   <div id="navigator" class="navigator" style="padding-left: 610px;">          
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
 				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
@@ -183,10 +185,9 @@
 	
 	
 	<!-- /페이지 이동 끝 -->    
-	 <!-- footer part start-->
+ <!-- footer part start-->
   <footer class="footer-area">
     <div class="container">
-         <div class="container">
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-5">
                 <div class="single-footer-widget">
@@ -201,7 +202,7 @@
 
                 </div>
             </div>
-       </div>   
+            
             <div class="col-sm-6 col-md-4">
                     <div class="single-footer-widget">
                        <div class="darkmode">
