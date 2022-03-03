@@ -543,4 +543,6 @@ create sequence essay_seq;
 create sequence review_seq;   
 
 -- shelf(내 서재)에 사용할 시퀀스
-create sequence shelf_seq;      
+create sequence shelf_seq; 
+-- 리뷰 번호에 사용할 시퀀스
+create sequence comments_seq;

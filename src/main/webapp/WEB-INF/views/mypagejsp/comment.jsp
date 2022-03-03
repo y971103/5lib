@@ -200,10 +200,14 @@
 												<td>
 													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
 													 <section class="textDiv" id="textDiv${shelf.isbn}">
-													   
-														<textarea name="content" cols="70" rows="5" style="resize: none;">		</textarea>
-														<div id="test_cnt">(0 / 180)</div>
 													
+														<form id="write" action="commentWrite" method="post">
+															<textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
+															<br>
+															<div id="test_cnt">(0 / 180)</div>
+															<input type="submit" id="button" value="저장">														
+														</form>											
+																									 
 														<form>
 															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
 		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		

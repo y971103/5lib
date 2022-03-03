@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Comments;
+import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
@@ -134,21 +135,22 @@ public class MypageController {
 		return "mypagejsp/comment";
 	}
 	
-
-	// 코멘트 작성하기
-//	@RequestMapping(value="comment", method=RequestMethod.GET)
-//	public String insertComments (Comments comments, HttpSession session, Model model) {
-//		
-//		String id = (String) session.getAttribute("loginId"); 
-//		comments.setId(id);
-//		
-//		logger.debug("저장할 내 서재 책 정보: {}", comments);
-//		return "mypagejsp/comment";
-//		//dao.insertComments(comments);
-//		
-//		//return "redirect:comment?booknum="+ comments.getBooknum();
-//	}
-	
+	//코멘트 작성하기
+	@RequestMapping (value="commentWrite", method=RequestMethod.POST)
+	public String commentWrite(
+			HttpSession session
+			, Model model
+			, Comments comments ) {
+		
+		//세션에서 로그인한 사용자의 아이디를 읽어서 essay객체의 작성자 정보에 세팅
+		String id = (String) session.getAttribute("loginId");
+		comments.setId(id);
+		
+		logger.debug("저장할 리뷰 글 내용 정보 : {}", comments);
+		
+		dao.insertComments(comments);
+		return "mypagejsp/comment";
+	}
 	
 	// 등록한 책 코멘트 삭제하기 
 	@RequestMapping (value="deleteComment", method=RequestMethod.GET)
