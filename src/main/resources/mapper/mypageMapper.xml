@@ -9,16 +9,15 @@
 	
 	<!-- 내 서재에 책 코멘트 등록 -->
 	<insert id="insertComments" parameterType="comments">
-		insert into comments 
-		(
+		insert into comments (
 			commentnum
 			, id
 			, content
 			, booknum
 		)
-		values 
-		(
+		values (
 			comments_seq.nextval				
+			, #{commentnum}
 			, #{id}
 			, #{content}
 			, #{booknum}
