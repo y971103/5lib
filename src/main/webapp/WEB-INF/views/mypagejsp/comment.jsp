@@ -35,12 +35,13 @@
                 $('.textDiv').hide();
 
                 /* J-Query또는 JavaScript 공통 : 해당 이름을 불러올 때 (.클래스 이름)  (#아이디 이름) */
+                
                 $('.sldwn').on('click',function(){
-                	/* alert('클릭시 보여주기'); */
-                    $('.textDiv').hide();
+                	/*  alert('클릭시 보여주기'); */
+                    $('.textDiv').hide(); //첫 보여지는 페이지는 전체 숨김
 	
                 	//지금 누른 제목의 ISBN
-                	var isbn = $(this).attr('isbn');
+                	var isbn = $(this).attr('isbn'); //변수명 isbn에 
                 	//보여줘야할 대상의 id를 알아냄
                 	var targetId = 'textDiv' + isbn;
                 	/* alert('보여주기'+targetId); */
@@ -200,7 +201,7 @@
 													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
 													 <section class="textDiv" id="textDiv${shelf.isbn}">
 													   
-														<textarea cols="70" rows="5" style="resize: none;">		</textarea>
+														<textarea name="content" cols="70" rows="5" style="resize: none;">		</textarea>
 														<div id="test_cnt">(0 / 180)</div>
 													
 														<form>

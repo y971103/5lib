@@ -24,6 +24,8 @@
 		)
 	</insert>
 	
+	
+	
 	<!-- 등록한 내 서재 책 코멘트 삭제 -->
 	<delete id="deleteComments" parameterType="comments">
 		delete
