@@ -171,7 +171,7 @@
 	
 	
 	<!-- 카테고리별 분류 -->
-	<select id="getCategory" resultType="Kakaobook">
+	<select id="getCategory" parameterType="string" resultType="Kakaobook">
 		select 
 			*
 		from 
