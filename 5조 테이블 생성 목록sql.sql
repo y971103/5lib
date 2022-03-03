@@ -259,7 +259,7 @@ CREATE TABLE comments
    -- 회원 아이디
    id varchar2(20) NOT NULL,
    -- 책 번호
-   booknum number NOT NULL,
+   isbn varchar2(200) NOT NULL,
    PRIMARY KEY (commentnum)
 );
 
