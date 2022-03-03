@@ -113,9 +113,9 @@ public class BookDAO {
 	}
 	
 	// 카테고리별 분류 버튼 생성, 조회
-	public ArrayList<Kakaobook> getCategory() {
+	public ArrayList<Kakaobook> getCategory(String genre) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		ArrayList<Kakaobook> category = mapper.getCategory();
+		ArrayList<Kakaobook> category = mapper.getCategory(genre);
 		return category;
 	}
 	
