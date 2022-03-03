@@ -158,13 +158,16 @@
 	
 	<!-- 찜 삭제 -->
 	<delete id="deleteShelf" parameterType="map">
+	 
 		delete 
 		from
 			shelf
 		where
-			isbn = #{isbn}
-		and id = #{id}
+			isbn = #{deleteShelf.isbn}
+		and id = #{deleteShelf.id} 
+		
 	</delete>
+	
 	
 	
 	<!-- 카테고리별 분류 -->

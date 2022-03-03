@@ -34,6 +34,8 @@ public Kakaobook getKakaoBook(String isbn);
 public int getTotal(book_Search book_search);
 //위시리스트 저장
 public int addwishlist(HashMap<String, String> map);
+//위시리스트 삭제
+public int deleteShelf(HashMap<String, String> map);
 
 public List<Kakaobook> recommendKakaobook();
 
@@ -43,5 +45,4 @@ public ArrayList<Kakaobook> selectBestSeller();
 // 카테고리별 분류 버튼 생성
 public String getCategory(Kakaobook kakaobook);
 
-public int deleteShelf(HashMap<String, String> map);
 }

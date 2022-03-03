@@ -2,6 +2,7 @@ package global.sesoc.library.dao;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -31,6 +32,7 @@ public interface MypageMapper {
 	public ArrayList<Habit> selectTime(String id);
 
 	public int getTotal();
+
 
 
 	
