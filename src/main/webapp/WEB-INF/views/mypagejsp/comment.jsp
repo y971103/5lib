@@ -73,7 +73,7 @@
             });
             
 
-        });
+     
         
             
             
@@ -217,13 +217,7 @@
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
                                              <input type="submit" id="button" value="저장">                                         
                                           </form>  
-                                          <c:if test="${loginId == board.id}">
-											<!-- 현재글 삭제하기-->
-											<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
-											<!-- 현재글 수정하기-->
-											<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
-										</c:if>
-                                          
+                              
                                                                          
                                                                             
                                          
