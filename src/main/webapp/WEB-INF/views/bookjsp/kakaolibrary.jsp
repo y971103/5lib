@@ -166,7 +166,7 @@
 	                    </div>
 	             </div>
 	             
-	              <div class="row"  style="width:125px; float:left; margin-left:20px;">
+	              <div class="row"  style="width:125px; float:left; margin-left:10px;">
 		            <form id="genre" method="get" action="kakaocategory">
 						<input type="button" onclick="humanities()" value="인문" class="gradient-btn" style="margin-top:0px;"><br>
 						<input type="button" onclick="novel()" value="일반소설" class="gradient-btn"><br>

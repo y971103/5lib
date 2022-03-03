@@ -5,6 +5,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+    font-family: 'WandohopeR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
@@ -58,12 +65,12 @@ body {
 .gradient-btn {
   display: inline-block;
   width:150px;
-  padding: 1em 2em;
+  padding: 1em 1em;
   border-radius: 0;
   color: #ffffff;
-  margin-top: 15px;
-  font-weight: bold;
-  font-size:13px;
+  margin-top: 5px;
+  font-family: 'WandohopeR';
+  font-size:19px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
