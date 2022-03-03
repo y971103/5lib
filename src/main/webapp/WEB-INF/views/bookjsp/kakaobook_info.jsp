@@ -314,7 +314,7 @@ function reviewUpdateCancle(div) {
                     <form method="post" id="t1" onsubmit="return false;">
 	                    <button type="button" onclick="popOpen()" class="readbt">책 읽기</button>
 						<input type="hidden" id="time" name="time">
-						
+						<input type="hidden" name="isbn" value="${book.isbn}" />
 						<input type="button" id="wishbt" value="찜하기" class="readbt" >
 						 <input type="button" id="deletewb" value="찜삭제" class="readbt" >
 					</form>

@@ -55,11 +55,13 @@
         (
             id
             , time
+            , isbn
         )
     values
         (
             #{id}
             , #{time}
+            , #{isbn}
         )
 </insert>
 
@@ -78,7 +80,12 @@
 		  
 	  (select to_char(inputdate, 'month') as month  from habit 
 	  	 where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
-	     group by to_char(inputdate, 'month')) as month
+	     group by to_char(inputdate, 'month')) as month,
+	     
+	  (select count(distinct isbn) as isbn
+    	from habit 
+	  	 where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
+	     group by to_char(inputdate, 'month')) as isbn
 	  from
       habit
         where id = #{id}
