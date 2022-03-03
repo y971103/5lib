@@ -36,9 +36,7 @@
                 $('.sldwn').on('click',function(){
                     $('#textDiv').slideToggle();
                 });
-                
-                
-                
+                   
 
                 $('#test').on('keyup', function() {
                     $('#test_cnt').html("("+$(this).val().length+" / 180)");
@@ -176,15 +174,15 @@
 												
 												<td>
 													<h3 class="sldwn title_font" value="${shelf.title}"> ${shelf.title}</h3>
-													  <section id="textDiv">
-													<textarea id="test" cols="50" rows="5" style="resize: none;">  </textarea>	
+													 <section class id="textDiv">
+													   
+												<textarea id="test" cols="50" rows="5" style="resize: none;"></textarea>
 													<div id="test_cnt">(0 / 180)</div>
 													<form>
 													<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
 	                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
 	                                				 </form>		
-	                       				       		 </section>
-	                              										 
+	                       				       		 </section>	                              										 
 												</td>
 
                           						<td>${shelf.inputdate}</td>
