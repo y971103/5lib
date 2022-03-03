@@ -216,7 +216,18 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th style="width: 150px;"><h4>Q. 질문사항 :</h4></th>
+							<th style="width: 150px;">
+								<c:if test="${sessionScope.loginId == 'admin'}">
+									<h4>
+										관리자 공지 : 
+									</h4>
+								</c:if>
+								<c:if test="${sessionScope.loginId != 'admin'}">
+									<h4>
+										Q. 질문사항 : 
+									</h4>
+								</c:if>
+							</th>
 							<td style="width: 1100px;" colspan="8">${board.title}</td>
 						</tr>
 
@@ -256,12 +267,14 @@
 			<h4>A. 관리자 답변</h4>
 			<!-- container div -->
 				<!-- 리플 작성 폼 시작 -->
-				<form id="replyform" action="replyWrite" method="post" onsubmit="return replyFormCheck();">
-					<input type="hidden" name="boardnum" value="${board.boardnum}">
-					<input type="text" name="content" id="retext" style="width:1000px;">
-					<input type="submit" value="확인" />
-				</form>
-					<br>
+				<c:if test="${sessionScope.loginId == 'admin'}">		
+					<form id="replyform" action="replyWrite" method="post" onsubmit="return replyFormCheck();">
+						<input type="hidden" name="boardnum" value="${board.boardnum}">
+						<input type="text" name="content" id="retext" style="width:1000px;">
+						<input type="submit" value="확인" />
+					</form>
+						<br>
+				</c:if>	
 					<!-- 리플 작성 폼 끝-->
 					
 					<!-- 리플 목록 출력 시작 -->
@@ -274,7 +287,12 @@
 				<table class="table table-striped" style="text-align:center:0px background:#465e44, solid #d0d4cb">
 					<c:forEach var="reply" items="${replylist}">
 					<tr>
-						<td style="width:100px">작성자 ID</td>
+						<c:if test="${reply.id == 'admin'}">
+							<td style="width:100px">관리자</td>
+						</c:if>
+						<c:if test="${reply.id != 'admin'}">
+							<td style="width:100px">작성자 ID</td>
+						</c:if>
 						<td style="width:1100px;" colspan="2">${reply.id}</td>
 				
 						<td style="width:1100px" colspan="4">${reply.content}</td>
