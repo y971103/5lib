@@ -38,6 +38,7 @@ public interface MypageMapper {
 
 	public ArrayList<Calender> selectCalender(String id);
 
+	public ArrayList<Habit> selectChart(String id);
 
 
 	
