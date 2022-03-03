@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
+import global.sesoc.library.vo.Calender;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
@@ -113,11 +114,14 @@ public class MypageController {
 	
 	@RequestMapping(value="habit", method=RequestMethod.GET)
 	public String habit(HttpSession session, Model model) {
-		logger.info("안녕하세여{}");
 		String id = (String) session.getAttribute("loginId");
 		ArrayList<Habit> habitlist = dao.selectTime(id);
 		model.addAttribute("habitlist", habitlist);
-		logger.info("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
+		logger.info(" habitlist:{}", habitlist);
+		
+		ArrayList<Calender> habitcalender = dao.selectCalender(id);
+		model.addAttribute("habitcalender", habitcalender);
+		logger.info("habitcalender:{}", habitcalender);
 		return "mypagejsp/habit";
 	}
 	

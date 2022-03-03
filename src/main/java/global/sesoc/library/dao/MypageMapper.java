@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 
+import global.sesoc.library.vo.Calender;
 import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
@@ -35,7 +36,7 @@ public interface MypageMapper {
 
 	public int commentWrite(Comments comments);
 
-
+	public ArrayList<Calender> selectCalender(String id);
 
 
 

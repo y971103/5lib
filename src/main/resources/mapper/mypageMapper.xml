@@ -124,6 +124,23 @@
 		title
 	</if>
 </select>
+
+<!-- 캘린더 -->
+	<select id="selectCalender" parameterType="string" resultType="calender">
+	  select
+	 	h.id
+	 	, h.isbn
+	 	, h.inputdate
+	 	, k.title 
+	 from
+	 	habit h, kakaobook k
+  	 where
+  		h.isbn = k.isbn 
+  		and
+  		id = #{id}
+  		
+  		
+	</select> 
 </mapper>
 
 	
