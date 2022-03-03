@@ -173,8 +173,8 @@
 												</td>
 												
 												<td>
-													<h3 class="sldwn title_font" value="${shelf.title}"> ${shelf.title}</h3>
-													 <section class id="textDiv">
+													<h3 class="sldwn title_font"> ${shelf.title}</h3>
+													 <section class id ="textDiv">
 													   
 												<textarea id="test" cols="50" rows="5" style="resize: none;"></textarea>
 													<div id="test_cnt">(0 / 180)</div>
@@ -182,6 +182,7 @@
 													<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
 	                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
 	                                				 </form>		
+	                                				 </textarea>
 	                       				       		 </section>	                              										 
 												</td>
 
