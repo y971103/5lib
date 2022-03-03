@@ -32,6 +32,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 	
+	 <link rel="stylesheet" href="../resources/css/genreBtn.css">
+	
 	 <!-- darkMode CSS -->
     <link rel="stylesheet" href="../resources/css/dark.css">  
     <script src="../resources/js/dark.js"></script>
@@ -134,7 +136,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="boardwrite" class="btn_2 text-cnter" style="margin-left: 90%; margin-bottom:15px;">글쓰기</a>
+                <a href="boardwrite" class="btn btn--diagonal btn--orange" style="margin-left: 87%; margin-bottom:15px;">글쓰기</a>
                 <div class="table-wrap">
                 
                 	

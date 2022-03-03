@@ -266,7 +266,7 @@ body {
   transition: all 0s ease;
 }
 
-.hologram-btn {
+#hologram-btn {
   display: inline-block;
   padding: 1.5em 2.6em;
   border-radius: 0;
@@ -280,7 +280,7 @@ body {
   position: relative;
   transition: all 250ms ease;
 }
-.hologram-btn:before, .hologram-btn:after {
+#hologram-btn:before, .hologram-btn:after {
   content: "";
   position: absolute;
   left: 0;
@@ -290,23 +290,24 @@ body {
   border: 2px solid;
   transition: 0.25s;
 }
-.hologram-btn:before {
+#hologram-btn:before {
   transform: translateX(-0.25em) translateY(0.25em);
 }
-.hologram-btn:after {
+#hologram-btn:after {
   transform: translateX(0.25em) translateY(-0.25em);
 }
-.hologram-btn:hover:before, .hologram-btn:hover:after {
+#hologram-btn:hover:before, .hologram-btn:hover:after {
   transform: translateX(0) translateY(0);
 }
 
 .btn {
   display: inline-block;
+  width:130px;
   padding: 1em 1.6em;
   border-radius: 3px;
   margin-top: 2rem;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
@@ -344,11 +345,11 @@ body {
   background-color: #00b300;
 }
 .btn--orange {
-  border: 2px solid #f28e0a;
-  color: #f28e0a;
+  border: 2px solid #99b19c;
+  color: #99b19c;
 }
 .btn--orange:after {
-  background-color: #f28e0a;
+  background-color: #99b19c;
 }
 .btn--blue {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);

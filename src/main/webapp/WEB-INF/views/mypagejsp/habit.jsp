@@ -144,7 +144,7 @@
          <div id="main">
                 <article id="Comment" class="panel">
                     <header>
-                        <h2 class="c_review" style="margin-left: 38%;">${sessionScope.loginId}님의 독서 습관</h2>
+                        <h2 class="c_review" style="margin-left: 38%;">${sessionScope.loginId} 님의 독서 습관</h2>
                     </header>
                     <section style="margin-left: 25%;">
                         <div class="container" style="margin-bottom: 10px;">
@@ -153,8 +153,10 @@
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
                                     <div class="c_title">
-                                     	  총 ${habit.time}분 동안 독서를 했습니다.<br>
-                                     	  ${habit.month}동안 ${habit.isbn}권을 ${habit.mtime}분 동안 읽었음
+                                    	※ 이번 달 ( ${habit.month} ) 독서량 집계 ※ <br>
+                                     	${habit.month} 월간 독서량은  [ ${habit.isbn} ] 권, <br> 
+                                     	 월간 독서시간은 [ ${habit.mtime} ] 분 입니다.<br>
+                                     	   
                                     </div>
                                 
                                 <%-- </class> --%>
@@ -165,7 +167,8 @@
                                  <%-- <class="binfo"> --%>   
                                
                                     <div class="c_title">
-                                     	  ${habit.inputdate}에 가장 많이 독서를 노력 했습니다.
+                                    	'${sessionScope.loginId}' 님의 총 누적 독서 시간은 [ ${habit.time} ]분 입니다.<br>
+                                     	 독서를 가장 선호하는 요일은 [ ${habit.inputdate} ]입니다.
                                     </div>
                                 </c:forEach>
                             </div>
