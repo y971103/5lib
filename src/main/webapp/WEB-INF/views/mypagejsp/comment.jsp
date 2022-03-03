@@ -304,7 +304,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../resources/js/jquery.nice-select.min.js"></script>
     <script src="../resources/js/gijgo.min.js"></script>
     <!-- contact js -->
+
     <script src="../resources/s/jquery.ajaxchimp.min.js"></script>   
+    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>	
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>

@@ -149,7 +149,7 @@
       
       	
       	
-         <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+         <table class="table table-striped" style="text-align: start; border: 1px solid #dddddd">
         <style>
         	table {
         	
@@ -164,34 +164,19 @@
             </thead>
             <tbody>
                <tr>
-               
-                  <td style="width:120px;"><h4>제목</h4></td>
-                  <td style="width:1100px;" colspan="4">${essay.title} </td>
-               </tr>
-              
-               <tr>
-                  <th style="width:120px;">ID: </th>
-                  <td style="width:100px;" colspan="2">${essay.id}</td>
-                
-
-                  <th style="width:100px;">조회수: </th>
-                  <td style="width:100px;" colspan="8">${essay.hits}</td>
-               </tr>
-               
-               <tr>
-                   <th style="width:100px;">작성일자: </th>
-               	  <td style="width:100px; border-bottom:1px solid" colspan="4">${essay.inputdate}</td>
-               </tr>
-         <%--       
-               <tr>
-                  <td>내용</td>
-                  <td colspan="2"${essay.content}</td> 
-               </tr>
-                --%>
-               
-               
-               <tr>
-				<td colspan="2" height="500">${essay.content}</td>
+                  	<th style="width:120px;">제목	 :</th>
+                  	<td style="width:400px;" colspan="3">${essay.title}</td>
+                  	<th style="width:70px;">ID : </th>
+                  	<td style="width:100px;border-bottom:1px solid #dee2e6;" colspan="2">${essay.id}</td>
+                	<th style="border-bottom:1px solid #dee2e6;">조회수: </th>
+                  	<td style="width:70px;border-bottom:1px solid #dee2e6;" colspan="1">${essay.hits}</td>
+				</tr>
+				<tr>
+                  <th style="width:100px;">작성일자 : </th>
+               	  <td style="width:570px; border-bottom:1px solid" colspan="4">${essay.inputdate}</td>
+               	</tr>
+               	<tr>
+					<td style= "height:500px; text-align:center;" colspan="10" > ${essay.content}</td>
 				</tr>
 				
 				
