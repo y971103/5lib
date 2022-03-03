@@ -296,16 +296,16 @@ CREATE TABLE genre_info
 );
 
 CREATE TABLE habit
-(
-   -- 회원 아이디
-   id varchar2(20) NOT NULL,
-   -- 독서 시간
-   time number,
-   -- 읽은 권수
-   amount number,
-   -- 타임과 비교할 현재 시각
-   inputdate date DEFAULT SYSDATE
-);
+   (
+  -- 회원 아이디
+  id varchar2(20) NOT NULL,
+  -- 독서 시간
+  time number,
+  -- 읽은 책 isbn값
+  isbn varchar(200) not null,
+  -- 타임과 비교할 현재 시각
+  inputdate date DEFAULT SYSDATE
+  );
 
 CREATE TABLE members
 (

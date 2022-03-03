@@ -4,7 +4,7 @@ package global.sesoc.library.vo;
 public class Habit {
 	private String id;
 	private int time;
-	private int amount;
+	private String isbn;
 	private String inputdate;
 	private String month;
 	private String mtime;
@@ -14,11 +14,11 @@ public class Habit {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Habit(String id, int time, int amount, String inputdate, String month, String mtime) {
+	public Habit(String id, int time, String isbn, String inputdate, String month, String mtime) {
 		super();
 		this.id = id;
 		this.time = time;
-		this.amount = amount;
+		this.isbn = isbn;
 		this.inputdate = inputdate;
 		this.month = month;
 		this.mtime = mtime;
@@ -40,12 +40,12 @@ public class Habit {
 		this.time = time;
 	}
 
-	public int getAmount() {
-		return amount;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getInputdate() {
@@ -74,9 +74,10 @@ public class Habit {
 
 	@Override
 	public String toString() {
-		return "Habit [id=" + id + ", time=" + time + ", amount=" + amount + ", inputdate=" + inputdate + ", month="
-				+ month + ", mtime=" + mtime + "]";
+		return "Habit [id=" + id + ", time=" + time + ", isbn=" + isbn + ", inputdate=" + inputdate + ", month=" + month
+				+ ", mtime=" + mtime + "]";
 	}
+
 	
 	
 }

@@ -31,6 +31,8 @@
      <!-- darkMode CSS -->
     <link rel="stylesheet" href="../resources/css/dark.css">  
     <script src="../resources/js/dark.js"></script>
+    <!-- jquery plugins here-->
+    <script src="../resources/js/jquery-1.12.1.min.js"></script>
     
     <script>
 		function pagingFormSubmit(currentPage) {
@@ -41,13 +43,6 @@
 		}
 	</script>
 	
-	<script>
-		function categorySubmit(genre) {
-			var genre = document.getElementById('genre');
-			genre.value = genre;
-			form.submit();
-		}
-	</script>
 </head>
 
 <body>
@@ -137,8 +132,6 @@
 
     <!--책 보여 주는데-->
     <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
-        
-          
 	             <div class="col-xl-6" style="margin-left:24%;">
 	                    <div class="section_tittle text-center">
 	                        <h2 style="color: white;">Book List</h2>
@@ -147,12 +140,12 @@
 	             
 	              <div class="row"  style="width:125px; float:left;">
 		            <form id="genre" method="get" action="kakaocategory">
-						<input type="button" onclick="categorySubmit("인문")" value="@인문" id="genre"><br>
-						<input type="button" onclick="categorySubmit("일반소설")" value="@일반소설" id="genre"><br>
-						<input type="button" onclick="categorySubmit("추리/공포소설")" value="@추리/공포소설" id="genre"><br>
-						<input type="button" onclick="categorySubmit("해외소설")" value="@해외소설" id="genre"><br>
-						<input type="button" onclick="categorySubmit("시")" value="@시" id="genre"><br>
-						<input type="button" onclick="categorySubmit("사회과학")" value="@사회과학" id="genre">
+						<input type="button" onclick="document.getElementById('인문').submit();" value="인문"><br>
+						<input type="button" onclick="document.getElementById('일반소설').submit();" value="일반소설"><br>
+						<input type="button" onclick="document.getElementById('추리/공포소설').submit();" value="추리/공포소설"><br>
+						<input type="button" onclick="document.getElementById('해외소설').submit();" value="해외소설"><br>
+						<input type="button" onclick="document.getElementById('시').submit();" value="시"><br>
+						<input type="button" onclick="document.getElementById('사회과학').submit();" value="사회과학">
 					</form>
 	            </div>
            
@@ -176,9 +169,9 @@
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
 				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
-					<c:if test="${counter == navi.currentPage}"><b></c:if>
+					<c:if test="${counter == navi.currentPage}"></c:if>
 						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-					<c:if test="${counter == navi.currentPage}"></b></c:if>
+					<c:if test="${counter == navi.currentPage}"></c:if>
 				</c:forEach>
 				&nbsp;&nbsp;
 				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
@@ -208,7 +201,7 @@
 
                 </div>
             </div>
-            
+       </div>   
             <div class="col-sm-6 col-md-4">
                     <div class="single-footer-widget">
                        <div class="darkmode">
@@ -244,8 +237,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </footer>
 <!-- footer part end-->
 
-    <!-- jquery plugins here-->
-    <script src="../resources/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="../resources/js/popper.min.js"></script>
     <!-- bootstrap js -->

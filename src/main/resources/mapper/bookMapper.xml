@@ -163,15 +163,15 @@
 		from
 			shelf
 		where
-			isbn = #{deleteShelf.isbn}
-		and id = #{deleteShelf.id} 
+			isbn = #{isbn}
+		and id = #{id} 
 		
 	</delete>
 	
 	
 	
 	<!-- 카테고리별 분류 -->
-	<select id="getCategory" parameterType="Kakaobook" resultType="String">
+	<select id="getCategory" resultType="Kakaobook">
 		select 
 			*
 		from 

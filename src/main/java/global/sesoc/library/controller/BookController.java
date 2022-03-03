@@ -31,11 +31,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import global.sesoc.library.dao.BookDAO;
 import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
-import global.sesoc.library.vo.Comments;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
-import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 
@@ -210,7 +208,7 @@ public class BookController {
 			return "bookjsp/index";
 		}
 		
-							
+		// 라이브러리 정보 표출					
 		@RequestMapping(value="kakaolibrary",method=RequestMethod.GET)
 		public String kakaolibrary(
 				@RequestParam(value="page", defaultValue="1") int page//페이징 변수
@@ -235,15 +233,17 @@ public class BookController {
 		}
 		
 		
-		
+		// 카테고리별 분류 버튼 생성, 조회
 		@RequestMapping(value="kakaocategory",method=RequestMethod.GET)
-		public String kakaocategory(Kakaobook kakaobook , Model model) {
-			// 카테고리별 분류 버튼 생성
-			String category = dao.getCategory(kakaobook);
-			
+		public String kakaocategory(Model model) {
+			ArrayList<Kakaobook> kakaobooklist = dao.getCategory();
+			model.addAttribute("getCategory", kakaobooklist);
 			return "bookjsp/kakaolibrary";
 		}
 		
+		
+		
+		// 책 정보 표출
 		@RequestMapping(value="kakaobook_info",method=RequestMethod.GET)
 		public String list(Model model, String isbn) {
 			Kakaobook book = dao.getKakaoBook(isbn);
@@ -263,7 +263,7 @@ public class BookController {
 					
 			return "bookjsp/viewer";
 		}
-			
+
 		
 		//ajax 세팅
 		@ResponseBody
@@ -271,7 +271,7 @@ public class BookController {
 		public void wishlist(HttpSession session, String isbn, String authors, String title, String thumbnail) {
 			//로그인한 사용자의 아이디를 세션에서 읽기
 			String id = (String) session.getAttribute("loginId");
-			logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}", isbn);
+			logger.info(">>>>>>>>>>>>>>>>>>수정한 내용>>>>>>>>>>>>>>>>>>>>>>{}", isbn);
 			
 			//ID와  ISBN을 HashMap에 저장
 			HashMap<String, String> map = new HashMap<String, String>();
@@ -286,22 +286,20 @@ public class BookController {
 			dao.addwishlist(map);
 			
 		}
-		
+
 		// shelf에 찜한 도서 삭제하기
 		@ResponseBody
-		@RequestMapping (value="/deleteShelf", method=RequestMethod.POST)
-		public void deleteShelf (HttpSession session, String isbn, String authors, String title, String thumbnail) {
+		@RequestMapping (value="deleteShelf", method=RequestMethod.POST)
+		public void deleteShelf (HttpSession session, String isbn) {
 			//로그인한 사용자의 아이디를 세션에서 읽기
 			String id = (String) session.getAttribute("loginId");
 			logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}", isbn);
+			logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{}", id);
 			
 			
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("id", id);
 			map.put("isbn", isbn);
-			map.put("authors", authors);
-			map.put("title", title);
-			map.put("thumbnail", thumbnail);
 			
 			//DAO로 맵을 전달
 			dao.deleteShelf(map);

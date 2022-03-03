@@ -42,7 +42,7 @@ public List<Kakaobook> recommendKakaobook();
 public int addHits(String isbn);
 
 public ArrayList<Kakaobook> selectBestSeller();
-// 카테고리별 분류 버튼 생성
-public String getCategory(Kakaobook kakaobook);
+// 카테고리별 분류 버튼 생성, 조회
+public ArrayList<Kakaobook> getCategory();
 
 }
