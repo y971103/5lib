@@ -163,8 +163,8 @@
 		from
 			shelf
 		where
-			isbn = #{deleteShelf.isbn}
-		and id = #{deleteShelf.id} 
+			isbn = #{isbn}
+		and id = #{id} 
 		
 	</delete>
 	

@@ -92,7 +92,7 @@ $(document).ready(function() {
 	$.ajax({
 		url: 'deleteShelf',
 		method: 'post',
-		data: {'isbn' : '${book.isbn}', 'authors' : '${book.authors}', 'title' : '${book.title}', 'thumbnail' : '${book.thumbnail}'},
+		data: {'isbn' : '${book.isbn}'},
 		success: function () {
 			alert('삭제 성공!');
 		},
