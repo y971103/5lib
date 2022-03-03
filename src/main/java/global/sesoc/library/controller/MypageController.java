@@ -135,19 +135,22 @@ public class MypageController {
 	}
 	
 
-	// 코멘트 작성하기
-//	@RequestMapping(value="comment", method=RequestMethod.GET)
-//	public String insertComments (Comments comments, HttpSession session, Model model) {
-//		
-//		String id = (String) session.getAttribute("loginId"); 
-//		comments.setId(id);
-//		
-//		logger.debug("저장할 내 서재 책 정보: {}", comments);
-//		return "mypagejsp/comment";
-//		//dao.insertComments(comments);
-//		
-//		//return "redirect:comment?booknum="+ comments.getBooknum();
-//	}
+	 //코멘트 작성하기
+	@RequestMapping(value="commentWrite", method=RequestMethod.POST)
+	public String commentWrite (Comments comments, HttpSession session, Model model) {
+		
+		String id = (String) session.getAttribute("loginId");
+		
+		/* Comments comments = new Comments(); */
+		
+		comments.setId(id);
+		
+		logger.debug("저장할 내 서재 책 정보: {}", comments);
+		
+		dao.commentWrite(comments);
+		
+		return "redirect:comment?isbn="+ comments.getIsbn();
+	}
 	
 	
 	// 등록한 책 코멘트 삭제하기 
@@ -158,7 +161,7 @@ public class MypageController {
 		comments.setId(id);
 		
 		dao.deleteComments(comments);
-		return "redirect:comment?booknum="+ comments.getBooknum();
+		return "redirect:comments?isbn="+ comments.getIsbn();
 	}
 	
 
@@ -173,7 +176,7 @@ public class MypageController {
 		//코멘트  수정 처리
 		dao.updateComments(comments);
 		//원래 화면으로 이동 
-		return "redirect:comment?booknum=" + comments.getBooknum();
+		return "redirect:comments?isbn="+ comments.getIsbn();
 	}
 	
 	

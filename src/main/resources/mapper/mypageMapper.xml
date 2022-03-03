@@ -8,19 +8,19 @@
 <mapper namespace="global.sesoc.library.dao.MypageMapper">
 	
 	<!-- 내 서재에 책 코멘트 등록 -->
-	<insert id="insertComments" parameterType="comments">
+	<insert id="commentWrite" parameterType="comments">
 		insert into comments (
 			commentnum
 			, id
 			, content
-			, booknum
+			, isbn
 		)
 		values (
 			comments_seq.nextval				
-			, #{commentnum}
+			
 			, #{id}
 			, #{content}
-			, #{booknum}
+			, #{isbn}
 		)
 	</insert>
 	

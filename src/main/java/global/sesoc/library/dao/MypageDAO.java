@@ -35,9 +35,9 @@ public class MypageDAO {
 	
 	
 	// 내 서재에 책 코멘트 등록
-	public int insertComments(Comments comments) {
+	public int commentWrite(Comments comments) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
-		int result = mapper.insertComments(comments);
+		int result = mapper.commentWrite(comments);
 		return result;
 	}
 	
@@ -91,6 +91,10 @@ public class MypageDAO {
 		int total = mapper.getTotal();
 		return total;
 	}
+
+
+
+
 
 
 

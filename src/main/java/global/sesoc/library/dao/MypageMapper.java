@@ -18,7 +18,7 @@ public interface MypageMapper {
 	public int countTime(Habit habit);
 	//내 서재에 책 코멘트 등록
 
-	public int insertComments(Comments comments);
+	
 	//등록한 책 코멘트 삭제
 	public int deleteComments(Comments comments);
 	//등록한 책 코멘트 수정
@@ -32,6 +32,10 @@ public interface MypageMapper {
 	public ArrayList<Habit> selectTime(String id);
 
 	public int getTotal();
+
+	public int commentWrite(Comments comments);
+
+
 
 
 

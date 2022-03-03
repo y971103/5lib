@@ -5,14 +5,14 @@ public class Comments {
 	private int commentnum;
 	private String content;
 	private String id;
-	private int booknum;
+	private String isbn;
 	
-	public Comments(int commentnum, String content, String id, int booknum) {
+	public Comments(int commentnum, String content, String id, String isbn) {
 		super();
 		this.commentnum = commentnum;
 		this.content = content;
 		this.id = id;
-		this.booknum = booknum;
+		this.isbn = isbn;
 	}
 	
 	
@@ -47,18 +47,21 @@ public class Comments {
 		this.id = id;
 	}
 
-	public int getBooknum() {
-		return booknum;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setBooknum(int booknum) {
-		this.booknum = booknum;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
+
+
 
 	@Override
 	public String toString() {
-		return "Comments [commentnum=" + commentnum + ", content=" + content + ", id=" + id + ", booknum=" + booknum
-				+ "]";
+		return "Comments [commentnum=" + commentnum + ", content=" + content + ", id=" + id + ", isbn=" + isbn + "]";
 	}
+
+	
 	
 }

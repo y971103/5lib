@@ -31,34 +31,34 @@
         
         <script>
             $(document).ready(function() {
-            	/*  alert('jquery 시작'); */
+               /*  alert('jquery 시작'); */
                 $('.textDiv').hide();
 
                 /* J-Query또는 JavaScript 공통 : 해당 이름을 불러올 때 (.클래스 이름)  (#아이디 이름) */
                 
                 $('.sldwn').on('click',function(){
-                	/*  alert('클릭시 보여주기'); */
+                   /*  alert('클릭시 보여주기'); */
                     $('.textDiv').hide(); //첫 보여지는 페이지는 전체 숨김
-	
-                	//지금 누른 제목의 ISBN
-                	var isbn = $(this).attr('isbn'); //변수명 isbn에 
-                	//보여줘야할 대상의 id를 알아냄
-                	var targetId = 'textDiv' + isbn;
-                	/* alert('보여주기'+targetId); */
+   
+                   //지금 누른 제목의 ISBN
+                   var isbn = $(this).attr('isbn'); //변수명 isbn에 
+                   //보여줘야할 대상의 id를 알아냄
+                   var targetId = 'textDiv' + isbn;
+                   /* alert('보여주기'+targetId); */
                   
-                	$('#'+targetId).show();
-                                     	 	
+                   $('#'+targetId).show();
+                                            
                 });
                   
-                	
+                   
                    /* $('.textDiv')를 모두 감준다
-                   	위에 알아낸 id를 가진것만 펼쳐서 보여 */
-                   	//textDiv를 모두 감춘다. 
-                   	
-                   	//숨겨야 할 대상의 id를 찾아냄 
-            	/*	var isbn = $(this).attr('isbn');
-              		var targetId = 'textDiv' + isbn; */
-/*                   	$('#'+textDiv).hide();                     	 	
+                      위에 알아낸 id를 가진것만 펼쳐서 보여 */
+                      //textDiv를 모두 감춘다. 
+                      
+                      //숨겨야 할 대상의 id를 찾아냄 
+               /*   var isbn = $(this).attr('isbn');
+                    var targetId = 'textDiv' + isbn; */
+/*                      $('#'+textDiv).hide();                            
                 });
                    */ 
 
@@ -74,17 +74,17 @@
         </script>
         
         <style type="text/css">
-        	.title_font{
-        		color: white;
-        		cursor: pointer;
-        		
-        	}
-        	
-        	
-        	.title_font:hover{
-        		color: black;
-        		transition-duration: 0.3s;
-        	}
+           .title_font{
+              color: white;
+              cursor: pointer;
+              
+           }
+           
+           
+           .title_font:hover{
+              color: black;
+              transition-duration: 0.3s;
+           }
         </style>
     </head>
     
@@ -132,7 +132,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                             <a class="dropdown-item" href="<c:url value="/board/notice_QnA"/>">Notice & QnA</a>
-                                        	<a class="dropdown-item" href="<c:url value="/essay/essay"/>">Essay</a>
+                                           <a class="dropdown-item" href="<c:url value="/essay/essay"/>">Essay</a>
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -141,13 +141,13 @@
                                 </ul>
                             </div>
                            <c:if test="${loginId != null}">
-							<h2>
-								${sessionScope.loginId}♡ <br>
-							</h2>
-							<a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="line-height:1.9em; width:80px;height:20px;font-family: 'CookieRun-Regular';font-size:12px;padding-right: 0px;padding-left: 18px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
-							<a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="line-height:1.9em; width:120px;height:20px;font-family: 'CookieRun-Regular';font-size:12px;padding-right: 0px;padding-left: 22px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
-							</c:if>
-							 <c:if test="${loginId == null}">
+                     <h2>
+                        ${sessionScope.loginId}♡ <br>
+                     </h2>
+                     <a href="<c:url value="/member/logout"/>" class="btn_1 text-cnter" style="line-height:1.9em; width:80px;height:20px;font-family: 'CookieRun-Regular';font-size:12px;padding-right: 0px;padding-left: 18px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">로그아웃</a>
+                     <a href="<c:url value="/member/update"/>" class="btn_2 text-cnter" style="line-height:1.9em; width:120px;height:20px;font-family: 'CookieRun-Regular';font-size:12px;padding-right: 0px;padding-left: 22px;padding-bottom: 25px;padding-top: 6px;margin-left: 5px;">회원정보 수정</a>
+                     </c:if>
+                      <c:if test="${loginId == null}">
                             <a href="<c:url value="/member/login_signup"/>" class="btn_1 d-none d-lg-block">Login / SignUp</a>
                             </c:if>
                     </div>
@@ -174,64 +174,69 @@
                 <!-- Comment 찜한 도서 보여주는 게시판 -->
                     <article id="Comment" class="panel">   
                     <header>
-					<h2>내 서재 리뷰</h2>
-				</header>                     
+               <h2>내 서재 리뷰</h2>
+            </header>                     
                         <section>
-                        	<div class="container" style="margin-bottom: 10px;">
-                            	<div class="row">
-                                	<div class="col-12">
-                                    	<div class="table-wrap">
-                                    		<table class="table myaccordion table-hover" id="accordion">
-                                    		<thead> </thead>
-                                    			<tbody>
-						                     <tr>
-						               		      <td>책 표지</td>	
-						                          <td>도서명</td>
-						                          <td>찜한 날짜 </td>   
-						                          <!-- <td>ISBN</td> -->             
-						                     </tr>
-											<c:forEach var="shelf" items="${shelflist}">
-				                  			 <tr>	
-												<!-- 찜한 서재 썸네일 보여주기 -->
-												<td style="width:150px; height:160px;">
-												<img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
-												</td>
-												
-												<!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
-												<td>
-													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
-													 <section class="textDiv" id="textDiv${shelf.isbn}">
-													   
-														<textarea name="content" cols="70" rows="5" style="resize: none;">		</textarea>
-														<div id="content">(0 / 180)</div>
-													
-														<form>
-															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/>
-		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>
-		                                 					
-	                                					</form>
-	                                					
-	                                							
-	                       				       		 </section>	                              										 
-												</td>
+                           <div class="container" style="margin-bottom: 10px;">
+                               <div class="row">
+                                   <div class="col-12">
+                                       <div class="table-wrap">
+                                          <table class="table myaccordion table-hover" id="accordion">
+                                          <thead> </thead>
+                                             <tbody>
+                                       <tr>
+                                             <td>책 표지</td>   
+                                            <td>도서명</td>
+                                            <td>찜한 날짜 </td>   
+                                            <!-- <td>ISBN</td> -->             
+                                       </tr>
+                                 <c:forEach var="shelf" items="${shelflist}">
+                                        <tr>   
+                                    <!-- 찜한 서재 썸네일 보여주기 -->
+                                    <td style="width:150px; height:160px;">
+                                    <img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
+                                    </td>
+                                    
+                                    <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
+                                    <td>
+                                       <h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
+                                        <section class="textDiv" id="textDiv${shelf.isbn}">
+                                          
+                                          <form id="write" action="commentWrite" method="post">
+                                             <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
+                                             <br>
+                                             <div id="test_cnt">(0 / 180)</div>
+                                             <input type="hidden" name="isbn" value="${shelf.isbn}" />
+                                             <input type="submit" id="button" value="저장">                                          
+                                          </form>                                 
+                                                                            
+                                          <!-- <form>
+                                             <input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/>
+                                                      <input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>
+                                                      
+                                                  </form> -->
+                                                  
+                                                        
+                                                    </section>                                                                
+                                    </td>
 
-                          						<td>${shelf.inputdate}</td>
-				         	 		 		 
-				                  			</tr>    
-				               				</c:forEach> 				               			
-						            	    </tbody>
-						                	</table>
-						            	</div>           
-						        	</div>
-						    	</div>
-							</div>
-						</section>
-						                                
+                                            <td>${shelf.inputdate}</td>
+                                       
+                                       </tr>    
+                                       </c:forEach>                                     
+                                     </tbody>
+                                     </table>
+                                 </div>           
+                             </div>
+                         </div>
+                     </div>
+                  </section>
+                                                  
                           </article>
                             </div>
                    </div>
                    <hr>  
-	
+   
 
 
 <!-- Scripts -->
@@ -284,7 +289,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 <!-- jquery plugins here-->
 
-	<script src="../resources/js/jquery-1.12.1.min.js"></script>
+   <script src="../resources/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="../resources/js/popper.min.js"></script>
     <!-- bootstrap js -->
@@ -299,7 +304,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../resources/js/jquery.nice-select.min.js"></script>
     <script src="../resources/js/gijgo.min.js"></script>
     <!-- contact js -->
-    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>
+    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>   
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>
