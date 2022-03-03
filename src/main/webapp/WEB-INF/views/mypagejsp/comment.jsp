@@ -28,8 +28,8 @@
         <link rel="stylesheet" href="../resources/assets/css/main.css" />
         <link rel="stylesheet" href="../resources/css/mypage.css">
         <script src="../resources/js/jquery-1.12.1.min.js"></script>
-        <script>
         
+        <script>
             $(document).ready(function() {
             	/*  alert('jquery 시작'); */
                 $('.textDiv').hide();
@@ -79,6 +79,7 @@
         		cursor: pointer;
         		
         	}
+        	
         	
         	.title_font:hover{
         		color: black;
@@ -200,7 +201,10 @@
 												<td>
 													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
 													 <section class="textDiv" id="textDiv${shelf.isbn}">
-													
+													   
+														<textarea name="content" cols="70" rows="5" style="resize: none;">		</textarea>
+														<div id="content">(0 / 180)</div>
+	
 														<form id="write" action="commentWrite" method="post">
 															<textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
 															<br>
@@ -209,8 +213,9 @@
 														</form>											
 																									 
 														<form>
-															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
-		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
+															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/>
+		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>
+		                                 					
 	                                					</form>
 	                                					
 	                                							
