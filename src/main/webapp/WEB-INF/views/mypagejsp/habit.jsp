@@ -214,9 +214,9 @@
             type: 'line', 
             // 챠트를 그릴 데이타 label 부분 '${chart.month}', <- 이렇게 해보기
              data: { labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], 
-            datasets: [{ label: '!독서량!', 
+            datasets: [{ label: '독서량', 
             backgroundColor: 'transparent', 
-            borderColor: 'white', 
+            borderColor: 'black', 
             data: [
             	<c:forEach var="chart" items="${chartlist}" >
             		${chart.isbn},
@@ -227,7 +227,7 @@
             options: {responsive: false,
             	legend: {
     				labels: {
-    					fontColor: "white",
+    					fontColor: "black",
     					fontSize: 18
     				}
     			},
@@ -236,13 +236,13 @@
     					ticks: {
     						beginAtZero: true,
     						fontSize : 16,
-    						fontColor: "white"
+    						fontColor: "black"
     					}
     				}],
     				xAxes: [{
     					ticks: {
     						beginAtZero: true,
-    						fontColor: "white",
+    						fontColor: "black",
     						fontSize : 16
     					}
     				}],
