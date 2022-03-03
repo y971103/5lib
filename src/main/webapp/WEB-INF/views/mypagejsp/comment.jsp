@@ -31,16 +31,21 @@
         <script>
         
             $(document).ready(function() {
-                $('#textDiv').hide();
+            	alert('jquery 시작');
+                $('.textDiv').hide();
 
+                /* J-Query또는 JavaScript 공통 : 해당 이름을 불러올 때 (.클래스 이름)  (#아이디 이름) */
                 $('.sldwn').on('click',function(){
+                	
                 	//지금 누른 제목의 ISBN
                 	var isbn = $(this).attr('isbn');
                 	//보여줘야할 대상의 id를 알아냄
                 	var targetId = 'textDiv' + isbn;
                 	
-                   $('.textDiv')를 모두 감준다
-                   위에 알아낸 id를 가진것만 펼쳐서 보여준
+                	$('#'+targetId).show();
+                	
+                   /* $('.textDiv')를 모두 감준다
+                   	위에 알아낸 id를 가진것만 펼쳐서 보여 */
                 });
                    
 
@@ -173,22 +178,23 @@
 						                     </tr>
 											<c:forEach var="shelf" items="${shelflist}">
 				                  			 <tr>	
-												
+												<!-- 찜한 서재 썸네일 보여주기 -->
 												<td style="width:150px; height:160px;">
 												<img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
 												</td>
 												
+												<!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
 												<td>
 													<h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
 													 <section class="textDiv" id="textDiv${shelf.isbn}">
 													   
-												<textarea cols="50" rows="5" style="resize: none;">		</textarea>
-													<div id="test_cnt">(0 / 180)</div>
-													<form>
-														<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
-		                                 				<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
-	                                				</form>		
-	                                			
+														<textarea cols="50" rows="5" style="resize: none;">		</textarea>
+														<div id="test_cnt">(0 / 180)</div>
+													
+														<form>
+															<input type="submit" value="저장하기" style="margin-top: 0px; margin-left: 60%;"/><br>
+		                                 					<input type="submit" value="공유하기" style="margin-top: 0px; margin-left: 60%;"/>		
+	                                					</form>		
 	                       				       		 </section>	                              										 
 												</td>
 
