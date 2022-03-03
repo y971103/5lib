@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="global.sesoc.library.vo.Calender"%>
 
 <!DOCTYPE html>
 <html>
@@ -54,8 +56,21 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
-                  initialView: 'dayGridMonth'
-                });
+                  initialView: 'dayGridMonth',
+                events:[
+                	<%ArrayList<Calender> habitcalender = (ArrayList<Calender>) request.getAttribute("habitcalender");%>
+                	<%if (habitcalender != null) {%>
+                	<%for (Calender vo : habitcalender) {%>
+                	{
+                		title : '<%=vo.getTitle()%>',
+                		start : '<%=vo.getInputdate()%>',
+                		end : '<%=vo.getInputdate()%>',
+                		color: '#' + Math.round(Math.random() * 0xffffff).toString(16)
+                	},
+                	<%}
+                }%>
+                	]
+           		});
                 calendar.render();
               });
         </script>
@@ -135,6 +150,7 @@
         <!-- 헤더 끝-->
 <!--nav탭 드롭다운 보여주는 곳-->
         <body class="is-preload">
+        <div id='calendar' style="color:black;"></div>
             <!-- Wrapper-->
          <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
          <!-- Nav -->
@@ -143,7 +159,7 @@
                <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
-         <div id='calendar' style="color:black;"></div>
+         
          <br>
          <div id="main">
                 <article id="Comment" class="panel">
