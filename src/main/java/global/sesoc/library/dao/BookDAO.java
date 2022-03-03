@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
-import global.sesoc.library.vo.Shelf;
 import global.sesoc.library.vo.book_Search;
 
 @Repository
@@ -113,10 +112,10 @@ public class BookDAO {
 		return bestseller;
 	}
 	
-	// 카테고리별 분류 버튼 생성
-	public String getCategory(Kakaobook kakaobook) {
+	// 카테고리별 분류 버튼 생성, 조회
+	public ArrayList<Kakaobook> getCategory() {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-		String category = mapper.getCategory(kakaobook);
+		ArrayList<Kakaobook> category = mapper.getCategory();
 		return category;
 	}
 	
