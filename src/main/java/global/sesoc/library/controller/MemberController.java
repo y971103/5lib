@@ -97,7 +97,7 @@ public class MemberController {
 		String id =(String) session.getAttribute("loginId");
 		member.setId(id);
 		dao.updateMember(member);
-		return "redirect:/";
+		return "bookjsp/index";
 	}
 	
 	
