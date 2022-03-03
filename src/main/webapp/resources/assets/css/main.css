@@ -29,6 +29,20 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+@font-face {
+    font-family: 'HoengseongHanu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/HoengseongHanu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	line-height: 1;
 }
@@ -1407,8 +1421,9 @@ input, select, textarea {
 		}
 
 	strong, b, h1, h2, h3, h4, h5, h6 {	
-	  font-size: 30px;
-	  line-height: 28px;
+	  font-family: 'CookieRun-Regular';
+	  font-size: 23px;
+	  line-height: 26px;
 	  color: #0c3e72;
 	  font-weight: 600;
 	  line-height: 1.222;
@@ -1420,7 +1435,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 30px;
+		font-size: 25px;
 		letter-spacing: -0.015em;
 	}
 
