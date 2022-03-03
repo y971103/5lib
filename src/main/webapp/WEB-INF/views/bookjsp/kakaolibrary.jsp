@@ -40,6 +40,14 @@
 			form.submit();
 		}
 	</script>
+	
+	<script>
+		function categorySubmit(genre) {
+			var genre = document.getElementById('genre');
+			genre.value = genre;
+			form.submit();
+		}
+	</script>
 </head>
 
 <body>
@@ -129,8 +137,16 @@
 
     <!--책 보여 주는데-->
     <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
-        <div class="container">
+        
             <div class="row justify-content-center">
+	            <form id="genre" method="get" action="kakaocategory">
+					<input type="button" onclick="categorySubmit("인문")" value="@인문" id="genre"><br>
+					<input type="button" onclick="categorySubmit("일반소설")" value="@일반소설" id="genre"><br>
+					<input type="button" onclick="categorySubmit("추리/공포소설")" value="@추리/공포소설" id="genre"><br>
+					<input type="button" onclick="categorySubmit("해외소설")" value="@해외소설" id="genre"><br>
+					<input type="button" onclick="categorySubmit("시")" value="@시" id="genre"><br>
+					<input type="button" onclick="categorySubmit("사회과학")" value="@사회과학" id="genre">
+				</form>
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
                         <h2 style="color: white;">Book List</h2>
@@ -142,7 +158,7 @@
                		<c:forEach var="book" items="${kakaobooklist}">
                     	<div style="margin-bottom:8px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
-                          	<img src="download?filename=${book.thumbnail}" style="width:230px; height:333px;">
+                          	<img src="download?filename=${book.thumbnail}" style="width:260px; height:333px;">
                             <div style="margin-top:5px;">
                             </div>
                         </a>
@@ -174,6 +190,7 @@
 	 <!-- footer part start-->
   <footer class="footer-area">
     <div class="container">
+         <div class="container">
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-5">
                 <div class="single-footer-widget">
