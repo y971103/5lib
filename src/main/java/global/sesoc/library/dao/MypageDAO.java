@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import global.sesoc.library.vo.Board;
 import global.sesoc.library.vo.Calender;
 import global.sesoc.library.vo.Comments;
+import global.sesoc.library.vo.DChart;
 import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
@@ -100,11 +101,23 @@ public class MypageDAO {
 		return habitcalender;
 	}
 
+	//chart
 	public ArrayList<Habit> selectTotal(String id) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
 		ArrayList<Habit> chartlist = mapper.selectChart(id);
 		return chartlist;
 	}
+	
+	//Dchart
+	public ArrayList<DChart> selectDChart(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<DChart> dchartlist = mapper.selectDChart(id);
+		return dchartlist;
+	}
+	
+	
+	
+	
 
 
 

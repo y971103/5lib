@@ -16,6 +16,8 @@ CREATE TABLE kakaobook
    thumbnail varchar2(200),
    -- 책 번호(DB)
    booknum number,
+   -- 조회수
+   hits number (not null)
    -- 장르
    genre varchar2(200),
    PRIMARY KEY (isbn)
@@ -259,7 +261,7 @@ CREATE TABLE comments
    -- 회원 아이디
    id varchar2(20) NOT NULL,
    -- 책 번호
-   isbn varchar2(200) NOT NULL,
+   booknum number NOT NULL,
    PRIMARY KEY (commentnum)
 );
 
@@ -544,3 +546,6 @@ create sequence review_seq;
 
 -- shelf(내 서재)에 사용할 시퀀스
 create sequence shelf_seq;      
+
+--comments에 사용할 시퀀스
+create sequence comments_seq;

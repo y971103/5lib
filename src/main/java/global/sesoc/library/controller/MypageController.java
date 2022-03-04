@@ -25,6 +25,7 @@ import global.sesoc.library.dao.MypageDAO;
 import global.sesoc.library.util.PageNavigator;
 import global.sesoc.library.vo.Calender;
 import global.sesoc.library.vo.Comments;
+import global.sesoc.library.vo.DChart;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Review;
@@ -123,11 +124,20 @@ public class MypageController {
 		model.addAttribute("habitcalender", habitcalender);
 		logger.info("habitcalender:{}", habitcalender);
 		
+		//line chart
 		ArrayList<Habit> chartlist = dao.selectTotal(id);
 		model.addAttribute("chartlist", chartlist);
 		logger.info("habit.jsp를 가기 전에 실행되는 컨트롤러의 모델에 저장한 habitlist 목록:{}", habitlist);
 		logger.info("차트 목록:{}", chartlist);
+		
+		//doughnut chart
+		ArrayList<DChart> dchartlist = dao.selectDChart(id);
+		model.addAttribute("dchartlist", dchartlist);
+		logger.info("차트 목록:{}", dchartlist);
+		
+		
 		return "mypagejsp/habit";
+		 
 	}
 	
 	@RequestMapping(value="comment", method=RequestMethod.GET)

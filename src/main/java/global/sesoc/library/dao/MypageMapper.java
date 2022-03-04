@@ -9,6 +9,7 @@ import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.library.vo.Calender;
 import global.sesoc.library.vo.Comments;
+import global.sesoc.library.vo.DChart;
 import global.sesoc.library.vo.Essay;
 import global.sesoc.library.vo.Habit;
 import global.sesoc.library.vo.Shelf;
@@ -39,6 +40,8 @@ public interface MypageMapper {
 	public ArrayList<Calender> selectCalender(String id);
 
 	public ArrayList<Habit> selectChart(String id);
+	
+	public ArrayList<DChart> selectDChart(String id);
 
 
 	
