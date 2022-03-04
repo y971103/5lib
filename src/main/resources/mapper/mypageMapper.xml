@@ -113,14 +113,12 @@
 		resultType="DChart">
 		
 		select
-		k.genre, sum(k.hits) as hits
+			k.genre, sum(k.hits) as hits
 		from
-		habit h, kakaobook k
+			(select distinct isbn, id from habit) h, kakaobook k
 		where
-		h.isbn = k.isbn and
-		id = #{id}
-		group by
-		genre
+			h.isbn = k.isbn and	id = #{id}
+		group by genre
 
 	</select>
 
