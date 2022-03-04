@@ -204,9 +204,9 @@
                                           <thead> </thead>
                                              <tbody>
                                        <tr>
-                                            <td style="font-family: 'CookieRun-Regular';">● 책 표지</td>   
-                                            <td style="font-family: 'CookieRun-Regular';">● 도서명</td>
-                                            <td style="font-family: 'CookieRun-Regular';">● 찜한 날짜 </td>       
+                                            <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 책 표지</td>   
+                                            <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 도서명</td>
+                                            <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 찜한 날짜 </td>       
                                        </tr>
                                  <c:forEach var="shelf" items="${shelflist}">
                                         <tr>   
