@@ -309,6 +309,10 @@ CREATE TABLE habit
   inputdate date DEFAULT SYSDATE
   );
 
+
+alter table habit add hits number default 0 not null; -- 추가하기!!
+
+
 CREATE TABLE members
 (
    -- 회원 아이디
