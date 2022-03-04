@@ -89,14 +89,7 @@
                       div.innerHTML = str;
                    }
             });
-            
-
-     
-        
-            
-            
-            
-            
+          
         </script>
         
         <style type="text/css">
@@ -200,8 +193,8 @@
                 <!-- Comment 찜한 도서 보여주는 게시판 -->
                     <article id="Comment" class="panel">   
                     <header>
-               <h2>내 서재 리뷰</h2>
-            </header>                     
+                        <h2 style="text-align:center; color:white;">□ 내 서재 리뷰 □</h2>
+                  </header>                     
                         <section>
                            <div class="container" style="margin-bottom: 10px;">
                                <div class="row">
@@ -211,53 +204,42 @@
                                           <thead> </thead>
                                              <tbody>
                                        <tr>
-                                             <td>책 표지</td>   
-                                            <td>도서명</td>
-                                            <td>찜한 날짜 </td>   
-                                            <!-- <td>ISBN</td> -->             
+                                            <td style="font-family: 'CookieRun-Regular';">● 책 표지</td>   
+                                            <td style="font-family: 'CookieRun-Regular';">● 도서명</td>
+                                            <td style="font-family: 'CookieRun-Regular';">● 찜한 날짜 </td>       
                                        </tr>
                                  <c:forEach var="shelf" items="${shelflist}">
                                         <tr>   
                                     <!-- 찜한 서재 썸네일 보여주기 -->
                                     <td style="width:150px; height:160px;">
                                     <img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
+                                    
                                     </td>
                                     
                                     <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
                                     <td>
-                                       <h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
+                                       <h3 class="sldwn title_font"; isbn="${shelf.isbn}"; style="text-decoration: underline; margin-bottom: 5px"> ${shelf.title}</h3>
                                         <c:forEach var="memo" items="${commentslist}">
-                                       		<c:set var="mm" value="${memo.isbn}" />
-                                       		<c:set var="ss" value="${shelf.isbn}" />
-                                       			<c:if test="${mm == ss}">
-						                      		<p style="color:white;">${memo.content}</p>
-						                        </c:if>
-				                        </c:forEach>   
+                                             <c:set var="mm" value="${memo.isbn}" />
+                                             <c:set var="ss" value="${shelf.isbn}" />
+                                                <c:if test="${mm == ss}">
+                                                   
+                                              <p style="color:white;">${memo.content}</p>
+                                          </c:if>
+                                    </c:forEach>   
                                         <section class="textDiv" id="textDiv${shelf.isbn}"><br>
                                           
                                           <form id="write" action="commentWrite" method="post">
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
                                              <br>
-                                            <!--  <div id="test_cnt">(0 / 180)</div> -->
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
                                              <input type="submit" id="button" value="저장">                                         
                                           </form>  
-                              <!-- comment 리뷰 출력 -->
-                        <%--       <c:forEach var="shelf" items="${shelf.isbn}">
-                              <tr>
-                                 <td class="read">
-                                    <b>${shelf.comment}</b>
-                                 </td>
-                              </tr>
-                              </c:forEach> --%>
-                              
-                                                                         
-                                                                            
-                                         
+                        
                                        </section>                                                                
                                    </td>
 
-                                            <td>${shelf.inputdate}</td>
+                                            <td style="font-family: 'CookieRun-Regular';color:white;">${shelf.inputdate}</td>
                                        
                                        </tr>    
                                        </c:forEach>                                     
