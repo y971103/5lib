@@ -173,7 +173,7 @@
                                 <div style="padding-left: 7%; padding-top: 19px; color:white;" class="icon solid fa-hourglass fa-3x"></div>
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
-                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:yellow;">
+                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:#ebe461;">
                                     	※ 이번 달 ( ${habit.month} ) 독서량 집계 ※ <br>
                                      	${habit.month} 월간 독서량은  [ ${habit.isbn} ] 권, <br> 
                                      	 월간 독서시간은 [ ${habit.mtime} ] 분 입니다.<br>
@@ -183,7 +183,7 @@
                             <br><br>
 	                            <div class="row">       
 	                                	<div style="padding-left: 7%; padding-top: 8px; color:white;" class="icon solid fa-calendar-alt fa-3x"></div>                                
-		                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:yellow;">
+		                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:#ebe461;">
 		                                    	'${sessionScope.loginId}' 님의 총 누적 독서 시간은 [ ${habit.time} ]분 입니다.<br>
 		                                     	 독서를 가장 선호하는 요일은 [ ${habit.inputdate} ]입니다.<br><br>
 		                                    </div>

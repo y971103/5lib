@@ -17,21 +17,15 @@
 		<typeAlias type="global.sesoc.library.vo.Habit" alias="habit" />
 		<typeAlias type="global.sesoc.library.vo.Shelf" alias="shelf" />
 		<typeAlias type="global.sesoc.library.vo.Calender" alias="calender" />
-		<typeAlias type="global.sesoc.library.vo.DChart" alias="dchart" />
-		
-		<typeAlias type="global.sesoc.library.vo.CommunityVO" alias="community" />
-		<typeAlias type="global.sesoc.library.vo.Group_userVO" alias="group_user" /> 
-		<typeAlias type="global.sesoc.library.vo.GroupBoardVO" alias="groupboard" /> 
-		<typeAlias type="global.sesoc.library.vo.GroupReplyVO" alias="groupreply" />
-		
-
+		<typeAlias type="global.sesoc.library.vo.DChart" alias="dchart" />	
 	</typeAliases>
+	
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/boardMapper.xml" /> 
 		<mapper resource="mapper/essayMapper.xml" /> 
 		<mapper resource="mapper/bookMapper.xml" />  
 		<mapper resource="mapper/mypageMapper.xml" />
-		<mapper resource="mapper/groupMapper.xml" />
 	</mappers>
+	
 </configuration>
