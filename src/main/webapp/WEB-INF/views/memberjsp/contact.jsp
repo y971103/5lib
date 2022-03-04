@@ -105,8 +105,8 @@
 
 				<div class="box alt container">
 					<section class="feature left">
-						<a href="#" class="image icon solid fa-tags"><img src="../resources/images/pic09.jpg" alt="" /></a>
-						<div class="content">
+						<a href="#" class="image icon solid fa-tags"><img src="../resources/images/pic05.jpg" alt="" /></a>
+						<div class="content" style="line-height:30px;">
 							<h3>Project Purpose</h3>
 							<br>
 							물리적인 도서의 구입량이 급감하고 있는 반면, 현대인이 인터넷에 <br>
@@ -134,14 +134,14 @@
 						<a href="#" class="image icon solid fa-address-book"><img src="../resources/images/pic03.jpg" alt="" /></a>
 						<div class="content">
 							<h3>About Team</h3>
-							<table>
+							<table id="info">
 								<tr>
-									<td><strong>Company</strong></td><br>
+									<td style="padding-bottom:6px;"><strong>Company</strong></td><br>
 									<td>KITA IT Academy</td>
 									
 								</tr>
 								<tr>
-									<td><strong>Team Name</strong></td><br>
+									<td style="padding-bottom:6px;"><strong>Team Name</strong></td><br>
 									<td>Digital Master Team 5</td>
 									
 								</tr>
@@ -154,11 +154,11 @@
 					</section>
 					<section class="feature right">
 						<a href="#" class="image icon solid fa-map-marker-alt"><img src="../resources/images/pic11.jpg" alt="" /></a>
-						<div class="content">
-							<h3>Location</h3><br><br>
-							<p>(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
-							<p>한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
-							<p><strong>전화</strong> 02-6000-5378,5379 &nbsp;&nbsp;  <strong>팩스</strong> 02-6000-5066</p>
+						<div class="content" style="line-height:30px;">
+							<h3 id="address">Location</h3><br><br>
+							<p id="address">(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
+							<p id="address">한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
+							<p id="address"><strong>전화</strong> 02-6000-5378,5379 &nbsp;&nbsp;  <strong>팩스</strong> 02-6000-5066</p>
 						</div>
 					</section>
 				</div>
