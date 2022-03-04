@@ -1,7 +1,7 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Library</title>
+    <title>Martine</title>
     <link rel="icon" href="../resources/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -26,55 +26,10 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
     
-      <link rel="stylesheet" href="../resources/css/search.css">
-      
-      <link rel="stylesheet" href="../resources/css/genreBtn.css">
-    
-     <!-- darkMode CSS -->
+    <link rel="stylesheet" href="../resources/css/search.css">
+    <!-- darkMode CSS -->
     <link rel="stylesheet" href="../resources/css/dark.css">  
     <script src="../resources/js/dark.js"></script>
-    <!-- jquery plugins here-->
-    <script src="../resources/js/jquery-1.12.1.min.js"></script>
-    
-    <script>
-		function pagingFormSubmit(currentPage) {
-			var form = document.getElementById('pagingForm');
-			var page = document.getElementById('page');
-			page.value = currentPage;
-			form.submit();
-		}
-		
-		function total(){
-			location.href = "http://localhost:8888/library/book/kakaolibrary";
-		}
-		
-		function humanities(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=인문";
-		}
-		
-		function novel(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=일반소설";
-		}
-		
-		function horror(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=추리/공포소설";
-		}
-		
-		function ForeignNovel(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=해외소설";
-		}
-		
-		function Poem(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=시";
-		}
-		
-		function SocialScience(){
-			location.href = "http://localhost:8888/library/book/kakaocategory?genre=사회과학";
-		}
-		
-		
-	</script>
-	
 </head>
 
 <body>
@@ -85,7 +40,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="<c:url value="/book/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="<c:url value="/member/index"/>"> <img src="../resources/img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -96,7 +51,7 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<c:url value="/book/index"/>">Home</a>
+                                        <a class="nav-link" href="<c:url value="/member/index"/>">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<c:url value="/book/kakaolibrary"/>">Library</a>
@@ -125,7 +80,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" style="padding-bottom:0px;" href="<c:url value="/member/contact"/>">Contact</a>
+                                        <a class="nav-link" href="<c:url value="/member/contact"/>">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -147,77 +102,38 @@
     </header>
     <!-- 헤더 끝-->
 
-    <!-- Header part end-->
-    
-    <!-- 검색폼 -->
-	<form id="pagingForm" method="get" action="kakaolibrary">
-		<input type="hidden" name="page" id="page" />
-		<select name ="type" id="type">
-			<option value = "1">통합</option>
-			<option value = "2">제목</option>
-			<option value = "3">저자</option>
-		</select> 
-			<input type="text"  name="searchText" value="${searchText}" id="searchText" placeholder="검색어를 입력해 주세요"/>
-			<input type="button" onclick="pagingFormSubmit(1)" value="검색" id="searchBtn"><!-- 1페이지로 전달한다는 뜻 -->
-	</form>
-	<!-- /검색폼 --> 
-
-    <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background-color:#20592a;">
-	             <div class="col-xl-6" style="margin-left:24%;">
-	                    <div class="section_tittle text-center">
-	                        <h2 style="color: white;">Book List</h2>
-	                    </div>
-	             </div>
-	             
-	              <div class="row"  style="width:125px; float:left; margin-left:10px;">
-		            <form id="genre" method="get" action="kakaocategory">
-						<input type="button" onclick="total()" value="전체" class="gradient-btn" style="margin-top:0px;"><br>
-						<input type="button" onclick="humanities()" value="인문" class="gradient-btn""><br>
-						<input type="button" onclick="novel()" value="일반소설" class="gradient-btn"><br>
-						<input type="button" onclick="horror();" value="추리/공포소설" class="gradient-btn"><br>
-						<input type="button" onclick="ForeignNovel();" value="해외소설" class="gradient-btn"><br>
-						<input type="button" onclick="Poem();" value="시" class="gradient-btn"><br>
-						<input type="button" onclick="SocialScience();" value="사회과학" class="gradient-btn">
-
-					</form>
-	            </div>
-           
-            <div class="row" style="margin-left: 11%;">
-         		<div class="row" style="margin-left:15px;">
-               		<c:forEach var="book" items="${kakaobooklist}">
-                    	<div style="margin-bottom:25px;">       
-                        <a href="kakaobook_info?isbn=${book.isbn}">
-                          	<img src="download?filename=${book.thumbnail}" style="width:260px; height:333px;">
-                            <div style="margin-top:5px;">
-                            </div>
-                        </a>
-                    	</div>
-                    	<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>     
-                	</c:forEach> 
-               </div>
+    <!-- 도서 슬라이드(배너)-->
+    <section class="client_review section_padding" style="padding-top: 63px; padding-bottom:70px; "  >
+        <div class="container">
+            <div class="row " style="height: 80px;">
+                <div class="col-xl-6">
+                    <div class="section_tittle">
+                        <h2>Best seller</h2>
+                    </div>
+                </div>
             </div>
-            <br>
-            <!-- 페이지 이동 부분 -->
-		   <div id="navigator" class="navigator" style="padding-left: 0px;">          
-				<a href="javascript:pagingFormSubmit(${navi.currentPage - navi.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage - 1})">◀</a> &nbsp;&nbsp;
-				<c:forEach var="counter" begin="${navi.startPageGroup}" end="${navi.endPageGroup}"> 
-					<c:if test="${counter == navi.currentPage}"></c:if>
-						<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-					<c:if test="${counter == navi.currentPage}"></c:if>
-				</c:forEach>
-				&nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage + 1})">▶</a> &nbsp;&nbsp;
-				<a href="javascript:pagingFormSubmit(${navi.currentPage + navi.pagePerGroup})">▷▷</a>
-			</div>
-        	
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="client_review_slider owl-carousel">
+                    	<c:forEach var="book" items="${bestseller}" begin="0" end="7">
+	                    	<a href="kakaobook_info?isbn=${book.isbn}">
+		                        <div class="photo">
+		                            <img src="download?filename=${book.thumbnail}" alt="">
+		                        </div>
+	                        </a>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+            	<a href="<c:url value="/book/kakaolibrary"/>" class="btn_1 text-cnter" style="margin-left: 475px;">Read More Books</a>
+        	</div>
+        </div>
+        
     </section>
-    <!--top place end-->
-	
-	
-	<!-- /페이지 이동 끝 -->    
- <!-- footer part start-->
+    <!-- 도서 슬라이드(배너) 끝-->
+    <!-- Header part end-->
+    <!-- footer part start-->
   <footer class="footer-area">
     <div class="container">
         <div class="row justify-content-between">
@@ -270,6 +186,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </footer>
 <!-- footer part end-->
 
+    <!-- jquery plugins here-->
+    <script src="../resources/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="../resources/js/popper.min.js"></script>
     <!-- bootstrap js -->
@@ -284,7 +202,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="../resources/js/jquery.nice-select.min.js"></script>
     <script src="../resources/js/gijgo.min.js"></script>
     <!-- contact js -->
-    <script src="../resources/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>

@@ -45,6 +45,7 @@
 			<mvc:mapping path="/board/replyEdit" />
 			<mvc:mapping path="/member/update" />
 			<mvc:mapping path="/book/kakaolibrary" />
+			<mvc:mapping path="/book/kakaobook_info" />
 			<mvc:mapping path="/board/habit" />
 			<mvc:mapping path="/board/shelf" />
 			<mvc:mapping path="/board/comment" />

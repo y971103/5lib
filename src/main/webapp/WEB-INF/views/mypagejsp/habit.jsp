@@ -213,7 +213,9 @@
             // 챠트 종류를 선택 
             type: 'line', 
             // 챠트를 그릴 데이타 label 부분 '${chart.month}', <- 이렇게 해보기
-             data: { labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], 
+             data: { labels: [<c:forEach var="chart" items="${chartlist}" >
+             					'${chart.month}',
+			        		 </c:forEach>], 
             datasets: [{ label: '독서량', 
             backgroundColor: 'transparent', 
             borderColor: 'black', 

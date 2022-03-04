@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.library.dao.MemberDAO;
-import global.sesoc.library.vo.Kakaobook;
 import global.sesoc.library.vo.Members;
 
 
@@ -48,7 +47,7 @@ public class MemberController {
 		if (result != 1) {
 			return "memberjsp/login_signup";
 		}
-		return "bookjsp/index";
+		return "redirect:../book/index";
 	}
 	
 	// 로그인
@@ -63,7 +62,7 @@ public class MemberController {
 		
 		if (member != null && member.getPassword().equals(password)) {
 			session.setAttribute("loginId", member.getId());
-			return "bookjsp/index";
+			return "redirect:../book/index";
 		}
 		//맞지 않으면 로그인폼으로 이동
 		else {
@@ -97,7 +96,7 @@ public class MemberController {
 		String id =(String) session.getAttribute("loginId");
 		member.setId(id);
 		dao.updateMember(member);
-		return "bookjsp/index";
+		return "redirect:../book/index";
 	}
 	
 	
