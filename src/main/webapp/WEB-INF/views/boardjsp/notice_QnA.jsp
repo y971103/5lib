@@ -152,15 +152,31 @@
                       </thead>
                       <tbody class="darkNotice">
                       	<c:forEach var="board" items="${boardlist}">
-                        <tr>
-                          <td scope="row">&nbsp&nbsp</td>
-                          <td>
-                          	<a href="read?boardnum=${board.boardnum}" class="darkTitle">${board.title}</a>
-                          </td>
-                          <td>${board.id}</td>
-                          <td>${board.hits}</td>
-                          <td>${board.inputdate}</td>
-                        </tr>
+                      		 <c:set var="id" value="${board.id}" />
+                      			<c:choose>
+                      			 <c:when test = "${id == 'ad***'}">
+                      			 	<tr>
+			                          <td scope="row">&nbsp&nbsp</td>
+			                          <td>
+			                          	<a href="read?boardnum=${board.boardnum}" class="darkTitle" style="color:red;">${board.title}</a>
+			                          </td>
+				                          <td style="color:red;">${board.id}</td>
+				                          <td style="color:red;">${board.hits}</td>
+				                          <td style="color:red;">${board.inputdate}</td>
+			                        </tr>
+                      			 </c:when>
+                      			 <c:otherwise>
+                      			 	<tr>
+			                          <td scope="row">&nbsp&nbsp</td>
+			                          <td>
+			                          	<a href="read?boardnum=${board.boardnum}" class="darkTitle">${board.title}</a>
+			                          </td>
+				                          <td>${board.id}</td>
+				                          <td>${board.hits}</td>
+				                          <td>${board.inputdate}</td>
+			                        </tr>
+                      			 </c:otherwise>
+                        	</c:choose>
                         </c:forEach>
                       </tbody>
                     </table>
