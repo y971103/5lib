@@ -150,26 +150,27 @@
         <!-- 헤더 끝-->
 <!--nav탭 드롭다운 보여주는 곳-->
         <body class="is-preload">
-        <div id='calendar' style="color:black;"></div>
-            <!-- Wrapper-->
-         <div id="wrapper" style="min-right: 0ch; padding-bottom: 300px;">
-         <!-- Nav -->
-         <nav id="nav">
+        <!-- Nav -->
+        <nav id="nav">
                <a href="<c:url value="/mypage/shelf"/>" class="icon solid fa-book-open"><span>Shelf</span></a>
                <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
+        <div id='calendar' style="color:black; width:800px; height:600px; margin-left:24%;"></div>
+            <!-- Wrapper-->
+         <div id="wrapper" style="min-right: 0ch; padding-bottom: 25px;">
          
+       
          <br>
-         <div id="main">
+         <div id="main" style="width:800px;">
                 <article id="Comment" class="panel">
                     <header>
-                        <h2 class="c_review" style="margin-left: 38%;">${sessionScope.loginId} 님의 독서 습관</h2>
+                        <h2 class="c_review" style="margin-left: 34%;">${sessionScope.loginId} 님의 독서 습관</h2>
                     </header>
                     <section style="margin-left: 25%;">
                         <div class="container" style="margin-bottom: 10px;">
                             <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-hourglass fa-3x"></div>
+                                <div style="padding-left: 7%; padding-top: 19px; color:white;" class="icon solid fa-hourglass fa-3x"></div>
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
                                     <div class="c_title">
@@ -183,7 +184,7 @@
                             </div>
                             <br><br>
                             <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 25px;" class="icon solid fa-calendar-alt fa-3x"></div>
+                                <div style="padding-left: 7%; padding-top: 8px; color:white;" class="icon solid fa-calendar-alt fa-3x"></div>
                                  <%-- <class="binfo"> --%>   
                                
                                     <div class="c_title">
@@ -196,11 +197,12 @@
                         </div>
                         
                     </section>
+                  		 <div class="container" style="padding-left:0px;"> 
+                 			<canvas id="myChart" style="width:740px; height:300px;"></canvas>
+            			</div> 
                 </div>
                 </article>
-                <div class="container"> 
-                 			<canvas id="myChart" style="width:800px; height:300px;"></canvas>
-            			</div> <!-- 부트스트랩 -->
+               
             </div>
          
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
@@ -216,9 +218,9 @@
              data: { labels: [<c:forEach var="chart" items="${chartlist}" >
              					'${chart.month}',
 			        		 </c:forEach>], 
-            datasets: [{ label: '독서량', 
+            datasets: [{ label: '올해 독서량', 
             backgroundColor: 'transparent', 
-            borderColor: 'black', 
+            borderColor: 'white', 
             data: [
             	<c:forEach var="chart" items="${chartlist}" >
             		${chart.isbn},
@@ -229,7 +231,7 @@
             options: {responsive: false,
             	legend: {
     				labels: {
-    					fontColor: "black",
+    					fontColor: "white",
     					fontSize: 18
     				}
     			},
@@ -238,13 +240,13 @@
     					ticks: {
     						beginAtZero: true,
     						fontSize : 16,
-    						fontColor: "black"
+    						fontColor: "white"
     					}
     				}],
     				xAxes: [{
     					ticks: {
     						beginAtZero: true,
-    						fontColor: "black",
+    						fontColor: "white",
     						fontSize : 16
     					}
     				}],
@@ -269,8 +271,8 @@
      							'${chart.genre}',
         					</c:forEach>], 
             datasets: [{ label: '내 취향', 
-            backgroundColor: 'transparent', 
-            borderColor: 'red', 
+            	backgroundColor: [ "#f79546", "#9bba57", "#4f81bb", "#5f497a", "#a94069", "#ff5f34"],
+            borderColor: 'transparent', 
             data: [
             	<c:forEach var="chart" items="${dchartlist}" >
             		${chart.hits},
@@ -279,8 +281,9 @@
             ] }] },
             // 옵션 
             options: {
-
+					
                 } }); 
+           
         </script>
         
          
