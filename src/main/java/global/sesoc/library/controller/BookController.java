@@ -261,7 +261,7 @@ public class BookController {
 		
 		@RequestMapping(value="viewer", method=RequestMethod.GET)
 		public String viewer() {
-					
+			
 			return "bookjsp/viewer";
 		}
 
@@ -312,7 +312,8 @@ public class BookController {
 		public String countTime(
 				HttpSession session
 				, Model model
-				, Habit habit ) {
+				, Habit habit
+				) {
 			
 			String id = (String) session.getAttribute("loginId");
 			habit.setId(id);

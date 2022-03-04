@@ -71,9 +71,11 @@ public class BookDAO {
 
 	public Kakaobook getKakaoBook(String isbn) {
 		BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+		MypageMapper mapper2 = sqlSession.getMapper(MypageMapper.class);
 		//해당 번호의 글정보 읽기
 		Kakaobook book = mapper.getKakaoBook(isbn);
 		mapper.addHits(isbn);
+		
 		return book;
 	}
 

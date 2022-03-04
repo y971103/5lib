@@ -46,6 +46,8 @@ public interface MypageMapper {
 
 	public ArrayList<Comments> listComments(String id);
 
+	//habit 테이블의 조회수 증가
+	//public void addHabitHits(String isbn);
 
 	
 	

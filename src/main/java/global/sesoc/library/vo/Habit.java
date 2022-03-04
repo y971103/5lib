@@ -8,6 +8,7 @@ public class Habit {
 	private String inputdate;
 	private String month;
 	private String mtime;
+	private int hits;
 	
 	public Habit() {
 		super();
@@ -71,13 +72,23 @@ public class Habit {
 	public void setMtime(String mtime) {
 		this.mtime = mtime;
 	}
+	
+
+	public int getHits() {
+		return hits;
+	}
+
+	public void setHits(int hits) {
+		this.hits = hits;
+	}
 
 	@Override
 	public String toString() {
 		return "Habit [id=" + id + ", time=" + time + ", isbn=" + isbn + ", inputdate=" + inputdate + ", month=" + month
-				+ ", mtime=" + mtime + "]";
+				+ ", mtime=" + mtime + ", hits=" + hits + "]";
 	}
 
+	
 	
 	
 }

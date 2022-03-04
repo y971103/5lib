@@ -101,7 +101,7 @@
 			where isbn = #{isbn}
 	</select>
 	
-	<!-- 조회수 1 증가 -->
+	<!-- bestseller용 조회수 1 증가 -->
 	<update id="addHits" parameterType="string">
 		update
 			kakaobook
@@ -110,7 +110,8 @@
 		where
 			isbn = #{isbn}
 	</update>
-
+	
+	
 	<!-- 베스트셀러 -->
 	<select id="selectBestSeller" resultType="Kakaobook">
 	select 
