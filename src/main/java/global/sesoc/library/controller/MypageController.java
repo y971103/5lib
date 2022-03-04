@@ -95,23 +95,6 @@ public class MypageController {
 	}
 	
 	
-	
-	
-	
-	/*
-	 * //북 인포 페이지 하나 더 만듦. 카카오 책 정보를 위한 북 인포 페이지
-	 * 
-	 * @RequestMapping(value="kakaobook_info",method=RequestMethod.GET) public
-	 * String list(Model model, String isbn) { Kakaobook book =
-	 * dao.getKakaoBook(isbn); List<Kakaobook> kakaobooklist =
-	 * dao.recommendKakaobook(); ArrayList<Review> reviewlist =
-	 * dao.listReview(isbn); logger.info("결과:{}",book); model.addAttribute("book",
-	 * book); model.addAttribute("kakaobooklist",kakaobooklist);
-	 * model.addAttribute("reviewlist", reviewlist); logger.info("결과:{}",book);
-	 * return "bookjsp/kakaobook_info"; }
-	 */
-	
-	
 	@RequestMapping(value="habit", method=RequestMethod.GET)
 	public String habit(HttpSession session, Model model) {
 		logger.info("안녕하세여{}");
@@ -130,6 +113,7 @@ public class MypageController {
 		return "mypagejsp/habit";
 	}
 	
+	// 이거 코멘트 목록 만들려고 가져온거야?
 	@RequestMapping(value="comment", method=RequestMethod.GET)
 	public String commentlist(@RequestParam(value="page", defaultValue="1") int page,
 			HttpSession session, Model model, Shelf shelf) {
@@ -149,13 +133,8 @@ public class MypageController {
 	public String commentWrite (Comments comments, HttpSession session, Model model) {
 		
 		String id = (String) session.getAttribute("loginId");
-		
-		/* Comments comments = new Comments(); */
-		
 		comments.setId(id);
-		
-		logger.debug("저장할 내 서재 책 정보: {}", comments);
-		
+		logger.debug("저장할 내 코멘트 정보: {}", comments);
 		dao.commentWrite(comments);
 		
 		return "redirect:comment?isbn="+ comments.getIsbn();
@@ -166,9 +145,9 @@ public class MypageController {
 	@RequestMapping (value="deleteComment", method=RequestMethod.GET)
 	public String deleteComments (Comments comments, HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
-		
 		comments.setId(id);
 		
+		logger.debug("삭제할 내 코멘트 정보: {}", comments);
 		dao.deleteComments(comments);
 		return "redirect:comments?isbn="+ comments.getIsbn();
 	}
@@ -178,10 +157,9 @@ public class MypageController {
 	// 등록한 내 서재 책 코멘트 수정하기
 	@RequestMapping (value="updateComment", method=RequestMethod.POST)
 	public String updateComments (HttpSession session, Comments comments) {
-		
 		String id = (String) session.getAttribute("loginId");
 		comments.setId(id);
-		
+		logger.debug("수정할 내 코멘트 정보: {}", comments);
 		//코멘트  수정 처리
 		dao.updateComments(comments);
 		//원래 화면으로 이동 
