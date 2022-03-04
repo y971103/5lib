@@ -35,7 +35,11 @@
 		set
 		board_type
 		= 2,
-		title = '[공지]'|| title
+		title=
+		case  when
+		title like '%[공지]%' then title
+		else '[공지]'|| title
+		end
 		where
 		id = 'admin'
 	</update>
