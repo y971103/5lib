@@ -258,21 +258,29 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-                    <!-- 라인차트 --> 
+                    <!-- 도넛차트 --> 
          <script> 
             var ctx = document.getElementById('doughnutChart').getContext('2d'); 
             var chart = new Chart(ctx, { 
             // 챠트 종류를 선택 
             type: 'doughnut', 
             // 챠트를 그릴 데이타
-             data: { labels: ['인문', '일반소설', '추리/공포소설', '해외소설', '시', '사회과학'], 
+             data: { labels: [<c:forEach var="chart" items="${dchartlist}" >
+     							'${chart.genre}',
+        					</c:forEach>], 
             datasets: [{ label: '내 취향', 
             backgroundColor: 'transparent', 
-            
             borderColor: 'red', 
-            data: [10, 5, 2, 20, 30, 45] }] },
+            data: [
+            	<c:forEach var="chart" items="${dchartlist}" >
+            		${chart.hits},
+            	</c:forEach>
+ 	
+            ] }] },
             // 옵션 
-            options: {} }); 
+            options: {
+
+                } }); 
         </script>
         
          

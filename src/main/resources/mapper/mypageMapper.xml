@@ -6,172 +6,177 @@
 <!-- 게시판 처리 SQL -->
 
 <mapper namespace="global.sesoc.library.dao.MypageMapper">
-	
+
 	<!-- 내 서재에 책 코멘트 등록 -->
 	<insert id="commentWrite" parameterType="comments">
 		insert into comments (
-			commentnum
-			, id
-			, content
-			, isbn
+		commentnum
+		, id
+		, content
+		, isbn
 		)
 		values (
-			comments_seq.nextval				
-			
-			, #{id}
-			, #{content}
-			, #{isbn}
+		comments_seq.nextval
+
+		, #{id}
+		, #{content}
+		, #{isbn}
 		)
 	</insert>
-	
-	
-	
+
+
+
 	<!-- 등록한 내 서재 책 코멘트 삭제 -->
 	<delete id="deleteComments" parameterType="comments">
 		delete
 		from
-			comments
+		comments
 		where
-			commentnum = #{commentnum}
-			and id = #{id}
+		commentnum = #{commentnum}
+		and id = #{id}
 	</delete>
-	
+
 	<!-- 등록한 내 서재 책 코멘트 내용 수정 -->
 	<update id="updateComments" parameterType="comments">
 		update
-			comments
+		comments
 		set
-			content = #{content}
+		content = #{content}
 		where
-			commentnum = #{commentnum}
-			and id = #{id}
+		commentnum = #{commentnum}
+		and id = #{id}
 	</update>
-	
 
-	
+
+
 	<!-- 독서시간 재기 -->
 	<insert id="countTime" parameterType="habit">
-    insert
-    into
-        habit
-        (
-            id
-            , time
-            , isbn
-        )
-    values
-        (
-            #{id}
-            , #{time}
-            , #{isbn}
-        )
-</insert>
-
-	<!-- id별 총 독서시간 -->
-   <select id="selectTime" parameterType="string" resultType="habit">
-    select
-     sum(time) as time,
-     
-      (select sum(time) as time  from habit 
-	      where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
-	      group by to_char(inputdate, 'month')) as mtime,
-	      
-	  (select day from (select to_char(inputdate, 'day') as day, count(to_char(inputdate, 'day')) as ct
-		  from habit where id=#{id} group by to_char(inputdate, 'day') 
-		  order by count(to_char(inputdate, 'day')) desc) where rownum=1) as inputdate,
-		  
-	  (select to_char(inputdate, 'month') as month  from habit 
-	  	 where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
-	     group by to_char(inputdate, 'month')) as month,
-	     
-	  (select count(distinct isbn) as isbn
-    	from habit 
-	  	 where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
-	     group by to_char(inputdate, 'month')) as isbn
-	  from
-      habit
-        where id = #{id}
-    group by id
-   </select>
-	
-	   <!-- 차트에 쓰일 쿼리 -->
-    <select id="selectChart" parameterType="string" resultType="habit">
-   select count(distinct isbn) as isbn,
-        to_char(inputdate, 'month') as month
-    	from habit 
-	  	 where id=#{id}
-	     group by to_char(inputdate, 'month')
-		order by to_char(inputdate, 'month')
-   </select>
-		<!-- 위시리스트 내용 목록 -->
-	<select id="listshelf" parameterType="string" resultType="shelf">
-		select 
-			isbn
-			, authors
-			, title
-			, to_char(inputdate, 'YYYY-MM-DD') inputdate
-			, thumbnail
-		from
-			shelf
-		where
-			id = #{id}
-		order by 
-			title
-	</select>
-	
-		
-	
-		<!-- 전체 위시리스트 개수 (검색 필터링 후) -->
-
-<select id="getTotal" parameterType="string" resultType="int">
-	select 
-		count(*)
-	from 
-		shelf 
-	<if test="_parameter != null">
-	where 
-		title
-	</if>
-</select>
-
-<!-- 캘린더 -->
-	<select id="selectCalender" parameterType="string" resultType="calender">
-	  select
-	 	h.id
-	 	, h.isbn
-	 	, h.inputdate
-	 	, k.title 
-	 from
-	 	habit h, kakaobook k
-  	 where
-  		h.isbn = k.isbn 
-  		and
-  		id = #{id}
-  		
-  		
-	</select> 
-</mapper>
-
-	
-	
-
-<!-- 
-<mapper namespace="global.sesoc.library.dao.MypageMapper">
-	<insert id="insertShelf" parameterType="shelf">
-	insert
-	into
+		insert
+		into
 		habit
 		(
-			inputdate 
-			, id
-			, isbn
-			)
+		id
+		, time
+		, isbn
+		)
 		values
-			(
-			#{inputdate} 
-			, #{id}
-			, #{isvn}
-			)
+		(
+		#{id}
+		, #{time}
+		, #{isbn}
+		)
 	</insert>
 
-</mapper> -->
+	<!-- id별 총 독서시간 -->
+	<select id="selectTime" parameterType="string"
+		resultType="habit">
+		select
+		sum(time) as time,
+
+		(select sum(time) as time from habit
+		where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
+		group by to_char(inputdate, 'month')) as mtime,
+
+		(select day from (select to_char(inputdate, 'day') as day,
+		count(to_char(inputdate, 'day')) as ct
+		from habit where id=#{id} group by to_char(inputdate, 'day')
+		order by count(to_char(inputdate, 'day')) desc) where rownum=1) as
+		inputdate,
+
+		(select to_char(inputdate, 'month') as month from habit
+		where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
+		group by to_char(inputdate, 'month')) as month,
+
+		(select count(distinct isbn) as isbn
+		from habit
+		where id=#{id} and to_char(inputdate, 'month')=to_char(sysdate, 'month')
+		group by to_char(inputdate, 'month')) as isbn
+		from
+		habit
+		where id = #{id}
+		group by id
+	</select>
+
+	<!-- 차트에 쓰일 쿼리 -->
+	<select id="selectChart" parameterType="string"
+		resultType="habit">
+		select count(distinct isbn) as isbn,
+		to_char(inputdate, 'month') as month
+		from habit
+		where id=#{id}
+		group by to_char(inputdate, 'month')
+		order by to_char(inputdate, 'month')
+	</select>
+
+	<!-- 도넛차트 -->
+	<select id="selectDChart" parameterType="string"
+		resultType="DChart">
+		
+		select
+		k.genre, sum(k.hits) as hits
+		from
+		habit h, kakaobook k
+		where
+		h.isbn = k.isbn and
+		id = #{id}
+		group by
+		genre
+
+	</select>
+
+	<!-- 위시리스트 내용 목록 -->
+	<select id="listshelf" parameterType="string" resultType="shelf">
+		select
+		isbn
+		, authors
+		, title
+		, to_char(inputdate, 'YYYY-MM-DD') inputdate
+		, thumbnail
+		from
+		shelf
+		where
+		id = #{id}
+		order by
+		title
+	</select>
+
+
+
+	<!-- 전체 위시리스트 개수 (검색 필터링 후) -->
+
+	<select id="getTotal" parameterType="string" resultType="int">
+		select
+		count(*)
+		from
+		shelf
+		<if test="_parameter != null">
+			where
+			title
+		</if>
+	</select>
+
+	<!-- 캘린더 -->
+	<select id="selectCalender" parameterType="string"
+		resultType="calender">
+		select
+		h.id
+		, h.isbn
+		, h.inputdate
+		, k.title
+		from
+		habit h, kakaobook k
+		where
+		h.isbn = k.isbn
+		and
+		id = #{id}
+
+
+	</select>
+</mapper>
+
+
+
+
+<!-- <mapper namespace="global.sesoc.library.dao.MypageMapper"> <insert id="insertShelf" 
+	parameterType="shelf"> insert into habit ( inputdate , id , isbn ) values 
+	( #{inputdate} , #{id} , #{isvn} ) </insert> </mapper> -->

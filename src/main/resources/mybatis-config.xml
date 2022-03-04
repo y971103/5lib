@@ -17,6 +17,7 @@
 		<typeAlias type="global.sesoc.library.vo.Habit" alias="habit" />
 		<typeAlias type="global.sesoc.library.vo.Shelf" alias="shelf" />
 		<typeAlias type="global.sesoc.library.vo.Calender" alias="calender" />
+		<typeAlias type="global.sesoc.library.vo.DChart" alias="dchart" />
 		
 		<typeAlias type="global.sesoc.library.vo.CommunityVO" alias="community" />
 		<typeAlias type="global.sesoc.library.vo.Group_userVO" alias="group_user" /> 
