@@ -44,6 +44,9 @@ public interface MypageMapper {
 	public ArrayList<DChart> selectDChart(String id);
 
 
+	public ArrayList<Comments> listComments(String id);
+
+
 	
 	
 }

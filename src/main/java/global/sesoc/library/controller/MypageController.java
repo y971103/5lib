@@ -131,6 +131,9 @@ public class MypageController {
 		int total = dao.getTotal();
 		PageNavigator navi = new PageNavigator(countPerPage, pagePerGroup, page, total); 
 		ArrayList<Shelf> shelflist = dao.listshelf(navi.getStartRecord(), navi.getCountPerPage(), id);
+		ArrayList<Comments> commentslist = dao.listComments(id);
+		model.addAttribute("commentslist", commentslist);
+		logger.info("commentslist:{}", commentslist);
 		model.addAttribute("shelflist", shelflist);
 		model.addAttribute("navi", navi);
 		logger.info("shelflist:{}", shelflist);

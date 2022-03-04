@@ -8,7 +8,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Martine</title>
+        <title>Lib-service</title>
         <link rel="icon" href="../resources/img/favicon.png">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -72,21 +72,21 @@
                 });
                    //리플 수정
                    function replyEditForm(replynum, boardnum, retext) {
-               	  	alert('리플을 수정하시겠습니까?');
-                   	//해당 리플번호를 붙여 생성한 <div>태그에 접근
-                   	var div = document.getElementById("div"+isbn);
-                   	
-                   	var str = '<form name="editForm' + replynum + '" action="replyEdit" method="post">';
-                   	str += '<input type="hidden" name="replynum" value="'+replynum+'">';
-                   	str += '<input type="hidden" name="boardnum" value="'+boardnum+'">';
-                   	str += '&nbsp;';
-                   	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
-                   	str += '&nbsp;';
-                   	str += '<a href="javascript:replyEdit(document.editForm' + replynum + ')">[저장]</a>';
-                   	str += '&nbsp;';
-                   	str += '<a href="javascript:replyEditCancle(document.getElementById(\'div' + replynum + '\'))">[취소]</a>';
-                   	str += '</form>';
-                   	div.innerHTML = str;
+                       alert('리플을 수정하시겠습니까?');
+                      //해당 리플번호를 붙여 생성한 <div>태그에 접근
+                      var div = document.getElementById("div"+isbn);
+                      
+                      var str = '<form name="editForm' + replynum + '" action="replyEdit" method="post">';
+                      str += '<input type="hidden" name="replynum" value="'+replynum+'">';
+                      str += '<input type="hidden" name="boardnum" value="'+boardnum+'">';
+                      str += '&nbsp;';
+                      str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
+                      str += '&nbsp;';
+                      str += '<a href="javascript:replyEdit(document.editForm' + replynum + ')">[저장]</a>';
+                      str += '&nbsp;';
+                      str += '<a href="javascript:replyEditCancle(document.getElementById(\'div' + replynum + '\'))">[취소]</a>';
+                      str += '</form>';
+                      div.innerHTML = str;
                    }
             });
             
@@ -221,32 +221,29 @@
                                     <!-- 찜한 서재 썸네일 보여주기 -->
                                     <td style="width:150px; height:160px;">
                                     <img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
+                                    
                                     </td>
                                     
                                     <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
                                     <td>
                                        <h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
+                                        <c:forEach var="memo" items="${commentslist}">
+                                       		<c:set var="mm" value="${memo.isbn}" />
+                                       		<c:set var="ss" value="${shelf.isbn}" />
+                                       			<c:if test="${mm == ss}">
+                                       				
+						                      		<p style="color:white;">${memo.content}</p>
+						                        </c:if>
+				                        </c:forEach>   
                                         <section class="textDiv" id="textDiv${shelf.isbn}"><br>
                                           
                                           <form id="write" action="commentWrite" method="post">
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
                                              <br>
-                                            <!--  <div id="test_cnt">(0 / 180)</div> -->
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
                                              <input type="submit" id="button" value="저장">                                         
                                           </form>  
-										<!-- comment 리뷰 출력 -->
-								<%-- 		<c:forEach var="shelf" items="${shelf.isbn}">
-										<tr>
-											<td class="read">
-												<b>${shelf.comment}</b>
-											</td>
-										</tr>
-										</c:forEach> --%>
-										
-                                                                         
-                                                                            
-                                         
+                        
                                        </section>                                                                
                                    </td>
 
@@ -336,7 +333,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- contact js -->
 
     <script src="../resources/s/jquery.ajaxchimp.min.js"></script>   
-    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>	
+    <script src="../resources/s/jquery.ajaxchimp.min.js"></script>   
     <script src="../resources/js/jquery.form.js"></script>
     <script src="../resources/js/jquery.validate.min.js"></script>
     <script src="../resources/js/mail-script.js"></script>

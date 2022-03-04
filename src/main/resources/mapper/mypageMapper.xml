@@ -170,6 +170,16 @@
 
 
 	</select>
+	
+	<select id="listComments" parameterType="string" resultType="comments">
+		select
+			*
+		from 
+			comments
+		where 
+			id = #{id}
+	</select>
+	
 </mapper>
 
 

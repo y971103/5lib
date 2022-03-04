@@ -114,6 +114,14 @@ public class MypageDAO {
 		ArrayList<DChart> dchartlist = mapper.selectDChart(id);
 		return dchartlist;
 	}
+
+
+
+	public ArrayList<Comments> listComments(String id) {
+		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
+		ArrayList<Comments> listComments = mapper.listComments(id);
+		return listComments;
+	}
 	
 	
 	
