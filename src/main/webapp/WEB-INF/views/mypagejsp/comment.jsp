@@ -70,10 +70,28 @@
                         $('#test_cnt').html("(180 / 180)");
                     }
                 });
+                   //리플 수정
+                   function replyEditForm(replynum, boardnum, retext) {
+               	  	alert('리플을 수정하시겠습니까?');
+                   	//해당 리플번호를 붙여 생성한 <div>태그에 접근
+                   	var div = document.getElementById("div"+isbn);
+                   	
+                   	var str = '<form name="editForm' + replynum + '" action="replyEdit" method="post">';
+                   	str += '<input type="hidden" name="replynum" value="'+replynum+'">';
+                   	str += '<input type="hidden" name="boardnum" value="'+boardnum+'">';
+                   	str += '&nbsp;';
+                   	str += '<input type="text" name="content" value="' + retext + '" style="width:530px;">';
+                   	str += '&nbsp;';
+                   	str += '<a href="javascript:replyEdit(document.editForm' + replynum + ')">[저장]</a>';
+                   	str += '&nbsp;';
+                   	str += '<a href="javascript:replyEditCancle(document.getElementById(\'div' + replynum + '\'))">[취소]</a>';
+                   	str += '</form>';
+                   	div.innerHTML = str;
+                   }
             });
             
 
-        });
+     
         
             
             
@@ -208,7 +226,7 @@
                                     <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
                                     <td>
                                        <h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
-                                        <section class="textDiv" id="textDiv${shelf.isbn}">
+                                        <section class="textDiv" id="textDiv${shelf.isbn}"><br>
                                           
                                           <form id="write" action="commentWrite" method="post">
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
@@ -217,13 +235,21 @@
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
                                              <input type="submit" id="button" value="저장">                                         
                                           </form>  
-                                          <c:if test="${loginId == board.id}">
-											<!-- 현재글 삭제하기-->
-											<a href="javascript:deleteCheck(${board.boardnum})">삭제하기</a>&nbsp;&nbsp;&nbsp;
-											<!-- 현재글 수정하기-->
-											<a href="edit?boardnum=${board.boardnum}">수정하기</a>&nbsp;&nbsp;&nbsp;
-										</c:if>
-                                          
+                           <%--   <c:forEach var="isbn" items="${replylist}">
+
+						
+												<tr>
+														<!-- Comments 보이기 -->
+														<td style="width:100px" class="replybutton">
+														<c:if test="${loginId == shelf.id}">
+															<a href="javascript:replyEditForm(${shelf.isbn})">수정</a>
+														</c:if>
+														
+														</td>
+													</tr>
+														
+													</tr>             
+								                              --%> 
                                                                          
                                                                             
                                          
