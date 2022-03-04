@@ -64,19 +64,18 @@ body {
 .gradient-btn {
   display: inline-block;
   width:150px;
-  padding: 1em 1em;
+  padding: 11.5px 11px;
   border-radius: 0;
   color: #ffffff;
-  margin-top: 5px;
   font-family: 'WandohopeR';
   font-size:19px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
-  background: linear-gradient(to right, #21582d 25%, #b2c5b3 70%);
+  background: linear-gradient(to right, #20592a 25%, #b2c5b3 70%);
   background-position: 1% 50%;
   background-size: 400% 300%;
-  border: 1px solid #21582d;
+  border: 0px solid #20592a;
   transition: 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .gradient-btn:hover {

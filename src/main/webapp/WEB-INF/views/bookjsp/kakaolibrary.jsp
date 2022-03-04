@@ -163,7 +163,7 @@
 	<!-- /검색폼 --> 
 
     <!--책 보여 주는데-->
-    <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background: linear-gradient(135deg, #20592a, #335353);">
+    <section class="top_place section_padding" style="padding-top:80px; padding-bottom:30px; background-color:#20592a;">
 	             <div class="col-xl-6" style="margin-left:24%;">
 	                    <div class="section_tittle text-center">
 	                        <h2 style="color: white;">Book List</h2>
