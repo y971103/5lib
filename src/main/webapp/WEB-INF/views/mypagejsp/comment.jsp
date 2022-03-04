@@ -226,7 +226,7 @@
                                     
                                     <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
                                     <td>
-                                       <h3 class="sldwn title_font" isbn="${shelf.isbn}"> ${shelf.title}</h3>
+                                       <h3 class="sldwn title_font" style="text-decoration: underline; isbn="${shelf.isbn}"> ${shelf.title}</h3>
                                         <c:forEach var="memo" items="${commentslist}">
                                        		<c:set var="mm" value="${memo.isbn}" />
                                        		<c:set var="ss" value="${shelf.isbn}" />
