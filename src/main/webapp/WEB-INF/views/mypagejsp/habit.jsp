@@ -165,47 +165,45 @@
          <div id="main" style="width:800px;">
                 <article id="Comment" class="panel">
                     <header>
-                        <h2 class="c_review" style="margin-left: 34%;">${sessionScope.loginId} 님의 독서 습관</h2>
+                        <h2 class="c_review" style="margin-left: 30%;">${sessionScope.loginId} 님의 독서 습관</h2><br>
                     </header>
-                    <section style="margin-left: 25%;">
+                    <section style="margin-left: 16%;">
                         <div class="container" style="margin-bottom: 10px;">
                             <div class="row">       
                                 <div style="padding-left: 7%; padding-top: 19px; color:white;" class="icon solid fa-hourglass fa-3x"></div>
                                 <%-- <class="binfo"> --%>
                                 <c:forEach var="habit" items="${habitlist}">
-                                    <div class="c_title">
+                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:#ebe461;">
                                     	※ 이번 달 ( ${habit.month} ) 독서량 집계 ※ <br>
                                      	${habit.month} 월간 독서량은  [ ${habit.isbn} ] 권, <br> 
                                      	 월간 독서시간은 [ ${habit.mtime} ] 분 입니다.<br>
                                      	   
-                                    </div>
-                                
-                                <%-- </class> --%>
+                                    </div>                               
                             </div>
                             <br><br>
-                            <div class="row">       
-                                <div style="padding-left: 7%; padding-top: 8px; color:white;" class="icon solid fa-calendar-alt fa-3x"></div>
-                                 <%-- <class="binfo"> --%>   
-                               
-                                    <div class="c_title">
-                                    	'${sessionScope.loginId}' 님의 총 누적 독서 시간은 [ ${habit.time} ]분 입니다.<br>
-                                     	 독서를 가장 선호하는 요일은 [ ${habit.inputdate} ]입니다.
-                                    </div>
-                                </c:forEach>
-                            </div>
+	                            <div class="row">       
+	                                	<div style="padding-left: 7%; padding-top: 8px; color:white;" class="icon solid fa-calendar-alt fa-3x"></div>                                
+		                                    <div class="c_title" style="font-size: 20px;font-family: 'CookieRun-Regular'; color:#ebe461;">
+		                                    	'${sessionScope.loginId}' 님의 총 누적 독서 시간은 [ ${habit.time} ]분 입니다.<br>
+		                                     	 독서를 가장 선호하는 요일은 [ ${habit.inputdate} ]입니다.<br><br>
+		                                    </div>
+	                                </c:forEach>
+	                            </div>
                               
                         </div>
                         
                     </section>
-                    	<div class="c_title" style="margin-left:47%; font-size:20px;">선호 장르</div>
+                    	<div class="c_title" style="margin-left:41%; font-size:30px; font-family: 'CookieRun-Regular';">※ 선호 장르</div><br>
 	                    <div class="container"> 
-	                 		<canvas id="doughnutChart"></canvas>
+	                 		<canvas id="doughnutChart"></canvas><br><br>
 	            		</div>
 	            		<br>
+	            		 <div class="c_title" style="margin-left:36%; font-size:30px; font-family: 'CookieRun-Regular';">※ 올해 독서량 추이</div><br>
                   		 <div class="container" style="padding-left:0px;"> 
                  			<canvas id="myChart" style="width:740px; height:300px;"></canvas>
             			</div> 
                 </div>
+                
                 </article>
                
             </div>
@@ -214,6 +212,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
                    <!-- 차트 --> 
+        
          <script> 
             var ctx = document.getElementById('myChart').getContext('2d'); 
             var chart = new Chart(ctx, { 
@@ -223,7 +222,7 @@
              data: { labels: [<c:forEach var="chart" items="${chartlist}" >
              					'${chart.month}',
 			        		 </c:forEach>], 
-            datasets: [{ label: '올해 독서량', 
+            datasets: [{ label: '올해 독서량 (권 수)', 
             backgroundColor: 'transparent', 
             borderColor: 'white', 
             data: [
@@ -237,7 +236,7 @@
             	legend: {
     				labels: {
     					fontColor: "white",
-    					fontSize: 18
+    					fontSize: 15
     				}
     			},
     			scales: {

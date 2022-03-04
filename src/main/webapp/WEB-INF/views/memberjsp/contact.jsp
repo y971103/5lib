@@ -156,9 +156,9 @@
 						<a href="#" class="image icon solid fa-map-marker-alt"><img src="../resources/images/pic11.jpg" alt="" /></a>
 						<div class="content" style="line-height:30px;">
 							<h3 id="address">Location</h3><br><br>
-							<p id="address">(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
-							<p id="address">한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
-							<p id="address"><strong>전화</strong> 02-6000-5378,5379 &nbsp;&nbsp;  <strong>팩스</strong> 02-6000-5066</p>
+							<p id="address" style="font-family: 'CookieRun-Regular';">(06090)서울특별시 강남구 학동로 426 (삼성동)</p>
+							<p id="address" style="font-family: 'CookieRun-Regular';">한국무역협회 무역아카데미 IT교육센터 (코엑스 4층)</p>
+							<p id="address" style="font-family: 'CookieRun-Regular';"><strong>전화</strong> 02-6000-5378,5379 &nbsp;&nbsp;  <strong>팩스</strong> 02-6000-5066</p>
 						</div>
 					</section>
 				</div>
@@ -204,7 +204,7 @@
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
                     <h4 style="width:300px;">Address Of Our Project </h4>
-                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white; font-family: 'CookieRun-Regular';">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>

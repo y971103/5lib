@@ -6,6 +6,13 @@
   cursor: not-allowed;
 }
 
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* TODO: not attached to body. attached to specific els. move */
 .fc-unselectable {
   -webkit-user-select: none;
@@ -888,6 +895,7 @@ A HORIZONTAL event
   flex-shrink: 1;
   min-width: 0; /* important for allowing to shrink all the way */
   overflow: hidden;
+  font-family: 'KOTRAHOPE';
   font-weight: bold;
 }
 .fc-daygrid-dot-event:hover,
@@ -914,6 +922,7 @@ A HORIZONTAL event
 /* --- spacing between time and title --- */
 .fc-direction-ltr .fc-daygrid-event .fc-event-time {
   margin-right: 3px;
+  font-size : 5px;
 }
 .fc-direction-rtl .fc-daygrid-event .fc-event-time {
   margin-left: 3px;

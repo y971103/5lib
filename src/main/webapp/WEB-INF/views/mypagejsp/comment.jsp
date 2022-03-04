@@ -94,7 +94,7 @@
         
         <style type="text/css">
            .title_font{
-              color: white;
+              color: #ebe461;
               cursor: pointer;
               
            }
@@ -193,7 +193,7 @@
                 <!-- Comment 찜한 도서 보여주는 게시판 -->
                     <article id="Comment" class="panel">   
                     <header>
-                        <h2 style="text-align:center; color:white;">□ 내 서재 리뷰 □</h2>
+                        <h2 style="text-align:center; color:white; font-size:31px;">□ 내 서재 리뷰 □</h2>
                   </header>                     
                         <section>
                            <div class="container" style="margin-bottom: 10px;">
@@ -218,7 +218,7 @@
                                     
                                     <!-- 찜한 서재명 클릭시 silde down으로 textarea 보여주기 -->
                                     <td>
-                                       <h3 class="sldwn title_font"; isbn="${shelf.isbn}"; style="text-decoration: underline; margin-bottom: 5px"> ${shelf.title}</h3>
+                                       <h3 class="sldwn title_font"; isbn="${shelf.isbn}"; style="text-decoration: none; margin-bottom: 5px"> ${shelf.title}</h3>
                                         <c:forEach var="memo" items="${commentslist}">
                                              <c:set var="mm" value="${memo.isbn}" />
                                              <c:set var="ss" value="${shelf.isbn}" />
@@ -287,7 +287,7 @@
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
                     <h4>Address Of Our Project </h4>
-                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white; font-family: 'CookieRun-Regular';">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>

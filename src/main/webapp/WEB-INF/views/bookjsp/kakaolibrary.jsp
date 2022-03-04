@@ -172,13 +172,13 @@
 	             
 	              <div class="row"  style="width:125px; float:left; margin-left:10px;">
 		            <form id="genre" method="get" action="kakaocategory">
-						<input type="button" onclick="total()" value="전체" class="gradient-btn" style="margin-top:0px;"><br>
-						<input type="button" onclick="humanities()" value="인문" class="gradient-btn""><br>
-						<input type="button" onclick="novel()" value="일반소설" class="gradient-btn"><br>
-						<input type="button" onclick="horror();" value="추리/공포소설" class="gradient-btn"><br>
-						<input type="button" onclick="ForeignNovel();" value="해외소설" class="gradient-btn"><br>
-						<input type="button" onclick="Poem();" value="시" class="gradient-btn"><br>
-						<input type="button" onclick="SocialScience();" value="사회과학" class="gradient-btn">
+						<input type="button" onclick="total()" value="전체" class="gradient-btn" style="margin-top:0px; color:#f5f2bf;"><br>
+						<input type="button" onclick="humanities()" value="인문" class="gradient-btn" style="color:#f5f2bf;"><br>
+						<input type="button" onclick="novel()" value="일반소설" class="gradient-btn" style="color:#f5f2bf;"><br>
+						<input type="button" onclick="horror();" value="추리/공포소설" class="gradient-btn" style="color:#f5f2bf;"><br>
+						<input type="button" onclick="ForeignNovel();" value="해외소설" class="gradient-btn" style="color:#f5f2bf;"><br>
+						<input type="button" onclick="Poem();" value="시" class="gradient-btn" style="color:#f5f2bf;"><br>
+						<input type="button" onclick="SocialScience();" value="사회과학" class="gradient-btn" style="color:#f5f2bf;">
 
 					</form>
 	            </div>
@@ -251,7 +251,7 @@
             <div class="col-sm-6 col-md-3">
                 <div class="single-footer-widget footer_icon">
                     <h4>Address Of Our Project </h4>
-                    <p><a href="https://github.com/y971103/5lib" style="color:white;">https://github.com/y971103/5lib</a></p>
+                    <p><a href="https://github.com/y971103/5lib" style="color:white; font-family: 'CookieRun-Regular';">https://github.com/y971103/5lib</a></p>
                 </div>
             </div>
         </div>
