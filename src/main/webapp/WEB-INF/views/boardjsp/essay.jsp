@@ -136,8 +136,9 @@ function alertSend(a){
         </div>
         <div class="row">
             <div class="col-md-12">
-            <a href="essaywrite" class="btn btn--diagonal btn--orange" style="margin-left: 1000px;">글쓰기</a>
-                <div class="table-wrap">
+	            <h3 class="h5 mb-4 text-center" style="font-size: 20px; font-family: 'CookieRun-Regular'; color:#0c3272;">Share your Reviews!</h3>
+	            <a href="essaywrite" class="btn btn--diagonal btn--orange" style="margin-top: 1rem; margin-left: 1000px; font-size: 20px;">글쓰기</a>
+                	<div class="table-wrap">
                 	<br></br>
                 	
                     <table class="table">
