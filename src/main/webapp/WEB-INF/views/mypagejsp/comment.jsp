@@ -231,25 +231,19 @@
                                           <form id="write" action="commentWrite" method="post">
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
                                              <br>
-                                             <div id="test_cnt">(0 / 180)</div>
+                                            <!--  <div id="test_cnt">(0 / 180)</div> -->
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
                                              <input type="submit" id="button" value="저장">                                         
                                           </form>  
-                           <%--   <c:forEach var="isbn" items="${replylist}">
-
-						
-												<tr>
-														<!-- Comments 보이기 -->
-														<td style="width:100px" class="replybutton">
-														<c:if test="${loginId == shelf.id}">
-															<a href="javascript:replyEditForm(${shelf.isbn})">수정</a>
-														</c:if>
-														
-														</td>
-													</tr>
-														
-													</tr>             
-								                              --%> 
+										<!-- comment 리뷰 출력 -->
+								<%-- 		<c:forEach var="shelf" items="${shelf.isbn}">
+										<tr>
+											<td class="read">
+												<b>${shelf.comment}</b>
+											</td>
+										</tr>
+										</c:forEach> --%>
+										
                                                                          
                                                                             
                                          
