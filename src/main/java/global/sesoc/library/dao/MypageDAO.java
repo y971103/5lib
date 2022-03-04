@@ -69,7 +69,7 @@ public class MypageDAO {
 	public int countTime(Habit habit) {
 		MypageMapper mapper = sqlSession.getMapper(MypageMapper.class);
 		int result = mapper.countTime(habit);
-
+		//mapper.addHabitHits(isbn);
 		return result;
 	}
 
