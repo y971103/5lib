@@ -44,6 +44,10 @@
 			form.submit();
 		}
 		
+		function total(){
+			location.href = "http://localhost:8888/library/book/kakaolibrary";
+		}
+		
 		function humanities(){
 			location.href = "http://localhost:8888/library/book/kakaocategory?genre=인문";
 		}
@@ -168,7 +172,8 @@
 	             
 	              <div class="row"  style="width:125px; float:left; margin-left:10px;">
 		            <form id="genre" method="get" action="kakaocategory">
-						<input type="button" onclick="humanities()" value="인문" class="gradient-btn" style="margin-top:0px;"><br>
+						<input type="button" onclick="total()" value="전체" class="gradient-btn" style="margin-top:0px;"><br>
+						<input type="button" onclick="humanities()" value="인문" class="gradient-btn""><br>
 						<input type="button" onclick="novel()" value="일반소설" class="gradient-btn"><br>
 						<input type="button" onclick="horror();" value="추리/공포소설" class="gradient-btn"><br>
 						<input type="button" onclick="ForeignNovel();" value="해외소설" class="gradient-btn"><br>
