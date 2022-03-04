@@ -156,11 +156,11 @@
                <a href="<c:url value="/mypage/habit"/>" class="icon solid fa-chart-bar active2"><span>Habit</span></a>
                <a href="<c:url value="/mypage/comment"/>" class="icon solid fa-bookmark"><span>Comment</span></a>            
          </nav>
-        <div id='calendar' style="color:black; width:800px; height:600px; margin-left:24%;"></div>
+        
             <!-- Wrapper-->
          <div id="wrapper" style="min-right: 0ch; padding-bottom: 25px;">
          
-       
+       		 <!-- 부트스트랩 -->
          <br>
          <div id="main" style="width:800px;">
                 <article id="Comment" class="panel">
@@ -197,6 +197,11 @@
                         </div>
                         
                     </section>
+                    	<div class="c_title" style="margin-left:47%; font-size:20px;">선호 장르</div>
+	                    <div class="container"> 
+	                 		<canvas id="doughnutChart"></canvas>
+	            		</div>
+	            		<br>
                   		 <div class="container" style="padding-left:0px;"> 
                  			<canvas id="myChart" style="width:740px; height:300px;"></canvas>
             			</div> 
@@ -204,7 +209,7 @@
                 </article>
                
             </div>
-         
+         <div id='calendar' style="color:black; width:800px; height:600px; margin-left:24%; margin-bottom:35px;"></div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -254,9 +259,7 @@
         </script>
             
         
-          <div class="container"> 
-                 <canvas id="doughnutChart"></canvas>
-            </div> <!-- 부트스트랩 -->
+          
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
