@@ -58,15 +58,27 @@
 		id
 		, time
 		, isbn
+		, hits
 		)
 		values
 		(
 		#{id}
 		, #{time}
 		, #{isbn}
+		, 1
 		)
 	</insert>
 
+<!-- habit의 조회수 1 증가 -->
+	<!-- <update id="addHabitHits" parameterType="string">
+		update
+			habit
+		set
+			hits = hits + 1
+		where
+			isbn = #{isbn} and id=#{id}
+	</update>
+ -->
 	<!-- id별 총 독서시간 -->
 	<select id="selectTime" parameterType="string"
 		resultType="habit">
@@ -113,9 +125,9 @@
 		resultType="DChart">
 		
 		select
-			k.genre, sum(k.hits) as hits
+			k.genre, sum(h.hits) as hits
 		from
-			(select distinct isbn, id from habit) h, kakaobook k
+			(select distinct isbn, id, hits from habit) h, kakaobook k
 		where
 			h.isbn = k.isbn and	id = #{id}
 		group by genre

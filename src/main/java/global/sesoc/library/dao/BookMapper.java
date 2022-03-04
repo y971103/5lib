@@ -39,10 +39,10 @@ public int deleteShelf(HashMap<String, String> map);
 
 public List<Kakaobook> recommendKakaobook();
 
-public int addHits(String isbn);
-
 public ArrayList<Kakaobook> selectBestSeller();
 // 카테고리별 분류 버튼 생성, 조회
 public ArrayList<Kakaobook> getCategory(String genre);
+//bestseller용 조회수 증가
+public int addHits(String isbn);
 
 }
