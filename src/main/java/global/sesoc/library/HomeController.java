@@ -15,7 +15,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		logger.info("홈화면 진입ㅎㅎ");
-		return "home";
+		return "redirect:http://localhost:8888/library/book/index";
 	}
 	
 }
