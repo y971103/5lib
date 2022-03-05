@@ -96,7 +96,7 @@
     </header>
     <!-- 헤더 끝-->
 		<!-- Main -->
-			<div id="main">
+			<div id="main2">
 
 				<header class="major container medium" id="hmajor" style="margin-bottom: 0px; width: 1000px;">
 					<h1><strong>lib-service</strong></h1>

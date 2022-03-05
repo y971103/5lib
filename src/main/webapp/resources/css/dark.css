@@ -22,6 +22,10 @@
             background-color: #1e1f21;
             color: #ffffff !important;
         }
+         body[data-darkmode=on] #main {
+            background-color: #004625;
+            color: #ffffff !important;
+        }
          body[data-darkmode=on] .dropdown-menu {
             background-color: #1e1f21;
             color: #ffffff !important;
@@ -53,6 +57,9 @@
             background-color: #1e1f21;
             color: #ffffff !important;
             border-top: 1px solid #2e2f30;
+        }
+        body[data-darkmode=on] #main2 {
+            background-color: #1e1f21;
         }
          body[data-darkmode=on] #accordion {
             background-color: #1e1f21;
