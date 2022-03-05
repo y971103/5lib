@@ -82,6 +82,9 @@
         body[data-darkmode=on] .dropdown-item{
             color: #ffffff !important;
         }
+        body[data-darkmode=on] .dropdown-item:hover{
+            background: #2b2b2b;
+        }
         body[data-darkmode=on] h3{
             color: #ffffff !important;
         }
