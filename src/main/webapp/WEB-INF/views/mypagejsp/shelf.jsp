@@ -55,6 +55,13 @@
             
 		
 	</script>
+	
+	<style type="text/css">
+    	#navbarDropdown.dropdown-size{
+    		padding-top: 4px;
+    	}
+    </style>
+	
     </head>
     
     <body>
@@ -88,7 +95,7 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item dropdown-size" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>

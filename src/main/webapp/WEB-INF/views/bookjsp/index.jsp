@@ -30,6 +30,8 @@
     <!-- darkMode CSS -->
     <link rel="stylesheet" href="../resources/css/dark.css">  
     <script src="../resources/js/dark.js"></script>
+    
+    
 </head>
 
 <body>

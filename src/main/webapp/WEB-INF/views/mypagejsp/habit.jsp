@@ -75,6 +75,12 @@
               });
         </script>
         
+        <style type="text/css">
+    	#navbarDropdown.dropdown-size{
+    		padding-top: 4px;
+    	}
+    	</style>
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
        <!-- 차트 링크 --> 
        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -111,7 +117,7 @@
                                             My page
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
+                                            <a class="dropdown-item dropdown-size" href="<c:url value="/mypage/shelf"/>" id="navbarDropdown">내 서재</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/habit"/>">통계</a>
                                             <a class="dropdown-item" href="<c:url value="/mypage/comment"/>">리뷰</a>
                                         </div>
