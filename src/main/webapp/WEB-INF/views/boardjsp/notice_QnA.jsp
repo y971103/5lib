@@ -136,10 +136,16 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="h5 mb-4 text-center">Notice & QnA</h3>
-                <a href="boardwrite" class="btn btn--diagonal btn--orange" style="margin-left: 87%; margin-bottom:15px;">관리자에게 요청하기</a>
+               
+                <c:if test="${loginId != 'admin'}">
+                	 <a href="boardwrite" class="btn btn--diagonal btn--orange" style="margin-left: 87%; margin-bottom:15px;">관리자에게 요청하기</a>
+		        </c:if>   
+		        <c:if test="${loginId == 'admin'}">
+                	 <a href="boardwrite" class="btn btn--diagonal btn--orange" style="margin-left: 87%; margin-bottom:15px; padding-left:26px;">공지사항 작성하기</a>
+		        </c:if>   
+               
                 <div class="table-wrap">
-                
-                	
+            	
                     <table class="table myaccordion table-hover" id="accordion">
                       <thead>
                         <tr>
