@@ -47,7 +47,7 @@ public class MemberController {
 		if (result != 1) {
 			return "memberjsp/login_signup";
 		}
-		return "redirect:../book/index";
+		return "memberjsp/login_signup";
 	}
 	
 	// 로그인
