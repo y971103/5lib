@@ -66,10 +66,10 @@
 			border-bottom:3px solid #FFF;
 			color:#FFF;
 			font-size:20px;
-			font-family:Courier, monospace;
+			font-family: 'WandohopeR';
 			height:28px;
 			font-weight:bold;
-			width:220px;
+			width:500px;
 		}
 		#button {
 			cursor:pointer;
@@ -108,6 +108,11 @@
 			margin-right:auto;
 			margin-top:24px;
 			margin-bottom:100px;
+		}
+		#margin{
+		font-family: 'WandohopeR';
+			font-weight:normal;
+			font-size:24px;
 		}
     </style>
     <script>
