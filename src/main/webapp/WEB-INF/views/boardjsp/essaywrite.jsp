@@ -51,8 +51,7 @@
 			line-height:40px;
 			padding-left:100px;
 			padding-right:100px;
-			padding-top:400px;
-			padding-bottom:34px;
+			padding-bottom:400px;
 			background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 			background-repeat:repeat-y, repeat;
 			-webkit-border-radius:12px;
