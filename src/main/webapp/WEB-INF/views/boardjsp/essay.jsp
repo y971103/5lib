@@ -144,7 +144,6 @@ function alertSend(a){
                     <table class="table">
                       <thead class="thead-primary">
                         <tr>
-                          <th class="essayHead">#</th>
                           <th class="essayHead">제목</th>
                           <th class="essayHead">작성자</th>
                           <th class="essayHead">조회수</th>
@@ -154,7 +153,6 @@ function alertSend(a){
                       <tbody>
                       	<c:forEach var="essay" items="${essaylist}">
                         <tr class="alert" role="alert">
-                            <td class="essayDark">${essay.essaynum}</td>
                             <td class="essayDark"><a href="read?essaynum=${essay.essaynum}" class="essayDark">${essay.title}</a></td>
                             <td class="essayDark">${essay.id}</td>
                             <td class="essayDark">${essay.hits}</td>
