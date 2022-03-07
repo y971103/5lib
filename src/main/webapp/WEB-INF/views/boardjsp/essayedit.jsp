@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lib-service</title>
     <style>
+    @font-face {
+    font-family: 'WandohopeR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}      
         * {
 	  	outline:none;
 		border:none;
@@ -15,27 +21,16 @@
 		padding:0px;
 		font-family:Courier, monospace;
 		}
-		
-		@font-face {
-		    font-family: 'WandohopeR';
-		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
-		    font-weight: normal;
-		    font-style: normal;
-		}
-		
-		
 		body {
-			background:rgb(30, 46, 19) repeat;  
-			margin-top: 4%;      
+			background:rgb(30, 46, 19) repeat;        
 		}
 		#paper {
 			color:#FFF;
 			font-size:20px;
 		}
 		#margin {
-			color: white;
 			margin-left:12px;
-			margin-bottom:22px;
+			margin-bottom:20px;
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			-ms-user-select: none;
@@ -49,13 +44,12 @@
 			color:#222;
 			font-family: 'WandohopeR';
 			font-weight:normal;
-			font-size:20px;
+			font-size:24px;
 			resize:none;
 			line-height:40px;
 			padding-left:100px;
 			padding-right:100px;
-			padding-top:400px;
-			padding-bottom:34px;
+			padding-bottom:400px;
 			background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
 			background-repeat:repeat-y, repeat;
 			-webkit-border-radius:12px;
@@ -73,7 +67,7 @@
 			font-family: 'WandohopeR';
 			height:28px;
 			font-weight:bold;
-			width:220px;
+			width:500px;
 		}
 		#button {
 			cursor:pointer;
@@ -113,6 +107,11 @@
 			margin-top:24px;
 			margin-bottom:100px;
 		}
+		#margin{
+		font-family: 'WandohopeR';
+			font-weight:normal;
+			font-size:24px;
+		}
     </style>
     <script>
         $(document).ready(function(){
@@ -136,7 +135,7 @@
 		<!-- <div id="margin">Title: <input class="title" type="text" name="title"></div>  -->
 	
 		
-         <div id="margin">Title :  
+         <div id="margin" style="color:white;">Title :  
     
      
       	  <input class="title" type="text" name="title" value="${essay.title}"></div>
