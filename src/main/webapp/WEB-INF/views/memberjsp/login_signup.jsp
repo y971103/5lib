@@ -6,6 +6,34 @@
         <title>Lib-service</title>
         <link rel="stylesheet" href="../resources/css/log-style.css">
         <link rel="icon" href="../resources/img/favicon.png">
+        <script>
+//가입폼 확인
+function formCheck() {
+	var pw = document.getElementById('password');
+	var id = document.getElementById('id');
+	var name = document.getElementById('name');
+	
+	if (id.value.length < 4 || id.value.length > 12) {
+		alert("id는 4~12자로 입력하세요.");
+		id.focus();
+		id.select();
+		return false;
+	}
+	if (pw.value.length < 4 || pw.value.length > 12) {
+		alert("비밀번호는 4~12자로 입력하세요.");
+		pw.focus();
+		pw.select();
+		return false;
+	}
+	if (name.value == '') {
+		alert("이름을 입력하세요.");
+		name.focus();
+		name.select();
+		return false;
+	}
+	return true;
+}
+</script>
     </head>
     <body>
         <div class="wrap">
@@ -21,9 +49,9 @@
                     <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
                     <input type="submit" class="submit" value="login">
                 </form>
-                <form id="register" action="register" class="input-group" style="top: 90px ;" method="post">
-                    <input type="text" class="input-field" placeholder="User ID" name="id" required>
-                    <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
+                <form id="register" action="register" class="input-group" style="top: 90px ;" method="post" onsubmit="return formCheck();">
+                    <input type="text" class="input-field" placeholder="User ID" name="id" id="id" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password" id="password" required>
                     <input type="email" class="input-field" placeholder="Your Email" name="email" required>
                     <input type="PhoneNumber" class="input-field" placeholder="Enter PhoneNumber" name="phone" required>
                     <input type="text" class="input-field" placeholder="Name" name="name" required>
