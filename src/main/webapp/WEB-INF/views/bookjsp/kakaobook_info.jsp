@@ -177,16 +177,16 @@ function reviewUpdateCancle(div) {
          let end = new Date();
          let second = (end - start)/1000;
          let minute = second / 60;
-         var time = Math.ceil(minute);
+         var time = Math.ceil(minute); // 올림 처리
          //'지금까지 독서시간을 저장하시겠습니까?'로  바꿀 예정인데 확인을 눌렀을때 form의 action이 작동 될수 있도록 'type = submit'이 될수 있도록 해줘야 함 
          //alert(time +'분동안 독서를 했습니다. 지금까지 독서시간을 저장하시겠습니까?');
          document.getElementById('time').value = time;
-         
+         	// 확인 취소 나오는 alert창
          if (!confirm(time+"분동안 독서를 했습니다. 지금까지 독서시간을 저장하시겠습니까?\n 저장(확인) 또는 삭제(취소)를 선택해주세요.")) {
            } else {
                var form = document.getElementById("t1");
                form.action = "countTime";
-               form.mothod = "POST";
+               form.method = "POST";
                form.submit();
                  }
             });
@@ -350,19 +350,19 @@ function reviewUpdateCancle(div) {
  							 <div>
  							 	<form id="reviewWrite" action="reviewWrite" method="post">
  							 	<input type="hidden" name="isbn" value="${book.isbn}" />
-                                <input type="text" placeholder="한 줄 리뷰를 작성 해보세요 / 로그인 했을때만 보이게 하면 될듯" class="write_review" name="content"> 
+                                <input type="text" placeholder="한 줄 리뷰를 작성하세요" class="write_review" name="content"> 
                                 <input type="submit" value="등록" class="sub_review">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
+			
                 <h2 style="margin-top: 15px; margin-left: 10%;">지금 이 책 말고 다른 책은 어떠세요? </h2>
                       
                   <div class="row" style="margin-left: 10%;">
                 
-                  <c:forEach var = "i" begin = "1" end = "4">
+                  <c:forEach var = "i" begin = "1" end = "4">	<!-- 랜덤으로 추천 책 뿌리기 -->
                       <c:set var="ran"><%= java.lang.Math.round(java.lang.Math.random() * 50) %></c:set>
                        <c:forEach var="book" items="${kakaobooklist}"> 
                          <c:if test = "${ran == book.booknum}">
