@@ -1,3 +1,19 @@
+
+/* Drop Tables */
+
+DROP TABLE reply CASCADE CONSTRAINTS;
+DROP TABLE board CASCADE CONSTRAINTS;
+DROP TABLE comments CASCADE CONSTRAINTS;
+DROP TABLE essay CASCADE CONSTRAINTS;
+DROP TABLE habit CASCADE CONSTRAINTS;
+DROP TABLE review CASCADE CONSTRAINTS;
+DROP TABLE shelf CASCADE CONSTRAINTS;
+DROP TABLE kakaobook CASCADE CONSTRAINTS;
+DROP TABLE members CASCADE CONSTRAINTS;
+
+
+
+
 /* Create Tables */
 
 CREATE TABLE board
@@ -132,7 +148,7 @@ CREATE TABLE review
 	-- 한줄평 번호 (라이브러리)
 	reviewnum number NOT NULL,
 	-- 한줄평 작성 날짜
-	inputdate date default sysdate,
+	inputdate date DEFAULT SYSDATE,
 	-- 한줄평 내용
 	content varchar2(200),
 	-- 회원 아이디
@@ -157,8 +173,6 @@ CREATE TABLE shelf
 	title varchar2(200),
 	-- 찜한 도서의 표지
 	thumbnail varchar2(200)
-	-- 복합키
-    	CONSTRAINT shelf_PK PRIMARY KEY(id, isbn)
 );
 
 
@@ -259,10 +273,12 @@ COMMENT ON COLUMN habit.hits IS '뷰어 연 횟수(sum으로 계산)';
 COMMENT ON COLUMN kakaobook.isbn IS '책 번호';
 COMMENT ON COLUMN kakaobook.title IS '책 제목';
 COMMENT ON COLUMN kakaobook.author IS '작가';
-COMMENT ON COLUMN kakaobook.publisher IS '출판사';
+COMMENT ON COLUMN kakaobook.content IS '책 소개';
 COMMENT ON COLUMN kakaobook.datetime IS '출판 일자';
-COMMENT ON COLUMN kakaobook.genre IS '장르';
+COMMENT ON COLUMN kakaobook.publisher IS '출판사';
 COMMENT ON COLUMN kakaobook.thumbnail IS '책 사진';
+COMMENT ON COLUMN kakaobook.booknum IS '책번호';
+COMMENT ON COLUMN kakaobook.genre IS '장르';
 COMMENT ON COLUMN kakaobook.hits IS '베스트셀러용 책 조회수';
 COMMENT ON COLUMN members.id IS '회원 아이디';
 COMMENT ON COLUMN members.password IS '회원 비밀번호';
@@ -272,8 +288,8 @@ COMMENT ON COLUMN members.email IS '회원 이메일';
 COMMENT ON COLUMN members.sub IS '회원 구독 정보';
 COMMENT ON COLUMN members.genre IS '선호 장르';
 COMMENT ON COLUMN reply.replynum IS '댓글 번호';
-COMMENT ON COLUMN reply.content IS 'reply 내용';
-COMMENT ON COLUMN reply.id IS 'reply 회원 아이디';
+COMMENT ON COLUMN reply.content IS '댓글 내용';
+COMMENT ON COLUMN reply.id IS '댓글 작성 회원 아이디';
 COMMENT ON COLUMN reply.boardnum IS '게시글 번호';
 COMMENT ON COLUMN review.reviewnum IS '한줄평 번호 (라이브러리)';
 COMMENT ON COLUMN review.inputdate IS '한줄평 작성 날짜';
@@ -288,17 +304,4 @@ COMMENT ON COLUMN shelf.title IS '찜한 도서의 제목';
 COMMENT ON COLUMN shelf.thumbnail IS '찜한 도서의 표지';
 
 
--- 게시판 글 번호에 사용할 시퀀스
-create sequence board_seq;
 
--- 게시글 댓글 번호에 사용할 시퀀스 
-create sequence reply_seq;
-
--- 에세이 글 번호에 사용할 시퀀스
-create sequence essay_seq;
-
--- 한줄평 댓글 번호에 사용할 시퀀스
-create sequence review_seq;    
-
---comments에 사용할 시퀀스
-create sequence comments_seq;
