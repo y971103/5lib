@@ -156,7 +156,13 @@
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
                 <br></br>
-                <h1 class="heading-section" style="margin-left:710px;">QnA</h1>
+                 <c:if test="${loginId != 'admin'}">
+                           <h1 class="heading-section" style="margin-left:710px;">QnA</h1>
+                 </c:if>
+                 <c:if test="${loginId == 'admin'}">
+                           <h1 class="heading-section" style="margin-left:710px;">Notice</h1>
+                 </c:if>
+                
             <br></br>
         	</div>
         </div>
