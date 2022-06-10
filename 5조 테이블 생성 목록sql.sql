@@ -17,7 +17,7 @@ CREATE TABLE kakaobook
    -- 책 번호(DB)
    booknum number,
    -- 조회수
-   hits number (not null)
+   hits number default 1,
    -- 장르
    genre varchar2(200),
    PRIMARY KEY (isbn)
@@ -254,7 +254,7 @@ CREATE TABLE comments
    -- 회원 아이디
    id varchar2(20) NOT NULL,
    -- 책 번호
-   booknum number NOT NULL,
+   isbn number NOT NULL,
    PRIMARY KEY (commentnum)
 );
 
@@ -311,7 +311,7 @@ CREATE TABLE members
    -- 회원 아이디
    id varchar2(20) NOT NULL,
    -- 회원 비밀번호
-   password varchar2 NOT NULL,
+   password varchar2(20) NOT NULL,
    -- 회원 이름
    name varchar2(20),
    -- 회원 전화번호

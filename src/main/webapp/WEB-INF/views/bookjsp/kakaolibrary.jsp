@@ -188,7 +188,7 @@
                		<c:forEach var="book" items="${kakaobooklist}">
                     	<div style="margin-bottom:25px;">       
                         <a href="kakaobook_info?isbn=${book.isbn}">
-                          	<img src="download?filename=${book.thumbnail}" style="width:260px; height:333px;">
+                          	<img src="../resources/file/bookimage/${book.thumbnail}" style="width:260px; height:333px;">
                             <div style="margin-top:5px;">
                             </div>
                         </a>

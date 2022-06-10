@@ -120,7 +120,7 @@
                     	<c:forEach var="book" items="${bestseller}" begin="0" end="7">
                     	<a href="kakaobook_info?isbn=${book.isbn}">
                         <div class="photo">
-                            <img src="download?filename=${book.thumbnail}" alt="">
+                            <img src="../resources/file/bookimage/${book.thumbnail}" alt="">
                         </div>
                         </a>
                         </c:forEach>

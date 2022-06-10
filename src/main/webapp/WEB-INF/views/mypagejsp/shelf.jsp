@@ -220,7 +220,8 @@
                		<c:forEach var="shelf" items="${shelflist}" begin="0" end="7">
                     	<div style="margin-bottom:8px;">       
                         <a href="<c:url value="/book/kakaobook_info?isbn=${shelf.isbn}"/>">
-                          	<img src="download?filename=${shelf.thumbnail}" style="width:170px; height:252px;">
+                        	<img src="../resources/file/bookimage/${shelf.thumbnail}" style="width:170px; height:252px;">
+                          	<%-- <img src="download?filename=${shelf.thumbnail}" style="width:170px; height:252px;"> --%>
                             <div style="margin-top:5px;">
                             </div>
                         </a>

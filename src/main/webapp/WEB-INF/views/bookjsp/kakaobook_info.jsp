@@ -272,7 +272,7 @@ function reviewUpdateCancle(div) {
 
                 <div style="padding-left: 10%;">
              
-                   <img src="download?filename=${book.thumbnail}" style="width:273px; height:395px;">
+                   <img src="../resources/file/bookimage/${book.thumbnail}" style="width:273px; height:395px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
@@ -368,7 +368,7 @@ function reviewUpdateCancle(div) {
                          <c:if test = "${ran == book.booknum}">
                              <div class="photo" style="margin-right: 22px;">
                              <a href="kakaobook_info?isbn=${book.isbn}">
-                                 <img src="download?filename=${book.thumbnail}" style="width:180px; height:261px;">
+                                 <img src="../resources/file/bookimage/${book.thumbnail}" style="width:180px; height:261px;">
                              </a>
                              </div>
                           </c:if>

@@ -222,7 +222,7 @@
                                         <tr>   
                                     <!-- 찜한 서재 썸네일 보여주기 -->
                                     <td style="width:150px; height:160px;">
-                                    <img src="download?filename=${shelf.thumbnail}" style="width:auto; height:auto;">
+                                    <img src="../resources/file/bookimage/${shelf.thumbnail}" style="width:auto; height:auto;">
                                     
                                     </td>
                                     
