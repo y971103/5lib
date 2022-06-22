@@ -155,14 +155,14 @@ public class MypageController {
 	
 	
 	// 등록한 책 코멘트 삭제하기 
-	@RequestMapping (value="deleteComment", method=RequestMethod.GET)
+	@RequestMapping (value="deleteComment", method=RequestMethod.POST)
 	public String deleteComments (Comments comments, HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
 		comments.setId(id);
 		
 		logger.debug("삭제할 내 코멘트 정보: {}", comments);
 		dao.deleteComments(comments);
-		return "redirect:comments?isbn="+ comments.getIsbn();
+		return "redirect:comment?isbn="+ comments.getIsbn();
 	}
 	
 
@@ -176,7 +176,7 @@ public class MypageController {
 		//코멘트  수정 처리
 		dao.updateComments(comments);
 		//원래 화면으로 이동 
-		return "redirect:comments?isbn="+ comments.getIsbn();
+		return "redirect:comment?isbn="+ comments.getIsbn();
 	}
 	
 	

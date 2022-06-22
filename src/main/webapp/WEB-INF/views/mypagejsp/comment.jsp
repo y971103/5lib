@@ -243,9 +243,13 @@
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
                                              <br>
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
-                                             <input type="submit" id="button" value="저장">                                         
+                                             <input type="submit" id="button" value="저장">                                            	                                    
                                           </form>  
-                        
+                                          
+                                          <form id="delete" action="deleteComment" method="post">
+                                             	<input type="hidden" name="isbn" value="${shelf.isbn}" />
+                                             	<input type="submit" id="button" value="삭제"> 
+                                          </form>  
                                        </section>                                                                
                                    </td>
 

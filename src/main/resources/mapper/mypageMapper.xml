@@ -29,22 +29,21 @@
 	<!-- 등록한 내 서재 책 코멘트 삭제 -->
 	<delete id="deleteComments" parameterType="comments">
 		delete
-		from
-		comments
-		where
-		commentnum = #{commentnum}
-		and id = #{id}
+			from
+				comments
+			where
+				isbn = #{isbn}
 	</delete>
 
 	<!-- 등록한 내 서재 책 코멘트 내용 수정 -->
 	<update id="updateComments" parameterType="comments">
 		update
-		comments
-		set
-		content = #{content}
-		where
-		commentnum = #{commentnum}
-		and id = #{id}
+			comments
+				set
+					content = #{content}
+				where
+					commentnum = #{commentnum}			
+					and id = #{id}
 	</update>
 
 
