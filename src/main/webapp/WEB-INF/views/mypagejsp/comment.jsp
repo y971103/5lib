@@ -234,7 +234,7 @@
                                              <c:set var="ss" value="${shelf.isbn}" />
                                                 <c:if test="${mm == ss}">
                                                    
-                                              <p style="color:white;">${memo.content}</p>
+                                              <p style="color:white; margin-bottom:0px;">${memo.content}</p>
                                           </c:if>
                                     </c:forEach>   
                                         <section class="textDiv" id="textDiv${shelf.isbn}"><br>
