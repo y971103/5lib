@@ -216,7 +216,7 @@
                                        <tr>
                                             <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 책 표지</td>   
                                             <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 도서명</td>
-                                            <td style="font-family: 'CookieRun-Regular'; color:#575752;">● 찜한 날짜 </td>       
+                                            <td style="font-family: 'CookieRun-Regular'; color:#575752; width:170px;">● 찜한 날짜 </td>       
                                        </tr>
                                  <c:forEach var="shelf" items="${shelflist}">
                                         <tr>   
@@ -239,7 +239,7 @@
                                     </c:forEach>   
                                         <section class="textDiv" id="textDiv${shelf.isbn}"><br>
                                           
-                                          <form id="write" action="commentWrite" method="post">
+                                          <form id="write" action="commentWrite" method="post" style="margin-bottom:0px;">
                                              <textarea placeholder="Write your review." name="content" cols="70" rows="5" style="resize: none; "></textarea>  
                                              <br>
                                              <input type="hidden" name="isbn" value="${shelf.isbn}" />
