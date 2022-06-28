@@ -235,6 +235,11 @@
                                                 <c:if test="${mm == ss}">
                                                    
                                               <p style="color:white; margin-bottom:0px;">${memo.content}</p>
+                                              
+                                              <form id="delete" action="deleteComment" method="post">
+                                             	<input type="hidden" name="isbn" value="${shelf.isbn}" />
+                                             	<input type="submit" id="button" value="리뷰 삭제"> 
+                                          	  </form>  
                                           </c:if>
                                     </c:forEach>   
                                         <section class="textDiv" id="textDiv${shelf.isbn}"><br>
@@ -246,10 +251,6 @@
                                              <input type="submit" id="button" value="저장">                                            	                                    
                                           </form>  
                                           
-                                          <form id="delete" action="deleteComment" method="post">
-                                             	<input type="hidden" name="isbn" value="${shelf.isbn}" />
-                                             	<input type="submit" id="button" value="삭제"> 
-                                          </form>  
                                        </section>                                                                
                                    </td>
 
